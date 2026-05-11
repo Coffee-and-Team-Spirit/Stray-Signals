@@ -1,3 +1,28 @@
 [gd_scene format=3 uid="uid://bgsmb4ojxsmv4"]
 
-[node name="DrinkMiniGame" type="Node2D" unique_id=1442853740]
+[node name="DrinkMiniGame" type="Control" unique_id=230215315]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CupSelector" type="HBoxContainer" parent="." unique_id=42541506]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.96400005
+anchor_right = 1.0
+anchor_bottom = 0.038000003
+offset_left = 1.119873
+offset_bottom = -0.040000916
+grow_horizontal = 0
+
+[node name="Cup - Boba Cup" type="TextureButton" parent="CupSelector" unique_id=1370005641]
+layout_mode = 2
+
+[node name="Cup - Mug" type="TextureButton" parent="CupSelector" unique_id=1744952382]
+layout_mode = 2
+
+[node name="Cup - Wine Glass" type="TextureButton" parent="CupSelector" unique_id=2031028854]
+layout_mode = 2
