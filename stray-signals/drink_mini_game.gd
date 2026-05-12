@@ -8,12 +8,12 @@ var chosen_flavors : Array = [];
 var chosen_topping : String = "";
 var chosen_modification : String = "";
 
-# Target drink 
+# Target drink, filled with a test drink for now 
 var target_drink = {
-	"cup": "",
-	"flavors": [],
-	"topping": "",
-	"modification": ""
+	"cup": "boba_cup",
+	"flavors": ["mango", "matcha"],
+	"topping": "catnip",
+	"modification": "shake"
 }
 
 
@@ -44,6 +44,7 @@ func _on_modification_button_pressed(button_path: NodePath):
 func select_cup(cup_name):
 	chosen_cup = cup_name
 	update_cup_display()
+	update_drink_components_display()
 	print(chosen_cup)
 
 
@@ -54,21 +55,142 @@ func select_flavor(flavor_name):
 	else:
 		chosen_flavors[next_index] = flavor_name
 		next_index = 1 - next_index
-		
+	update_cup_display()
+	update_drink_components_display()
 	print(chosen_flavors)
 
 
 func select_topping(topping_name):
 	chosen_topping = topping_name
+	update_cup_display()
+	update_drink_components_display()
 	print(chosen_topping)
 
 
 func select_modification(modification_name):
 	chosen_modification = modification_name
+	update_cup_display()
+	update_drink_components_display()
 	print(chosen_modification)
 
+
 func update_cup_display():
-	$DrinkDisplay/CupDisplay/CupBase.texture = load("res://art/cups/empty_cup_%s.png" % chosen_cup)
+	if chosen_cup !="":
+		$DrinkInformation/CupDisplay/CupBase.texture = load("res://art/cups/empty_cup_%s.png" % chosen_cup)
+	else:
+		$DrinkInformation/CupDisplay/CupBase.texture = load("res://art/cups/empty_cup.png")
+	
+	if chosen_flavors.size() > 0:
+		if chosen_flavors.size() == 1:
+			$DrinkInformation/CupDisplay/BaseFlavorLayer.texture = load("res://art/flavors/base_flavor_%s.png" % chosen_flavors[0])
+		else:
+			$DrinkInformation/CupDisplay/BaseFlavorLayer.texture = load("res://art/flavors/base_flavor_%s.png" % chosen_flavors[0])
+			$DrinkInformation/CupDisplay/SecondaryFlavorLayer.texture = load("res://art/flavors/secondary_flavor_%s.png" % chosen_flavors[1])
+	else:
+		$DrinkInformation/CupDisplay/BaseFlavorLayer.texture = null
+		$DrinkInformation/CupDisplay/SecondaryFlavorLayer.texture = null
+
+	if chosen_topping != "":
+		$DrinkInformation/CupDisplay/ToppingLayer.texture = load("res://art/toppings/topping_%s.png" % chosen_topping)
+	else:
+		$DrinkInformation/CupDisplay/ToppingLayer.texture = null
+
+
+func update_drink_components_display():
+	var filled_panel_stylebox = load("res://ui/drink_components_panel_filled.tres")
+	var unfilled_panel_stylebox = load("res://ui/drink_components_panel.tres")
+	
+	if chosen_cup != "":
+		$DrinkInformation/MarginContainer/DrinkComponents/SelectCup.text = chosen_cup.capitalize()
+		$DrinkInformation/MarginContainer/DrinkComponents/SelectCup/Panel.add_theme_stylebox_override("panel", filled_panel_stylebox)
+		$DrinkInformation/MarginContainer/DrinkComponents/SelectCup.add_theme_color_override("default_color", Color(256, 256, 256))
+	else:
+		$DrinkInformation/MarginContainer/DrinkComponents/SelectCup.text = "Select Cup"
+		$DrinkInformation/MarginContainer/DrinkComponents/SelectCup/Panel.add_theme_stylebox_override("panel", unfilled_panel_stylebox)
+		$DrinkInformation/MarginContainer/DrinkComponents/SelectCup.add_theme_color_override("default_color", Color(0, 0, 0))
+
+	if chosen_flavors.size() > 0:
+		if chosen_flavors.size() == 1:
+			$DrinkInformation/MarginContainer/DrinkComponents/SelectBaseFlavor.text = chosen_flavors[0].capitalize()
+			$DrinkInformation/MarginContainer/DrinkComponents/SelectBaseFlavor/Panel.add_theme_stylebox_override("panel", filled_panel_stylebox)
+			$DrinkInformation/MarginContainer/DrinkComponents/SelectBaseFlavor.add_theme_color_override("default_color", Color(256, 256, 256))
+		else:
+			$DrinkInformation/MarginContainer/DrinkComponents/SelectBaseFlavor.text = chosen_flavors[0].capitalize()
+			$DrinkInformation/MarginContainer/DrinkComponents/SelectBaseFlavor/Panel.add_theme_stylebox_override("panel", filled_panel_stylebox)
+			$DrinkInformation/MarginContainer/DrinkComponents/SelectBaseFlavor.add_theme_color_override("default_color", Color(256, 256, 256))
+			
+			$DrinkInformation/MarginContainer/DrinkComponents/SelectSecondaryFlavor.text = chosen_flavors[1].capitalize()
+			$DrinkInformation/MarginContainer/DrinkComponents/SelectSecondaryFlavor/Panel.add_theme_stylebox_override("panel", filled_panel_stylebox)
+			$DrinkInformation/MarginContainer/DrinkComponents/SelectSecondaryFlavor.add_theme_color_override("default_color", Color(256, 256, 256))
+	else:
+		$DrinkInformation/MarginContainer/DrinkComponents/SelectBaseFlavor.text = "Select Base Flavor"
+		$DrinkInformation/MarginContainer/DrinkComponents/SelectBaseFlavor/Panel.add_theme_stylebox_override("panel", unfilled_panel_stylebox)
+		$DrinkInformation/MarginContainer/DrinkComponents/SelectBaseFlavor.add_theme_color_override("default_color", Color(0, 0, 0))
+		$DrinkInformation/MarginContainer/DrinkComponents/SelectSecondaryFlavor.text = "Select Secondary Flavor"
+		$DrinkInformation/MarginContainer/DrinkComponents/SelectSecondaryFlavor/Panel.add_theme_stylebox_override("panel", unfilled_panel_stylebox)
+		$DrinkInformation/MarginContainer/DrinkComponents/SelectSecondaryFlavor.add_theme_color_override("default_color", Color(0, 0, 0))	
+	
+	if chosen_topping != "":
+		$DrinkInformation/MarginContainer/DrinkComponents/SelectTopping.text = chosen_topping.capitalize()
+		$DrinkInformation/MarginContainer/DrinkComponents/SelectTopping/Panel.add_theme_stylebox_override("panel", filled_panel_stylebox)
+		$DrinkInformation/MarginContainer/DrinkComponents/SelectTopping.add_theme_color_override("default_color", Color(256, 256, 256))
+	else:
+		$DrinkInformation/MarginContainer/DrinkComponents/SelectTopping.text = "Select Topping"
+		$DrinkInformation/MarginContainer/DrinkComponents/SelectTopping/Panel.add_theme_stylebox_override("panel", unfilled_panel_stylebox)
+		$DrinkInformation/MarginContainer/DrinkComponents/SelectTopping.add_theme_color_override("default_color", Color(0, 0, 0))
+	
+	if chosen_modification != "":
+		$"DrinkInformation/MarginContainer/DrinkComponents/SelectModification".text = chosen_modification.capitalize()
+		$DrinkInformation/MarginContainer/DrinkComponents/SelectModification/Panel.add_theme_stylebox_override("panel", filled_panel_stylebox)
+		$DrinkInformation/MarginContainer/DrinkComponents/SelectModification.add_theme_color_override("default_color", Color(256, 256, 256))
+	else:
+		$"DrinkInformation/MarginContainer/DrinkComponents/SelectModification".text = "Select Modification"
+		$DrinkInformation/MarginContainer/DrinkComponents/SelectModification/Panel.add_theme_stylebox_override("panel", unfilled_panel_stylebox)
+		$DrinkInformation/MarginContainer/DrinkComponents/SelectModification.add_theme_color_override("default_color", Color(0, 0, 0))
+
+func score_drink() -> int:
+	var score = 0
+	
+	if chosen_cup == target_drink["cup"]:
+		score += 1
+	
+	for flavor in chosen_flavors:
+		if flavor in target_drink["flavors"]:
+			score += 1
+	
+	if chosen_topping == target_drink["topping"]:
+		score += 1
+	
+	if chosen_modification == target_drink["modification"]:
+		score += 1
+		
+	print(score)
+	return score
+
+
+func evaluate_drink_rating(score):
+	if score >= 4:
+		print("Congrats, you made a Good drink!")
+	elif score >= 2 && score < 4:
+		print("You made a Medicore drink... better luck next time.")
+	else:
+		print("This drink is soooo Bad, I need a remake.")
+
+
+func _on_serve_pressed() -> void:
+	var player_drink_score = score_drink()
+	evaluate_drink_rating(player_drink_score)
+
+
+func _on_reset_pressed() -> void:
+	chosen_cup = ""
+	chosen_flavors = []
+	chosen_topping = ""
+	chosen_modification = ""
+	
+	update_cup_display()
+	update_drink_components_display()
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://cmaigw5l0kd4" path="res://art/ingredients/ingredient_boba.png" id="9_okdn2"]
 [ext_resource type="Texture2D" uid="uid://chd6sfxr8ly6m" path="res://art/ingredients/ingredient_cream_and_cat_treats.png" id="10_id7fa"]
 [ext_resource type="Texture2D" uid="uid://cof8hgx2vd0dw" path="res://art/ingredients/ingredient_catnip.png" id="11_3cihv"]
+[ext_resource type="StyleBox" uid="uid://d16gnpc5j64h7" path="res://ui/drink_components_panel.tres" id="13_1ck7w"]
 [ext_resource type="Texture2D" uid="uid://cb2m4871ckl5y" path="res://art/cups/empty_cup.png" id="13_i647u"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vlrg8"]
@@ -22,6 +23,26 @@ content_margin_top = 5.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0yecb"]
 content_margin_top = 5.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_okdn2"]
+content_margin_top = 5.0
+content_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_id7fa"]
+content_margin_top = 5.0
+content_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3cihv"]
+content_margin_top = 5.0
+content_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vjac4"]
+content_margin_top = 5.0
+content_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k0qsm"]
+content_margin_top = 5.0
+content_margin_bottom = 5.0
 
 [node name="DrinkMiniGame" type="Control" unique_id=230215315]
 layout_mode = 3
@@ -390,75 +411,195 @@ custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
 text = "Shake"
 
-[node name="DrinkDisplay" type="VBoxContainer" parent="." unique_id=1078941575]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-grow_vertical = 2
-theme_override_constants/separation = 150
+[node name="DrinkInformation" type="HBoxContainer" parent="." unique_id=2058362915]
+layout_mode = 0
+offset_top = 284.0
+offset_right = 40.0
+offset_bottom = 324.0
 
-[node name="CupDisplay" type="Control" parent="DrinkDisplay" unique_id=1314586537]
+[node name="MarginContainer" type="MarginContainer" parent="DrinkInformation" unique_id=348003988]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+
+[node name="DrinkComponents" type="VBoxContainer" parent="DrinkInformation/MarginContainer" unique_id=1000015434]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+
+[node name="SelectCup" type="RichTextLabel" parent="DrinkInformation/MarginContainer/DrinkComponents" unique_id=226446679]
+clip_contents = false
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_okdn2")
+text = "Select Cup"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="Panel" type="Panel" parent="DrinkInformation/MarginContainer/DrinkComponents/SelectCup" unique_id=1737600586]
+show_behind_parent = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("13_1ck7w")
+
+[node name="SelectBaseFlavor" type="RichTextLabel" parent="DrinkInformation/MarginContainer/DrinkComponents" unique_id=1146954660]
+clip_contents = false
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_id7fa")
+text = "Select Base Flavor"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="Panel" type="Panel" parent="DrinkInformation/MarginContainer/DrinkComponents/SelectBaseFlavor" unique_id=1980145952]
+show_behind_parent = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("13_1ck7w")
+
+[node name="SelectSecondaryFlavor" type="RichTextLabel" parent="DrinkInformation/MarginContainer/DrinkComponents" unique_id=699688464]
+clip_contents = false
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3cihv")
+text = "Select Secondary Flavor"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="Panel" type="Panel" parent="DrinkInformation/MarginContainer/DrinkComponents/SelectSecondaryFlavor" unique_id=1796686658]
+show_behind_parent = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("13_1ck7w")
+
+[node name="SelectTopping" type="RichTextLabel" parent="DrinkInformation/MarginContainer/DrinkComponents" unique_id=1533706332]
+clip_contents = false
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vjac4")
+text = "Select Topping"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="Panel" type="Panel" parent="DrinkInformation/MarginContainer/DrinkComponents/SelectTopping" unique_id=798016380]
+show_behind_parent = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("13_1ck7w")
+
+[node name="SelectModification" type="RichTextLabel" parent="DrinkInformation/MarginContainer/DrinkComponents" unique_id=1883354255]
+clip_contents = false
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_k0qsm")
+text = "Select Modification"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="Panel" type="Panel" parent="DrinkInformation/MarginContainer/DrinkComponents/SelectModification" unique_id=1650089956]
+show_behind_parent = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("13_1ck7w")
+
+[node name="MarginContainer" type="MarginContainer" parent="DrinkInformation/MarginContainer/DrinkComponents" unique_id=698630222]
+layout_mode = 2
+theme_override_constants/margin_top = 25
+
+[node name="DrinkActions" type="VBoxContainer" parent="DrinkInformation/MarginContainer/DrinkComponents/MarginContainer" unique_id=330370034]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Serve" type="Button" parent="DrinkInformation/MarginContainer/DrinkComponents/MarginContainer/DrinkActions" unique_id=1274002954]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "SERVE"
+
+[node name="Reset" type="Button" parent="DrinkInformation/MarginContainer/DrinkComponents/MarginContainer/DrinkActions" unique_id=141757990]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "RESET"
+
+[node name="CupDisplay" type="Control" parent="DrinkInformation" unique_id=1314586537]
+custom_minimum_size = Vector2(512, 512)
 layout_mode = 2
 size_flags_horizontal = 0
-size_flags_vertical = 0
 
-[node name="CupBase" type="TextureRect" parent="DrinkDisplay/CupDisplay" unique_id=119191514]
+[node name="CupBase" type="TextureRect" parent="DrinkInformation/CupDisplay" unique_id=119191514]
 custom_minimum_size = Vector2(400, 400)
 layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -75.0
-offset_right = 150.0
-offset_bottom = 75.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -64.0
+offset_bottom = 64.0
+grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("13_i647u")
-expand_mode = 2
-
-[node name="BaseFlavorLayer" type="TextureRect" parent="DrinkDisplay/CupDisplay" unique_id=2142162753]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="SecondaryFlavorLayer" type="TextureRect" parent="DrinkDisplay/CupDisplay" unique_id=1781846496]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="ToppingLayer" type="TextureRect" parent="DrinkDisplay/CupDisplay" unique_id=16210692]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="CupDisplay2" type="Control" parent="DrinkDisplay" unique_id=4397243]
-visible = false
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-
-[node name="CupBase" type="TextureRect" parent="DrinkDisplay/CupDisplay2" unique_id=1593285171]
-custom_minimum_size = Vector2(150, 150)
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("13_i647u")
 expand_mode = 1
+stretch_mode = 5
 
-[node name="BaseFlavorLayer" type="TextureRect" parent="DrinkDisplay/CupDisplay2" unique_id=1696218774]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="ToppingLayer" type="TextureRect" parent="DrinkInformation/CupDisplay" unique_id=16210692]
+layout_mode = 1
+stretch_mode = 5
 
-[node name="SecondaryFlavorLayer" type="TextureRect" parent="DrinkDisplay/CupDisplay2" unique_id=247787348]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="SecondaryFlavorLayer" type="TextureRect" parent="DrinkInformation/CupDisplay" unique_id=1781846496]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
 
-[node name="ToppingLayer" type="TextureRect" parent="DrinkDisplay/CupDisplay2" unique_id=697291957]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="BaseFlavorLayer" type="TextureRect" parent="DrinkInformation/CupDisplay" unique_id=2142162753]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
 
 [connection signal="pressed" from="PlayerComponents/CupSelector/BobaCup/CupBobaCup" to="." method="_on_cup_button_pressed" binds= [NodePath("PlayerComponents/CupSelector/BobaCup/CupBobaCup")]]
 [connection signal="pressed" from="PlayerComponents/CupSelector/Mug/CupMug" to="." method="_on_cup_button_pressed" binds= [NodePath("PlayerComponents/CupSelector/Mug/CupMug")]]
@@ -475,3 +616,5 @@ offset_bottom = 40.0
 [connection signal="pressed" from="PlayerComponents/ModificationSelector/Modification/ModRow1/ModificationChill" to="." method="_on_modification_button_pressed" binds= [NodePath("PlayerComponents/ModificationSelector/Modification/ModRow1/ModificationChill")]]
 [connection signal="pressed" from="PlayerComponents/ModificationSelector/Modification/ModRow2/ModificationStir" to="." method="_on_modification_button_pressed" binds= [NodePath("PlayerComponents/ModificationSelector/Modification/ModRow2/ModificationStir")]]
 [connection signal="pressed" from="PlayerComponents/ModificationSelector/Modification/ModRow2/ModificationShake" to="." method="_on_modification_button_pressed" binds= [NodePath("PlayerComponents/ModificationSelector/Modification/ModRow2/ModificationShake")]]
+[connection signal="pressed" from="DrinkInformation/MarginContainer/DrinkComponents/MarginContainer/DrinkActions/Serve" to="." method="_on_serve_pressed"]
+[connection signal="pressed" from="DrinkInformation/MarginContainer/DrinkComponents/MarginContainer/DrinkActions/Reset" to="." method="_on_reset_pressed"]
