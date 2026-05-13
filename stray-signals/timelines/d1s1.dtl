@@ -24,6 +24,7 @@ Player: Your usual then?
 Loren: That would be just perfect. A mug with Mango and Matcha. Some Boba. Oh, and make it hot of course. My bones could use some heat.
 Player: On it!
 [signal arg="craft_drink"]
+label d1s1_drink_rating (Scene 1 Drink Rating)
 [center][b][FOR TESTING ONLY][/b]\
 Choose drink rating above.[/center]
 - Best
@@ -39,3 +40,4 @@ elif {Drink.Rating} == "Best":
 else:
 	# Bad
 	Loren: Now, I know you can do better than this, {Player.PlayerName}! I’ll give ya another shot.
+	jump d1s1_drink_rating

@@ -2,7 +2,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	Dialogic.start("test")
+	Dialogic.start("d1s1")
 	Dialogic.signal_event.connect(_on_signal)
 
 func _on_signal(signal_passed_in):
