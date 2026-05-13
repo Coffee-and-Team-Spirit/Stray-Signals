@@ -29,12 +29,9 @@ directories/dtl_directory={
 "d1s1": "res://timelines/d1s1.dtl",
 "test": "res://timelines/test.dtl"
 }
-layout/style_directory={
-"": "res://styles/new_style.tres",
-"new_style": "res://styles/new_style.tres"
-}
-layout/style_list=["res://styles/new_style.tres"]
-layout/default_style="res://styles/new_style.tres"
+layout/style_directory={}
+layout/style_list=[]
+layout/default_style=""
 glossary/default_case_sensitive=true
 text/letter_speed=0.03
 text/initial_text_reveal_skippable=true
@@ -46,7 +43,7 @@ animations/join_default_length=0.5
 animations/join_default_wait=true
 animations/leave_default_length=0.5
 animations/leave_default_wait=true
-animations/cross_fade_default_length=0.5
+animations/cross_fade_default_length=0.0
 choices/autofocus_first=true
 choices/delay=0.2
 choices/reveal_delay=0

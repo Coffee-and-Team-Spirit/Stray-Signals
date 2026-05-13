@@ -1,30 +1,35 @@
+[background arg="res://assets/temp/tempCafe/Cafe_Interior.jpg" fade="1.0" wait="true"]
+audio music "res://assets/audio/cafe_bgm.ogg" [fade="2.0" volume="-5.0"]
 [text_input text="What is your name?" var="Player.PlayerName" placeholder="Enter your name" allow_empty="true"]
 Player: [i]Ah… [pause=0.5]another day at Cafe <Name>. [pause=0.8]After three years here, you think I’d get bored of making drinks.[/i]
 Player: [i]But everyone who stops by leaves behind a little something.[/i]
 Player: [i]I wonder who I’ll be serving today…[/i]
-# Loren approaches the counter, Neutral
+join Loren (Neutral) center
 Player: [i]Ah, it’s Loren! [pause=0.5]He’s a good ol’ regular. Been coming here for nearly 20 years I hear.[/i]
 Player: Hello Loren, welcome in. How are you doing today?
-Loren: Why hello there. [pause=0.5]It's always a pleasure to see you behind that counter each day. The comfort in patterns I suppose.
-Loren: Now, as to the question you asked.
-Loren: I would say I'm having a fine day, [pause=0.3]in a comfortable place, [pause=0.3]with great company, [pause=0.3]in what must otherwise be described as a truly mediocre world.
-Loren: Hmmm…
+Loren (Smile): Why hello there. [pause=0.5]It's always a pleasure to see you behind that counter each day. The comfort in patterns I suppose.
+Loren (Neutral): Now, as to the question you asked.
+Loren (Sad): I would say I'm having a fine day, [pause=0.3]in a comfortable place, [pause=0.3]with great company, [pause=0.3]in what must otherwise be described as a truly mediocre world.
+Loren (Neutral): Hmmm…
 Loren: Yes, I think that about sums it up. At least to the best of my oratorical ability.
 Player: That good then? [pause=0.5]...You seem to have a lot on your mind. Of course you usually do. Just more so today.
-Loren: A bit inquisitive today, are we? Well I reckon you are right about things being on my mind. Many, many things.
+Loren (Neutral): A bit inquisitive today, are we? Well I reckon you are right about things being on my mind. Many, many things.
 Loren: Few of them are pleasant but, hey, watcha gonna do, you know. That's just how life is.
 Loren: The best part is, I really am happy overall. Maybe not as a clam or nothing, but happy all the same.
 Loren: At least normally I am. [pause=0.5]But not this week...
-Loren: Truth be told, I keep feeling like someone is following me. [pause=0.5]I know, I know, I sound crazy. But I'm telling ya, strange things are going on.
+Loren (Sad): Truth be told, I keep feeling like someone is following me. [pause=0.5]I know, I know, I sound crazy. But I'm telling ya, strange things are going on.
 Loren: Applogies, [pause=0.5]here I am going on and on. I would say I'm holding up the line but luckily it's just me here.
 Player: It's all good Loren. You’ve been coming here much longer than I have. You're our most valuable customer. Take the time you need.
 Player: Sorry to hear things haven't been great for ya. Here's hoping a drink for ya will cheer things up. At least a bit, for a bit of time.
-Loren: Ah yes, a drink. That would be just great. [pause=0.3]Clear my mind and all that.
+Loren (Eyes Closed): Ah yes, a drink. That would be just great. [pause=0.3]Clear my mind and all that.
 Player: Your usual then?
-Loren: That would be just perfect. A mug with Mango and Matcha. Some Boba. Oh, and make it hot of course. My bones could use some heat.
+Loren (Smile): That would be just perfect. A mug with Mango and Matcha. Some Boba. Oh, and make it hot of course. My bones could use some heat.
 Player: On it!
-[signal arg="craft_drink"]
+leave Loren
+audio music "res://assets/audio/craft_drink_bgm.ogg" [fade="2.0" volume="-5.0"]
 label d1s1_drink_rating (Scene 1 Drink Rating)
+[signal arg="craft_drink"]
+[wait time="1.0"]
 [center][b][FOR TESTING ONLY][/b]\
 Choose drink rating above.[/center]
 - Best
@@ -34,10 +39,14 @@ Choose drink rating above.[/center]
 - Bad
 	set {Drink.Rating} = "Bad"
 if {Drink.Rating} == "Good":
-	Loren: That was good. Though maybe not your best work. I'm sure my rambling distracted you is all. [pause=0.3]Anyways, I've got to get going. See you tomorrow.
+	join Loren (Smile) center
+	Loren (Smile): That was good. Though maybe not your best work. I'm sure my rambling distracted you is all. [pause=0.3]Anyways, I've got to get going. See you tomorrow.
 elif {Drink.Rating} == "Best":
-	Loren: This was just perfect. Thanks a bunch! [pause=0.3]Anyways, I better get going. See you tomorrow!
+	join Loren (Laugh) center
+	Loren (Laugh): This was just perfect. Thanks a bunch! [pause=0.3]Anyways, I better get going. See you tomorrow!
 else:
 	# Bad
-	Loren: Now, I know you can do better than this, {Player.PlayerName}! I’ll give ya another shot.
+	join Loren (Smirk) center
+	Loren (Smirk): Now, I know you can do better than this, {Player.PlayerName}! I’ll give ya another shot.
+	leave Loren
 	jump d1s1_drink_rating
