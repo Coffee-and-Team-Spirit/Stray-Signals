@@ -3,10 +3,10 @@ extends Control
 signal drink_result(result); # store the result of drink on 'serve' signal
 
 # Player selections
-var chosen_cup : String = "";
-var chosen_flavors : Array = [];
-var chosen_topping : String = "";
-var chosen_modification : String = "";
+var chosen_cup : String = ""
+var chosen_flavors : Array = []
+var chosen_topping : String = ""
+var chosen_modification : String = ""
 
 # Target drink, filled with a test drink for now 
 var target_drink = {
@@ -148,6 +148,7 @@ func update_drink_components_display():
 		$DrinkInformation/MarginContainer/DrinkComponents/SelectModification/Panel.add_theme_stylebox_override("panel", unfilled_panel_stylebox)
 		$DrinkInformation/MarginContainer/DrinkComponents/SelectModification.add_theme_color_override("default_color", Color(0, 0, 0))
 
+
 func score_drink() -> int:
 	var score = 0
 	
@@ -168,18 +169,21 @@ func score_drink() -> int:
 	return score
 
 
-func evaluate_drink_rating(score):
+func evaluate_drink_rating(score) -> String:
 	if score >= 4:
 		print("Congrats, you made a Good drink!")
-	elif score >= 2 && score < 4:
-		print("You made a Medicore drink... better luck next time.")
+		return "good"
+	elif score >= 2:
+		print("You made a Mediocre drink... better luck next time.")
+		return "mediocre"
 	else:
 		print("This drink is soooo Bad, I need a remake.")
+		return "bad"
 
 
 func _on_serve_pressed() -> void:
-	var player_drink_score = score_drink()
-	evaluate_drink_rating(player_drink_score)
+	var player_drink_result = evaluate_drink_rating(score_drink())
+	emit_signal("drink_result", player_drink_result)
 
 
 func _on_reset_pressed() -> void:
