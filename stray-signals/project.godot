@@ -21,11 +21,18 @@ Dialogic="*uid://ds2q0uclmolvu"
 
 [dialogic]
 
-directories/dch_directory={}
+directories/dch_directory={
+"Loren": "res://characters/Loren.dch"
+}
 directories/dtl_directory={
 "test": "res://timelines/test.dtl"
 }
-layout/style_directory={}
+layout/style_directory={
+"": "res://styles/new_style.tres",
+"new_style": "res://styles/new_style.tres"
+}
+layout/style_list=["res://styles/new_style.tres"]
+layout/default_style="res://styles/new_style.tres"
 
 [editor_plugins]
 
