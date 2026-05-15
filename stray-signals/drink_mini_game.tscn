@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cx803hothqib7" path="res://art/cups/empty_cup_mug.png" id="2_1a4ix"]
 [ext_resource type="Texture2D" uid="uid://d3l7spk8fxpi5" path="res://art/cups/empty_cup_wine_glass.png" id="3_4ybsq"]
 [ext_resource type="Texture2D" uid="uid://b0ks6b18uhdsf" path="res://art/ingredients/ingredient_coffee.png" id="4_cgw06"]
+[ext_resource type="Script" uid="uid://o7hmrsu5brlx" path="res://flavor_button_pour.gd" id="5_1ck7w"]
 [ext_resource type="Texture2D" uid="uid://btl5tkmiio1re" path="res://art/ingredients/ingredient_mango.png" id="5_nrfi6"]
 [ext_resource type="Texture2D" uid="uid://dg47jfvwy0ic5" path="res://art/ingredients/ingredient_matcha.png" id="6_dqtyw"]
 [ext_resource type="Texture2D" uid="uid://c35frs4ecjsys" path="res://art/ingredients/ingredient_milk_tea.png" id="7_i647u"]
@@ -14,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://cof8hgx2vd0dw" path="res://art/ingredients/ingredient_catnip.png" id="11_3cihv"]
 [ext_resource type="StyleBox" uid="uid://d16gnpc5j64h7" path="res://ui/drink_components_panel.tres" id="13_1ck7w"]
 [ext_resource type="Texture2D" uid="uid://cb2m4871ckl5y" path="res://art/cups/empty_cup.png" id="13_i647u"]
+[ext_resource type="Script" uid="uid://dlut1ikn4tx6h" path="res://cup_display_drop.gd" id="15_okdn2"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vlrg8"]
 content_margin_top = 5.0
@@ -161,6 +163,7 @@ layout_mode = 2
 texture_normal = ExtResource("4_cgw06")
 ignore_texture_size = true
 stretch_mode = 0
+script = ExtResource("5_1ck7w")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PlayerComponents/FlavorSelector/Coffee/FlavorCoffee" unique_id=1112100249]
 custom_minimum_size = Vector2(20, 20)
@@ -187,6 +190,7 @@ layout_mode = 2
 texture_normal = ExtResource("5_nrfi6")
 ignore_texture_size = true
 stretch_mode = 0
+script = ExtResource("5_1ck7w")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PlayerComponents/FlavorSelector/Mango/FlavorMango" unique_id=902840133]
 custom_minimum_size = Vector2(20, 20)
@@ -214,6 +218,7 @@ layout_mode = 2
 texture_normal = ExtResource("6_dqtyw")
 ignore_texture_size = true
 stretch_mode = 0
+script = ExtResource("5_1ck7w")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PlayerComponents/FlavorSelector/Matcha/FlavorMatcha" unique_id=678070690]
 custom_minimum_size = Vector2(20, 20)
@@ -240,6 +245,7 @@ layout_mode = 2
 texture_normal = ExtResource("7_i647u")
 ignore_texture_size = true
 stretch_mode = 0
+script = ExtResource("5_1ck7w")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PlayerComponents/FlavorSelector/MilkTea/FlavorMilkTea" unique_id=359524067]
 custom_minimum_size = Vector2(20, 20)
@@ -266,6 +272,7 @@ layout_mode = 2
 texture_normal = ExtResource("8_1ck7w")
 ignore_texture_size = true
 stretch_mode = 0
+script = ExtResource("5_1ck7w")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PlayerComponents/FlavorSelector/Strawberry/FlavorStrawberry" unique_id=133307959]
 custom_minimum_size = Vector2(20, 20)
@@ -313,6 +320,32 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_vlrg8")
 text = "Boba"
 horizontal_alignment = 1
 
+[node name="Catnip" type="VBoxContainer" parent="PlayerComponents/ToppingSelector" unique_id=1658762002]
+layout_mode = 2
+
+[node name="ToppingCatnip" type="TextureButton" parent="PlayerComponents/ToppingSelector/Catnip" unique_id=1805034688]
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 2
+texture_normal = ExtResource("11_3cihv")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PlayerComponents/ToppingSelector/Catnip/ToppingCatnip" unique_id=1403553382]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -7.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/normal_font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0yecb")
+text = "Catnip"
+horizontal_alignment = 1
+
 [node name="CreamAndCatTreats" type="VBoxContainer" parent="PlayerComponents/ToppingSelector" unique_id=1189657040]
 layout_mode = 2
 
@@ -338,32 +371,6 @@ size_flags_vertical = 8
 theme_override_font_sizes/normal_font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxEmpty_a01rs")
 text = "Cream & Cat Treats"
-horizontal_alignment = 1
-
-[node name="Catnip" type="VBoxContainer" parent="PlayerComponents/ToppingSelector" unique_id=1658762002]
-layout_mode = 2
-
-[node name="ToppingCatnip" type="TextureButton" parent="PlayerComponents/ToppingSelector/Catnip" unique_id=1805034688]
-custom_minimum_size = Vector2(250, 250)
-layout_mode = 2
-texture_normal = ExtResource("11_3cihv")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="RichTextLabel" type="RichTextLabel" parent="PlayerComponents/ToppingSelector/Catnip/ToppingCatnip" unique_id=1403553382]
-custom_minimum_size = Vector2(20, 20)
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -7.0
-offset_bottom = 36.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_font_sizes/normal_font_size = 25
-theme_override_styles/normal = SubResource("StyleBoxEmpty_0yecb")
-text = "Catnip"
 horizontal_alignment = 1
 
 [node name="ModificationSelector" type="HBoxContainer" parent="PlayerComponents" unique_id=1570383195]
@@ -562,6 +569,8 @@ text = "RESET"
 custom_minimum_size = Vector2(512, 512)
 layout_mode = 2
 size_flags_horizontal = 0
+mouse_filter = 1
+script = ExtResource("15_okdn2")
 
 [node name="CupBase" type="TextureRect" parent="DrinkInformation/CupDisplay" unique_id=119191514]
 custom_minimum_size = Vector2(400, 400)
@@ -573,12 +582,14 @@ offset_top = -64.0
 offset_bottom = 64.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("13_i647u")
 expand_mode = 1
 stretch_mode = 5
 
 [node name="ToppingLayer" type="TextureRect" parent="DrinkInformation/CupDisplay" unique_id=16210692]
 layout_mode = 1
+mouse_filter = 2
 stretch_mode = 5
 
 [node name="SecondaryFlavorLayer" type="TextureRect" parent="DrinkInformation/CupDisplay" unique_id=1781846496]
@@ -588,6 +599,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 expand_mode = 1
 stretch_mode = 5
 
@@ -598,6 +610,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 expand_mode = 1
 stretch_mode = 5
 
@@ -610,8 +623,8 @@ stretch_mode = 5
 [connection signal="pressed" from="PlayerComponents/FlavorSelector/MilkTea/FlavorMilkTea" to="." method="_on_flavor_button_pressed" binds= [NodePath("PlayerComponents/FlavorSelector/MilkTea/FlavorMilkTea")]]
 [connection signal="pressed" from="PlayerComponents/FlavorSelector/Strawberry/FlavorStrawberry" to="." method="_on_flavor_button_pressed" binds= [NodePath("PlayerComponents/FlavorSelector/Strawberry/FlavorStrawberry")]]
 [connection signal="pressed" from="PlayerComponents/ToppingSelector/Boba/ToppingBoba" to="." method="_on_topping_button_pressed" binds= [NodePath("PlayerComponents/ToppingSelector/Boba/ToppingBoba")]]
-[connection signal="pressed" from="PlayerComponents/ToppingSelector/CreamAndCatTreats/ToppingCreamAndCatTreats" to="." method="_on_topping_button_pressed" binds= [NodePath("PlayerComponents/ToppingSelector/CreamAndCatTreats/ToppingCreamAndCatTreats")]]
 [connection signal="pressed" from="PlayerComponents/ToppingSelector/Catnip/ToppingCatnip" to="." method="_on_topping_button_pressed" binds= [NodePath("PlayerComponents/ToppingSelector/Catnip/ToppingCatnip")]]
+[connection signal="pressed" from="PlayerComponents/ToppingSelector/CreamAndCatTreats/ToppingCreamAndCatTreats" to="." method="_on_topping_button_pressed" binds= [NodePath("PlayerComponents/ToppingSelector/CreamAndCatTreats/ToppingCreamAndCatTreats")]]
 [connection signal="pressed" from="PlayerComponents/ModificationSelector/Modification/ModRow1/ModificationHeat" to="." method="_on_modification_button_pressed" binds= [NodePath("PlayerComponents/ModificationSelector/Modification/ModRow1/ModificationHeat")]]
 [connection signal="pressed" from="PlayerComponents/ModificationSelector/Modification/ModRow1/ModificationChill" to="." method="_on_modification_button_pressed" binds= [NodePath("PlayerComponents/ModificationSelector/Modification/ModRow1/ModificationChill")]]
 [connection signal="pressed" from="PlayerComponents/ModificationSelector/Modification/ModRow2/ModificationStir" to="." method="_on_modification_button_pressed" binds= [NodePath("PlayerComponents/ModificationSelector/Modification/ModRow2/ModificationStir")]]

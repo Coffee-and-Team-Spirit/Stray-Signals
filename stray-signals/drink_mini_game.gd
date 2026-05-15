@@ -7,6 +7,7 @@ var chosen_cup : String = ""
 var chosen_flavors : Array = []
 var chosen_topping : String = ""
 var chosen_modification : String = ""
+var next_index := 0 # track what flavor layer the player is on
 
 # Target drink, filled with a test drink for now 
 var target_drink = {
@@ -15,6 +16,19 @@ var target_drink = {
 	"topping": "catnip",
 	"modification": "shake"
 }
+
+# Drag and pour with action key P
+var is_dragging_flavor : bool = false # track ingredient dragging
+var is_flavor_hovering : bool = false # track flavor hovering above cup
+var current_hovered_flavor : String = "" # track what flavor is hovering
+var is_pouring_flavor : bool = false # game state
+var is_pouring_action : bool = false # action key P
+
+var pour_flavor : String = ""
+var pour_amount : float = 0.0
+var pour_stage : int = 0
+
+const POUR_TIME : float = 0.2
 
 
 func _on_cup_button_pressed(button_path: NodePath):
@@ -48,7 +62,6 @@ func select_cup(cup_name):
 	print(chosen_cup)
 
 
-var next_index := 0
 func select_flavor(flavor_name):
 	if chosen_flavors.size() < 2:
 		chosen_flavors.append(flavor_name)
@@ -57,7 +70,7 @@ func select_flavor(flavor_name):
 		next_index = 1 - next_index
 	update_cup_display()
 	update_drink_components_display()
-	print(chosen_flavors)
+	print("CHOSEN FLAVORS: ", chosen_flavors)
 
 
 func select_topping(topping_name):
@@ -192,15 +205,53 @@ func _on_reset_pressed() -> void:
 	chosen_topping = ""
 	chosen_modification = ""
 	
+	pour_stage = 0
+	
 	update_cup_display()
 	update_drink_components_display()
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+func start_pouring(flavor : String):
+	is_pouring_flavor = true
+	pour_flavor = flavor
+	pour_amount = 0.0
+	pour_stage = 0
+	print("Pouring flavor: ", pour_flavor)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _process(delta):
+	is_pouring_action = Input.is_action_pressed("pour_flavor")
+	
+	if is_pouring_action && is_flavor_hovering && not is_pouring_flavor:
+			start_pouring(current_hovered_flavor)
+			
+	if is_pouring_flavor and is_pouring_action:
+		pour_amount += delta
+		
+		var required_pour_time = POUR_TIME if pour_stage == 0 else POUR_TIME * 2
+		if pour_amount >= required_pour_time:
+			finish_pouring()
+
+
+func finish_pouring():
+	if pour_stage == 0:
+		next_index = 0
+		select_flavor(pour_flavor)
+		pour_stage = 1;
+		pour_amount = 0.0
+		
+		if not is_pouring_action:
+			is_pouring_flavor = false
+		
+		print("BASE FLAVOR: ", pour_flavor)
+	else:
+		next_index = 1
+		select_flavor(pour_flavor)
+		pour_stage = 0;
+		pour_amount = 0.0
+		
+		is_pouring_flavor = false
+		is_pouring_action = false
+		print("SECONDARY FLAVOR: ", pour_flavor)
+		
+	print("FINISH POURING: ", chosen_flavors)
