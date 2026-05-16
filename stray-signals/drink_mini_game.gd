@@ -1,6 +1,6 @@
 extends Control
 
-signal drink_result(result); # store the result of drink on 'serve' signal
+signal drink_finished(result); # store the result of drink on 'serve' signal
 
 # Player selections
 var chosen_cup : String = ""
@@ -294,8 +294,9 @@ func evaluate_drink_rating(score) -> String:
 
 
 func _on_serve_pressed() -> void:
-	var player_drink_result = evaluate_drink_rating(score_drink())
-	emit_signal("drink_result", player_drink_result)
+	GameState.drink_result = evaluate_drink_rating(score_drink())
+	#GameState.drink_finished.emit(player_drink_result)
+	get_tree().change_scene_to_file("res://scenes/main.tscn")
 
 
 func _on_reset_pressed() -> void:

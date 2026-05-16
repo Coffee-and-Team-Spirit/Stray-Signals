@@ -26,22 +26,14 @@ Player: Your usual then?
 Loren (Smile): That would be just perfect. A mug with Mango and Matcha. Some Boba. Oh, and make it hot of course. My bones could use some heat.
 Player: On it!
 leave Loren
-audio music "res://assets/audio/craft_drink_bgm.ogg" [fade="2.0" volume="-5.0"]
-label d1s1_drink_rating (Scene 1 Drink Rating)
 [signal arg="craft_drink"]
-[wait time="1.0"]
-[center][b][FOR TESTING ONLY][/b]\
-Choose drink rating above.[/center]
-- Best
-	set {Drink.Rating} = "Best"
-- Good
-	set {Drink.Rating} = "Good"
-- Bad
-	set {Drink.Rating} = "Bad"
-if {Drink.Rating} == "Good":
+label d1s1_drink_rating (Scene 1 Drink Rating)
+[background arg="res://assets/temp/tempCafe/Cafe_Interior.jpg" fade="1.0" wait="true"]
+audio music "res://assets/audio/craft_drink_bgm.ogg" [fade="2.0" volume="-5.0"]
+if {Drink.Rating} == "mediocre":
 	join Loren (Smile) center
 	Loren (Smile): That was good. Though maybe not your best work. I'm sure my rambling distracted you is all. [pause=0.3]Anyways, I've got to get going. See you tomorrow.
-elif {Drink.Rating} == "Best":
+elif {Drink.Rating} == "good":
 	join Loren (Laugh) center
 	Loren (Laugh): This was just perfect. Thanks a bunch! [pause=0.3]Anyways, I better get going. See you tomorrow!
 else:
