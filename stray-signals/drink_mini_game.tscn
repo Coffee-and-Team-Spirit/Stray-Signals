@@ -767,24 +767,15 @@ step = 1.0
 fill_mode = 1
 show_percentage = false
 
-[node name="BitterBar" type="ProgressBar" parent="DrinkComponents/FlavorBars/CoolWarmBar/CoolBar" unique_id=1753282182]
-custom_minimum_size = Vector2(150, 25)
-layout_mode = 0
-size_flags_vertical = 1
-theme_override_styles/background = SubResource("StyleBoxFlat_okdn2")
-theme_override_styles/fill = SubResource("StyleBoxFlat_id7fa")
-step = 1.0
-fill_mode = 1
-show_percentage = false
-
-[node name="RichTextLabel" type="RichTextLabel" parent="DrinkComponents/FlavorBars/CoolWarmBar/CoolBar/BitterBar" unique_id=748019095]
+[node name="RichTextLabel" type="RichTextLabel" parent="DrinkComponents/FlavorBars/CoolWarmBar/CoolBar" unique_id=748019095]
 custom_minimum_size = Vector2(70, 20)
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
+offset_left = 150.0
 offset_top = -49.0
-offset_right = 70.0
+offset_right = 220.0
 grow_vertical = 0
 text = "Cool"
 

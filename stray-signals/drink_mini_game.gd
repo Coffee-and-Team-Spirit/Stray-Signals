@@ -352,18 +352,24 @@ func update_drink_traits(flavor_name):
 		for key in traits.keys():
 			drink_traits[key] += traits[key]
 			
-	if drink_traits["fancy_cozy"] < 0:
+	if drink_traits["fancy_cozy"] <= 0:
 		$DrinkComponents/FlavorBars/FancyCozyBar/FancyBar.value = abs(drink_traits["fancy_cozy"])
+		$DrinkComponents/FlavorBars/FancyCozyBar/CozyBar.value = 0
 	elif drink_traits["fancy_cozy"] > 0:
 		$DrinkComponents/FlavorBars/FancyCozyBar/CozyBar.value = drink_traits["fancy_cozy"]
-	if drink_traits["bitter_sweet"] < 0:
+		$DrinkComponents/FlavorBars/FancyCozyBar/FancyBar.value = 0
+	if drink_traits["bitter_sweet"] <= 0:
 		$DrinkComponents/FlavorBars/BitterSweetBar/BitterBar.value = abs(drink_traits["bitter_sweet"])
+		$DrinkComponents/FlavorBars/BitterSweetBar/SweetBar.value = 0
 	elif drink_traits["bitter_sweet"] > 0:
 		$DrinkComponents/FlavorBars/BitterSweetBar/SweetBar.value = drink_traits["bitter_sweet"]
-	if drink_traits["cool_warm"] < 0:
+		$DrinkComponents/FlavorBars/BitterSweetBar/BitterBar.value = 0
+	if drink_traits["cool_warm"] <= 0:
 		$DrinkComponents/FlavorBars/CoolWarmBar/CoolBar.value = abs(drink_traits["cool_warm"])
+		$DrinkComponents/FlavorBars/CoolWarmBar/WarmBar.value = 0
 	elif drink_traits["cool_warm"] > 0:
 		$DrinkComponents/FlavorBars/CoolWarmBar/WarmBar.value = drink_traits["cool_warm"]
+		$DrinkComponents/FlavorBars/CoolWarmBar/CoolBar.value = 0
 	
 	print("updated drink flavors ", drink_traits)
 

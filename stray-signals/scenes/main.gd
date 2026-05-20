@@ -2,27 +2,9 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	#if GameState.drink_result == "":
-	#Dialogic.signal_event.connect(_on_signal)
-	#Dialogic.VAR.set_variable("Drink.Rating", GameState.drink_result)
-	#Dialogic.start("res://timelines/d1s1.dtl")
-	#else:
-		#Dialogic.VAR.set_variable("Drink.Rating", GameState.drink_result)
-		#Dialogic.start("res://timelines/d1s1.dtl", {"jump_to": "d1s1_drink_rating"})
-		#GameState.drink_result = ""
-		#Dialogic.VAR.set_variable("Drink.Rating", GameState.drink_result)
 	Dialogic.signal_event.connect(_on_signal)
 	Dialogic.VAR.set_variable("Drink.Rating", GameState.drink_result)	
-	#if GameState.drink_result == "none":
 	Dialogic.start("res://timelines/d1s1.dtl")
-	
-	if Dialogic.VAR.get_variable("Drink.Rating") != 'bad':
-		Dialogic.end_timeline()
-		
-	#else:
-		#Dialogic.VAR.set_variable("Drink.Rating", GameState.drink_result)
-		#Dialogic.start("res://timelines/d1s1.dtl", "d1s1_drink_rating")
-		#GameState.drink_result = "none"
 
 
 func _on_signal(signal_passed_in):
