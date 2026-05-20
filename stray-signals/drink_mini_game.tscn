@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://bgsmb4ojxsmv4"]
 
 [ext_resource type="Script" uid="uid://bf15e30xys6qa" path="res://drink_mini_game.gd" id="1_dqtyw"]
-[ext_resource type="Texture2D" uid="uid://dmmj6g7iakwxo" path="res://art/cups/empty_cup_boba_cup.png" id="1_o1c78"]
+[ext_resource type="Texture2D" uid="uid://dmmj6g7iakwxo" path="res://art/cups/empty_cup_cup.png" id="1_o1c78"]
 [ext_resource type="Texture2D" uid="uid://cx803hothqib7" path="res://art/cups/empty_cup_mug.png" id="2_1a4ix"]
-[ext_resource type="Texture2D" uid="uid://d3l7spk8fxpi5" path="res://art/cups/empty_cup_wine_glass.png" id="3_4ybsq"]
+[ext_resource type="Texture2D" uid="uid://d3l7spk8fxpi5" path="res://art/cups/empty_cup_glass.png" id="3_4ybsq"]
 [ext_resource type="Texture2D" uid="uid://b0ks6b18uhdsf" path="res://art/ingredients/ingredient_coffee.png" id="4_cgw06"]
 [ext_resource type="Script" uid="uid://o7hmrsu5brlx" path="res://flavor_button_pour.gd" id="5_1ck7w"]
 [ext_resource type="Texture2D" uid="uid://btl5tkmiio1re" path="res://art/ingredients/ingredient_mango.png" id="5_nrfi6"]
@@ -88,17 +88,17 @@ theme_override_constants/separation = 60
 layout_mode = 2
 alignment = 1
 
-[node name="BobaCup" type="VBoxContainer" parent="PlayerComponents/CupSelector" unique_id=1265148803]
+[node name="Cup" type="VBoxContainer" parent="PlayerComponents/CupSelector" unique_id=1265148803]
 layout_mode = 2
 
-[node name="CupBobaCup" type="TextureButton" parent="PlayerComponents/CupSelector/BobaCup" unique_id=1370005641]
+[node name="CupCup" type="TextureButton" parent="PlayerComponents/CupSelector/Cup" unique_id=1370005641]
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
 texture_normal = ExtResource("1_o1c78")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="PlayerComponents/CupSelector/BobaCup/CupBobaCup" unique_id=1225347686]
+[node name="RichTextLabel" type="RichTextLabel" parent="PlayerComponents/CupSelector/Cup/CupCup" unique_id=1225347686]
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 1
 anchors_preset = 12
@@ -111,7 +111,7 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/normal_font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxEmpty_vlrg8")
-text = "Boba Cup"
+text = "Cup"
 horizontal_alignment = 1
 
 [node name="Mug" type="VBoxContainer" parent="PlayerComponents/CupSelector" unique_id=1124344402]
@@ -141,17 +141,17 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_a01rs")
 text = "Mug"
 horizontal_alignment = 1
 
-[node name="WineGlass" type="VBoxContainer" parent="PlayerComponents/CupSelector" unique_id=1021402601]
+[node name="Glass" type="VBoxContainer" parent="PlayerComponents/CupSelector" unique_id=1021402601]
 layout_mode = 2
 
-[node name="CupWineGlass" type="TextureButton" parent="PlayerComponents/CupSelector/WineGlass" unique_id=2031028854]
+[node name="CupGlass" type="TextureButton" parent="PlayerComponents/CupSelector/Glass" unique_id=2031028854]
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
 texture_normal = ExtResource("3_4ybsq")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="PlayerComponents/CupSelector/WineGlass/CupWineGlass" unique_id=1286621732]
+[node name="RichTextLabel" type="RichTextLabel" parent="PlayerComponents/CupSelector/Glass/CupGlass" unique_id=1286621732]
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 1
 anchors_preset = 12
@@ -164,7 +164,7 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/normal_font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxEmpty_0yecb")
-text = "Wine Glass"
+text = "Glass"
 horizontal_alignment = 1
 
 [node name="FlavorSelector" type="HBoxContainer" parent="PlayerComponents" unique_id=1776169496]
@@ -466,7 +466,7 @@ custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxEmpty_okdn2")
-text = "Select Cup"
+text = "Cup"
 fit_content = true
 autowrap_mode = 0
 horizontal_alignment = 1
@@ -488,7 +488,7 @@ custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxEmpty_id7fa")
-text = "Select Base Flavor"
+text = "Base Flavor"
 fit_content = true
 autowrap_mode = 0
 horizontal_alignment = 1
@@ -510,7 +510,7 @@ custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxEmpty_3cihv")
-text = "Select Secondary Flavor"
+text = "Secondary Flavor"
 fit_content = true
 autowrap_mode = 0
 horizontal_alignment = 1
@@ -532,7 +532,7 @@ custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxEmpty_vjac4")
-text = "Select Topping"
+text = "Topping"
 fit_content = true
 autowrap_mode = 0
 horizontal_alignment = 1
@@ -554,7 +554,7 @@ custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxEmpty_k0qsm")
-text = "Select Modification"
+text = "Modification"
 fit_content = true
 autowrap_mode = 0
 horizontal_alignment = 1
@@ -812,9 +812,9 @@ grow_vertical = 0
 text = "Warm"
 horizontal_alignment = 2
 
-[connection signal="pressed" from="PlayerComponents/CupSelector/BobaCup/CupBobaCup" to="." method="_on_cup_button_pressed" binds= [NodePath("PlayerComponents/CupSelector/BobaCup/CupBobaCup")]]
+[connection signal="pressed" from="PlayerComponents/CupSelector/Cup/CupCup" to="." method="_on_cup_button_pressed" binds= [NodePath("PlayerComponents/CupSelector/Cup/CupCup")]]
 [connection signal="pressed" from="PlayerComponents/CupSelector/Mug/CupMug" to="." method="_on_cup_button_pressed" binds= [NodePath("PlayerComponents/CupSelector/Mug/CupMug")]]
-[connection signal="pressed" from="PlayerComponents/CupSelector/WineGlass/CupWineGlass" to="." method="_on_cup_button_pressed" binds= [NodePath("PlayerComponents/CupSelector/WineGlass/CupWineGlass")]]
+[connection signal="pressed" from="PlayerComponents/CupSelector/Glass/CupGlass" to="." method="_on_cup_button_pressed" binds= [NodePath("PlayerComponents/CupSelector/Glass/CupGlass")]]
 [connection signal="pressed" from="PlayerComponents/FlavorSelector/Coffee/FlavorCoffee" to="." method="_on_flavor_button_pressed" binds= [NodePath("PlayerComponents/FlavorSelector/Coffee/FlavorCoffee")]]
 [connection signal="pressed" from="PlayerComponents/FlavorSelector/Mango/FlavorMango" to="." method="_on_flavor_button_pressed" binds= [NodePath("PlayerComponents/FlavorSelector/Mango/FlavorMango")]]
 [connection signal="pressed" from="PlayerComponents/FlavorSelector/Matcha/FlavorMatcha" to="." method="_on_flavor_button_pressed" binds= [NodePath("PlayerComponents/FlavorSelector/Matcha/FlavorMatcha")]]

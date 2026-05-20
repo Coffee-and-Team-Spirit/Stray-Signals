@@ -7,7 +7,7 @@ var chosen_cup : String = ""
 var chosen_flavors : Array = []
 var chosen_topping : String = ""
 var chosen_modification : String = ""
-var next_index := 0 # track what flavor layer the player is on
+var next_index : int = 0 # track what flavor layer the player is on
 
 # Flavor bar tracking
 var drink_traits = {
@@ -17,7 +17,7 @@ var drink_traits = {
 }
 
 var flavor_traits = {
-	"boba_cup": {
+	"cup": {
 		"fancy_cozy": 0,
 		"bitter_sweet": 0,
 		"cool_warm": 0
@@ -96,7 +96,7 @@ var flavor_traits = {
 
 # Target drink, filled with a test drink for now 
 var target_drink = {
-	"cup": "boba_cup",
+	"cup": "cup",
 	"flavors": ["mango", "matcha"],
 	"topping": "catnip",
 	"modification": "shake"
@@ -113,7 +113,7 @@ var pour_flavor : String = ""
 var pour_amount : float = 0.0
 var pour_stage : int = 0
 
-const POUR_TIME : float = 0.2
+const POUR_TIME : float = 0.3
 
 
 func _on_cup_button_pressed(button_path: NodePath):
@@ -343,7 +343,7 @@ func _process(delta):
 		
 		var required_pour_time = POUR_TIME if pour_stage == 0 else POUR_TIME * 2
 		if pour_amount >= required_pour_time:
-			finish_pouring()
+			finish_pouring(current_hovered_flavor)
 
 func update_drink_traits(flavor_name):
 	print("drink flavors ", drink_traits)
@@ -368,24 +368,24 @@ func update_drink_traits(flavor_name):
 	print("updated drink flavors ", drink_traits)
 
 
-func finish_pouring():
+func finish_pouring(flavor):
 	if pour_stage == 0:
 		next_index = 0
-		select_flavor(pour_flavor)
+		select_flavor(flavor)
 		pour_stage = 1;
 		pour_amount = 0.0
 		
 		if not is_pouring_action:
 			is_pouring_flavor = false
 		
-		print("BASE FLAVOR: ", pour_flavor)
+		print("BASE FLAVOR: ", flavor)
 	else:
 		next_index = 1
-		select_flavor(pour_flavor)
+		select_flavor(flavor)
 		pour_stage = 0;
 		pour_amount = 0.0
 		
 		is_pouring_flavor = false
 		is_pouring_action = false
-		print("SECONDARY FLAVOR: ", pour_flavor)
+		print("SECONDARY FLAVOR: ", flavor)
 	print("FINISH POURING: ", chosen_flavors)
