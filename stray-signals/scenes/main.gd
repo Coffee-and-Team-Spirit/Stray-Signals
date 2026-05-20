@@ -9,9 +9,8 @@ func _ready() -> void:
 	Dialogic.start("res://timelines/d1s1.dtl")
 	var hud_instance = hud_scene.instantiate()
   
-	if GameState.drink_result == "":
-		add_child(hud_instance)
-    
+	add_child(hud_instance)
+	
 
 func _on_signal(signal_passed_in):
 	match signal_passed_in:
@@ -26,8 +25,8 @@ func _on_signal(signal_passed_in):
 		"clear_drink":
 			GameState.drink_result = "none"
 			Dialogic.VAR.set_variable("Drink.Rating", GameState.drink_result)
-      
-      
+	  
+	  
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
 		get_tree().quit()

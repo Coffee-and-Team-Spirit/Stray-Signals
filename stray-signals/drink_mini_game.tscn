@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bf15e30xys6qa" path="res://drink_mini_game.gd" id="1_dqtyw"]
 [ext_resource type="Texture2D" uid="uid://dmmj6g7iakwxo" path="res://assets/art/cups/empty_cup_cup.png" id="1_o1c78"]
 [ext_resource type="Texture2D" uid="uid://cx803hothqib7" path="res://assets/art/cups/empty_cup_mug.png" id="2_1a4ix"]
-[ext_resource type="Texture2D" uid="uid://d3l7spk8fxpi5" path="res://assets/art/cups/empty_cup_glass.png" id="3_4ybsq"]
+[ext_resource type="Texture2D" uid="uid://d3l7spk8fxpi5" path="res://assets/art/cups/empty_cup_wine_glass.png" id="3_4ybsq"]
 [ext_resource type="Texture2D" uid="uid://b0ks6b18uhdsf" path="res://assets/art/ingredients/ingredient_coffee.png" id="4_cgw06"]
 [ext_resource type="Script" uid="uid://o7hmrsu5brlx" path="res://flavor_button_pour.gd" id="5_1ck7w"]
 [ext_resource type="Texture2D" uid="uid://btl5tkmiio1re" path="res://assets/art/ingredients/ingredient_mango.png" id="5_nrfi6"]
