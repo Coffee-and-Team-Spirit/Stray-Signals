@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://cq0cuu823f6cs"]
+
+[ext_resource type="Texture2D" uid="uid://dmmj6g7iakwxo" path="res://assets/art/cups/empty_cup_boba_cup.png" id="1_oo0fn"]
+[ext_resource type="Texture2D" uid="uid://v4nprl4ekfd1" path="res://assets/art/flavors/base_flavor_coffee.png" id="2_5ysmq"]
+
+[node name="HUD" type="CanvasLayer" unique_id=959292212]
+layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=962769361]
+position = Vector2(108, 111)
+scale = Vector2(0.3671875, 0.3671875)
+texture = ExtResource("1_oo0fn")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1300462949]
+offset_left = 49.0
+offset_top = 102.0
+offset_right = 165.0
+offset_bottom = 165.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 26
+text = "Day 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BaseFlavorCoffee" type="Sprite2D" parent="." unique_id=1075982837]
+position = Vector2(62.000004, 198.00002)
+scale = Vector2(0.27539063, 0.27539063)
+texture = ExtResource("2_5ysmq")
+
+[node name="BaseFlavorCoffee2" type="Sprite2D" parent="." unique_id=1802976892]
+position = Vector2(161, 198.00002)
+scale = Vector2(0.27539063, 0.27539063)
+texture = ExtResource("2_5ysmq")
