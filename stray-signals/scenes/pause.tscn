@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://cqnah8bf2730h"]
+
+[ext_resource type="Script" uid="uid://bxks81d84wk7s" path="res://scenes/pause.gd" id="1_f1d2v"]
+
+[node name="Pause" type="CanvasLayer" unique_id=1108024468]
+script = ExtResource("1_f1d2v")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1296776827]
+offset_left = 528.0
+offset_top = 238.0
+offset_right = 1412.0
+offset_bottom = 830.0
+color = Color(0.09249935, 0.12338964, 0.2643477, 1)
+
+[node name="Button" type="Button" parent="ColorRect" unique_id=1855056681]
+layout_mode = 0
+offset_left = 301.0
+offset_top = 437.0
+offset_right = 578.0
+offset_bottom = 513.0
+theme_override_font_sizes/font_size = 36
+text = "Quit"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect" unique_id=1127124328]
+layout_mode = 0
+offset_left = 198.0
+offset_top = 38.0
+offset_right = 667.0
+offset_bottom = 125.0
+theme_override_font_sizes/normal_font_size = 58
+text = "Pause Menu"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="ColorRect/Button" to="." method="_on_button_pressed"]
