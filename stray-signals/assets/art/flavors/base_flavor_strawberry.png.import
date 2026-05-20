@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ca4eyaab3xghd"
-path="res://.godot/imported/secondary_flavor_mango.png-83036590d0fe7d146a19a70b91e826e0.ctex"
+uid="uid://rts3v7syqt0x"
+path="res://.godot/imported/base_flavor_strawberry.png-c41f34b8317098aef8499b48fd15ced8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/flavors/secondary_flavor_mango.png"
-dest_files=["res://.godot/imported/secondary_flavor_mango.png-83036590d0fe7d146a19a70b91e826e0.ctex"]
+source_file="res://assets/art/flavors/base_flavor_strawberry.png"
+dest_files=["res://.godot/imported/base_flavor_strawberry.png-c41f34b8317098aef8499b48fd15ced8.ctex"]
 
 [params]
 

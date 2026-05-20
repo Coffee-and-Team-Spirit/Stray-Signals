@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blk53ig68xs65"
-path="res://.godot/imported/topping_cream_and_cat_treats.png-25cceb9e0a47acc79497e9cc14e3d182.ctex"
+uid="uid://cxak45pwxmd05"
+path="res://.godot/imported/base_flavor_matcha.png-dbbe6b5db866bac65c3fad50eca1663d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/toppings/topping_cream_and_cat_treats.png"
-dest_files=["res://.godot/imported/topping_cream_and_cat_treats.png-25cceb9e0a47acc79497e9cc14e3d182.ctex"]
+source_file="res://assets/art/flavors/base_flavor_matcha.png"
+dest_files=["res://.godot/imported/base_flavor_matcha.png-dbbe6b5db866bac65c3fad50eca1663d.ctex"]
 
 [params]
 

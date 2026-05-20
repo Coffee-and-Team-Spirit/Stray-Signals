@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmmj6g7iakwxo"
-path="res://.godot/imported/empty_cup_cup.png-245caa5e2716b5848948d968909db43e.ctex"
+uid="uid://v4nprl4ekfd1"
+path="res://.godot/imported/base_flavor_coffee.png-34e7dae1dd8ef23616e8c135eb0c99e4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/cups/empty_cup_cup.png"
-dest_files=["res://.godot/imported/empty_cup_cup.png-245caa5e2716b5848948d968909db43e.ctex"]
+source_file="res://assets/art/flavors/base_flavor_coffee.png"
+dest_files=["res://.godot/imported/base_flavor_coffee.png-34e7dae1dd8ef23616e8c135eb0c99e4.ctex"]
 
 [params]
 

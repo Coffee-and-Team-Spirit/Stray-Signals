@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmaigw5l0kd4"
-path="res://.godot/imported/ingredient_boba.png-613fbb292e83061e4e330609089fa090.ctex"
+uid="uid://dmmj6g7iakwxo"
+path="res://.godot/imported/empty_cup_cup.png-0951ab681304c12c23a4b00c26149b95.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/ingredients/ingredient_boba.png"
-dest_files=["res://.godot/imported/ingredient_boba.png-613fbb292e83061e4e330609089fa090.ctex"]
+source_file="res://assets/art/cups/empty_cup_cup.png"
+dest_files=["res://.godot/imported/empty_cup_cup.png-0951ab681304c12c23a4b00c26149b95.ctex"]
 
 [params]
 

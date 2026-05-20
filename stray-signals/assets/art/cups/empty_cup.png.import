@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://btl5tkmiio1re"
-path="res://.godot/imported/ingredient_mango.png-cc840be1060378f4f74004b322bf7362.ctex"
+uid="uid://cb2m4871ckl5y"
+path="res://.godot/imported/empty_cup.png-7298f9c535cc75f4cb80186201fe1502.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/ingredients/ingredient_mango.png"
-dest_files=["res://.godot/imported/ingredient_mango.png-cc840be1060378f4f74004b322bf7362.ctex"]
+source_file="res://assets/art/cups/empty_cup.png"
+dest_files=["res://.godot/imported/empty_cup.png-7298f9c535cc75f4cb80186201fe1502.ctex"]
 
 [params]
 

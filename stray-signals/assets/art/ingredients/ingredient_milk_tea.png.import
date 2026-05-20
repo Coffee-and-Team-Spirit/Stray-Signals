@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cb2m4871ckl5y"
-path="res://.godot/imported/empty_cup.png-6bb33202a0a07494778a4fac5873a745.ctex"
+uid="uid://c35frs4ecjsys"
+path="res://.godot/imported/ingredient_milk_tea.png-eb8e6bab7e5a150b27de73c81402da03.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/cups/empty_cup.png"
-dest_files=["res://.godot/imported/empty_cup.png-6bb33202a0a07494778a4fac5873a745.ctex"]
+source_file="res://assets/art/ingredients/ingredient_milk_tea.png"
+dest_files=["res://.godot/imported/ingredient_milk_tea.png-eb8e6bab7e5a150b27de73c81402da03.ctex"]
 
 [params]
 

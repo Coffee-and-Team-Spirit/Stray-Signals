@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c81tqglpy7kir"
-path="res://.godot/imported/topping_boba.png-f3c8445faf5cb14f718256b2b3aa1adb.ctex"
+uid="uid://btl5tkmiio1re"
+path="res://.godot/imported/ingredient_mango.png-aea6eea642fb7d3e90eaeffd3dc0a944.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/toppings/topping_boba.png"
-dest_files=["res://.godot/imported/topping_boba.png-f3c8445faf5cb14f718256b2b3aa1adb.ctex"]
+source_file="res://assets/art/ingredients/ingredient_mango.png"
+dest_files=["res://.godot/imported/ingredient_mango.png-aea6eea642fb7d3e90eaeffd3dc0a944.ctex"]
 
 [params]
 

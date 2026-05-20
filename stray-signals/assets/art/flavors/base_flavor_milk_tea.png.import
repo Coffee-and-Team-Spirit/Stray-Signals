@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgfxj0inl34mi"
-path="res://.godot/imported/secondary_flavor_milk_tea.png-01700504c704bac183b603af772f17c4.ctex"
+uid="uid://cxv6tsr55v75j"
+path="res://.godot/imported/base_flavor_milk_tea.png-baae6ad5cc1c2e359ec3c0c3abf6391e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/flavors/secondary_flavor_milk_tea.png"
-dest_files=["res://.godot/imported/secondary_flavor_milk_tea.png-01700504c704bac183b603af772f17c4.ctex"]
+source_file="res://assets/art/flavors/base_flavor_milk_tea.png"
+dest_files=["res://.godot/imported/base_flavor_milk_tea.png-baae6ad5cc1c2e359ec3c0c3abf6391e.ctex"]
 
 [params]
 

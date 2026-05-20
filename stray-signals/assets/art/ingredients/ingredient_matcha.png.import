@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3l7spk8fxpi5"
-path="res://.godot/imported/empty_cup_glass.png-fb14eee34370674eb526a245cfb3577b.ctex"
+uid="uid://dg47jfvwy0ic5"
+path="res://.godot/imported/ingredient_matcha.png-83f217e0fef2264f705c63399cc79a59.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/cups/empty_cup_glass.png"
-dest_files=["res://.godot/imported/empty_cup_glass.png-fb14eee34370674eb526a245cfb3577b.ctex"]
+source_file="res://assets/art/ingredients/ingredient_matcha.png"
+dest_files=["res://.godot/imported/ingredient_matcha.png-83f217e0fef2264f705c63399cc79a59.ctex"]
 
 [params]
 

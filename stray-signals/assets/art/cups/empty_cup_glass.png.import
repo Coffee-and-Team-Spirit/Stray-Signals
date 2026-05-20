@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chd6sfxr8ly6m"
-path="res://.godot/imported/ingredient_cream_and_cat_treats.png-b7d2ba32b3e10b66b7bfd2b164f1a7b2.ctex"
+uid="uid://d3l7spk8fxpi5"
+path="res://.godot/imported/empty_cup_glass.png-2c1f8a31ddc1c326ce5f1e259df873cb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/ingredients/ingredient_cream_and_cat_treats.png"
-dest_files=["res://.godot/imported/ingredient_cream_and_cat_treats.png-b7d2ba32b3e10b66b7bfd2b164f1a7b2.ctex"]
+source_file="res://assets/art/cups/empty_cup_glass.png"
+dest_files=["res://.godot/imported/empty_cup_glass.png-2c1f8a31ddc1c326ce5f1e259df873cb.ctex"]
 
 [params]
 

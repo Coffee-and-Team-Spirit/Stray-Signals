@@ -1,6 +1,6 @@
 extends Control
 
-signal drink_finished(result); # store the result of drink on 'serve' signal
+#signal drink_finished(result); # store the result of drink on 'serve' signal
 
 # Player selections
 var chosen_cup : String = ""
@@ -96,10 +96,10 @@ var flavor_traits = {
 
 # Target drink, filled with a test drink for now 
 var target_drink = {
-	"cup": "cup",
+	"cup": "mug",
 	"flavors": ["mango", "matcha"],
-	"topping": "catnip",
-	"modification": "shake"
+	"topping": "boba",
+	"modification": "heat"
 }
 
 # Drag and pour with action key P
@@ -181,17 +181,17 @@ func update_cup_display():
 	}
 	
 	if chosen_cup !="":
-		$DrinkComponents/DrinkInformation/CupDisplay/CupBase.texture = load("res://art/cups/empty_cup_%s.png" % chosen_cup)
+		$DrinkComponents/DrinkInformation/CupDisplay/CupBase.texture = load("res://assets/art/cups/empty_cup_%s.png" % chosen_cup)
 		update_drink_traits(chosen_cup)
 	else:
-		$DrinkComponents/DrinkInformation/CupDisplay/CupBase.texture = load("res://art/cups/empty_cup.png")
+		$DrinkComponents/DrinkInformation/CupDisplay/CupBase.texture = load("res://assets/art/cups/empty_cup.png")
 	
 	if chosen_flavors.size() > 0:
 		if chosen_flavors.size() == 1:
-			$DrinkComponents/DrinkInformation/CupDisplay/BaseFlavorLayer.texture = load("res://art/flavors/base_flavor_%s.png" % chosen_flavors[0])
+			$DrinkComponents/DrinkInformation/CupDisplay/BaseFlavorLayer.texture = load("res://assets/art/flavors/base_flavor_%s.png" % chosen_flavors[0])
 		else:
-			$DrinkComponents/DrinkInformation/CupDisplay/BaseFlavorLayer.texture = load("res://art/flavors/base_flavor_%s.png" % chosen_flavors[0])
-			$DrinkComponents/DrinkInformation/CupDisplay/SecondaryFlavorLayer.texture = load("res://art/flavors/secondary_flavor_%s.png" % chosen_flavors[1])
+			$DrinkComponents/DrinkInformation/CupDisplay/BaseFlavorLayer.texture = load("res://assets/art/flavors/base_flavor_%s.png" % chosen_flavors[0])
+			$DrinkComponents/DrinkInformation/CupDisplay/SecondaryFlavorLayer.texture = load("res://assets/art/flavors/secondary_flavor_%s.png" % chosen_flavors[1])
 			update_drink_traits(chosen_flavors[1])
 		update_drink_traits(chosen_flavors[0])
 	else:
@@ -199,7 +199,7 @@ func update_cup_display():
 		$DrinkComponents/DrinkInformation/CupDisplay/SecondaryFlavorLayer.texture = null
 
 	if chosen_topping != "":
-		$DrinkComponents/DrinkInformation/CupDisplay/ToppingLayer.texture = load("res://art/toppings/topping_%s.png" % chosen_topping)
+		$DrinkComponents/DrinkInformation/CupDisplay/ToppingLayer.texture = load("res://assets/art/toppings/topping_%s.png" % chosen_topping)
 		update_drink_traits(chosen_topping)
 	else:
 		$DrinkComponents/DrinkInformation/CupDisplay/ToppingLayer.texture = null

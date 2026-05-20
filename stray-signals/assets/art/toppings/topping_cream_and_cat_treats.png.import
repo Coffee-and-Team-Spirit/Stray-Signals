@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c74i1sli1i6xd"
-path="res://.godot/imported/topping_catnip.png-9fd44c288027d0e4c95596ee6ddddeda.ctex"
+uid="uid://blk53ig68xs65"
+path="res://.godot/imported/topping_cream_and_cat_treats.png-fe30ed9424e34b2d75d5690991d7e918.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/toppings/topping_catnip.png"
-dest_files=["res://.godot/imported/topping_catnip.png-9fd44c288027d0e4c95596ee6ddddeda.ctex"]
+source_file="res://assets/art/toppings/topping_cream_and_cat_treats.png"
+dest_files=["res://.godot/imported/topping_cream_and_cat_treats.png-fe30ed9424e34b2d75d5690991d7e918.ctex"]
 
 [params]
 
