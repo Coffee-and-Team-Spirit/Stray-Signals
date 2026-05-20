@@ -1,13 +1,13 @@
 extends Control
 
-signal drink_finished(result); # store the result of drink on 'serve' signal
+#signal drink_finished(result); # store the result of drink on 'serve' signal
 
 # Player selections
 var chosen_cup : String = ""
 var chosen_flavors : Array = []
 var chosen_topping : String = ""
 var chosen_modification : String = ""
-var next_index := 0 # track what flavor layer the player is on
+var next_index : int = 0 # track what flavor layer the player is on
 
 # Flavor bar tracking
 var drink_traits = {
@@ -17,7 +17,7 @@ var drink_traits = {
 }
 
 var flavor_traits = {
-	"boba_cup": {
+	"cup": {
 		"fancy_cozy": 0,
 		"bitter_sweet": 0,
 		"cool_warm": 0
@@ -96,10 +96,10 @@ var flavor_traits = {
 
 # Target drink, filled with a test drink for now 
 var target_drink = {
-	"cup": "boba_cup",
+	"cup": "mug",
 	"flavors": ["mango", "matcha"],
-	"topping": "catnip",
-	"modification": "shake"
+	"topping": "boba",
+	"modification": "heat"
 }
 
 # Drag and pour with action key P
@@ -113,7 +113,7 @@ var pour_flavor : String = ""
 var pour_amount : float = 0.0
 var pour_stage : int = 0
 
-const POUR_TIME : float = 0.2
+const POUR_TIME : float = 0.3
 
 
 func _on_cup_button_pressed(button_path: NodePath):
@@ -181,17 +181,17 @@ func update_cup_display():
 	}
 	
 	if chosen_cup !="":
-		$DrinkComponents/DrinkInformation/CupDisplay/CupBase.texture = load("res://art/cups/empty_cup_%s.png" % chosen_cup)
+		$DrinkComponents/DrinkInformation/CupDisplay/CupBase.texture = load("res://assets/art/cups/empty_cup_%s.png" % chosen_cup)
 		update_drink_traits(chosen_cup)
 	else:
-		$DrinkComponents/DrinkInformation/CupDisplay/CupBase.texture = load("res://art/cups/empty_cup.png")
+		$DrinkComponents/DrinkInformation/CupDisplay/CupBase.texture = load("res://assets/art/cups/empty_cup.png")
 	
 	if chosen_flavors.size() > 0:
 		if chosen_flavors.size() == 1:
-			$DrinkComponents/DrinkInformation/CupDisplay/BaseFlavorLayer.texture = load("res://art/flavors/base_flavor_%s.png" % chosen_flavors[0])
+			$DrinkComponents/DrinkInformation/CupDisplay/BaseFlavorLayer.texture = load("res://assets/art/flavors/base_flavor_%s.png" % chosen_flavors[0])
 		else:
-			$DrinkComponents/DrinkInformation/CupDisplay/BaseFlavorLayer.texture = load("res://art/flavors/base_flavor_%s.png" % chosen_flavors[0])
-			$DrinkComponents/DrinkInformation/CupDisplay/SecondaryFlavorLayer.texture = load("res://art/flavors/secondary_flavor_%s.png" % chosen_flavors[1])
+			$DrinkComponents/DrinkInformation/CupDisplay/BaseFlavorLayer.texture = load("res://assets/art/flavors/base_flavor_%s.png" % chosen_flavors[0])
+			$DrinkComponents/DrinkInformation/CupDisplay/SecondaryFlavorLayer.texture = load("res://assets/art/flavors/secondary_flavor_%s.png" % chosen_flavors[1])
 			update_drink_traits(chosen_flavors[1])
 		update_drink_traits(chosen_flavors[0])
 	else:
@@ -199,7 +199,7 @@ func update_cup_display():
 		$DrinkComponents/DrinkInformation/CupDisplay/SecondaryFlavorLayer.texture = null
 
 	if chosen_topping != "":
-		$DrinkComponents/DrinkInformation/CupDisplay/ToppingLayer.texture = load("res://art/toppings/topping_%s.png" % chosen_topping)
+		$DrinkComponents/DrinkInformation/CupDisplay/ToppingLayer.texture = load("res://assets/art/toppings/topping_%s.png" % chosen_topping)
 		update_drink_traits(chosen_topping)
 	else:
 		$DrinkComponents/DrinkInformation/CupDisplay/ToppingLayer.texture = null
@@ -343,7 +343,7 @@ func _process(delta):
 		
 		var required_pour_time = POUR_TIME if pour_stage == 0 else POUR_TIME * 2
 		if pour_amount >= required_pour_time:
-			finish_pouring()
+			finish_pouring(current_hovered_flavor)
 
 func update_drink_traits(flavor_name):
 	print("drink flavors ", drink_traits)
@@ -352,40 +352,46 @@ func update_drink_traits(flavor_name):
 		for key in traits.keys():
 			drink_traits[key] += traits[key]
 			
-	if drink_traits["fancy_cozy"] < 0:
+	if drink_traits["fancy_cozy"] <= 0:
 		$DrinkComponents/FlavorBars/FancyCozyBar/FancyBar.value = abs(drink_traits["fancy_cozy"])
+		$DrinkComponents/FlavorBars/FancyCozyBar/CozyBar.value = 0
 	elif drink_traits["fancy_cozy"] > 0:
 		$DrinkComponents/FlavorBars/FancyCozyBar/CozyBar.value = drink_traits["fancy_cozy"]
-	if drink_traits["bitter_sweet"] < 0:
+		$DrinkComponents/FlavorBars/FancyCozyBar/FancyBar.value = 0
+	if drink_traits["bitter_sweet"] <= 0:
 		$DrinkComponents/FlavorBars/BitterSweetBar/BitterBar.value = abs(drink_traits["bitter_sweet"])
+		$DrinkComponents/FlavorBars/BitterSweetBar/SweetBar.value = 0
 	elif drink_traits["bitter_sweet"] > 0:
 		$DrinkComponents/FlavorBars/BitterSweetBar/SweetBar.value = drink_traits["bitter_sweet"]
-	if drink_traits["cool_warm"] < 0:
+		$DrinkComponents/FlavorBars/BitterSweetBar/BitterBar.value = 0
+	if drink_traits["cool_warm"] <= 0:
 		$DrinkComponents/FlavorBars/CoolWarmBar/CoolBar.value = abs(drink_traits["cool_warm"])
+		$DrinkComponents/FlavorBars/CoolWarmBar/WarmBar.value = 0
 	elif drink_traits["cool_warm"] > 0:
 		$DrinkComponents/FlavorBars/CoolWarmBar/WarmBar.value = drink_traits["cool_warm"]
+		$DrinkComponents/FlavorBars/CoolWarmBar/CoolBar.value = 0
 	
 	print("updated drink flavors ", drink_traits)
 
 
-func finish_pouring():
+func finish_pouring(flavor):
 	if pour_stage == 0:
 		next_index = 0
-		select_flavor(pour_flavor)
+		select_flavor(flavor)
 		pour_stage = 1;
 		pour_amount = 0.0
 		
 		if not is_pouring_action:
 			is_pouring_flavor = false
 		
-		print("BASE FLAVOR: ", pour_flavor)
+		print("BASE FLAVOR: ", flavor)
 	else:
 		next_index = 1
-		select_flavor(pour_flavor)
+		select_flavor(flavor)
 		pour_stage = 0;
 		pour_amount = 0.0
 		
 		is_pouring_flavor = false
 		is_pouring_action = false
-		print("SECONDARY FLAVOR: ", pour_flavor)
+		print("SECONDARY FLAVOR: ", flavor)
 	print("FINISH POURING: ", chosen_flavors)
