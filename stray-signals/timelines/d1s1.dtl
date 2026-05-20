@@ -1,4 +1,8 @@
 [background arg="res://assets/temp/tempCafe/Cafe_Interior.jpg" fade="1.0" wait="true"]
+if {Drink.Rating} == "\"none\"":
+else:
+	jump d1s1_drink_rating
+label begin_timeline
 audio music "res://assets/audio/cafe_bgm.ogg" [fade="2.0" volume="-8.0"]
 [text_input text="What is your name?" var="Player.PlayerName" placeholder="Enter your name" allow_empty="true"]
 Player: [i]Ah… [pause=0.5]another day at Cafe <Name>. [pause=0.8]After three years here, you think I’d get bored of making drinks.[/i]
@@ -33,12 +37,15 @@ label d1s1_drink_rating (Scene 1 Drink Rating)
 if {Drink.Rating} == "mediocre":
 	join Loren (Neutral) center
 	Loren (Happy): That was good. Though maybe not your best work. I'm sure my rambling distracted you is all. [pause=0.3]Anyways, I've got to get going. See you tomorrow.
+	[signal arg="clear_drink"]
 elif {Drink.Rating} == "good":
 	join Loren (Happy) center
 	Loren: This was just perfect. Thanks a bunch! [pause=0.3]Anyways, I better get going. See you tomorrow!
+	[signal arg="clear_drink"]
 else:
 	# Bad
 	join Loren (Neutral) center
 	Loren (Neutral): Now, I know you can do better than this, {Player.PlayerName}! I’ll give ya another shot.
 	leave Loren
+	[signal arg="clear_drink"]
 	jump d1s1_drink_rating
