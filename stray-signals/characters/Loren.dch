@@ -10,34 +10,16 @@
 "style": "",
 "suffix": ""
 },
-&"default_portrait": "Angry",
+&"default_portrait": "Neutral",
 &"description": "",
 &"display_name": "Loren",
 &"mirror": false,
 &"nicknames": [""],
 &"offset": Vector2(0, 0),
 &"portraits": {
-"Angry": {
+"Happy": {
 "export_overrides": {
-"image": "\"res://assets/temp/tempLoren/tempLoren_angry.png\""
-},
-"mirror": false,
-"offset": Vector2(0, 0),
-"scale": 1,
-"scene": ""
-},
-"Eyes Closed": {
-"export_overrides": {
-"image": "\"res://assets/temp/tempLoren/tempLoren_eyesClosed.png\""
-},
-"mirror": false,
-"offset": Vector2(0, 0),
-"scale": 1,
-"scene": ""
-},
-"Laugh": {
-"export_overrides": {
-"image": "\"res://assets/temp/tempLoren/tempLoren_laugh.png\""
+"image": "\"res://assets/art/characters/loren/Loren_Happy.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -46,7 +28,7 @@
 },
 "Neutral": {
 "export_overrides": {
-"image": "\"res://assets/temp/tempLoren/tempLoren_neutral.png\""
+"image": "\"res://assets/art/characters/loren/Loren_Neutral.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -55,34 +37,7 @@
 },
 "Sad": {
 "export_overrides": {
-"image": "\"res://assets/temp/tempLoren/tempLoren_sad.png\""
-},
-"mirror": false,
-"offset": Vector2(0, 0),
-"scale": 1,
-"scene": ""
-},
-"Smile": {
-"export_overrides": {
-"image": "\"res://assets/temp/tempLoren/tempLoren_smile.png\""
-},
-"mirror": false,
-"offset": Vector2(0, 0),
-"scale": 1,
-"scene": ""
-},
-"Smirk": {
-"export_overrides": {
-"image": "\"res://assets/temp/tempLoren/tempLoren_smirk.png\""
-},
-"mirror": false,
-"offset": Vector2(0, 0),
-"scale": 1,
-"scene": ""
-},
-"Surprised": {
-"export_overrides": {
-"image": "\"res://assets/temp/tempLoren/tempLoren_surprised.png\""
+"image": "\"res://assets/art/characters/loren/Loren_Sad.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
