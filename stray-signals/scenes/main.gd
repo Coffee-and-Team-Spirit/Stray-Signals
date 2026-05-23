@@ -8,7 +8,6 @@ func _ready() -> void:
 	Dialogic.VAR.set_variable("Drink.Rating", GameState.drink_result)	
 	Dialogic.start("res://timelines/d1s1.dtl")
 	var hud_instance = hud_scene.instantiate()
-  
 	add_child(hud_instance)
 	
 
@@ -20,7 +19,7 @@ func _on_signal(signal_passed_in):
 			
 			# go to crafting drink mini-game
 			Dialogic.end_timeline()
-			get_tree().change_scene_to_file("res://drink_mini_game.tscn")
+			get_tree().change_scene_to_file("res://scenes/drink_mini_game.tscn")
 
 		"clear_drink":
 			GameState.drink_result = "none"
