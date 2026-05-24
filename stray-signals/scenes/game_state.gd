@@ -1,6 +1,7 @@
 extends Node
 
 var drink_result : String = "none"
+var drink_hint : String = "none"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

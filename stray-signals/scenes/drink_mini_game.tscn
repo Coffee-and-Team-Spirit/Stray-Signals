@@ -447,6 +447,15 @@ offset_bottom = 356.0
 grow_vertical = 2
 theme_override_constants/separation = 75
 
+[node name="DialogueHistory" type="VBoxContainer" parent="DrinkComponents" unique_id=2073230424]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+
+[node name="DialogueHint" type="RichTextLabel" parent="DrinkComponents/DialogueHistory" unique_id=147450619]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+text = "Dialogue hint"
+
 [node name="DrinkInformation" type="HBoxContainer" parent="DrinkComponents" unique_id=2058362915]
 layout_mode = 2
 
