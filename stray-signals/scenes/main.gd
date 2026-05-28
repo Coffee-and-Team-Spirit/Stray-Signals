@@ -37,10 +37,19 @@ func _on_signal(signal_passed_in):
 
 func _on_about_to_show_text(info: Dictionary):
 	print("triggered")
+	print(info)
 	print(info.get("text"))
+	print("CHARACTER IMAGE ", info.get("portrait"))
 	var dialogue_drink_hint = info.get("text")
 	if GameState.drink_hint == "none":
 		GameState.drink_hint = dialogue_drink_hint
+
+		var current_speaker = Dialogic.Text.get_current_speaker()
+		GameState.current_character = current_speaker.display_name
+		GameState.current_portrait_info = (Dialogic.Portraits.get_character_info(current_speaker))["portrait"]
+
+		print("Gamestate: curr char ", GameState.current_character)
+		print("Gamestate: curr portrait info ", GameState.current_portrait_info)
 
 
 func _input(event):
