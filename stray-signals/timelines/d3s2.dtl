@@ -1,0 +1,50 @@
+[background arg="res://assets/temp/tempCafe/Cafe_Interior.jpg" fade="1.5"]
+if {Drink.Rating} == "none":
+	jump begin_timeline
+else:
+	jump drink_rating
+label begin_timeline
+audio music "res://assets/audio/cafe_bgm.ogg" [fade="2.0" volume="-8.0"]
+# DAY 3, SCENE 2
+join Zara center
+Player: [i]I wonder if this is the cat Archimedes talked about yesterday.[/i]
+Player: Welcome in, would–
+Zara: Can you believe places like this still exist? I had to come all the way up to the counter instead of being served in a comfortable lounge or the like.
+Zara: Completely absurd! My ancient ancestors we treated like gods. But I must grovel before you for basic sustenance. Oh, how we have fallen.
+Player: [pause=1] ...I’m sorry for the inconvenience ma’am.
+Zara: Oh, I know you are. I'm sure this sad abode and its conditions are not your fault. I’m sure you suffer like me.
+Zara: Not as much of course but suffer all the same.
+Zara: Now. [pause=.3]The reason I have come here to this…place…”
+Zara: I promised that wretchedly annoying blue cat I would offer my services to you. Conditionally of course.
+Player: The Blue cat? Archimedes?
+Zara: Don’t say his name! It's bad enough to be associated with such a rapscallion as him. I don't need to think more of him then I must.
+Zara: But he thinks you can help end this turning Humans into Cats business.
+Zara: And I will not have humans be turned into such magnificent creatures as us. Dilutes the brand for us, or at least for us great ones.
+Player: So... you are going to help me?
+Zara: Yes, of course. I have something you need. But first, serve me at least to your barest minimum ability, then I will assist you.
+[signal arg="drink_hint"]
+Zara: **DRINK HINT HERE**
+leave Zara
+[signal arg="craft_drink"]
+label drink_rating (Scene 2 Drink Rating)
+[background arg="res://assets/temp/tempCafe/Cafe_Interior.jpg" fade="1.5" wait="true"]
+audio music "res://assets/audio/craft_drink_bgm.ogg" [fade="2.0" volume="-5.0"]
+if {Drink.Rating} == "mediocre":
+	join Zara center
+	Zara: I have had worse, not much better, but still worse. I will come back tomorrow. Perhaps you can impress me then.
+	leave Zara
+	[signal arg="clear_drink"]
+elif {Drink.Rating} == "good":
+	join Zara center
+	Zara: Well, I suppose that was adequate. Here you go, serve this to the traitor and you may yet be able to stop thom.
+	leave Zara
+	[signal arg="clear_drink"]
+else:
+	# Bad
+	join Zara center
+	Zara: You attempt to kill me! What a horrid life I live. I will return tomorrow. Perhaps you can impress me then.
+	leave Zara
+	[signal arg="clear_drink"]
+	[signal arg="craft_drink"]
+[signal arg="end_encounter"]
+[end_timeline]

@@ -1,0 +1,47 @@
+[background arg="res://assets/temp/tempCafe/Cafe_Interior.jpg" fade="1.5"]
+if {Drink.Rating} == "none":
+	jump begin_timeline
+else:
+	jump drink_rating
+label begin_timeline
+audio music "res://assets/audio/cafe_bgm.ogg" [fade="2.0" volume="-8.0"]
+# DAY 4, SCENE 2
+join GG center
+GG: Hello again! It's so good to see you again. I hope things are just fantastic?
+Player: [pause=.3] Hello again GG. It's good to see you, too. Things are fine. Still a bit odd of a time but can't complain too much about the job.
+Player: It's nice seeing the people as always. Like yourself.
+GG: Oh my gosh, thank you so much for saying so. It feels so good to be included.
+GG: I'm glad you enjoy seeing me cause I very much enjoy seeing you.
+GG: I mean... how could I not enjoy a place like this and service like yours?
+Player: I’m glad you feel that way. You should always feel at home here.
+GG: Oh, I very much do.
+GG: I just wish there was a good way to help you. Given how nice you have been to me and all.
+Player: I appreciate that. But unless you can tell me who is behind turning Humans into Cats, I’m afraid there isn’t much that can be done.
+GG: Oh, I don't know about that.
+GG: But If you want to serve me one of those fantastic drinks of yours, I might spill some beans on what I know about such people.
+[signal arg="drink_hint"]
+GG: **DRINK HINT HERE**
+leave GG
+[signal arg="craft_drink"]
+label drink_rating (Scene 2 Drink Rating)
+[background arg="res://assets/temp/tempCafe/Cafe_Interior.jpg" fade="1.5" wait="true"]
+audio music "res://assets/audio/craft_drink_bgm.ogg" [fade="2.0" volume="-5.0"]
+if {Drink.Rating} == "mediocre":
+	join GG center
+	GG: **FINAL DRINK CLUE**
+	leave GG
+	[signal arg="clear_drink"]
+elif {Drink.Rating} == "good":
+	join GG center
+	GG: **FINAL DRINK CLUE**
+	leave GG
+	[signal arg="clear_drink"]
+else:
+	# Bad
+	join GG center
+	GG: Oh, I really hate so much to be rude, but this isn't quite what I asked for. Could you perhaps try again? Thanks!
+	leave GG
+	[signal arg="clear_drink"]
+	[signal arg="craft_drink"]
+[signal arg="end_encounter"]
+[end_timeline]

@@ -1,0 +1,58 @@
+[background arg="res://assets/temp/tempCafe/Cafe_Interior.jpg" fade="1.5"]
+if {Drink.Rating} == "none":
+	jump begin_timeline
+else:
+	jump drink_rating
+label begin_timeline
+audio music "res://assets/audio/cafe_bgm.ogg" [fade="2.0" volume="-8.0"]
+# DAY 2, SCENE 3
+join Archimedes center
+Player: [i]The strange Blue cat is back? What does he want this time?[/i]
+Player: Welcome back. What can I get you today?
+Archimedes: [pause=.3] Pleasant greetings {Player.PlayerName}. I hope your day has been as exciting for you to experience as it was for me to observe.
+Player: ...You're watching me?
+Archimedes: I have been curiously watching your interactions with the fascinating humans and cats of this not so fair city of ours.
+Player: ...So you were watching me.
+Archimedes: [i]*sigh*[/i][pause=.5] If we much use such basic vocabulary to describe it, yes, I was watching you.
+Player: May I ask why you have been watching me? [pause=.3]Wait, you’re not the human kidnapper the detective was talking about, are you?!?
+Archimedes: Ha, I would never use such words to describe myself and my actions. I most certainly do not claim to be the… human kidnapper, as you so crudely say.
+Archimedes: Now, what other people may describe me as is another matter entirely.
+Player: Thats not exactly reassuring...
+Player: Then why are you watching me?
+Archimedes: Because {Player.PlayerName}, I believe you to be in a unique position to solve our little mystery. Yes, a unique position indeed.
+Archimedes: I'm as certain as I'm capable of being that the human kidnapper has or will come here. And I think you can stop them.
+Player: If you know something, you should tell the detective.
+Archimedes: No, I don't think I will. I would much rather help you. More entertaining, and I believe a better outcome following this path.
+Archimedes: Now, I have some information I'm willing to share with you. But I'm going to need to see how good you are with that drink making of yours.
+Player: Okay? So you just want a drink.
+[signal arg="drink_hint"]
+Archimedes: **DRINK HINT HERE**
+leave Archimedes
+[signal arg="craft_drink"]
+label drink_rating (Scene 2 Drink Rating)
+[background arg="res://assets/temp/tempCafe/Cafe_Interior.jpg" fade="1.5" wait="true"]
+audio music "res://assets/audio/craft_drink_bgm.ogg" [fade="2.0" volume="-5.0"]
+if {Drink.Rating} == "mediocre":
+	join Archimedes center
+	Archimedes: This will suffice for now. Though I may encourage you to practice before this is all over.
+	Archimedes: A cat is coming tomorrow. They have something you will need. They like... non-human things.
+	leave Archimedes
+	[signal arg="clear_drink"]
+elif {Drink.Rating} == "good":
+	join Archimedes center
+	Archimedes: Very good, very good indeed. You may yet be the person I was hoping you were. How exciting.
+	Archimedes: A cat is coming tomorrow. They have something you will need. Make sure to slip them some catnip. Will make things easier, I assure you.
+	leave Archimedes
+	[signal arg="clear_drink"]
+else:
+	# Bad
+	join Archimedes center
+	Archimedes: If you are going to stop the human kidnapper, you will need to do much better than that I'm afraid.
+	leave Archimedes
+	[signal arg="clear_drink"]
+	[signal arg="craft_drink"]
+Player: [i]What a strange cat.[/i]
+Player: [i]Can I really solve this?[/i]
+Player: [i]Can I save Loren?[/i]
+[signal arg="end_encounter"]
+[end_timeline]

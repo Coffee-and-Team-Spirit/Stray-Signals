@@ -1,0 +1,54 @@
+[background arg="res://assets/temp/tempCafe/Cafe_Interior.jpg" fade="1.5"]
+if {Drink.Rating} == "none":
+	jump begin_timeline
+else:
+	jump drink_rating
+label begin_timeline
+audio music "res://assets/audio/cafe_bgm.ogg" [fade="2.0" volume="-8.0"]
+# DAY 4, SCENE B
+join Archimedes center
+Archimedes: Hello again {Player.PlayerName}. I hope your week has been pleasant. I hope you learned everything you needed to learn.
+Player: I have learned a lot. But I'm not sure if it is everything I need or not.
+Archimedes: Yes, I suppose that would be frustrating, wouldn't it? Whatever will you do? Hmmmm...
+Player: I haven't seen you the last couple days. Where have you been?
+Archimedes: Observing, or watching as you insisted it be described.
+Archimedes: Watching you talk with the Human Cat.
+Archimedes: Watching you talk with the detective.
+Archimedes: Watching you talk with the nervous kitty.
+Archimedes: Watching you talk with the God among us.
+Archimedes: Watching you talk with the mastermind.
+Player: ...You know who it is? Why don't you tell me?
+Archimedes: I have inferred the mastermind, but I do not know for sure. I will leave the burden of proof to you, I should think.
+Player: Of course you will. Do you at least have anything else to share? Some last hint?
+Archimedes: I may. Though I can not promise its efficacy or reliability. I have gained some useful tidbits of information from my…. [pause=.3]watching.
+Player: I assume I will need to make you a drink to gain this tidbit?
+Archimedes: Why, look how much you have learned. You may solve this yet, me two legged friend.
+[signal arg="drink_hint"]
+Archimedes: **DRINK HINT HERE**
+leave Archimedes
+[signal arg="craft_drink"]
+label drink_rating (Scene 2 Drink Rating)
+[background arg="res://assets/temp/tempCafe/Cafe_Interior.jpg" fade="1.5" wait="true"]
+audio music "res://assets/audio/craft_drink_bgm.ogg" [fade="2.0" volume="-5.0"]
+if {Drink.Rating} == "mediocre":
+	join Archimedes center
+	Archimedes: You still have room to improve your craft, though not much time to do it in.
+	Archimedes: Loren has always had an affinity for cats, to an unusual degree I might add. Likes our overall vibe I suppose.
+	leave Archimedes
+	[signal arg="clear_drink"]
+elif {Drink.Rating} == "good":
+	join Archimedes center
+	Archimedes: Just purrfect. Just purrfect indeed.
+	Archimedes: Did you know that Loren wanted to be a Cat? He told his family once while they were out on a walk that he thought being a Cat sounded wonderful.
+	Archimedes: Now isn't that just such an interesting thing...
+	leave Archimedes
+	[signal arg="clear_drink"]
+else:
+	# Bad
+	join Archimedes center
+	Archimedes: All this time and you still can't make the correct drink? My earlier praise may have been premature.
+	leave Archimedes
+	[signal arg="clear_drink"]
+	[signal arg="craft_drink"]
+[signal arg="end_encounter"]
+[end_timeline]
