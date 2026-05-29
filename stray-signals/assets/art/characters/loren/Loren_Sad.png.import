@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://be3shn05m2pgp"
-path="res://.godot/imported/Loren_Sad.png-21df2adc1c8714e6d4a3492365b15b3a.ctex"
+path="res://.godot/imported/Loren_Sad.png-b5bb1f0309c3d5f9d23e102959e035c7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/characters/loren/Loren_Sad.png"
-dest_files=["res://.godot/imported/Loren_Sad.png-21df2adc1c8714e6d4a3492365b15b3a.ctex"]
+source_file="res://assets/art/characters/Loren/Loren_Sad.png"
+dest_files=["res://.godot/imported/Loren_Sad.png-b5bb1f0309c3d5f9d23e102959e035c7.ctex"]
 
 [params]
 

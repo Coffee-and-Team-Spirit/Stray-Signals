@@ -217,7 +217,7 @@ func update_drink_components_display():
 		$DrinkComponents/DrinkInformation/MarginContainer/DrinkComponents/SelectCup/Panel.add_theme_stylebox_override("panel", filled_panel_stylebox)
 		$DrinkComponents/DrinkInformation/MarginContainer/DrinkComponents/SelectCup.add_theme_color_override("default_color", Color(256, 256, 256))
 	else:
-		$DrinkComponents/DrinkInformation/MarginContainer/DrinkComponents/SelectCup.text = "Select Cup"
+		$DrinkComponents/DrinkInformation/MarginContainer/DrinkComponents/SelectCup.text = "Cup"
 		$DrinkComponents/DrinkInformation/MarginContainer/DrinkComponents/SelectCup/Panel.add_theme_stylebox_override("panel", unfilled_panel_stylebox)
 		$DrinkComponents/DrinkInformation/MarginContainer/DrinkComponents/SelectCup.add_theme_color_override("default_color", Color(0, 0, 0))
 
@@ -235,10 +235,10 @@ func update_drink_components_display():
 			$DrinkComponents/DrinkInformation/MarginContainer/DrinkComponents/SelectSecondaryFlavor/Panel.add_theme_stylebox_override("panel", filled_panel_stylebox)
 			$DrinkComponents/DrinkInformation/MarginContainer/DrinkComponents/SelectSecondaryFlavor.add_theme_color_override("default_color", Color(256, 256, 256))
 	else:
-		$DrinkComponents/DrinkInformation/MarginContainer/DrinkComponents/SelectBaseFlavor.text = "Select Base Flavor"
+		$DrinkComponents/DrinkInformation/MarginContainer/DrinkComponents/SelectBaseFlavor.text = "Base Flavor"
 		$DrinkComponents/DrinkInformation/MarginContainer/DrinkComponents/SelectBaseFlavor/Panel.add_theme_stylebox_override("panel", unfilled_panel_stylebox)
 		$DrinkComponents/DrinkInformation/MarginContainer/DrinkComponents/SelectBaseFlavor.add_theme_color_override("default_color", Color(0, 0, 0))
-		$DrinkComponents/DrinkInformation/MarginContainer/DrinkComponents/SelectSecondaryFlavor.text = "Select Secondary Flavor"
+		$DrinkComponents/DrinkInformation/MarginContainer/DrinkComponents/SelectSecondaryFlavor.text = "Secondary Flavor"
 		$DrinkComponents/DrinkInformation/MarginContainer/DrinkComponents/SelectSecondaryFlavor/Panel.add_theme_stylebox_override("panel", unfilled_panel_stylebox)
 		$DrinkComponents/DrinkInformation/MarginContainer/DrinkComponents/SelectSecondaryFlavor.add_theme_color_override("default_color", Color(0, 0, 0))	
 	
@@ -247,7 +247,7 @@ func update_drink_components_display():
 		$DrinkComponents/DrinkInformation/MarginContainer/DrinkComponents/SelectTopping/Panel.add_theme_stylebox_override("panel", filled_panel_stylebox)
 		$DrinkComponents/DrinkInformation/MarginContainer/DrinkComponents/SelectTopping.add_theme_color_override("default_color", Color(256, 256, 256))
 	else:
-		$DrinkComponents/DrinkInformation/MarginContainer/DrinkComponents/SelectTopping.text = "Select Topping"
+		$DrinkComponents/DrinkInformation/MarginContainer/DrinkComponents/SelectTopping.text = "Topping"
 		$DrinkComponents/DrinkInformation/MarginContainer/DrinkComponents/SelectTopping/Panel.add_theme_stylebox_override("panel", unfilled_panel_stylebox)
 		$DrinkComponents/DrinkInformation/MarginContainer/DrinkComponents/SelectTopping.add_theme_color_override("default_color", Color(0, 0, 0))
 	
@@ -256,7 +256,7 @@ func update_drink_components_display():
 		$DrinkComponents/DrinkInformation/MarginContainer/DrinkComponents/SelectModification/Panel.add_theme_stylebox_override("panel", filled_panel_stylebox)
 		$DrinkComponents/DrinkInformation/MarginContainer/DrinkComponents/SelectModification.add_theme_color_override("default_color", Color(256, 256, 256))
 	else:
-		$DrinkComponents/DrinkInformation/MarginContainer/DrinkComponents/SelectModification.text = "Select Modification"
+		$DrinkComponents/DrinkInformation/MarginContainer/DrinkComponents/SelectModification.text = "Modification"
 		$DrinkComponents/DrinkInformation/MarginContainer/DrinkComponents/SelectModification/Panel.add_theme_stylebox_override("panel", unfilled_panel_stylebox)
 		$DrinkComponents/DrinkInformation/MarginContainer/DrinkComponents/SelectModification.add_theme_color_override("default_color", Color(0, 0, 0))
 
@@ -353,23 +353,23 @@ func update_drink_traits(flavor_name):
 			drink_traits[key] += traits[key]
 			
 	if drink_traits["fancy_cozy"] <= 0:
-		$DrinkComponents/FlavorBars/FancyCozyBar/FancyBar.value = abs(drink_traits["fancy_cozy"])
-		$DrinkComponents/FlavorBars/FancyCozyBar/CozyBar.value = 0
+		$DrinkComponents/DrinkInformation/FlavorBars/FancyCozyBar/FancyBar.value = abs(drink_traits["fancy_cozy"])
+		$DrinkComponents/DrinkInformation/FlavorBars/FancyCozyBar/CozyBar.value = 0
 	elif drink_traits["fancy_cozy"] > 0:
-		$DrinkComponents/FlavorBars/FancyCozyBar/CozyBar.value = drink_traits["fancy_cozy"]
-		$DrinkComponents/FlavorBars/FancyCozyBar/FancyBar.value = 0
+		$DrinkComponents/DrinkInformation/FlavorBars/FancyCozyBar/CozyBar.value = drink_traits["fancy_cozy"]
+		$DrinkComponents/DrinkInformation/FlavorBars/FancyCozyBar/FancyBar.value = 0
 	if drink_traits["bitter_sweet"] <= 0:
-		$DrinkComponents/FlavorBars/BitterSweetBar/BitterBar.value = abs(drink_traits["bitter_sweet"])
-		$DrinkComponents/FlavorBars/BitterSweetBar/SweetBar.value = 0
+		$DrinkComponents/DrinkInformation/FlavorBars/BitterSweetBar/BitterBar.value = abs(drink_traits["bitter_sweet"])
+		$DrinkComponents/DrinkInformation/FlavorBars/BitterSweetBar/SweetBar.value = 0
 	elif drink_traits["bitter_sweet"] > 0:
-		$DrinkComponents/FlavorBars/BitterSweetBar/SweetBar.value = drink_traits["bitter_sweet"]
-		$DrinkComponents/FlavorBars/BitterSweetBar/BitterBar.value = 0
+		$DrinkComponents/DrinkInformation/FlavorBars/BitterSweetBar/SweetBar.value = drink_traits["bitter_sweet"]
+		$DrinkComponents/DrinkInformation/FlavorBars/BitterSweetBar/BitterBar.value = 0
 	if drink_traits["cool_warm"] <= 0:
-		$DrinkComponents/FlavorBars/CoolWarmBar/CoolBar.value = abs(drink_traits["cool_warm"])
-		$DrinkComponents/FlavorBars/CoolWarmBar/WarmBar.value = 0
+		$DrinkComponents/DrinkInformation/FlavorBars/CoolWarmBar/CoolBar.value = abs(drink_traits["cool_warm"])
+		$DrinkComponents/DrinkInformation/FlavorBars/CoolWarmBar/WarmBar.value = 0
 	elif drink_traits["cool_warm"] > 0:
-		$DrinkComponents/FlavorBars/CoolWarmBar/WarmBar.value = drink_traits["cool_warm"]
-		$DrinkComponents/FlavorBars/CoolWarmBar/CoolBar.value = 0
+		$DrinkComponents/DrinkInformation/FlavorBars/CoolWarmBar/WarmBar.value = drink_traits["cool_warm"]
+		$DrinkComponents/DrinkInformation/FlavorBars/CoolWarmBar/CoolBar.value = 0
 	
 	print("updated drink flavors ", drink_traits)
 
@@ -395,3 +395,10 @@ func finish_pouring(flavor):
 		is_pouring_action = false
 		print("SECONDARY FLAVOR: ", flavor)
 	print("FINISH POURING: ", chosen_flavors)
+
+"res://assets/art/characters/Loren/Loren_Happy.png"
+
+func _ready():
+	$DrinkComponents/DialogueHistory/DialogueHint.text = GameState.drink_hint
+	$DrinkComponents/DialogueHistory/CharacterImage.texture.atlas = load("res://assets/art/characters/%s/%s_%s.png" % [GameState.current_character, GameState.current_character, GameState.current_portrait_info])
+	$DrinkComponents/DialogueHistory/CharacterName.text = GameState.current_character
