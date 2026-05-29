@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cayjmysuaoyqk"
-path="res://.godot/imported/Loren_Happy.png-9b95f7555682b7f968be7b9f91f43bf8.ctex"
+path="res://.godot/imported/Loren_Happy.png-14290e831cb26667fb7ebd6d06e436db.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/characters/loren/Loren_Happy.png"
-dest_files=["res://.godot/imported/Loren_Happy.png-9b95f7555682b7f968be7b9f91f43bf8.ctex"]
+source_file="res://assets/art/characters/Loren/Loren_Happy.png"
+dest_files=["res://.godot/imported/Loren_Happy.png-14290e831cb26667fb7ebd6d06e436db.ctex"]
 
 [params]
 
