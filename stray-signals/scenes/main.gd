@@ -6,10 +6,10 @@ var hud_scene = preload("res://scenes/hud.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Dialogic.signal_event.connect(_on_signal)
-	#Dialogic.Text.about_to_show_text.connect(_on_about_to_show_text)
 	
+	var current_timeline = DayManager.get_current_timeline()
 	Dialogic.VAR.set_variable("Drink.Rating", GameState.drink_result)	
-	Dialogic.start("res://timelines/d1s1.dtl")
+	Dialogic.start("res://timelines/%s.dtl" % current_timeline)
 	
 	var hud_instance = hud_scene.instantiate()
 	add_child(hud_instance)
@@ -33,6 +33,18 @@ func _on_signal(signal_passed_in):
 			
 		"drink_hint":
 			Dialogic.Text.about_to_show_text.connect(_on_about_to_show_text)
+			
+		"end_encounter":
+			GameState.drink_hint = "none"
+			GameState.drink_result = "none"
+			Dialogic.VAR.set_variable("Drink.Rating", GameState.drink_result)
+			
+			if Dialogic.Text.about_to_show_text.is_connected(_on_about_to_show_text):
+				Dialogic.Text.about_to_show_text.disconnect(_on_about_to_show_text)
+		
+			DayManager.advance_encounter()
+			var current_timeline = DayManager.get_current_timeline()
+			Dialogic.start("res://timelines/%s.dtl" % current_timeline)
 
 
 func _on_about_to_show_text(info: Dictionary):
