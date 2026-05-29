@@ -4,16 +4,14 @@ extends Node
 var target_drinks = {
 	1: {
 		1: {
-			"cup": "mug",
-			"flavors": ["mango", "matcha"],
-			"topping": "boba",
-			"modification": "heat"
+			"fancy_cozy": 8, 
+			"bitter_sweet": 5,
+			"cool_warm": 6 
 		},
 		2: {
-			"cup": "mug",
-			"flavors": ["mango", "matcha"],
-			"topping": "boba",
-			"modification": "heat"
+			"fancy_cozy": 8, 
+			"bitter_sweet": 5,
+			"cool_warm": 6 
 		},
 		3: {
 			
