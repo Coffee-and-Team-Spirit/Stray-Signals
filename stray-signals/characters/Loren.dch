@@ -19,7 +19,7 @@
 &"portraits": {
 "Happy": {
 "export_overrides": {
-"image": "\"res://assets/art/characters/Loren/Loren_Happy.png\""
+"image": "\"res://assets/art/characters/loren_new/Loren_Happy.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -28,7 +28,7 @@
 },
 "Neutral": {
 "export_overrides": {
-"image": "\"res://assets/art/characters/Loren/Loren_Neutral.png\""
+"image": "\"res://assets/art/characters/loren_new/Loren_Neutral.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -37,7 +37,7 @@
 },
 "Sad": {
 "export_overrides": {
-"image": "\"res://assets/art/characters/Loren/Loren_Sad.png\""
+"image": "\"res://assets/art/characters/loren_new/Loren_Sad.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
