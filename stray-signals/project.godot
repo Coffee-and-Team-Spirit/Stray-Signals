@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 Dialogic="*uid://ds2q0uclmolvu"
 GameState="*uid://dfnl5hw1b8uai"
 DayManager="*uid://rt57ypssarld"
+DrinkData="*uid://d1eg6ghmcwcet"
 
 [dialogic]
 

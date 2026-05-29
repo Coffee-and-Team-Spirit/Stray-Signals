@@ -8,8 +8,10 @@ func _ready() -> void:
 	Dialogic.signal_event.connect(_on_signal)
 	
 	var current_timeline = DayManager.get_current_timeline()
-	Dialogic.VAR.set_variable("Drink.Rating", GameState.drink_result)	
 	Dialogic.start("res://timelines/%s.dtl" % current_timeline)
+	
+	Dialogic.VAR.set_variable("Drink.Rating", GameState.drink_result)
+	GameState.target_drink = DrinkData.target_drinks[DayManager.day][DayManager.encounter]
 	
 	var hud_instance = hud_scene.instantiate()
 	add_child(hud_instance)
