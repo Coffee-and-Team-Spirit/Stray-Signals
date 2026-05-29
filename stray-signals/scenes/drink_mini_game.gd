@@ -94,14 +94,6 @@ var flavor_traits = {
 	}
 }
 
-# Target drink, filled with a test drink for now 
-var target_drink = {
-	"cup": "mug",
-	"flavors": ["mango", "matcha"],
-	"topping": "boba",
-	"modification": "heat"
-}
-
 # Drag and pour with action key P
 var is_dragging_flavor : bool = false # track ingredient dragging
 var is_flavor_hovering : bool = false # track flavor hovering above cup
@@ -264,17 +256,17 @@ func update_drink_components_display():
 func score_drink() -> int:
 	var score = 0
 	
-	if chosen_cup == target_drink["cup"]:
+	if chosen_cup == GameState.target_drink["cup"]:
 		score += 1
 	
 	for flavor in chosen_flavors:
-		if flavor in target_drink["flavors"]:
+		if flavor in GameState.target_drink["flavors"]:
 			score += 1
 	
-	if chosen_topping == target_drink["topping"]:
+	if chosen_topping == GameState.target_drink["topping"]:
 		score += 1
 	
-	if chosen_modification == target_drink["modification"]:
+	if chosen_modification == GameState.target_drink["modification"]:
 		score += 1
 		
 	print(score)

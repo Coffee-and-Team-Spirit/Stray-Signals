@@ -1,0 +1,34 @@
+[background arg="res://assets/temp/tempCafe/Cafe_Interior.jpg" fade="1.0" wait="true"]
+if {Drink.Rating} == "none":
+	jump begin_timeline
+else:
+	jump drink_rating
+label begin_timeline
+audio music "res://assets/audio/cafe_bgm.ogg" [fade="2.0" volume="-8.0"]
+Player: [i]Ah… [pause=0.5] This is a test timeline for Day 1, Encounter 2[/i]
+join Loren (Neutral) center
+[signal arg="drink_hint"]
+Loren: That would be just perfect. A mug with Mango and Matcha. Some Boba. Oh, and make it hot of course. My bones could use some heat.
+Player: On it!
+leave Loren
+[signal arg="craft_drink"]
+label drink_rating (Scene 2 Drink Rating)
+[background arg="res://assets/temp/tempCafe/Cafe_Interior.jpg" fade="1.0" wait="true"]
+audio music "res://assets/audio/craft_drink_bgm.ogg" [fade="2.0" volume="-5.0"]
+if {Drink.Rating} == "mediocre":
+	join Loren (Neutral) center
+	Loren (Happy): That was good. Though maybe not your best work. I'm sure my rambling distracted you is all. [pause=0.3]Anyways, I've got to get going. See you tomorrow.
+	[signal arg="clear_drink"]
+elif {Drink.Rating} == "good":
+	join Loren (Happy) center
+	Loren: This was just perfect. Thanks a bunch! [pause=0.3]Anyways, I better get going. See you tomorrow!
+	[signal arg="clear_drink"]
+else:
+	# Bad
+	join Loren (Neutral) center
+	Loren (Neutral): Now, I know you can do better than this, {Player.PlayerName}! I’ll give ya another shot.
+	leave Loren
+	[signal arg="clear_drink"]
+	[signal arg="craft_drink"]
+[signal arg="end_encounter"]
+[end_timeline]
