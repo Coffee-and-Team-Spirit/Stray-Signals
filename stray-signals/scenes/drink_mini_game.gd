@@ -1,7 +1,5 @@
 extends Control
 
-#signal drink_finished(result); # store the result of drink on 'serve' signal
-
 # Player selections
 var chosen_cup : String = ""
 var chosen_flavors : Array = []
@@ -10,7 +8,7 @@ var chosen_modification : String = ""
 var next_index : int = 0 # track what flavor layer the player is on
 
 # Flavor bar tracking
-var drink_traits = {
+var player_drink_traits = {
 	"fancy_cozy": 0,
 	"bitter_sweet": 0,
 	"cool_warm": 0
@@ -88,7 +86,7 @@ func select_modification(modification_name):
 
 
 func update_cup_display():
-	drink_traits = {
+	player_drink_traits = {
 		"fancy_cozy": 0,
 		"bitter_sweet": 0,
 		"cool_warm": 0
@@ -175,36 +173,68 @@ func update_drink_components_display():
 		$DrinkComponents/DrinkInformation/MarginContainer/DrinkComponents/SelectModification.add_theme_color_override("default_color", Color(0, 0, 0))
 
 
+func get_flavor_category(category_value) -> String:
+	var absolute_category_value = abs(category_value)
+	
+	if absolute_category_value >= 8:
+		return "extremely"
+	elif absolute_category_value >= 6:
+		return "very"
+	elif absolute_category_value == 5:
+		return "half"
+	elif absolute_category_value >= 3:
+		return "slight"
+	elif absolute_category_value >= 1:
+		return "hint"
+	
+	return "none"
+
+
+func get_flavor_direction(flavor_value) -> String:
+	if flavor_value > 0:
+		return "positive"
+	elif flavor_value < 0:
+		return "negative"
+	
+	return "none"
+
+
+func get_drink_trait_categories(drink_traits) -> Dictionary:
+	var drink_result : Dictionary = {}
+	
+	for key in drink_traits.keys():
+		var value = drink_traits[key]
+		drink_result[key] = {
+			"direction": get_flavor_direction(value),
+			"category": get_flavor_category(value)
+		}
+	
+	return drink_result
+
+
 func score_drink() -> int:
 	var score = 0
+	var player_categories = get_drink_trait_categories(player_drink_traits)
+	var target_categories = get_drink_trait_categories(DrinkData.target_drinks[DayManager.day][DayManager.encounter])
 	
-	if chosen_cup == GameState.target_drink["cup"]:
-		score += 1
-	
-	for flavor in chosen_flavors:
-		if flavor in GameState.target_drink["flavors"]:
+	for key in player_categories.keys():
+		if player_categories[key]["direction"] == target_categories[key]["direction"] and player_categories[key]["category"]  == target_categories[key]["category"]:
 			score += 1
 	
-	if chosen_topping == GameState.target_drink["topping"]:
-		score += 1
-	
-	if chosen_modification == GameState.target_drink["modification"]:
-		score += 1
-		
 	print(score)
 	return score
 
 
 func evaluate_drink_rating(score) -> String:
-	if score >= 4:
+	if score == 3:
 		print("Congrats, you made a Good drink!")
 		return "good"
-	elif score >= 2:
+	elif score == 2:
 		print("You made a Mediocre drink... better luck next time.")
 		return "mediocre"
-	else:
-		print("This drink is soooo Bad, I need a remake.")
-		return "bad"
+	
+	print("This drink is soooo Bad, I need a remake.")
+	return "bad"
 
 
 func _on_serve_pressed() -> void:
@@ -219,18 +249,18 @@ func _on_reset_pressed() -> void:
 	chosen_topping = ""
 	chosen_modification = ""
 	
-	drink_traits = {
+	player_drink_traits = {
 		"fancy_cozy": 0,
 		"bitter_sweet": 0,
 		"cool_warm": 0
 	}
 	
-	$DrinkComponents/FlavorBars/FancyCozyBar/FancyBar.value = drink_traits["fancy_cozy"]
-	$DrinkComponents/FlavorBars/FancyCozyBar/CozyBar.value = drink_traits["fancy_cozy"]
-	$DrinkComponents/FlavorBars/BitterSweetBar/BitterBar.value = drink_traits["bitter_sweet"]
-	$DrinkComponents/FlavorBars/BitterSweetBar/SweetBar.value = drink_traits["bitter_sweet"]
-	$DrinkComponents/FlavorBars/CoolWarmBar/CoolBar.value = drink_traits["cool_warm"]
-	$DrinkComponents/FlavorBars/CoolWarmBar/WarmBar.value = drink_traits["cool_warm"]
+	$DrinkComponents/FlavorBars/FancyCozyBar/FancyBar.value = player_drink_traits["fancy_cozy"]
+	$DrinkComponents/FlavorBars/FancyCozyBar/CozyBar.value = player_drink_traits["fancy_cozy"]
+	$DrinkComponents/FlavorBars/BitterSweetBar/BitterBar.value = player_drink_traits["bitter_sweet"]
+	$DrinkComponents/FlavorBars/BitterSweetBar/SweetBar.value = player_drink_traits["bitter_sweet"]
+	$DrinkComponents/FlavorBars/CoolWarmBar/CoolBar.value = player_drink_traits["cool_warm"]
+	$DrinkComponents/FlavorBars/CoolWarmBar/WarmBar.value = player_drink_traits["cool_warm"]
 	
 	pour_stage = 0
 	
@@ -260,32 +290,32 @@ func _process(delta):
 			finish_pouring(current_hovered_flavor)
 
 func update_drink_traits(flavor_name):
-	print("drink flavors ", drink_traits)
+	print("drink flavors ", player_drink_traits)
 	if flavor_name in DrinkTraits.flavor_traits:
 		var traits = DrinkTraits.flavor_traits[flavor_name]
 		for key in traits.keys():
-			drink_traits[key] += traits[key]
+			player_drink_traits[key] += traits[key]
 			
-	if drink_traits["fancy_cozy"] <= 0:
-		$DrinkComponents/DrinkInformation/FlavorBars/FancyCozyBar/FancyBar.value = abs(drink_traits["fancy_cozy"])
+	if player_drink_traits["fancy_cozy"] <= 0:
+		$DrinkComponents/DrinkInformation/FlavorBars/FancyCozyBar/FancyBar.value = abs(player_drink_traits["fancy_cozy"])
 		$DrinkComponents/DrinkInformation/FlavorBars/FancyCozyBar/CozyBar.value = 0
-	elif drink_traits["fancy_cozy"] > 0:
-		$DrinkComponents/DrinkInformation/FlavorBars/FancyCozyBar/CozyBar.value = drink_traits["fancy_cozy"]
+	elif player_drink_traits["fancy_cozy"] > 0:
+		$DrinkComponents/DrinkInformation/FlavorBars/FancyCozyBar/CozyBar.value = player_drink_traits["fancy_cozy"]
 		$DrinkComponents/DrinkInformation/FlavorBars/FancyCozyBar/FancyBar.value = 0
-	if drink_traits["bitter_sweet"] <= 0:
-		$DrinkComponents/DrinkInformation/FlavorBars/BitterSweetBar/BitterBar.value = abs(drink_traits["bitter_sweet"])
+	if player_drink_traits["bitter_sweet"] <= 0:
+		$DrinkComponents/DrinkInformation/FlavorBars/BitterSweetBar/BitterBar.value = abs(player_drink_traits["bitter_sweet"])
 		$DrinkComponents/DrinkInformation/FlavorBars/BitterSweetBar/SweetBar.value = 0
-	elif drink_traits["bitter_sweet"] > 0:
-		$DrinkComponents/DrinkInformation/FlavorBars/BitterSweetBar/SweetBar.value = drink_traits["bitter_sweet"]
+	elif player_drink_traits["bitter_sweet"] > 0:
+		$DrinkComponents/DrinkInformation/FlavorBars/BitterSweetBar/SweetBar.value = player_drink_traits["bitter_sweet"]
 		$DrinkComponents/DrinkInformation/FlavorBars/BitterSweetBar/BitterBar.value = 0
-	if drink_traits["cool_warm"] <= 0:
-		$DrinkComponents/DrinkInformation/FlavorBars/CoolWarmBar/CoolBar.value = abs(drink_traits["cool_warm"])
+	if player_drink_traits["cool_warm"] <= 0:
+		$DrinkComponents/DrinkInformation/FlavorBars/CoolWarmBar/CoolBar.value = abs(player_drink_traits["cool_warm"])
 		$DrinkComponents/DrinkInformation/FlavorBars/CoolWarmBar/WarmBar.value = 0
-	elif drink_traits["cool_warm"] > 0:
-		$DrinkComponents/DrinkInformation/FlavorBars/CoolWarmBar/WarmBar.value = drink_traits["cool_warm"]
+	elif player_drink_traits["cool_warm"] > 0:
+		$DrinkComponents/DrinkInformation/FlavorBars/CoolWarmBar/WarmBar.value = player_drink_traits["cool_warm"]
 		$DrinkComponents/DrinkInformation/FlavorBars/CoolWarmBar/CoolBar.value = 0
 	
-	print("updated drink flavors ", drink_traits)
+	print("updated drink flavors ", player_drink_traits)
 
 
 func finish_pouring(flavor):
