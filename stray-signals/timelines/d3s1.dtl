@@ -12,17 +12,17 @@ Player: Hello. Welcome in. Watcha looking for today?
 Whiskerly: Meow, I am a cat.
 Player: [i]I should stop wishing for things. The city seems less than apathetic to my needs.[/i]
 Player: I did notice you are a cat.[pause=.3] What did the cat want to drink?
-Whiskerly: I suppose a cat type drink would be good.
+Whiskerly (Sad): I suppose a cat type drink would be good.
 Whiskerly: Yes, I will have whatever cats have. That will have to do, I guess.
 Player: If you don't want to, you don't have to have a cat drink. You can get whatever you want.
 Whiskerly: No, it will be sufficient for my needs.
 Player: Not to be intrusive,  but are you okay? You seem a bit down?
-Whiskerly: No no, it's all well enough {Player.PlayerName}. Life goes in strange ways is all. Got to roll with the punches. Like handing out in the great cafe in a crappy city.
+Whiskerly (Happy): No no, it's all well enough {Player.PlayerName}. Life goes in strange ways is all. Got to roll with the punches. Like handing out in the great cafe in a crappy city.
 Player: Well, maybe we can get you that drink to cheer you up? What do ya say?
-Whiskerly: Yes, let us do that, thank you.
+Whiskerly (Neutral): Yes, let us do that, thank you.
 [signal arg="drink_hint"]
 Whiskerly: **DRINK HINT HERE**
-leave 
+leave Whiskerly
 [signal arg="craft_drink"]
 label drink_rating (Scene 2 Drink Rating)
 [background arg="res://assets/temp/tempCafe/Cafe_Interior.jpg" fade="1.5" wait="true"]
@@ -31,20 +31,20 @@ if {Drink.Rating} == "mediocre":
 	join Whiskerly center
 	Whiskerly: Cat drinks are okay I guess. Will grow to like them I think.
 	Whiskerly: I heard you may want to know things about the cat stuff going on.
-	Whiskerly: They are…an odd person I must say. Odd indeed.
+	Whiskerly: They are… an odd person I must say. Odd indeed.
 	leave Whiskerly
 	[signal arg="clear_drink"]
 elif {Drink.Rating} == "good":
-	join Whiskerly center
+	join Whiskerly (Happy) center
 	Whiskerly: For a cat drink, this is pretty damn good.
-	Whiskerly: You know I heard you are looking into the…
+	Whiskerly (Neutral): You know I heard you are looking into the…
 	Whiskerly: Cat transformation!
 	Whiskerly: They are a happy person, in their own way at least. Just thought you should know.
 	leave Whiskerly
 	[signal arg="clear_drink"]
 else:
 	# Bad
-	join Whiskerly center
+	join Whiskerly (Sad) center
 	Whiskerly: That is really not a very good Cat drink. Could you maybe try that once more?
 	leave Whiskerly
 	[signal arg="clear_drink"]

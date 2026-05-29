@@ -6,13 +6,13 @@ else:
 label begin_timeline
 audio music "res://assets/audio/cafe_bgm.ogg" [fade="2.0" volume="-8.0"]
 # DAY 2, SCENE 2
-join GG center
+join GG (Happy) center
 GG: Oh my gosh, hello!
 GG: It's so nice to meet you. I love your Cafe. Well not your cafe I guess, but still. It's so nice! [pause=.3] Sorry I'm just rambling already. That's my bad. How are you today?
 Player: Hi. It's all good. I'm doing okay. Things have been strange of late, but I enjoy my job.
-GG: Oh, things have been so strange of late. It's weird out there in the city. Strange things are happening. People disappear.
+GG (Neutral): Oh, things have been so strange of late. It's weird out there in the city. Strange things are happening. People disappear.
 GG: Even rumors of stranger things.
-GG: The city is such a scary place. Not like this fantastic place you have here. So safe and warm compared to the cold outside.
+GG (Happy): The city is such a scary place. Not like this fantastic place you have here. So safe and warm compared to the cold outside.
 Player: I'm glad you like the place so much. I hope you come around often.
 GG: Oh for sure I will!
 GG: This place smells like sweets and Mango. I love mango.
@@ -26,18 +26,18 @@ label drink_rating (Scene 2 Drink Rating)
 [background arg="res://assets/temp/tempCafe/Cafe_Interior.jpg" fade="1.5" wait="true"]
 audio music "res://assets/audio/craft_drink_bgm.ogg" [fade="2.0" volume="-5.0"]
 if {Drink.Rating} == "mediocre":
-	join GG center
+	join GG (Happy) center
 	GG: **FINAL DRINK CLUE**
 	leave GG
 	[signal arg="clear_drink"]
 elif {Drink.Rating} == "good":
-	join GG center
+	join GG (Happy) center
 	GG: **FINAL DRINK CLUE**
 	leave GG
 	[signal arg="clear_drink"]
 else:
 	# Bad
-	join GG center
+	join GG (Sad) center
 	GG: I don't mean to be rude, but can I perhaps have another drink? Something feels a little off with mine.
 	leave GG
 	[signal arg="clear_drink"]

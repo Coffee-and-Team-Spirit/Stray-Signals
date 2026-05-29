@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dv43hahulk841"
-path="res://.godot/imported/Wiskerly_Sad.png-c9ae68598598b8cd2c0eff5a762787a5.ctex"
+uid="uid://ciwx7nyoxh8v2"
+path="res://.godot/imported/Wiskerly_Happy.png-d1e2093db62ac574bd0ea2c08c1c7171.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/characters/wiskerly/Wiskerly_Sad.png"
-dest_files=["res://.godot/imported/Wiskerly_Sad.png-c9ae68598598b8cd2c0eff5a762787a5.ctex"]
+source_file="res://assets/art/characters/whiskerly/Wiskerly_Happy.png"
+dest_files=["res://.godot/imported/Wiskerly_Happy.png-d1e2093db62ac574bd0ea2c08c1c7171.ctex"]
 
 [params]
 

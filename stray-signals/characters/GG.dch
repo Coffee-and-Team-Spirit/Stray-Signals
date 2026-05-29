@@ -10,12 +10,49 @@
 "style": "",
 "suffix": ""
 },
-&"default_portrait": "",
+&"default_portrait": "Neutral",
 &"description": "",
 &"display_name": "Gg",
 &"mirror": false,
 &"nicknames": [""],
 &"offset": Vector2(0, 0),
-&"portraits": {},
+&"portraits": {
+"Angry": {
+"export_overrides": {
+"image": "\"res://assets/art/characters/gg/GG_Angry.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Happy": {
+"export_overrides": {
+"image": "\"res://assets/art/characters/gg/GG_Happy.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Neutral": {
+"export_overrides": {
+"image": "\"res://assets/art/characters/gg/GG_Neutral.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Sad": {
+"export_overrides": {
+"image": "\"res://assets/art/characters/gg/GG_Sad.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+}
+},
 &"scale": 1.0
 }

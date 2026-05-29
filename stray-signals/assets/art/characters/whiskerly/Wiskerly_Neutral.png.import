@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dx63kwqn1ionp"
-path="res://.godot/imported/Wiskerly_Neutral.png-2c21a2aebb25b7b25d150a16f7fff87a.ctex"
+path="res://.godot/imported/Wiskerly_Neutral.png-5400a94f4f0c9ea9ee075829bb9188f1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/characters/wiskerly/Wiskerly_Neutral.png"
-dest_files=["res://.godot/imported/Wiskerly_Neutral.png-2c21a2aebb25b7b25d150a16f7fff87a.ctex"]
+source_file="res://assets/art/characters/whiskerly/Wiskerly_Neutral.png"
+dest_files=["res://.godot/imported/Wiskerly_Neutral.png-5400a94f4f0c9ea9ee075829bb9188f1.ctex"]
 
 [params]
 

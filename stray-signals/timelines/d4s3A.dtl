@@ -21,19 +21,19 @@ label drink_rating (Scene 2 Drink Rating)
 [background arg="res://assets/temp/tempCafe/Cafe_Interior.jpg" fade="1.5" wait="true"]
 audio music "res://assets/audio/craft_drink_bgm.ogg" [fade="2.0" volume="-5.0"]
 if {Drink.Rating} == "mediocre":
-	join Zara center
+	join Zara (Sad) center
 	Zara: How very disappointing. I will not be returning, I can promise you that.
 	leave Zara
 	[signal arg="clear_drink"]
 elif {Drink.Rating} == "good":
-	join Zara center
+	join Zara (Happy) center
 	Zara: Much better. At least you have managed adequacy. Here you go, serve this to the traitor and you may yet be able to stop them.
 	leave Zara
 	[signal arg="clear_drink"]
 else:
 	# Bad
 	join Zara center
-	Zara: How very, very, very disappointing. I will not be returning, I can promise you that.
+	Zara (Sad): How very, very, very disappointing. I will not be returning, I can promise you that.
 	leave Zara
 	[signal arg="clear_drink"]
 	[signal arg="craft_drink"]

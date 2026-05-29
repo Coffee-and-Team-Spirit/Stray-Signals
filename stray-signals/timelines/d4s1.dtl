@@ -19,14 +19,14 @@ Player: A human that's been transformed into a cat?
 Whiskerly: ....
 Player: ....
 Whiskerly: ....
-Whiskerly: You always were clever {Player.PlayerName}.
-Whiskerly: I don't think I can say more for some reason, but I hope my previous comment was enough.
+Whiskerly (Happy): You always were clever {Player.PlayerName}.
+Whiskerly (Neutral): I don't think I can say more for some reason, but I hope my previous comment was enough.
 Player: Sorry, do we know each other? From before you were a cat I assume.
-Whiskerly: I hope you haven't forgotten your best customer.
+Whiskerly (Sad): I hope you haven't forgotten your best customer.
 Whiskerly: I would hope my years of loyalty have bought me some familiarity, even in a less human form.
 Player: Loren! I can't believe it's you!
 Player: Why didn't you tell me it was you? I would have tried to help. Tried to do something...
-Whiskerly: Honestly it's all a little fuzzy to be honest. Things come and go. Not sure my brain was really meant for a cat body. Some times are better than others.
+Whiskerly (Neutral): Honestly it's all a little fuzzy to be honest. Things come and go. Not sure my brain was really meant for a cat body. Some times are better than others.
 Whiskerly: And how could you have helped me? I'm a cat. No, the only way to help me is to catch the person that did this to me.
 Player: Then tell me who did this to you!
 Whiskerly: If only it was that easy. But again, I can't quite remember everything. Maybe if you could make me a drink like you used to.
@@ -45,14 +45,14 @@ if {Drink.Rating} == "mediocre":
 	leave Whiskerly
 	[signal arg="clear_drink"]
 elif {Drink.Rating} == "good":
-	join Whiskerly center
+	join Whiskerly (Happy) center
 	Whiskerly: Yes, that's great. I feel more like myself. Thank you.
 	Whiskerly: **MORE DIALOGUE HERE**
 	leave Whiskerly
 	[signal arg="clear_drink"]
 else:
 	# Bad
-	join Whiskerly center
+	join Whiskerly (Sad) center
 	Whiskerly: You and I both know you can make a better drink than this.
 	leave Whiskerly
 	[signal arg="clear_drink"]

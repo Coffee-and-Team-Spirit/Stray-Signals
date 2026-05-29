@@ -9,16 +9,16 @@ audio music "res://assets/audio/cafe_bgm.ogg" [fade="2.0" volume="-8.0"]
 join Zara center
 Player: [i]I wonder if this is the cat Archimedes talked about yesterday.[/i]
 Player: Welcome in, would–
-Zara: Can you believe places like this still exist? I had to come all the way up to the counter instead of being served in a comfortable lounge or the like.
+Zara (Sad): Can you believe places like this still exist? I had to come all the way up to the counter instead of being served in a comfortable lounge or the like.
 Zara: Completely absurd! My ancient ancestors we treated like gods. But I must grovel before you for basic sustenance. Oh, how we have fallen.
 Player: [pause=1] ...I’m sorry for the inconvenience ma’am.
-Zara: Oh, I know you are. I'm sure this sad abode and its conditions are not your fault. I’m sure you suffer like me.
+Zara (Neutral): Oh, I know you are. I'm sure this sad abode and its conditions are not your fault. I’m sure you suffer like me.
 Zara: Not as much of course but suffer all the same.
 Zara: Now. [pause=.3]The reason I have come here to this…place…”
 Zara: I promised that wretchedly annoying blue cat I would offer my services to you. Conditionally of course.
 Player: The Blue cat? Archimedes?
-Zara: Don’t say his name! It's bad enough to be associated with such a rapscallion as him. I don't need to think more of him then I must.
-Zara: But he thinks you can help end this turning Humans into Cats business.
+Zara (Sad): Don’t say his name! It's bad enough to be associated with such a rapscallion as him. I don't need to think more of him then I must.
+Zara (Neutral): But he thinks you can help end this turning Humans into Cats business.
 Zara: And I will not have humans be turned into such magnificent creatures as us. Dilutes the brand for us, or at least for us great ones.
 Player: So... you are going to help me?
 Zara: Yes, of course. I have something you need. But first, serve me at least to your barest minimum ability, then I will assist you.
@@ -35,7 +35,7 @@ if {Drink.Rating} == "mediocre":
 	leave Zara
 	[signal arg="clear_drink"]
 elif {Drink.Rating} == "good":
-	join Zara center
+	join Zara (Happy) center
 	Zara: Well, I suppose that was adequate. Here you go, serve this to the traitor and you may yet be able to stop thom.
 	leave Zara
 	[signal arg="clear_drink"]

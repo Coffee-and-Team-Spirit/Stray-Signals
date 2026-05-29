@@ -9,13 +9,14 @@ audio music "res://assets/audio/cafe_bgm.ogg" [fade="2.0" volume="-8.0"]
 join Archimedes center
 Player: [i]A cat's coming to the counter. I don't think I've seen this one before.[/i]
 Player: Hello! Welcome to the cafe. What can I get you?
-Archimedes: What a simply marvelous place you have here. So wonderous. So perfect in its imperfect way.
+Archimedes (Happy): What a simply marvelous place you have here. So wonderous. So perfect in its imperfect way.
 Player: Um, thank you?
 Archimedes: Why of course, my new intellectual partner in the making. I'm always happy to provide compliments to those deserving of such niceties.
 Player: ...What can I get for you today?
-Archimedes: Ah yes. My liquid for consumption. Maybe for sustenance, maybe for pleasure. Most likely both. Probably not neither.
+Archimedes (Neutral): Ah yes. My liquid for consumption. Maybe for sustenance, maybe for pleasure. Most likely both. Probably not neither.
 Archimedes: ..You know, I think this place will be a very important place in the time to come. Very important indeed.
 Archimedes: But…my drink….yes.
+update Archimedes (Happy)
 [signal arg="drink_hint"]
 Archimedes: **DRINK HINT HERE**
 leave Archimedes
@@ -24,7 +25,7 @@ label drink_rating (Scene 2 Drink Rating)
 [background arg="res://assets/temp/tempCafe/Cafe_Interior.jpg" fade="1.5" wait="true"]
 audio music "res://assets/audio/craft_drink_bgm.ogg" [fade="2.0" volume="-5.0"]
 if {Drink.Rating} == "mediocre":
-	join Archimedes center
+	join Archimedes (Happy) center
 	Archimedes: That was quite a nice little drink. Thank you for your service to my needs.
 	Archimedes: A nice drink deserves some knowledge, I would think. Proportional to the drinks' qualitative nature of course.
 	Archimedes: I do not wish to alarm…well, I might be inclined to alarm for curiosity's sake. Regardless of my own proclivities, I should warn you...
@@ -32,10 +33,10 @@ if {Drink.Rating} == "mediocre":
 	leave Archimedes
 	[signal arg="clear_drink"]
 elif {Drink.Rating} == "good":
-	join Archimedes center
+	join Archimedes (Happy) center
 	Archimedes: Now that was just pure perfection. No more. No Less.
 	Archimedes: In fact, your perfect drink deserves a perfect response from my prolifically pondering self!
-	Archimedes: I do not wish to alarm…well, I might be inclined to alarm for curiosity's sake. Regardless of my own proclivities, I should warn you...
+	Archimedes (Neutral): I do not wish to alarm…well, I might be inclined to alarm for curiosity's sake. Regardless of my own proclivities, I should warn you...
 	Archimedes: Unusual things are about. Humans are going missing. More Cats are about.
 	Archimedes: And that friend of yours. He is being followed.
 	leave Archimedes
@@ -43,7 +44,7 @@ elif {Drink.Rating} == "good":
 else:
 	# Bad
 	join Archimedes center
-	Archimedes: What a most interesting mystery. You seem to have made a truly undrinkable concoction. Let's see if you can attempt this endeavor again.
+	Archimedes (Sad): What a most interesting mystery. You seem to have made a truly undrinkable concoction. Let's see if you can attempt this endeavor again.
 	leave Loren
 	[signal arg="clear_drink"]
 	[signal arg="craft_drink"]

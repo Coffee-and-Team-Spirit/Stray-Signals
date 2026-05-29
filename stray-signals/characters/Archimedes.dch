@@ -10,12 +10,40 @@
 "style": "",
 "suffix": ""
 },
-&"default_portrait": "",
+&"default_portrait": "Neutral",
 &"description": "",
 &"display_name": "Archimedes",
 &"mirror": false,
 &"nicknames": [""],
 &"offset": Vector2(0, 0),
-&"portraits": {},
+&"portraits": {
+"Happy": {
+"export_overrides": {
+"image": "\"res://assets/art/characters/archimedes/Archimedes_Happy.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Neutral": {
+"export_overrides": {
+"image": "\"res://assets/art/characters/archimedes/Archimedes_Neutral.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Sad": {
+"export_overrides": {
+"image": "\"res://assets/art/characters/archimedes/Archimedes_Sad.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+}
+},
 &"scale": 1.0
 }
