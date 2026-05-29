@@ -16,84 +16,6 @@ var drink_traits = {
 	"cool_warm": 0
 }
 
-var flavor_traits = {
-	"cup": {
-		"fancy_cozy": 0,
-		"bitter_sweet": 0,
-		"cool_warm": 0
-	},
-	"mug": {
-		"fancy_cozy": 50,
-		"bitter_sweet": 0,
-		"cool_warm": 10
-	},
-	"wine_glass": {
-		"fancy_cozy": -50,
-		"bitter_sweet": 0,
-		"cool_warm": -10
-	},
-	"coffee": {
-		"fancy_cozy": 20,
-		"bitter_sweet": -50,
-		"cool_warm": 20
-	},
-	"mango": {
-		"fancy_cozy": 0,
-		"bitter_sweet": 60,
-		"cool_warm": 0
-	},
-	"matcha": {
-		"fancy_cozy": 30,
-		"bitter_sweet": -30,
-		"cool_warm": 10
-	},
-	"milk_tea": {
-		"fancy_cozy": 20,
-		"bitter_sweet": 20,
-		"cool_warm": 0
-	},
-	"strawberry": {
-		"fancy_cozy": -10,
-		"bitter_sweet": 30,
-		"cool_warm": -30
-	},
-	"boba": {
-		"fancy_cozy": 20,
-		"bitter_sweet": 30,
-		"cool_warm": 0
-	},
-	"catnip": {
-		"fancy_cozy": -30,
-		"bitter_sweet": -80,
-		"cool_warm": 0
-	},
-	"cream_and_treats": {
-		"fancy_cozy": 0,
-		"bitter_sweet": 50,
-		"cool_warm": 0
-	},
-	"chill": {
-		"fancy_cozy": 0,
-		"bitter_sweet": 0,
-		"cool_warm": -40
-	},
-	"heat": {
-		"fancy_cozy": 40,
-		"bitter_sweet": 0,
-		"cool_warm": 40
-	},
-	"shake": {
-		"fancy_cozy": 0,
-		"bitter_sweet": 0,
-		"cool_warm": -10
-	},
-	"stir": {
-		"fancy_cozy": -10,
-		"bitter_sweet": 0,
-		"cool_warm": -10
-	}
-}
-
 # Drag and pour with action key P
 var is_dragging_flavor : bool = false # track ingredient dragging
 var is_flavor_hovering : bool = false # track flavor hovering above cup
@@ -339,8 +261,8 @@ func _process(delta):
 
 func update_drink_traits(flavor_name):
 	print("drink flavors ", drink_traits)
-	if flavor_name in flavor_traits:
-		var traits = flavor_traits[flavor_name]
+	if flavor_name in DrinkTraits.flavor_traits:
+		var traits = DrinkTraits.flavor_traits[flavor_name]
 		for key in traits.keys():
 			drink_traits[key] += traits[key]
 			
