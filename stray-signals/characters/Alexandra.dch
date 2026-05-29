@@ -19,7 +19,7 @@
 &"portraits": {
 "Angry": {
 "export_overrides": {
-"image": "\"res://assets/art/characters/alexandra/Alexandra_Angry.png\""
+"image": "\"res://assets/art/characters/Alexandra/Alexandra_Angry.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -28,7 +28,7 @@
 },
 "Happy": {
 "export_overrides": {
-"image": "\"res://assets/art/characters/alexandra/Alexandra_Happy.png\""
+"image": "\"res://assets/art/characters/Alexandra/Alexandra_Happy.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -37,7 +37,7 @@
 },
 "Neutral": {
 "export_overrides": {
-"image": "\"res://assets/art/characters/alexandra/Alexandra_Neutral.png\""
+"image": "\"res://assets/art/characters/Alexandra/Alexandra_Neutral.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -46,7 +46,7 @@
 },
 "Sad": {
 "export_overrides": {
-"image": "\"res://assets/art/characters/alexandra/Alexandra_Sad.png\""
+"image": "\"res://assets/art/characters/Alexandra/Alexandra_Sad.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),

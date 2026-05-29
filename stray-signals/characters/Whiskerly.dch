@@ -19,7 +19,7 @@
 &"portraits": {
 "Happy": {
 "export_overrides": {
-"image": "\"res://assets/art/characters/whiskerly/Wiskerly_Happy.png\""
+"image": "\"res://assets/art/characters/Whiskerly/Wiskerly_Happy.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -28,7 +28,7 @@
 },
 "Neutral": {
 "export_overrides": {
-"image": "\"res://assets/art/characters/whiskerly/Wiskerly_Neutral.png\""
+"image": "\"res://assets/art/characters/Whiskerly/Wiskerly_Neutral.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -37,7 +37,7 @@
 },
 "Sad": {
 "export_overrides": {
-"image": "\"res://assets/art/characters/whiskerly/Wiskerly_Sad.png\""
+"image": "\"res://assets/art/characters/Whiskerly/Wiskerly_Sad.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),

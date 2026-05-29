@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b4qp8135q7hrp"
-path="res://.godot/imported/Alexandra_Neutral.png-24ce436df1fd3483fde54173a4b1aaa8.ctex"
+path="res://.godot/imported/Alexandra_Neutral.png-704602b58aba5717b517b17e9bb80090.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/characters/alexandra/Alexandra_Neutral.png"
-dest_files=["res://.godot/imported/Alexandra_Neutral.png-24ce436df1fd3483fde54173a4b1aaa8.ctex"]
+source_file="res://assets/art/characters/Alexandra/Alexandra_Neutral.png"
+dest_files=["res://.godot/imported/Alexandra_Neutral.png-704602b58aba5717b517b17e9bb80090.ctex"]
 
 [params]
 

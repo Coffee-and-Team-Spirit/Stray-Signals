@@ -19,7 +19,7 @@
 &"portraits": {
 "Angry": {
 "export_overrides": {
-"image": "\"res://assets/art/characters/gg/GG_Angry.png\""
+"image": "\"res://assets/art/characters/GG/GG_Angry.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -28,7 +28,7 @@
 },
 "Happy": {
 "export_overrides": {
-"image": "\"res://assets/art/characters/gg/GG_Happy.png\""
+"image": "\"res://assets/art/characters/GG/GG_Happy.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -37,7 +37,7 @@
 },
 "Neutral": {
 "export_overrides": {
-"image": "\"res://assets/art/characters/gg/GG_Neutral.png\""
+"image": "\"res://assets/art/characters/GG/GG_Neutral.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -46,7 +46,7 @@
 },
 "Sad": {
 "export_overrides": {
-"image": "\"res://assets/art/characters/gg/GG_Sad.png\""
+"image": "\"res://assets/art/characters/GG/GG_Sad.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),

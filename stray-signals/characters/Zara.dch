@@ -19,7 +19,7 @@
 &"portraits": {
 "Happy": {
 "export_overrides": {
-"image": "\"res://assets/art/characters/zara/Zara_Happy.png\""
+"image": "\"res://assets/art/characters/Zara/Zara_Happy.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -28,7 +28,7 @@
 },
 "Neutral": {
 "export_overrides": {
-"image": "\"res://assets/art/characters/zara/Zara_Neutral.png\""
+"image": "\"res://assets/art/characters/Zara/Zara_Neutral.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -37,7 +37,7 @@
 },
 "Sad": {
 "export_overrides": {
-"image": "\"res://assets/art/characters/zara/Zara_Sad.png\""
+"image": "\"res://assets/art/characters/Zara/Zara_Sad.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
