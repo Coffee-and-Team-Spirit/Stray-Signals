@@ -1,6 +1,10 @@
 extends Node
 
-var drink_result: String = ""
+var drink_result : String = "none"
+var drink_hint : String = "none"
+var current_character: String = "none"
+var current_portrait_info : String = "none"
+var target_drink : Dictionary = {}
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

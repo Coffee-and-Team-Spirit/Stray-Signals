@@ -1,4 +1,9 @@
 [background arg="res://assets/temp/tempCafe/Cafe_Interior.jpg" fade="1.0" wait="true"]
+if {Drink.Rating} == "none":
+	jump begin_timeline
+else:
+	jump drink_rating
+label begin_timeline
 audio music "res://assets/audio/cafe_bgm.ogg" [fade="2.0" volume="-8.0"]
 [text_input text="What is your name?" var="Player.PlayerName" placeholder="Enter your name" allow_empty="true"]
 Player: [i]Ah… [pause=0.5]another day at Cafe <Name>. [pause=0.8]After three years here, you think I’d get bored of making drinks.[/i]
@@ -23,22 +28,31 @@ Player: It's all good Loren. You’ve been coming here much longer than I have. 
 Player: Sorry to hear things haven't been great for ya. Here's hoping a drink for ya will cheer things up. At least a bit, for a bit of time.
 Loren (Happy): Ah yes, a drink. That would be just great. [pause=0.3]Clear my mind and all that.
 Player: Your usual then?
+[signal arg="drink_hint"]
 Loren: That would be just perfect. A mug with Mango and Matcha. Some Boba. Oh, and make it hot of course. My bones could use some heat.
 Player: On it!
 leave Loren
 audio music "res://assets/audio/craft_drink_bgm.ogg" [fade="2.0" volume="-8.0"]
 label d1s1_drink_rating (Scene 1 Drink Rating)
 [signal arg="craft_drink"]
+label drink_rating (Scene 1 Drink Rating)
 [background arg="res://assets/temp/tempCafe/Cafe_Interior.jpg" fade="1.0" wait="true"]
+audio music "res://assets/audio/craft_drink_bgm.ogg" [fade="2.0" volume="-5.0"]
 if {Drink.Rating} == "mediocre":
 	join Loren (Neutral) center
 	Loren (Happy): That was good. Though maybe not your best work. I'm sure my rambling distracted you is all. [pause=0.3]Anyways, I've got to get going. See you tomorrow.
+	[signal arg="clear_drink"]
 elif {Drink.Rating} == "good":
 	join Loren (Happy) center
 	Loren: This was just perfect. Thanks a bunch! [pause=0.3]Anyways, I better get going. See you tomorrow!
+	[signal arg="clear_drink"]
 else:
 	# Bad
 	join Loren (Neutral) center
 	Loren (Neutral): Now, I know you can do better than this, {Player.PlayerName}! I’ll give ya another shot.
 	leave Loren
-	jump d1s1_drink_rating
+	[signal arg="clear_drink"]
+	[signal arg="craft_drink"]
+leave Loren
+[signal arg="end_encounter"]
+[end_timeline]
