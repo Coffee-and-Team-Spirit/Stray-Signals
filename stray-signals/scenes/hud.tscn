@@ -3,9 +3,11 @@
 [ext_resource type="Texture2D" uid="uid://flmec454gow" path="res://assets/temp/day.png" id="1_5ysmq"]
 [ext_resource type="Texture2D" uid="uid://cdb55wryw5vg7" path="res://assets/temp/menu.png" id="2_6fi6k"]
 [ext_resource type="Texture2D" uid="uid://vbtk0x2ojxjb" path="res://assets/temp/notebook.png" id="3_uo2fv"]
+[ext_resource type="Script" uid="uid://bc4jq7yl223at" path="res://scenes/hud.gd" id="4_6fi6k"]
 
 [node name="HUD" type="CanvasLayer" unique_id=959292212]
-layer = 2
+process_mode = 3
+layer = 5
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=962769361]
 visible = false
@@ -60,18 +62,21 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="Menu" type="TextureRect" parent="MarginContainer/HUDDay/HUDOptions" unique_id=1065132356]
-custom_minimum_size = Vector2(40, 0)
+[node name="Menu" type="TextureButton" parent="MarginContainer/HUDDay/HUDOptions" unique_id=699086782]
+custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 size_flags_horizontal = 2
-texture = ExtResource("2_6fi6k")
-expand_mode = 4
+texture_normal = ExtResource("2_6fi6k")
+ignore_texture_size = true
 stretch_mode = 5
+script = ExtResource("4_6fi6k")
 
-[node name="Notebook" type="TextureRect" parent="MarginContainer/HUDDay/HUDOptions" unique_id=1847685752]
-custom_minimum_size = Vector2(40, 0)
+[node name="Notebook" type="TextureButton" parent="MarginContainer/HUDDay/HUDOptions" unique_id=1174021524]
+custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 size_flags_horizontal = 10
-texture = ExtResource("3_uo2fv")
-expand_mode = 4
+texture_normal = ExtResource("3_uo2fv")
+ignore_texture_size = true
 stretch_mode = 5
+
+[connection signal="pressed" from="MarginContainer/HUDDay/HUDOptions/Menu" to="MarginContainer/HUDDay/HUDOptions/Menu" method="_on_menu_button_pressed"]

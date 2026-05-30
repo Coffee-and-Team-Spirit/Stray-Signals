@@ -340,8 +340,6 @@ func finish_pouring(flavor):
 		print("SECONDARY FLAVOR: ", flavor)
 	print("FINISH POURING: ", chosen_flavors)
 
-"res://assets/art/characters/Loren/Loren_Happy.png"
-
 func _ready():
 	$DrinkComponents/DialogueHistory/DialogueHint.text = GameState.drink_hint
 	$DrinkComponents/DialogueHistory/CharacterImage.texture.atlas = load("res://assets/art/characters/%s/%s_%s.png" % [GameState.current_character, GameState.current_character, GameState.current_portrait_info])

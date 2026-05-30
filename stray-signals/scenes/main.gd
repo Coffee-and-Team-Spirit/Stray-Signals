@@ -5,10 +5,13 @@ var hud_scene = preload("res://scenes/hud.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	Dialogic.signal_event.connect(_on_signal)
+	if not Dialogic.signal_event.is_connected(_on_signal):
+		Dialogic.signal_event.connect(_on_signal)
+	#Dialogic.signal_event.connect(_on_signal)
 	
-	var current_timeline = DayManager.get_current_timeline()
-	Dialogic.start("res://timelines/%s.dtl" % current_timeline)
+	#if Dialogic.get_full_state().timeline == "":
+		#var current_timeline = DayManager.get_current_timeline()
+		#Dialogic.start("res://timelines/%s.dtl" % current_timeline)
 	
 	Dialogic.VAR.set_variable("Drink.Rating", GameState.drink_result)
 	GameState.target_drink = DrinkData.target_drinks[DayManager.day][DayManager.encounter]
@@ -45,6 +48,7 @@ func _on_signal(signal_passed_in):
 				Dialogic.Text.about_to_show_text.disconnect(_on_about_to_show_text)
 		
 			DayManager.advance_encounter()
+			Dialogic.end_timeline()
 			var current_timeline = DayManager.get_current_timeline()
 			Dialogic.start("res://timelines/%s.dtl" % current_timeline)
 
@@ -66,6 +70,6 @@ func _on_about_to_show_text(info: Dictionary):
 		print("Gamestate: curr portrait info ", GameState.current_portrait_info)
 
 
-func _input(event):
-	if event.is_action_pressed("ui_cancel"):
-		get_tree().quit()
+#func _input(event):
+	#if event.is_action_pressed("ui_cancel"):
+		#get_tree().quit()

@@ -5,10 +5,15 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f1d2v"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f1d2v"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r8yp4"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m0klm"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1xtef"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aicil"]
@@ -17,105 +22,125 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jn4bt"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xmhi0"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r1fnm"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wen6a"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xw83q"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cml1b"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="Pause" type="CanvasLayer" unique_id=1108024468]
+layer = 10
 script = ExtResource("1_f1d2v")
 
 [node name="Background" type="ColorRect" parent="." unique_id=1544118276]
-z_index = -1
+z_index = 1
 custom_minimum_size = Vector2(1920, 1080)
 offset_right = 1920.0
 offset_bottom = 1080.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
-mouse_filter = 2
-color = Color(0, 0, 0, 0.20784314)
+color = Color(0, 0, 0, 0.38431373)
 
-[node name="PauseBackground" type="ColorRect" parent="." unique_id=1296776827]
+[node name="PauseMenu" type="ColorRect" parent="." unique_id=1296776827]
+z_index = 2
 offset_left = 158.0
-offset_top = 2.0
 offset_right = 540.0
-offset_bottom = 477.0
-color = Color(0.28150788, 0.2715301, 0.50794667, 1)
+offset_bottom = 498.0
+color = Color(0.28235295, 0.27058825, 0.50980395, 1)
 
-[node name="MarginContainer" type="MarginContainer" parent="PauseBackground" unique_id=1727772753]
+[node name="MarginContainer" type="MarginContainer" parent="PauseMenu" unique_id=1727772753]
+z_index = 1
 layout_mode = 0
-offset_top = -32.5
-offset_right = 800.0
-offset_bottom = 892.5
+offset_right = 384.0
+offset_bottom = 498.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme_override_constants/margin_left = 50
-theme_override_constants/margin_top = 125
+theme_override_constants/margin_top = 115
 
-[node name="MainMenuContainer" type="VBoxContainer" parent="PauseBackground/MarginContainer" unique_id=1471873596]
+[node name="MainMenuContainer" type="VBoxContainer" parent="PauseMenu/MarginContainer" unique_id=1471873596]
+custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_constants/separation = 50
 
-[node name="SaveGame" type="Button" parent="PauseBackground/MarginContainer/MainMenuContainer" unique_id=2016487352]
+[node name="SaveGame" type="Button" parent="PauseMenu/MarginContainer/MainMenuContainer" unique_id=2016487352]
+clip_contents = true
+custom_minimum_size = Vector2(25, 0)
 layout_mode = 2
-theme_override_colors/font_hover_color = Color(0.95639485, 0.7346787, 0.868453, 1)
+theme_override_colors/font_pressed_color = Color(0.105882354, 0.09019608, 0.34117648, 1)
+theme_override_colors/font_hover_color = Color(0.95686275, 0.73333335, 0.8666667, 1)
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_f1d2v")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_f1d2v")
 theme_override_styles/hover = SubResource("StyleBoxFlat_r8yp4")
 text = "SAVE GAME"
 alignment = 0
 
-[node name="LoadGame" type="Button" parent="PauseBackground/MarginContainer/MainMenuContainer" unique_id=358591054]
+[node name="LoadGame" type="Button" parent="PauseMenu/MarginContainer/MainMenuContainer" unique_id=358591054]
 layout_mode = 2
+theme_override_colors/font_pressed_color = Color(0.10404196, 0.08853788, 0.34181657, 1)
 theme_override_colors/font_hover_color = Color(0.95639485, 0.7346787, 0.868453, 1)
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_m0klm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1xtef")
 theme_override_styles/hover = SubResource("StyleBoxFlat_aicil")
 text = "LOAD GAME"
 alignment = 0
 
-[node name="MainMenu" type="Button" parent="PauseBackground/MarginContainer/MainMenuContainer" unique_id=765021181]
+[node name="MainMenu" type="Button" parent="PauseMenu/MarginContainer/MainMenuContainer" unique_id=765021181]
 layout_mode = 2
+theme_override_colors/font_pressed_color = Color(0.10404196, 0.08853788, 0.34181657, 1)
 theme_override_colors/font_hover_color = Color(0.95639485, 0.7346787, 0.868453, 1)
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_jn4bt")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_xmhi0")
 theme_override_styles/hover = SubResource("StyleBoxFlat_r1fnm")
 text = "MAIN MENU"
 alignment = 0
 
-[node name="Settings" type="Button" parent="PauseBackground/MarginContainer/MainMenuContainer" unique_id=639175281]
+[node name="Settings" type="Button" parent="PauseMenu/MarginContainer/MainMenuContainer" unique_id=639175281]
 layout_mode = 2
+theme_override_colors/font_pressed_color = Color(0.10404196, 0.08853788, 0.34181657, 1)
 theme_override_colors/font_hover_color = Color(0.95639485, 0.7346787, 0.868453, 1)
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_wen6a")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_xw83q")
 theme_override_styles/hover = SubResource("StyleBoxFlat_cml1b")
 text = "SETTINGS"
 alignment = 0
 
-[node name="Button" type="Button" parent="PauseBackground" unique_id=1855056681]
+[node name="Button" type="Button" parent="." unique_id=1855056681]
 visible = false
-layout_mode = 0
-offset_left = 301.0
+offset_left = 459.0
 offset_top = 437.0
-offset_right = 578.0
+offset_right = 736.0
 offset_bottom = 513.0
 theme_override_font_sizes/font_size = 36
 text = "Quit"
 
-[node name="RichTextLabel" type="RichTextLabel" parent="PauseBackground" unique_id=1127124328]
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1127124328]
 visible = false
-layout_mode = 0
-offset_left = 198.0
+offset_left = 356.0
 offset_top = 38.0
-offset_right = 667.0
+offset_right = 825.0
 offset_bottom = 125.0
 theme_override_font_sizes/normal_font_size = 58
 text = "Pause Menu"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="pressed" from="PauseBackground/Button" to="." method="_on_button_pressed"]
+[connection signal="gui_input" from="Background" to="." method="_on_background_gui_input"]
+[connection signal="pressed" from="PauseMenu/MarginContainer/MainMenuContainer/SaveGame" to="." method="_on_save_game_pressed"]
+[connection signal="pressed" from="PauseMenu/MarginContainer/MainMenuContainer/LoadGame" to="." method="_on_load_game_pressed"]
+[connection signal="pressed" from="PauseMenu/MarginContainer/MainMenuContainer/MainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="PauseMenu/MarginContainer/MainMenuContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
