@@ -27,7 +27,8 @@ DrinkTraits="*uid://dggsag4eurpkd"
 
 directories/dch_directory={
 "Loren": "res://characters/Loren.dch",
-"Player": "res://characters/Player.dch"
+"Player": "res://characters/Player.dch",
+"Zara": "res://characters/Zara.dch"
 }
 directories/dtl_directory={
 "d1s1": "res://timelines/d1s1.dtl",

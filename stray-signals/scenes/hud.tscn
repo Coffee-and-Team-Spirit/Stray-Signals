@@ -1,33 +1,77 @@
 [gd_scene format=3 uid="uid://cq0cuu823f6cs"]
 
-[ext_resource type="Texture2D" uid="uid://dmmj6g7iakwxo" path="res://assets/art/cups/empty_cup_boba_cup.png" id="1_oo0fn"]
-[ext_resource type="Texture2D" uid="uid://v4nprl4ekfd1" path="res://assets/art/flavors/base_flavor_coffee.png" id="2_5ysmq"]
+[ext_resource type="Texture2D" uid="uid://flmec454gow" path="res://assets/temp/day.png" id="1_5ysmq"]
+[ext_resource type="Texture2D" uid="uid://cdb55wryw5vg7" path="res://assets/temp/menu.png" id="2_6fi6k"]
+[ext_resource type="Texture2D" uid="uid://vbtk0x2ojxjb" path="res://assets/temp/notebook.png" id="3_uo2fv"]
 
 [node name="HUD" type="CanvasLayer" unique_id=959292212]
 layer = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=962769361]
+visible = false
 position = Vector2(108, 111)
 scale = Vector2(0.3671875, 0.3671875)
-texture = ExtResource("1_oo0fn")
+texture = ExtResource("1_5ysmq")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1300462949]
-offset_left = 49.0
-offset_top = 102.0
-offset_right = 165.0
-offset_bottom = 165.0
+[node name="BaseFlavorCoffee" type="Sprite2D" parent="." unique_id=1075982837]
+visible = false
+position = Vector2(81, 189)
+scale = Vector2(0.27539063, 0.27539063)
+texture = ExtResource("2_6fi6k")
+
+[node name="BaseFlavorCoffee2" type="Sprite2D" parent="." unique_id=1802976892]
+visible = false
+position = Vector2(133, 190)
+scale = Vector2(0.27539063, 0.27539063)
+texture = ExtResource("3_uo2fv")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=292035484]
+offset_right = 100.0
+offset_bottom = 144.0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+
+[node name="HUDDay" type="VBoxContainer" parent="MarginContainer" unique_id=273102397]
+layout_mode = 2
+alignment = 1
+
+[node name="Day" type="TextureRect" parent="MarginContainer/HUDDay" unique_id=1290148431]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+texture = ExtResource("1_5ysmq")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="DayText" type="RichTextLabel" parent="MarginContainer/HUDDay/Day" unique_id=1300462949]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 26
 text = "Day 1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="BaseFlavorCoffee" type="Sprite2D" parent="." unique_id=1075982837]
-position = Vector2(62.000004, 198.00002)
-scale = Vector2(0.27539063, 0.27539063)
-texture = ExtResource("2_5ysmq")
+[node name="HUDOptions" type="HBoxContainer" parent="MarginContainer/HUDDay" unique_id=2133456695]
+layout_mode = 2
+size_flags_vertical = 4
 
-[node name="BaseFlavorCoffee2" type="Sprite2D" parent="." unique_id=1802976892]
-position = Vector2(161, 198.00002)
-scale = Vector2(0.27539063, 0.27539063)
-texture = ExtResource("2_5ysmq")
+[node name="Menu" type="TextureRect" parent="MarginContainer/HUDDay/HUDOptions" unique_id=1065132356]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+size_flags_horizontal = 2
+texture = ExtResource("2_6fi6k")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="Notebook" type="TextureRect" parent="MarginContainer/HUDDay/HUDOptions" unique_id=1847685752]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+texture = ExtResource("3_uo2fv")
+expand_mode = 4
+stretch_mode = 5
