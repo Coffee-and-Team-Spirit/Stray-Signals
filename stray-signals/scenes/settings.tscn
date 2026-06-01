@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://brp6e32b60vj0"]
 
 [ext_resource type="Script" uid="uid://fyxcg6y47cmq" path="res://scenes/settings.gd" id="1_5p8wc"]
-[ext_resource type="Script" uid="uid://cdailehem08kr" path="res://scenes/main_menu.gd" id="1_r6d6q"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_36l1p"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -94,7 +93,6 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_am25x")
 theme_override_styles/hover = SubResource("StyleBoxFlat_6wm04")
 text = "LOAD GAME"
 alignment = 0
-script = ExtResource("1_r6d6q")
 
 [node name="Gallery" type="Button" parent="MenuBackground/MarginContainer/MainMenuContainer" unique_id=1154437001]
 layout_mode = 2
@@ -147,5 +145,5 @@ offset_top = 206.0
 offset_right = 1753.0
 offset_bottom = 857.0
 
-[connection signal="pressed" from="MenuBackground/MarginContainer/MainMenuContainer/LoadGame" to="MenuBackground/MarginContainer/MainMenuContainer/NewGame" method="_on_new_game_pressed"]
+[connection signal="pressed" from="MenuBackground/MarginContainer/MainMenuContainer/LoadGame" to="Back" method="_on_load_game_pressed"]
 [connection signal="pressed" from="Back" to="Back" method="_on_back_pressed"]

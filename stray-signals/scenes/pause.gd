@@ -57,9 +57,22 @@ func _on_settings_pressed() -> void:
 
 func _on_background_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed:
-		hide()
+		close_pause_menu()
+
+
+func open_pause_menu() -> void:
+	visible = true
+
+	$Background.mouse_filter = Control.MOUSE_FILTER_STOP
+	$PauseMenu.mouse_filter = Control.MOUSE_FILTER_STOP
+
+
+func close_pause_menu() -> void:
+	visible = false
+
+	$Background.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	$PauseMenu.mouse_filter = Control.MOUSE_FILTER_IGNORE
 
 
 func _unhandled_input(event):
-	if event.is_action_pressed("ui_cancel"):
-		visible = false
+	pass

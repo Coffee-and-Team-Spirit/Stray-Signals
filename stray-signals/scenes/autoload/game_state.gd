@@ -25,3 +25,10 @@ func load_game() -> void:
 		
 		print("LOAD")
 		Dialogic.Save.load("autosave")
+	
+	# Instance gameplay scene
+	var main_scene = preload("res://scenes/main.tscn").instantiate()
+	get_tree().current_scene.add_child(main_scene)
+	
+	# Show HUD
+	get_tree().current_scene.get_node("HUD").visible = true

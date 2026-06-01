@@ -31,18 +31,11 @@ func _on_new_game_pressed() -> void:
 
 func _on_load_game_pressed() -> void:
 	GameState.load_game()
-	#get_tree().change_scene_to_file("res://scenes/main.tscn")
+	
 	print("Load game - main menu")
-
+	
 	# Hide menu
 	get_tree().current_scene.get_node("MainMenu").visible = false
-	
-	# Instance gameplay scene
-	var main_scene = preload("res://scenes/main.tscn").instantiate()
-	get_tree().current_scene.add_child(main_scene)
-	
-	# Show HUD
-	get_tree().current_scene.get_node("HUD").visible = true
 
 
 func _on_settings_pressed() -> void:
