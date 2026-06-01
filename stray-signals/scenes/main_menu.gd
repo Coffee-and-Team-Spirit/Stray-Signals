@@ -46,7 +46,7 @@ func _on_load_game_pressed() -> void:
 
 
 func _on_settings_pressed() -> void:
-		# Hide menu
+	# Hide menu
 	get_tree().current_scene.get_node("MainMenu").visible = false
 		
 	# Instance gameplay scene

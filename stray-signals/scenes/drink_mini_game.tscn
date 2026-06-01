@@ -70,12 +70,11 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 
 [node name="DrinkMiniGame" type="Control" unique_id=230215315]
+z_index = 30
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
 script = ExtResource("1_dqtyw")
 
 [node name="PlayerComponents" type="VBoxContainer" parent="." unique_id=1577458315]

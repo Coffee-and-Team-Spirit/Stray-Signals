@@ -5,6 +5,7 @@ var encounter : int = 1
 
 
 func get_current_timeline() -> String:
+	print("TIMELINE : d%ss%s" % [day, encounter])
 	return "d%ss%s" % [day, encounter]
 
 func advance_encounter():

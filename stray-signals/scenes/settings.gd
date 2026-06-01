@@ -12,4 +12,4 @@ func _process(delta: float) -> void:
 
 
 func _on_back_pressed() -> void:
-	pass # Replace with function body.
+	pass

@@ -9,24 +9,6 @@
 process_mode = 3
 layer = 5
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=962769361]
-visible = false
-position = Vector2(108, 111)
-scale = Vector2(0.3671875, 0.3671875)
-texture = ExtResource("1_5ysmq")
-
-[node name="BaseFlavorCoffee" type="Sprite2D" parent="." unique_id=1075982837]
-visible = false
-position = Vector2(81, 189)
-scale = Vector2(0.27539063, 0.27539063)
-texture = ExtResource("2_6fi6k")
-
-[node name="BaseFlavorCoffee2" type="Sprite2D" parent="." unique_id=1802976892]
-visible = false
-position = Vector2(133, 190)
-scale = Vector2(0.27539063, 0.27539063)
-texture = ExtResource("3_uo2fv")
-
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=292035484]
 offset_right = 100.0
 offset_bottom = 144.0
@@ -54,7 +36,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 26
-text = "Day 1"
+text = "#"
 horizontal_alignment = 1
 vertical_alignment = 1
 

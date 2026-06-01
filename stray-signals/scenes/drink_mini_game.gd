@@ -239,8 +239,17 @@ func evaluate_drink_rating(score) -> String:
 
 func _on_serve_pressed() -> void:
 	GameState.drink_result = evaluate_drink_rating(score_drink())
-	#GameState.drink_finished.emit(player_drink_result)
-	get_tree().change_scene_to_file("res://scenes/main.tscn")
+	
+	var game_root = get_tree().current_scene
+	queue_free()
+	
+	game_root.get_node("HUD").visible = true
+	
+	Dialogic.VAR.set_variable("Drink.Rating", GameState.drink_result)
+
+	var current_timeline = DayManager.get_current_timeline()
+	print("DEBUG TIMELINE: ", current_timeline)
+	Dialogic.start("res://timelines/%s.dtl" % current_timeline, "drink_rating")
 
 
 func _on_reset_pressed() -> void:
@@ -288,6 +297,7 @@ func _process(delta):
 		var required_pour_time = POUR_TIME if pour_stage == 0 else POUR_TIME * 2
 		if pour_amount >= required_pour_time:
 			finish_pouring(current_hovered_flavor)
+
 
 func update_drink_traits(flavor_name):
 	print("drink flavors ", player_drink_traits)
@@ -338,6 +348,7 @@ func finish_pouring(flavor):
 		is_pouring_flavor = false
 		is_pouring_action = false
 		print("SECONDARY FLAVOR: ", flavor)
+		
 	print("FINISH POURING: ", chosen_flavors)
 
 func _ready():

@@ -15,9 +15,6 @@ func _ready() -> void:
 	
 	Dialogic.VAR.set_variable("Drink.Rating", GameState.drink_result)
 	GameState.target_drink = DrinkData.target_drinks[DayManager.day][DayManager.encounter]
-	
-	var hud_instance = hud_scene.instantiate()
-	add_child(hud_instance)
 
 
 func _on_signal(signal_passed_in):
@@ -28,7 +25,15 @@ func _on_signal(signal_passed_in):
 			
 			# go to crafting drink mini-game
 			Dialogic.end_timeline()
-			get_tree().change_scene_to_file("res://scenes/drink_mini_game.tscn")
+			
+			var game_root = get_tree().current_scene
+			var mini_game_scene = preload("res://scenes/drink_mini_game.tscn").instantiate()
+			mini_game_scene.name = "DrinkMiniGame"
+			
+			game_root.add_child(mini_game_scene)
+		
+			# Show HUD
+			get_tree().current_scene.get_node("HUD").visible = true
 
 		"clear_drink":
 			if GameState.drink_result != "bad":
@@ -46,7 +51,8 @@ func _on_signal(signal_passed_in):
 			
 			if Dialogic.Text.about_to_show_text.is_connected(_on_about_to_show_text):
 				Dialogic.Text.about_to_show_text.disconnect(_on_about_to_show_text)
-		
+			
+			print("end_encounter flag")
 			DayManager.advance_encounter()
 			Dialogic.end_timeline()
 			var current_timeline = DayManager.get_current_timeline()
