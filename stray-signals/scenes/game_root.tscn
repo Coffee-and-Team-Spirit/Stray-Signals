@@ -3,12 +3,17 @@
 [ext_resource type="Script" uid="uid://88dut8tid1kw" path="res://scenes/game_root.gd" id="1_ni5ms"]
 [ext_resource type="PackedScene" uid="uid://btapyl7u3unes" path="res://scenes/main_menu.tscn" id="2_jb3nc"]
 [ext_resource type="PackedScene" uid="uid://cqnah8bf2730h" path="res://scenes/pause.tscn" id="2_uebra"]
+[ext_resource type="PackedScene" uid="uid://brp6e32b60vj0" path="res://scenes/settings.tscn" id="3_iusj4"]
 [ext_resource type="PackedScene" uid="uid://cq0cuu823f6cs" path="res://scenes/hud.tscn" id="4_jb3nc"]
 
 [node name="GameRoot" type="Node2D" unique_id=1365270137]
 script = ExtResource("1_ni5ms")
 
 [node name="MainMenu" parent="." unique_id=1281184125 instance=ExtResource("2_jb3nc")]
+visible = false
+
+[node name="Settings" parent="." unique_id=490838427 instance=ExtResource("3_iusj4")]
+visible = false
 
 [node name="Pause" parent="." unique_id=1108024468 instance=ExtResource("2_uebra")]
 visible = false

@@ -1,149 +1,220 @@
 [gd_scene format=3 uid="uid://brp6e32b60vj0"]
 
-[ext_resource type="Script" uid="uid://fyxcg6y47cmq" path="res://scenes/settings.gd" id="1_5p8wc"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_36l1p"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_am25x"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5p8wc"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r6d6q"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6wm04"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f4mfi"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_es4n0"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gis3k"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_83j8s"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
+[ext_resource type="PackedScene" uid="uid://d1pkrbdjn820w" path="res://scenes/sub_menu.tscn" id="1_5p8wc"]
+[ext_resource type="Script" uid="uid://fyxcg6y47cmq" path="res://scenes/settings.gd" id="1_r6d6q"]
+[ext_resource type="Texture2D" uid="uid://dg0vwi8mwerfy" path="res://assets/art/backgrounds/Main_Menu_Background.png" id="2_f4mfi"]
+[ext_resource type="Texture2D" uid="uid://nvkr0ljxpqlw" path="res://assets/temp/settings_doodles.png" id="4_es4n0"]
+[ext_resource type="Texture2D" uid="uid://cqg3gi3megs3e" path="res://assets/temp/music_off.png" id="5_gis3k"]
+[ext_resource type="Texture2D" uid="uid://dxv56n3kd14t6" path="res://assets/temp/music_on.png" id="6_83j8s"]
+[ext_resource type="Texture2D" uid="uid://wc6wl8wnnh5s" path="res://assets/temp/audio_off.png" id="7_gjs24"]
+[ext_resource type="Texture2D" uid="uid://u66b2cuhq8jm" path="res://assets/temp/audio_on.png" id="8_am25x"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gjs24"]
-bg_color = Color(0.28235295, 0.27058825, 0.50980395, 1)
-expand_margin_left = 10.0
-expand_margin_top = 10.0
-expand_margin_right = 10.0
-expand_margin_bottom = 10.0
+content_margin_top = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(1, 0.49019608, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 20
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ppmf"]
-bg_color = Color(0.28235295, 0.27058825, 0.50980395, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gis3k"]
+bg_color = Color(0.05882353, 0.05490196, 0.13725491, 0.4862745)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 20
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uhhto"]
-bg_color = Color(0.28235295, 0.27058825, 0.50980395, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_83j8s"]
+bg_color = Color(0.05882353, 0.05490196, 0.13725491, 0.4862745)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 20
 
-[node name="Settings" type="Node2D" unique_id=1617772527]
+[node name="Settings" type="Control" unique_id=490838427]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_r6d6q")
 
-[node name="Background" type="ColorRect" parent="." unique_id=270288724]
-z_index = -1
-custom_minimum_size = Vector2(1920, 1080)
-size_flags_horizontal = 4
-size_flags_vertical = 4
-mouse_filter = 2
-color = Color(0, 0, 0, 1)
+[node name="Background" type="TextureRect" parent="." unique_id=644793827]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_f4mfi")
 
-[node name="MenuBackground" type="ColorRect" parent="." unique_id=1076490736]
-offset_left = 158.0
-offset_right = 540.0
-offset_bottom = 546.0
+[node name="SubMenu" parent="." unique_id=710927500 instance=ExtResource("1_5p8wc")]
+layout_mode = 0
+
+[node name="SettingsBackground" type="ColorRect" parent="." unique_id=1267164169]
+layout_mode = 0
+offset_left = 640.0
+offset_top = 182.0
+offset_right = 1862.0
+offset_bottom = 1014.0
+color = Color(0.105882354, 0.09019608, 0.34117648, 1)
+
+[node name="Pagination" type="ColorRect" parent="SettingsBackground" unique_id=1966541774]
+layout_mode = 0
+offset_left = 31.0
+offset_top = -67.0
+offset_right = 102.0
 color = Color(0.28235295, 0.27058825, 0.50980395, 1)
 
-[node name="MarginContainer" type="MarginContainer" parent="MenuBackground" unique_id=1748348124]
+[node name="Page1" type="RichTextLabel" parent="SettingsBackground/Pagination" unique_id=1199295165]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 28
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Doodles" type="TextureRect" parent="SettingsBackground" unique_id=451095957]
 layout_mode = 0
-offset_top = -32.5
-offset_right = 381.0
-offset_bottom = 548.0
-size_flags_horizontal = 0
-size_flags_vertical = 0
-theme_override_constants/margin_left = 50
-theme_override_constants/margin_top = 125
+offset_left = 675.0
+offset_top = 32.0
+offset_right = 1160.0
+offset_bottom = 799.5318
+texture = ExtResource("4_es4n0")
+expand_mode = 4
+stretch_mode = 5
 
-[node name="MainMenuContainer" type="VBoxContainer" parent="MenuBackground/MarginContainer" unique_id=1667203665]
+[node name="MarginContainer" type="MarginContainer" parent="SettingsBackground" unique_id=1384023663]
+layout_mode = 0
+offset_right = 628.0
+offset_bottom = 830.0
+
+[node name="ContentArea" type="VBoxContainer" parent="SettingsBackground/MarginContainer" unique_id=1689686663]
+custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
-theme_override_constants/separation = 50
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 100
 
-[node name="NewGame" type="Button" parent="MenuBackground/MarginContainer/MainMenuContainer" unique_id=1465412414]
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsBackground/MarginContainer/ContentArea" unique_id=1961338713]
 layout_mode = 2
-theme_override_colors/font_pressed_color = Color(0.105882354, 0.09019608, 0.34117648, 1)
-theme_override_colors/font_hover_color = Color(0.95639485, 0.7346787, 0.868453, 1)
-theme_override_font_sizes/font_size = 25
-theme_override_styles/normal = SubResource("StyleBoxFlat_36l1p")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_am25x")
-theme_override_styles/hover = SubResource("StyleBoxFlat_5p8wc")
-text = "NEW GAME"
-alignment = 0
+theme_override_constants/separation = 40
 
-[node name="LoadGame" type="Button" parent="MenuBackground/MarginContainer/MainMenuContainer" unique_id=126195411]
+[node name="Audio" type="RichTextLabel" parent="SettingsBackground/MarginContainer/ContentArea/VBoxContainer" unique_id=322496233]
+custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
-theme_override_colors/font_pressed_color = Color(0.105882354, 0.09019608, 0.34117648, 1)
-theme_override_colors/font_hover_color = Color(0.95639485, 0.7346787, 0.868453, 1)
-theme_override_font_sizes/font_size = 25
-theme_override_styles/normal = SubResource("StyleBoxFlat_r6d6q")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_am25x")
-theme_override_styles/hover = SubResource("StyleBoxFlat_6wm04")
-text = "LOAD GAME"
-alignment = 0
+theme_override_font_sizes/normal_font_size = 30
+text = "AUDIO"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Gallery" type="Button" parent="MenuBackground/MarginContainer/MainMenuContainer" unique_id=1154437001]
+[node name="MusicVolume" type="VBoxContainer" parent="SettingsBackground/MarginContainer/ContentArea/VBoxContainer" unique_id=315061578]
 layout_mode = 2
-theme_override_colors/font_pressed_color = Color(0.105882354, 0.09019608, 0.34117648, 1)
-theme_override_colors/font_hover_color = Color(0.95639485, 0.7346787, 0.868453, 1)
-theme_override_font_sizes/font_size = 25
-theme_override_styles/normal = SubResource("StyleBoxFlat_f4mfi")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_am25x")
-theme_override_styles/hover = SubResource("StyleBoxFlat_es4n0")
-text = "GALLERY"
-alignment = 0
 
-[node name="Settings" type="Button" parent="MenuBackground/MarginContainer/MainMenuContainer" unique_id=87195306]
+[node name="MusicLabel" type="RichTextLabel" parent="SettingsBackground/MarginContainer/ContentArea/VBoxContainer/MusicVolume" unique_id=2136453595]
 layout_mode = 2
-theme_override_colors/font_pressed_color = Color(0.105882354, 0.09019608, 0.34117648, 1)
-theme_override_colors/font_hover_color = Color(0.95639485, 0.7346787, 0.868453, 1)
-theme_override_font_sizes/font_size = 25
-theme_override_styles/normal = SubResource("StyleBoxFlat_gis3k")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_am25x")
-theme_override_styles/hover = SubResource("StyleBoxFlat_83j8s")
-text = "SETTINGS"
-alignment = 0
+text = "Music Volume"
+fit_content = true
+horizontal_alignment = 1
 
-[node name="Credits" type="Button" parent="MenuBackground/MarginContainer/MainMenuContainer" unique_id=741296030]
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingsBackground/MarginContainer/ContentArea/VBoxContainer/MusicVolume" unique_id=435968350]
 layout_mode = 2
-theme_override_colors/font_pressed_color = Color(0.105882354, 0.09019608, 0.34117648, 1)
-theme_override_colors/font_hover_color = Color(0.95639485, 0.7346787, 0.868453, 1)
-theme_override_font_sizes/font_size = 25
-theme_override_styles/normal = SubResource("StyleBoxFlat_gis3k")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_am25x")
-theme_override_styles/hover = SubResource("StyleBoxFlat_83j8s")
-text = "CREDITS"
-alignment = 0
 
-[node name="Back" type="Button" parent="." unique_id=962706296]
-offset_left = 136.0
-offset_top = 923.0
-offset_right = 219.0
-offset_bottom = 981.0
-theme_override_font_sizes/font_size = 36
-theme_override_styles/normal = SubResource("StyleBoxFlat_gjs24")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_4ppmf")
-theme_override_styles/hover = SubResource("StyleBoxFlat_uhhto")
-text = "BACK"
-script = ExtResource("1_5p8wc")
+[node name="TextureRect" type="TextureRect" parent="SettingsBackground/MarginContainer/ContentArea/VBoxContainer/MusicVolume/HBoxContainer" unique_id=789707604]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("5_gis3k")
+expand_mode = 1
+stretch_mode = 5
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1293896761]
-offset_left = 664.0
-offset_top = 206.0
-offset_right = 1753.0
-offset_bottom = 857.0
+[node name="HSlider" type="HSlider" parent="SettingsBackground/MarginContainer/ContentArea/VBoxContainer/MusicVolume/HBoxContainer" unique_id=21316829]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/slider = SubResource("StyleBoxFlat_gjs24")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_gis3k")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_83j8s")
 
-[connection signal="pressed" from="MenuBackground/MarginContainer/MainMenuContainer/LoadGame" to="Back" method="_on_load_game_pressed"]
-[connection signal="pressed" from="Back" to="Back" method="_on_back_pressed"]
+[node name="TextureRect2" type="TextureRect" parent="SettingsBackground/MarginContainer/ContentArea/VBoxContainer/MusicVolume/HBoxContainer" unique_id=285386844]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("6_83j8s")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="SFXVolume" type="VBoxContainer" parent="SettingsBackground/MarginContainer/ContentArea/VBoxContainer" unique_id=1551193756]
+layout_mode = 2
+
+[node name="SFXLabel" type="RichTextLabel" parent="SettingsBackground/MarginContainer/ContentArea/VBoxContainer/SFXVolume" unique_id=1245433319]
+layout_mode = 2
+text = "SFX Volume"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingsBackground/MarginContainer/ContentArea/VBoxContainer/SFXVolume" unique_id=2050244572]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="SettingsBackground/MarginContainer/ContentArea/VBoxContainer/SFXVolume/HBoxContainer" unique_id=294375170]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("7_gjs24")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="HSlider" type="HSlider" parent="SettingsBackground/MarginContainer/ContentArea/VBoxContainer/SFXVolume/HBoxContainer" unique_id=468375249]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/slider = SubResource("StyleBoxFlat_gjs24")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_gis3k")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_83j8s")
+
+[node name="TextureRect2" type="TextureRect" parent="SettingsBackground/MarginContainer/ContentArea/VBoxContainer/SFXVolume/HBoxContainer" unique_id=1331831028]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("8_am25x")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="SettingsBackground/MarginContainer/ContentArea" unique_id=870620683]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Text" type="RichTextLabel" parent="SettingsBackground/MarginContainer/ContentArea/VBoxContainer2" unique_id=326201505]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 30
+text = "TEXT"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextSpeed" type="VBoxContainer" parent="SettingsBackground/MarginContainer/ContentArea/VBoxContainer2" unique_id=281789354]
+layout_mode = 2
+
+[node name="TextLabel" type="RichTextLabel" parent="SettingsBackground/MarginContainer/ContentArea/VBoxContainer2/TextSpeed" unique_id=753312652]
+layout_mode = 2
+text = "Text Speed"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingsBackground/MarginContainer/ContentArea/VBoxContainer2/TextSpeed" unique_id=1064437849]
+layout_mode = 2
+alignment = 1
+
+[node name="HSlider" type="HSlider" parent="SettingsBackground/MarginContainer/ContentArea/VBoxContainer2/TextSpeed/HBoxContainer" unique_id=928130891]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/slider = SubResource("StyleBoxFlat_gjs24")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_gis3k")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_83j8s")

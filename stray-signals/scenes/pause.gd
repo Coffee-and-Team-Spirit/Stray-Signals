@@ -74,5 +74,6 @@ func close_pause_menu() -> void:
 	$PauseMenu.mouse_filter = Control.MOUSE_FILTER_IGNORE
 
 
-func _unhandled_input(event):
-	pass
+func _input(event):
+	if visible and event.is_action_pressed("ui_cancel"):
+		close_pause_menu()

@@ -14,15 +14,17 @@ func _on_new_game_pressed() -> void:
 	if Dialogic.Save.has_slot("autosave"):
 		Dialogic.Save.delete_slot("autosave")
 		
+	var game_root = get_tree().current_scene
+	
 	# Hide menu
-	get_tree().current_scene.get_node("MainMenu").visible = false
+	game_root.get_node("MainMenu").visible = false
 		
 	# Instance gameplay scene
 	var main_scene = preload("res://scenes/main.tscn").instantiate()
-	get_tree().current_scene.add_child(main_scene)
+	game_root.add_child(main_scene)
 		
 	# Show HUD
-	get_tree().current_scene.get_node("HUD").visible = true
+	game_root.get_node("HUD").visible = true
 	
 	# Start first timeline
 	var first_timeline = DayManager.get_current_timeline()
@@ -40,8 +42,7 @@ func _on_load_game_pressed() -> void:
 
 func _on_settings_pressed() -> void:
 	# Hide menu
+	var game_root = get_tree().current_scene
+	
 	get_tree().current_scene.get_node("MainMenu").visible = false
-		
-	# Instance gameplay scene
-	var settings_scene = preload("res://scenes/settings.tscn").instantiate()
-	get_tree().current_scene.add_child(settings_scene)
+	get_tree().current_scene.get_node("Settings").visible = true
