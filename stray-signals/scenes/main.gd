@@ -69,9 +69,19 @@ func _on_about_to_show_text(info: Dictionary):
 		GameState.drink_hint = dialogue_drink_hint
 
 		var current_speaker = Dialogic.Text.get_current_speaker()
+		if current_speaker ==  null:
+			return
+			
+		var character_info = Dialogic.Portraits.get_character_info(current_speaker)
+		if character_info == null:
+			return 
+			
+		if not character_info.has("portrait"):
+			return
+			
 		GameState.current_character = current_speaker.display_name
-		GameState.current_portrait_info = (Dialogic.Portraits.get_character_info(current_speaker))["portrait"]
-
+		GameState.current_portrait_info = character_info["portrait"]
+		
 		print("Gamestate: curr char ", GameState.current_character)
 		print("Gamestate: curr portrait info ", GameState.current_portrait_info)
 

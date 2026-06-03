@@ -4,9 +4,6 @@ extends Node
 var target_drinks = {
 	1: {
 		1: {
-			"fancy_cozy": 8, 
-			"bitter_sweet": 5,
-			"cool_warm": 6,
 			"perfect": {
 				"ingredients": {
 					"flavors": ["matcha", "mango"],
@@ -28,13 +25,25 @@ var target_drinks = {
 			"bad": {}
 		},
 		2: {
-			"fancy_cozy": 8, 
-			"bitter_sweet": 5,
-			"cool_warm": 6 
+			"perfect": {
+				"ingredients": {
+					"flavors": ["matcha"],
+					"modification": "stir"
+				},
+				"stats": {
+					"fancy_cozy_category": [4, 3]
+				}
+			},
+			"good": {
+				"ingredients": {
+					"flavors": ["matcha"]
+				},
+				"stats": {
+					"fancy_cozy_category": [2]
+				}
+			},
+			"bad": {}
 		},
-		3: {
-			
-		}
 	},
 	2: {
 		1: {
