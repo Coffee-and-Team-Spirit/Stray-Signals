@@ -54,13 +54,25 @@ func _on_main_menu_pressed() -> void:
 func _on_settings_pressed() -> void:
 	GameState.settings_return_target = "pause_menu"
 	visible = false
+	
+	$Background.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	$PauseMenu.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	
 	print("pause screen")
 	get_tree().current_scene.get_node("SettingsOverlay").visible = true
+	
+	var game_root = get_tree().root.get_node("GameRoot")
+	var settings = game_root.get_node("SettingsOverlay/Settings")
+	
+	settings.get_node("SubMenu").visible = false
+	settings.get_node("Background").visible = false
+	settings.get_node("Pause").visible = true
 
 
 func _on_background_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed:
 		close_pause_menu()
+		close_settings_overlay()
 
 
 func open_pause_menu() -> void:
@@ -77,10 +89,29 @@ func close_pause_menu() -> void:
 	$PauseMenu.mouse_filter = Control.MOUSE_FILTER_IGNORE
 
 
+func close_settings_overlay():
+	visible = false
+	
+	$Background.mouse_filter = Control.MOUSE_FILTER_STOP
+	$PauseMenu.mouse_filter = Control.MOUSE_FILTER_STOP
+	
+	if GameState.settings_return_target == "pause_menu":
+		get_tree().paused = false
+		
+		var game_root = get_tree().root.get_node("GameRoot")
+		game_root.get_node("SettingsOverlay").visible = false
+		
+		# Resume Dialogic
+		if Dialogic.paused:
+			Dialogic.paused = false
+
+
 func _input(event):
 	if visible and event.is_action_pressed("ui_cancel"):
 		close_pause_menu()
+		close_settings_overlay()
 
 
 func _on_back_pressed() -> void:
 	close_pause_menu()
+	close_settings_overlay()
