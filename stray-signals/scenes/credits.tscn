@@ -1,0 +1,396 @@
+[gd_scene format=3 uid="uid://b0vyjocrqsixo"]
+
+[ext_resource type="Script" uid="uid://cdwm5lont4reo" path="res://scenes/credits.gd" id="1_0ctdu"]
+[ext_resource type="Texture2D" uid="uid://dg0vwi8mwerfy" path="res://assets/art/backgrounds/Main_Menu_Background.png" id="2_2fbfq"]
+[ext_resource type="PackedScene" uid="uid://d1pkrbdjn820w" path="res://scenes/sub_menu.tscn" id="3_8gwij"]
+[ext_resource type="Texture2D" uid="uid://flmec454gow" path="res://assets/temp/day.png" id="4_2fbfq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8gwij"]
+bg_color = Color(0.28235295, 0.27058825, 0.50980395, 1)
+corner_radius_top_left = 20
+corner_radius_bottom_left = 20
+
+[node name="Credits" type="Control" unique_id=1204340958]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0ctdu")
+
+[node name="Background" type="TextureRect" parent="." unique_id=674863279]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_2fbfq")
+
+[node name="SubMenu" parent="." unique_id=1812428688 instance=ExtResource("3_8gwij")]
+layout_mode = 0
+
+[node name="SettingsBackground" type="ColorRect" parent="." unique_id=1746689263]
+layout_mode = 0
+offset_left = 640.0
+offset_top = 182.0
+offset_right = 1862.0
+offset_bottom = 1014.0
+color = Color(0.105882354, 0.09019608, 0.34117648, 1)
+
+[node name="Pagination" type="ColorRect" parent="SettingsBackground" unique_id=1255659593]
+layout_mode = 0
+offset_left = 31.0
+offset_top = -67.0
+offset_right = 102.0
+color = Color(0.28235295, 0.27058825, 0.50980395, 1)
+
+[node name="Page1" type="RichTextLabel" parent="SettingsBackground/Pagination" unique_id=269982431]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 28
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LeftContent" type="MarginContainer" parent="SettingsBackground" unique_id=2147150868]
+layout_mode = 0
+offset_right = 628.0
+offset_bottom = 830.0
+theme_override_constants/margin_top = 35
+
+[node name="ContentArea" type="VBoxContainer" parent="SettingsBackground/LeftContent" unique_id=754110085]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_constants/separation = 100
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsBackground/LeftContent/ContentArea" unique_id=1721688415]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="DevTeam" type="RichTextLabel" parent="SettingsBackground/LeftContent/ContentArea/VBoxContainer" unique_id=186698748]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 30
+text = "DEV TEAM"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Alexis" type="HBoxContainer" parent="SettingsBackground/LeftContent/ContentArea/VBoxContainer" unique_id=861435993]
+layout_mode = 2
+
+[node name="PersonPhoto" type="TextureRect" parent="SettingsBackground/LeftContent/ContentArea/VBoxContainer/Alexis" unique_id=417230530]
+z_index = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("4_2fbfq")
+expand_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="SettingsBackground/LeftContent/ContentArea/VBoxContainer/Alexis" unique_id=2094269513]
+layout_mode = 2
+theme_override_constants/margin_left = -75
+
+[node name="MarginContainer" type="MarginContainer" parent="SettingsBackground/LeftContent/ContentArea/VBoxContainer/Alexis/MarginContainer" unique_id=954974705]
+layout_mode = 2
+theme_override_constants/margin_left = 85
+theme_override_constants/margin_top = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsBackground/LeftContent/ContentArea/VBoxContainer/Alexis/MarginContainer/MarginContainer" unique_id=1818715746]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="SettingsBackground/LeftContent/ContentArea/VBoxContainer/Alexis/MarginContainer/MarginContainer/VBoxContainer" unique_id=1595451469]
+z_index = 2
+layout_mode = 2
+text = "LEAD PROGRAMMER"
+fit_content = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="SettingsBackground/LeftContent/ContentArea/VBoxContainer/Alexis/MarginContainer/MarginContainer/VBoxContainer" unique_id=1162465384]
+z_index = 2
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+text = "Alexis Koss"
+fit_content = true
+
+[node name="PersonInfo" type="Panel" parent="SettingsBackground/LeftContent/ContentArea/VBoxContainer/Alexis/MarginContainer" unique_id=1229132138]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8gwij")
+
+[node name="Bryn" type="HBoxContainer" parent="SettingsBackground/LeftContent/ContentArea/VBoxContainer" unique_id=827738616]
+layout_mode = 2
+
+[node name="PersonPhoto" type="TextureRect" parent="SettingsBackground/LeftContent/ContentArea/VBoxContainer/Bryn" unique_id=109924964]
+z_index = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("4_2fbfq")
+expand_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="SettingsBackground/LeftContent/ContentArea/VBoxContainer/Bryn" unique_id=1058292891]
+layout_mode = 2
+theme_override_constants/margin_left = -75
+
+[node name="MarginContainer" type="MarginContainer" parent="SettingsBackground/LeftContent/ContentArea/VBoxContainer/Bryn/MarginContainer" unique_id=733064556]
+layout_mode = 2
+theme_override_constants/margin_left = 85
+theme_override_constants/margin_top = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsBackground/LeftContent/ContentArea/VBoxContainer/Bryn/MarginContainer/MarginContainer" unique_id=926348359]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="SettingsBackground/LeftContent/ContentArea/VBoxContainer/Bryn/MarginContainer/MarginContainer/VBoxContainer" unique_id=1536921647]
+z_index = 2
+layout_mode = 2
+text = "PRODUCER & NARRATIVE DESIGNER"
+fit_content = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="SettingsBackground/LeftContent/ContentArea/VBoxContainer/Bryn/MarginContainer/MarginContainer/VBoxContainer" unique_id=1465597735]
+z_index = 2
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+text = "Bryn Bills"
+fit_content = true
+
+[node name="PersonInfo" type="Panel" parent="SettingsBackground/LeftContent/ContentArea/VBoxContainer/Bryn/MarginContainer" unique_id=1788087008]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8gwij")
+
+[node name="Lucas" type="HBoxContainer" parent="SettingsBackground/LeftContent/ContentArea/VBoxContainer" unique_id=1665979581]
+layout_mode = 2
+
+[node name="PersonPhoto" type="TextureRect" parent="SettingsBackground/LeftContent/ContentArea/VBoxContainer/Lucas" unique_id=1400540056]
+z_index = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("4_2fbfq")
+expand_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="SettingsBackground/LeftContent/ContentArea/VBoxContainer/Lucas" unique_id=1903787574]
+layout_mode = 2
+theme_override_constants/margin_left = -75
+
+[node name="MarginContainer" type="MarginContainer" parent="SettingsBackground/LeftContent/ContentArea/VBoxContainer/Lucas/MarginContainer" unique_id=131473687]
+layout_mode = 2
+theme_override_constants/margin_left = 85
+theme_override_constants/margin_top = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsBackground/LeftContent/ContentArea/VBoxContainer/Lucas/MarginContainer/MarginContainer" unique_id=2027557310]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="SettingsBackground/LeftContent/ContentArea/VBoxContainer/Lucas/MarginContainer/MarginContainer/VBoxContainer" unique_id=2081088308]
+z_index = 2
+layout_mode = 2
+text = "LEAD ARTIST"
+fit_content = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="SettingsBackground/LeftContent/ContentArea/VBoxContainer/Lucas/MarginContainer/MarginContainer/VBoxContainer" unique_id=40335330]
+z_index = 2
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+text = "Lucas Suarez"
+fit_content = true
+
+[node name="PersonInfo" type="Panel" parent="SettingsBackground/LeftContent/ContentArea/VBoxContainer/Lucas/MarginContainer" unique_id=477941863]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8gwij")
+
+[node name="Sola" type="HBoxContainer" parent="SettingsBackground/LeftContent/ContentArea/VBoxContainer" unique_id=1851599831]
+layout_mode = 2
+
+[node name="PersonPhoto" type="TextureRect" parent="SettingsBackground/LeftContent/ContentArea/VBoxContainer/Sola" unique_id=1480181619]
+z_index = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("4_2fbfq")
+expand_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="SettingsBackground/LeftContent/ContentArea/VBoxContainer/Sola" unique_id=1034093340]
+layout_mode = 2
+theme_override_constants/margin_left = -75
+
+[node name="MarginContainer" type="MarginContainer" parent="SettingsBackground/LeftContent/ContentArea/VBoxContainer/Sola/MarginContainer" unique_id=32842555]
+layout_mode = 2
+theme_override_constants/margin_left = 85
+theme_override_constants/margin_top = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsBackground/LeftContent/ContentArea/VBoxContainer/Sola/MarginContainer/MarginContainer" unique_id=1990363554]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="SettingsBackground/LeftContent/ContentArea/VBoxContainer/Sola/MarginContainer/MarginContainer/VBoxContainer" unique_id=143235432]
+z_index = 2
+layout_mode = 2
+text = "UI LEAD & IMPLEMENTER"
+fit_content = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="SettingsBackground/LeftContent/ContentArea/VBoxContainer/Sola/MarginContainer/MarginContainer/VBoxContainer" unique_id=87783432]
+z_index = 2
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+text = "Sola Chang"
+fit_content = true
+
+[node name="PersonInfo" type="Panel" parent="SettingsBackground/LeftContent/ContentArea/VBoxContainer/Sola/MarginContainer" unique_id=310498836]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8gwij")
+
+[node name="Spencer" type="HBoxContainer" parent="SettingsBackground/LeftContent/ContentArea/VBoxContainer" unique_id=2125322196]
+layout_mode = 2
+
+[node name="PersonPhoto" type="TextureRect" parent="SettingsBackground/LeftContent/ContentArea/VBoxContainer/Spencer" unique_id=1303721329]
+z_index = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("4_2fbfq")
+expand_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="SettingsBackground/LeftContent/ContentArea/VBoxContainer/Spencer" unique_id=452270912]
+layout_mode = 2
+theme_override_constants/margin_left = -75
+
+[node name="MarginContainer" type="MarginContainer" parent="SettingsBackground/LeftContent/ContentArea/VBoxContainer/Spencer/MarginContainer" unique_id=37704491]
+layout_mode = 2
+theme_override_constants/margin_left = 85
+theme_override_constants/margin_top = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsBackground/LeftContent/ContentArea/VBoxContainer/Spencer/MarginContainer/MarginContainer" unique_id=350646406]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="SettingsBackground/LeftContent/ContentArea/VBoxContainer/Spencer/MarginContainer/MarginContainer/VBoxContainer" unique_id=1017059849]
+z_index = 2
+layout_mode = 2
+text = "LEAD GAME DESIGNER & UX LEAD"
+fit_content = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="SettingsBackground/LeftContent/ContentArea/VBoxContainer/Spencer/MarginContainer/MarginContainer/VBoxContainer" unique_id=1841968987]
+z_index = 2
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+text = "Spencer Jong"
+fit_content = true
+
+[node name="PersonInfo" type="Panel" parent="SettingsBackground/LeftContent/ContentArea/VBoxContainer/Spencer/MarginContainer" unique_id=289578062]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8gwij")
+
+[node name="RightContent" type="MarginContainer" parent="SettingsBackground" unique_id=891176864]
+layout_mode = 0
+offset_left = 594.0
+offset_top = 1.0
+offset_right = 1222.0
+offset_bottom = 831.0
+theme_override_constants/margin_top = 35
+
+[node name="ContentArea" type="VBoxContainer" parent="SettingsBackground/RightContent" unique_id=808279620]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_constants/separation = 100
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsBackground/RightContent/ContentArea" unique_id=1227627802]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="SteeringCommittee" type="RichTextLabel" parent="SettingsBackground/RightContent/ContentArea/VBoxContainer" unique_id=1992496492]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 30
+text = "STEERING COMMITTEE"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Julia" type="HBoxContainer" parent="SettingsBackground/RightContent/ContentArea/VBoxContainer" unique_id=709372069]
+layout_mode = 2
+
+[node name="PersonPhoto" type="TextureRect" parent="SettingsBackground/RightContent/ContentArea/VBoxContainer/Julia" unique_id=60812141]
+z_index = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("4_2fbfq")
+expand_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="SettingsBackground/RightContent/ContentArea/VBoxContainer/Julia" unique_id=711832287]
+layout_mode = 2
+theme_override_constants/margin_left = -75
+
+[node name="MarginContainer" type="MarginContainer" parent="SettingsBackground/RightContent/ContentArea/VBoxContainer/Julia/MarginContainer" unique_id=1738042717]
+layout_mode = 2
+theme_override_constants/margin_left = 85
+theme_override_constants/margin_top = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsBackground/RightContent/ContentArea/VBoxContainer/Julia/MarginContainer/MarginContainer" unique_id=1666565226]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="SettingsBackground/RightContent/ContentArea/VBoxContainer/Julia/MarginContainer/MarginContainer/VBoxContainer" unique_id=1285844394]
+z_index = 2
+layout_mode = 2
+text = "EXECUTIVE PRODUCER"
+fit_content = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="SettingsBackground/RightContent/ContentArea/VBoxContainer/Julia/MarginContainer/MarginContainer/VBoxContainer" unique_id=912897544]
+z_index = 2
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+text = "Julia Graves"
+fit_content = true
+
+[node name="PersonInfo" type="Panel" parent="SettingsBackground/RightContent/ContentArea/VBoxContainer/Julia/MarginContainer" unique_id=1091440303]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8gwij")
+
+[node name="Danielle" type="HBoxContainer" parent="SettingsBackground/RightContent/ContentArea/VBoxContainer" unique_id=1954304266]
+layout_mode = 2
+
+[node name="PersonPhoto" type="TextureRect" parent="SettingsBackground/RightContent/ContentArea/VBoxContainer/Danielle" unique_id=69267453]
+z_index = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("4_2fbfq")
+expand_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="SettingsBackground/RightContent/ContentArea/VBoxContainer/Danielle" unique_id=196826734]
+layout_mode = 2
+theme_override_constants/margin_left = -75
+
+[node name="MarginContainer" type="MarginContainer" parent="SettingsBackground/RightContent/ContentArea/VBoxContainer/Danielle/MarginContainer" unique_id=812810157]
+layout_mode = 2
+theme_override_constants/margin_left = 85
+theme_override_constants/margin_top = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsBackground/RightContent/ContentArea/VBoxContainer/Danielle/MarginContainer/MarginContainer" unique_id=572201579]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="SettingsBackground/RightContent/ContentArea/VBoxContainer/Danielle/MarginContainer/MarginContainer/VBoxContainer" unique_id=1598310208]
+z_index = 2
+layout_mode = 2
+text = "ASSOCIATE PRODUCER"
+fit_content = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="SettingsBackground/RightContent/ContentArea/VBoxContainer/Danielle/MarginContainer/MarginContainer/VBoxContainer" unique_id=184783116]
+z_index = 2
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+text = "Danielle Osterman"
+fit_content = true
+
+[node name="PersonInfo" type="Panel" parent="SettingsBackground/RightContent/ContentArea/VBoxContainer/Danielle/MarginContainer" unique_id=513637467]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8gwij")
