@@ -77,7 +77,7 @@ clip_contents = true
 custom_minimum_size = Vector2(25, 0)
 layout_mode = 2
 theme_override_colors/font_pressed_color = Color(0.105882354, 0.09019608, 0.34117648, 1)
-theme_override_colors/font_hover_color = Color(0.95686275, 0.73333335, 0.8666667, 1)
+theme_override_colors/font_hover_color = Color(1, 0.66993517, 0.4684493, 1)
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_f1d2v")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_f1d2v")
@@ -88,7 +88,7 @@ alignment = 0
 [node name="LoadGame" type="Button" parent="PauseMenu/MarginContainer/MainMenuContainer" unique_id=358591054]
 layout_mode = 2
 theme_override_colors/font_pressed_color = Color(0.10404196, 0.08853788, 0.34181657, 1)
-theme_override_colors/font_hover_color = Color(0.95639485, 0.7346787, 0.868453, 1)
+theme_override_colors/font_hover_color = Color(1, 0.66993517, 0.4684493, 1)
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_m0klm")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_1xtef")
@@ -99,7 +99,7 @@ alignment = 0
 [node name="MainMenu" type="Button" parent="PauseMenu/MarginContainer/MainMenuContainer" unique_id=765021181]
 layout_mode = 2
 theme_override_colors/font_pressed_color = Color(0.10404196, 0.08853788, 0.34181657, 1)
-theme_override_colors/font_hover_color = Color(0.95639485, 0.7346787, 0.868453, 1)
+theme_override_colors/font_hover_color = Color(1, 0.66993517, 0.4684493, 1)
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_jn4bt")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_xmhi0")
@@ -110,7 +110,7 @@ alignment = 0
 [node name="Settings" type="Button" parent="PauseMenu/MarginContainer/MainMenuContainer" unique_id=639175281]
 layout_mode = 2
 theme_override_colors/font_pressed_color = Color(0.10404196, 0.08853788, 0.34181657, 1)
-theme_override_colors/font_hover_color = Color(0.95639485, 0.7346787, 0.868453, 1)
+theme_override_colors/font_hover_color = Color(1, 0.66993517, 0.4684493, 1)
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_wen6a")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_xw83q")

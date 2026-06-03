@@ -4,7 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://btapyl7u3unes" path="res://scenes/main_menu.tscn" id="2_jb3nc"]
 [ext_resource type="PackedScene" uid="uid://cqnah8bf2730h" path="res://scenes/pause.tscn" id="2_uebra"]
 [ext_resource type="PackedScene" uid="uid://brp6e32b60vj0" path="res://scenes/settings.tscn" id="3_iusj4"]
+[ext_resource type="PackedScene" uid="uid://b0vyjocrqsixo" path="res://scenes/credits.tscn" id="4_a1rh6"]
 [ext_resource type="PackedScene" uid="uid://cq0cuu823f6cs" path="res://scenes/hud.tscn" id="4_jb3nc"]
+[ext_resource type="PackedScene" uid="uid://c5w85ihkcf3dp" path="res://scenes/settings_overlay.tscn" id="7_j7aru"]
 
 [node name="GameRoot" type="Node2D" unique_id=1365270137]
 script = ExtResource("1_ni5ms")
@@ -15,8 +17,14 @@ visible = false
 [node name="Settings" parent="." unique_id=490838427 instance=ExtResource("3_iusj4")]
 visible = false
 
+[node name="Credits" parent="." unique_id=1204340958 instance=ExtResource("4_a1rh6")]
+visible = false
+
 [node name="Pause" parent="." unique_id=1108024468 instance=ExtResource("2_uebra")]
 visible = false
 
 [node name="HUD" parent="." unique_id=959292212 instance=ExtResource("4_jb3nc")]
+visible = false
+
+[node name="SettingsOverlay" parent="." unique_id=837282808 instance=ExtResource("7_j7aru")]
 visible = false

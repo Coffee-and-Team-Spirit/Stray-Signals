@@ -30,20 +30,20 @@ func _on_load_game_pressed() -> void:
 func _on_main_menu_pressed() -> void:
 	Dialogic.end_timeline()
 	
-	var root = get_tree().current_scene  # This is GameRoot
+	var game_root = get_tree().current_scene  # This is GameRoot
 	
 	# Remove gameplay scene
-	var main = root.get_node_or_null("Main")
+	var main = game_root.get_node_or_null("Main")
 	if main:
 		main.queue_free()
 		
 	# Show main menu
-	var menu = root.get_node_or_null("MainMenu")
+	var menu = game_root.get_node_or_null("MainMenu")
 	if menu:
 		menu.visible = true
 		
 	# Hide HUD
-	var hud = root.get_node_or_null("HUD")
+	var hud = game_root.get_node_or_null("HUD")
 	if hud:
 		hud.visible = false
 
@@ -52,7 +52,10 @@ func _on_main_menu_pressed() -> void:
 
 
 func _on_settings_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/settings.tscn")
+	GameState.settings_return_target = "pause_menu"
+	visible = false
+	print("pause screen")
+	get_tree().current_scene.get_node("SettingsOverlay").visible = true
 
 
 func _on_background_gui_input(event: InputEvent) -> void:

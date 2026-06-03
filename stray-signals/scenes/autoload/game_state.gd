@@ -7,11 +7,7 @@ var current_character: String = "none"
 var current_portrait_info : String = "none"
 var target_drink : Dictionary = {}
 
-var settings : Dictionary = {
-	"music": 1.0,
-	"sfx": 1.0,
-	"text": 1.0
-}
+var settings_return_target := "main_menu"
 
 func new_game() -> void:
 	GameState.drink_result = "none"

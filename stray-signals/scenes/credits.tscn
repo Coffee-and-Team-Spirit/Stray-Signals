@@ -1,0 +1,108 @@
+[gd_scene format=3 uid="uid://b0vyjocrqsixo"]
+
+[ext_resource type="Script" uid="uid://cdwm5lont4reo" path="res://scenes/credits.gd" id="1_0ctdu"]
+[ext_resource type="Texture2D" uid="uid://dg0vwi8mwerfy" path="res://assets/art/backgrounds/Main_Menu_Background.png" id="2_2fbfq"]
+[ext_resource type="PackedScene" uid="uid://d1pkrbdjn820w" path="res://scenes/sub_menu.tscn" id="3_8gwij"]
+
+[node name="Credits" type="Control" unique_id=1204340958]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0ctdu")
+
+[node name="Background" type="TextureRect" parent="." unique_id=674863279]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_2fbfq")
+
+[node name="SubMenu" parent="." unique_id=1812428688 instance=ExtResource("3_8gwij")]
+layout_mode = 0
+
+[node name="SettingsBackground" type="ColorRect" parent="." unique_id=1746689263]
+layout_mode = 0
+offset_left = 640.0
+offset_top = 182.0
+offset_right = 1862.0
+offset_bottom = 1014.0
+color = Color(0.105882354, 0.09019608, 0.34117648, 1)
+
+[node name="Pagination" type="ColorRect" parent="SettingsBackground" unique_id=1255659593]
+layout_mode = 0
+offset_left = 31.0
+offset_top = -67.0
+offset_right = 102.0
+color = Color(0.28235295, 0.27058825, 0.50980395, 1)
+
+[node name="Page1" type="RichTextLabel" parent="SettingsBackground/Pagination" unique_id=269982431]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 28
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LeftContent" type="MarginContainer" parent="SettingsBackground" unique_id=2147150868]
+layout_mode = 0
+offset_right = 628.0
+offset_bottom = 830.0
+
+[node name="ContentArea" type="VBoxContainer" parent="SettingsBackground/LeftContent" unique_id=754110085]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 100
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsBackground/LeftContent/ContentArea" unique_id=1721688415]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="DevTeam" type="RichTextLabel" parent="SettingsBackground/LeftContent/ContentArea/VBoxContainer" unique_id=186698748]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 30
+text = "DEV TEAM"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RightContent" type="MarginContainer" parent="SettingsBackground" unique_id=891176864]
+layout_mode = 0
+offset_left = 594.0
+offset_top = 1.0
+offset_right = 1222.0
+offset_bottom = 831.0
+
+[node name="ContentArea" type="VBoxContainer" parent="SettingsBackground/RightContent" unique_id=808279620]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 100
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsBackground/RightContent/ContentArea" unique_id=1227627802]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="SteeringCommittee" type="RichTextLabel" parent="SettingsBackground/RightContent/ContentArea/VBoxContainer" unique_id=1992496492]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 30
+text = "STEERING COMMITTEE"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
