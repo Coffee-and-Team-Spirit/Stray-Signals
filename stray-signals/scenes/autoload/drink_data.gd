@@ -21,8 +21,7 @@ var drink_puzzles = {
 					"modification": "heat"
 				},
 				"stats": {}
-			},
-			"bad": {}
+			}
 		},
 		2: {
 			"perfect": {
@@ -43,8 +42,7 @@ var drink_puzzles = {
 					"fancy_cozy_direction": ["fancy"],
 					"fancy_cozy_intensity": [2]
 				}
-			},
-			"bad": {}
+			}
 		},
 	},
 	2: {
@@ -70,25 +68,99 @@ var drink_puzzles = {
 					"cool_warm_direction": ["cold"],
 					"cool_warm_intensity": [3, 2]             # > 5 cool
 				}
-			},
-			"bad": {}
+			}
 		},
 		2: {
-			
+			"perfect": {
+				"ingredients": {
+					"flavors": ["mango"],
+					"topping": "catnip"
+				},
+				"stats": {}
+			},
+			"good": {
+				"ingredients": {
+					"flavors": ["mango"],
+					"topping": "catnip"
+				},
+				"stats": {}
+			},
 		},
 		3: {
-			
+			"perfect": {
+				"ingredients": {
+					"topping": "cream_and_cat_treats"
+				},
+				"stats": {
+					"fancy_cozy_direction": ["cozy"],
+					"fancy_cozy_intensity": [4, 3],
+					"cool_warm_direction": ["warm"],
+					"cool_warm_intensity": [4, 3]
+					}
+			},
+			"good": {
+				"ingredients": {
+					"topping": "cream_and_cat_treats"
+				},
+				"stats": {
+					"fancy_cozy_intensity": [2, 1],
+					"cool_warm_intensity": [2, 1]
+				}
+			}
 		}
 	},
 	3: {
 		1: {
-			
+			"perfect": {
+				"ingredients": {
+					"flavors": ["milk_tea"],
+					"flavors_or": ["strawberry", "mango"],
+					"topping": "boba",
+				},
+				"stats": {}
+			},
+			"good": {
+				"ingredients": {
+					"flavors": ["milk_tea"],
+					"topping": "boba",
+				},
+				"stats": {}
+			}
 		},
 		2: {
-			
+			"perfect": {
+				"ingredients": {
+					"topping": "boba",
+					"modification": "shake"
+				},
+				"stats": {}
+			},
+			"good": {
+				"ingredients": {
+					"topping": "boba"
+				},
+				"stats": {}
+			}	
 		},
 		3: {
-			
+			"perfect": {
+				"ingredients": {
+					"flavors": ["strawberry", "mango"]
+				},
+				"stats": {
+					"cool_warm_direction": ["cold"],
+					"cool_warm_intensity": [4, 3]
+				}
+			},
+			"good": {
+				"ingredients": {
+					"flavors_or": ["strawberry", "mango"]
+				},
+				"stats": {
+					"cool_warm_direction": ["cold"],
+					"cool_warm_intensity": [2]
+				}
+			}
 		}
 	},
 	4: {

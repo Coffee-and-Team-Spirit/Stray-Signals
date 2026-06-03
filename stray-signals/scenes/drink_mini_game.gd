@@ -173,12 +173,24 @@ func update_drink_components_display():
 		$DrinkComponents/DrinkInformation/MarginContainer/DrinkComponents/SelectModification.add_theme_color_override("default_color", Color(0, 0, 0))
 
 
-func get_flavor_category_id(value) -> Dictionary:
+func get_flavor_category_id(flavor_name, value) -> Dictionary:
 	var direction := "neutral"
-	if value < 0:
-		direction = "cold"
-	elif value > 0:
-		direction = "warm"
+	
+	if flavor_name == "fancy_cozy":
+		if value < 0:
+			direction = "fancy"
+		elif value > 0:
+			direction = "cozy"
+	elif flavor_name == "bitter_sweet":
+		if value < 0:
+			direction = "bitter"
+		elif value > 0:
+			direction = "sweet"
+	elif flavor_name == "cool_warm":
+		if value < 0:
+			direction = "cold"
+		elif value > 0:
+			direction = "warm"
 		
 	var abs_value = abs(value)
 	var intensity = -1;
@@ -210,6 +222,15 @@ func matches_all(criteria, stats) -> bool:
 		if target_ingredients.has("flavors"):
 			for f in target_ingredients["flavors"]:
 				if f not in chosen_flavors:
+					return false
+		
+		if target_ingredients.has("flavors_or"):
+			var ok := false
+			for f in target_ingredients["flavors_or"]:
+				if f in chosen_flavors:
+					ok = true
+					break
+				if not ok:
 					return false
 					
 		if target_ingredients.has("topping") and chosen_topping != target_ingredients["topping"]:
@@ -250,6 +271,11 @@ func matches_any(criteria, stats) -> bool:
 		
 		if target_ingredients.has("flavors"):
 			for f in target_ingredients["flavors"]:
+				if f in chosen_flavors:
+					matched = true
+				
+		if target_ingredients.has("flavors_or"):
+			for f in target_ingredients["flavors_or"]:
 				if f in chosen_flavors:
 					matched = true
 					
@@ -304,7 +330,7 @@ func count_matching_ingredients(target_ingredients) -> int:
 func score_drink(puzzle, player_stats) -> int:
 	var player_category = {}
 	for key in player_stats.keys():
-		var result = get_flavor_category_id(player_stats[key])
+		var result = get_flavor_category_id(key, player_stats[key])
 		player_category[key + "_direction"] = result.direction
 		player_category[key + "_intensity"] = result.intensity
 	

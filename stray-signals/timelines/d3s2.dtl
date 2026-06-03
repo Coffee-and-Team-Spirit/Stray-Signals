@@ -23,7 +23,7 @@ Zara: And I will not have humans be turned into such magnificent creatures as us
 Player: So... you are going to help me?
 Zara: Yes, of course. I have something you need. But first, serve me at least to your barest minimum ability, then I will assist you.
 [signal arg="drink_hint"]
-Zara: **DRINK HINT HERE**
+Zara: I want something with boba but make sure the boba is dispersed evenly throughout the drink.
 leave Zara
 [signal arg="craft_drink"]
 label drink_rating (Scene 2 Drink Rating)
