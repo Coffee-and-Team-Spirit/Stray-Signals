@@ -191,19 +191,19 @@ func get_flavor_category_id(value) -> int:
 # Matches perfect
 func matches_all(criteria, stats) -> bool:
 	if criteria.has("ingredients"):
-		var ing = criteria["ingredients"]
-		if ing.has("flavors"):
-			for f in ing["flavors"]:
+		var target_ingredients = criteria["ingredients"]
+		if target_ingredients.has("flavors"):
+			for f in target_ingredients["flavors"]:
 				if f not in chosen_flavors:
 					return false
 					
-		if ing.has("topping") and chosen_topping != ing["topping"]:
+		if target_ingredients.has("topping") and chosen_topping != target_ingredients["topping"]:
 			return false
 			
-		if ing.has("cup") and chosen_cup != ing["cup"]:
+		if target_ingredients.has("cup") and chosen_cup != target_ingredients["cup"]:
 			return false
 		
-		if ing.has("modification") and chosen_modification != ing["modification"]:
+		if target_ingredients.has("modification") and chosen_modification != target_ingredients["modification"]:
 			return false
 			
 	if criteria.has("stats"):
@@ -225,20 +225,20 @@ func matches_any(criteria, stats) -> bool:
 	var matched = false
 	
 	if criteria.has("ingredients"):
-		var ing = criteria["ingredients"]
+		var target_ingredients = criteria["ingredients"]
 		
-		if ing.has("flavors"):
-			for f in ing["flavors"]:
+		if target_ingredients.has("flavors"):
+			for f in target_ingredients["flavors"]:
 				if f in chosen_flavors:
 					matched = true
 					
-		if ing.has("topping") and chosen_topping == ing["topping"]:
+		if target_ingredients.has("topping") and chosen_topping == target_ingredients["topping"]:
 			matched = true
 		
-		if ing.has("cup") and chosen_cup == ing["cup"]:
+		if target_ingredients.has("cup") and chosen_cup == target_ingredients["cup"]:
 			matched = true
 			
-		if ing.has("modification") and chosen_modification == ing["modification"]:
+		if target_ingredients.has("modification") and chosen_modification == target_ingredients["modification"]:
 			matched = true
 			
 	if criteria.has("stats"):
@@ -255,44 +255,44 @@ func matches_any(criteria, stats) -> bool:
 	return matched
 
 # Ingredient only puzzles
-func count_matching_ingredients(target_ing) -> int:
+func count_matching_ingredients(target_ingredients) -> int:
 	var count = 0
 	
-	if target_ing.has("flavors"):
-		for f in target_ing["flavors"]:
+	if target_ingredients.has("flavors"):
+		for f in target_ingredients["flavors"]:
 			if f in chosen_flavors:
 				count += 1
 				
-	if target_ing.has("topping") and chosen_topping == target_ing["topping"]:
+	if target_ingredients.has("topping") and chosen_topping == target_ingredients["topping"]:
 		count += 1
 		
-	if target_ing.has("cup") and chosen_cup == target_ing["cup"]:
+	if target_ingredients.has("cup") and chosen_cup == target_ingredients["cup"]:
 		count += 1
 	
-	if target_ing.has("modification") and chosen_modification == target_ing["modification"]:
+	if target_ingredients.has("modification") and chosen_modification == target_ingredients["modification"]:
 		count += 1
 	
 	return count
 
 
 func score_drink(puzzle, player_stats) -> int:
-	var player_cat = {}
+	var player_category = {}
 	for key in player_stats.keys():
-		player_cat[key + "_category"] = get_flavor_category_id(player_stats[key])
+		player_category[key + "_category"] = get_flavor_category_id(player_stats[key])
 		
-	if matches_all(puzzle["perfect"], player_cat):
+	if matches_all(puzzle["perfect"], player_category):
 		return 3
 		
-	if matches_all(puzzle["good"], player_cat):
+	if matches_all(puzzle["good"], player_category):
 		return 2
 		
 	if puzzle["perfect"]["stats"].is_empty() and puzzle["perfect"]["ingredients"].size() > 0:
-		var target_ing = puzzle["perfect"]["ingredients"]
-		var matches = count_matching_ingredients(target_ing)
+		var target_ingredients = puzzle["perfect"]["ingredients"]
+		var matches = count_matching_ingredients(target_ingredients)
 		
-		if matches == target_ing.size():
+		if matches == target_ingredients.size():
 			return 3
-		elif matches == target_ing.size() - 1:
+		elif matches == target_ingredients.size() - 1:
 			return 2
 		else:
 			return 0

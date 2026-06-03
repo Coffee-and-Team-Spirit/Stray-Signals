@@ -70,7 +70,6 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 
 [node name="DrinkMiniGame" type="Control" unique_id=230215315]
-z_index = 30
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1920.0
