@@ -13,6 +13,33 @@ var settings : Dictionary = {
 	"text": 1.0
 }
 
+func new_game() -> void:
+	GameState.drink_result = "none"
+	GameState.drink_hint = "none"
+	GameState.target_drink = {}
+	GameState.current_character = "none"
+	GameState.current_portrait_info = "none"
+	
+	DayManager.day = 1
+	DayManager.encounter = 1
+	
+	if Dialogic.Save.has_slot("autosave"):
+		Dialogic.Save.delete_slot("autosave")
+		
+	var game_root = get_tree().current_scene
+		
+	# Instance gameplay scene
+	var main_scene = preload("res://scenes/main.tscn").instantiate()
+	game_root.add_child(main_scene)
+		
+	# Show HUD
+	game_root.get_node("HUD").visible = true
+	
+	# Start first timeline
+	var first_timeline = DayManager.get_current_timeline()
+	Dialogic.start("res://timelines/%s.dtl" % first_timeline)
+
+
 func load_game() -> void:
 	if Dialogic.Save.has_slot("autosave"):
 		var game_data = Dialogic.Save.get_slot_info("autosave")
