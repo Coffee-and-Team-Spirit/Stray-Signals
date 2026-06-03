@@ -6,7 +6,17 @@ var target_drinks = {
 		1: {
 			"fancy_cozy": 8, 
 			"bitter_sweet": 5,
-			"cool_warm": 6 
+			"cool_warm": 6,
+			"required": {
+				"stats": {
+					},
+				"ingredients": {
+					"flavors": ["matcha", "mango"],
+					"cup": "mug",
+					"topping": "boba",
+					"modification": "heat"
+				}
+			}
 		},
 		2: {
 			"fancy_cozy": 8, 

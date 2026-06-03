@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://rsivi3woypnw"
-path="res://.godot/imported/GG_Sad.png-4ea0c196899787abbcc8a8db866f6b8f.ctex"
+path="res://.godot/imported/GG_Sad.png-9a6e542ea3c8caecde2c2faf299333d5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/characters/gg/GG_Sad.png"
-dest_files=["res://.godot/imported/GG_Sad.png-4ea0c196899787abbcc8a8db866f6b8f.ctex"]
+source_file="res://assets/art/characters/GG/GG_Sad.png"
+dest_files=["res://.godot/imported/GG_Sad.png-9a6e542ea3c8caecde2c2faf299333d5.ctex"]
 
 [params]
 

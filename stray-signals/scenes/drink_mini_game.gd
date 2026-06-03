@@ -264,12 +264,12 @@ func _on_reset_pressed() -> void:
 		"cool_warm": 0
 	}
 	
-	$DrinkComponents/FlavorBars/FancyCozyBar/FancyBar.value = player_drink_traits["fancy_cozy"]
-	$DrinkComponents/FlavorBars/FancyCozyBar/CozyBar.value = player_drink_traits["fancy_cozy"]
-	$DrinkComponents/FlavorBars/BitterSweetBar/BitterBar.value = player_drink_traits["bitter_sweet"]
-	$DrinkComponents/FlavorBars/BitterSweetBar/SweetBar.value = player_drink_traits["bitter_sweet"]
-	$DrinkComponents/FlavorBars/CoolWarmBar/CoolBar.value = player_drink_traits["cool_warm"]
-	$DrinkComponents/FlavorBars/CoolWarmBar/WarmBar.value = player_drink_traits["cool_warm"]
+	$DrinkComponents/DrinkInformation/FlavorBars/FancyCozyBar/FancyBar.value = player_drink_traits["fancy_cozy"]
+	$DrinkComponents/DrinkInformation/FlavorBars/FancyCozyBar/CozyBar.value = player_drink_traits["fancy_cozy"]
+	$DrinkComponents/DrinkInformation/FlavorBars/BitterSweetBar/BitterBar.value = player_drink_traits["bitter_sweet"]
+	$DrinkComponents/DrinkInformation/FlavorBars/BitterSweetBar/SweetBar.value = player_drink_traits["bitter_sweet"]
+	$DrinkComponents/DrinkInformation/FlavorBars/CoolWarmBar/CoolBar.value = player_drink_traits["cool_warm"]
+	$DrinkComponents/DrinkInformation/FlavorBars/CoolWarmBar/WarmBar.value = player_drink_traits["cool_warm"]
 	
 	pour_stage = 0
 	

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ba6kyc7lcvrg5"
-path="res://.godot/imported/GG_Happy.png-79b7e797b0bad360adc1ae234c7f0bb8.ctex"
+path="res://.godot/imported/GG_Happy.png-41353e602c25d1104982fac106129e26.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/characters/gg/GG_Happy.png"
-dest_files=["res://.godot/imported/GG_Happy.png-79b7e797b0bad360adc1ae234c7f0bb8.ctex"]
+source_file="res://assets/art/characters/GG/GG_Happy.png"
+dest_files=["res://.godot/imported/GG_Happy.png-41353e602c25d1104982fac106129e26.ctex"]
 
 [params]
 
