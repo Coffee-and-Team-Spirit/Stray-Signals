@@ -46,6 +46,8 @@ func load_game() -> void:
 		DayManager.day = game_data.get("day", 1)
 		DayManager.encounter = game_data.get("encounter", 1)
 		
+		DayManager.emit_signal("day_changed", DayManager.day)
+		
 		print("LOAD")
 		Dialogic.Save.load("autosave")
 	

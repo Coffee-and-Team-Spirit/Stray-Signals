@@ -1,7 +1,7 @@
 extends Node
 
 # Day -> Encounter(s)
-var target_drinks = {
+var drink_puzzles = {
 	1: {
 		1: {
 			"perfect": {
@@ -31,7 +31,8 @@ var target_drinks = {
 					"modification": "stir"
 				},
 				"stats": {
-					"fancy_cozy_category": [4, 3]
+					"fancy_cozy_direction": ["fancy"],
+					"fancy_cozy_intensity": [4, 3]
 				}
 			},
 			"good": {
@@ -39,7 +40,8 @@ var target_drinks = {
 					"flavors": ["matcha"]
 				},
 				"stats": {
-					"fancy_cozy_category": [2]
+					"fancy_cozy_direction": ["fancy"],
+					"fancy_cozy_intensity": [2]
 				}
 			},
 			"bad": {}
@@ -47,7 +49,29 @@ var target_drinks = {
 	},
 	2: {
 		1: {
-			
+			"perfect": {
+				"ingredients": {
+					"topping": "cream_and_cat_treats"
+				},
+				"stats": {
+					"bitter_sweet_direction": ["sweet"],
+					"bitter_sweet_intensity": [-1, 0, 1],   # less than half sweet
+					"cool_warm_direction": ["cold"],
+					"cool_warm_intensity": [4, 3]           # extremely or very cool
+				}
+			},
+			"good": {
+				"ingredients": {
+					"topping": "cream_and_cat_treats"
+				},
+				"stats": {
+					"bitter_sweet_direction": ["sweet"],
+					"bitter_sweet_intensity": [-1, 0, 1, 2],  # < 6 sweet
+					"cool_warm_direction": ["cold"],
+					"cool_warm_intensity": [3, 2]             # > 5 cool
+				}
+			},
+			"bad": {}
 		},
 		2: {
 			

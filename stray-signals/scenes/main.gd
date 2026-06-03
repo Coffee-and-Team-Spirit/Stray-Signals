@@ -13,7 +13,7 @@ func _ready() -> void:
 		#Dialogic.start("res://timelines/%s.dtl" % current_timeline)
 	
 	Dialogic.VAR.set_variable("Drink.Rating", GameState.drink_result)
-	GameState.target_drink = DrinkData.target_drinks[DayManager.day][DayManager.encounter]
+	GameState.target_drink = DrinkData.drink_puzzles[DayManager.day][DayManager.encounter]
 
 
 func _on_signal(signal_passed_in):

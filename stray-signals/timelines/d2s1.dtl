@@ -26,7 +26,7 @@ Player: I will. [pause=1] Umm, did you want a drink…?
 Alexandra (Sad): [pause=1] [i]*sigh*...[/i] That would be nice actually.
 Player: Of course, what will you have?
 [signal arg="drink_hint"]
-Alexandra (Neutral): **DRINK HINT HERE**
+Alexandra (Neutral): I've had enough sweet things today... how about something nice and cool. Add cat treats on top though, for a little happiness.
 leave Alexandra
 [signal arg="craft_drink"]
 label drink_rating (Scene 2 Drink Rating)
