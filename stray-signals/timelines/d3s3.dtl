@@ -1,0 +1,52 @@
+[background arg="res://assets/temp/tempCafe/Cafe_Interior.jpg" fade="1.5"]
+if {Drink.Rating} == "none":
+	jump begin_timeline
+else:
+	jump drink_rating
+label begin_timeline
+audio music "res://assets/audio/cafe_bgm.ogg" [fade="2.0" volume="-8.0"]
+# DAY 3, SCENE 3
+join Alexandra center
+Player: Welcome in again detective. How goes the investigation?
+Alexandra (Sad): Not very good if I must be honest.
+Alexandra: I have not answered the who, why or how of this case.
+Alexandra: And it's starting to weigh on me.
+Player: I’m sorry to hear that.
+Player: What brought you in today? Was there something I can help you with?
+Player: [i]Maybe I should tell them the things Archimedes mentioned to me?[/i]
+Alexandra (Neutral): I'm really not sure. The last trail I followed led me to a stupid blue cat that wouldn't stop talking in riddles. If I never hear about that creature again, it will be too soon.
+Player: [i]Then again, maybe I shouldn't.[/i]
+Alexandra: I did learn that humans that have been turned into cats can't tell you what they are as some side effect of the process.
+Alexandra: They will act like an imitation of what a cat does to try and fit in.
+Alexandra: It all makes my job that much harder.
+Alexandra: Truthfully, I came in here just to get another drink before heading back out into the world.
+Player: [i]Acting like a cat. That sounds like Whiskerly. Hmmm...[/i]
+Player: Of course, what can I get for ya to get you recharged for your investigation?
+[signal arg="drink_hint"]
+Alexandra: **DRINK HINT HERE**
+leave Alexandra
+[signal arg="craft_drink"]
+label drink_rating (Scene 2 Drink Rating)
+[background arg="res://assets/temp/tempCafe/Cafe_Interior.jpg" fade="1.5" wait="true"]
+audio music "res://assets/audio/craft_drink_bgm.ogg" [fade="2.0" volume="-5.0"]
+if {Drink.Rating} == "mediocre":
+	join Alexandra (Happy) center
+	Alexandra: A fine enough drink for the day.
+	Alexandra: My investigation has led me to believe that the culprit is new to the area, but that's just a best guess at this point.
+	leave Alexandra
+	[signal arg="clear_drink"]
+elif {Drink.Rating} == "good":
+	join Alexandra (Happy) center
+	Alexandra: I needed this, thank you. I feel like I can head back out there.
+	Alexandra: I'm as confident as I can be that the culprit is new to the area, but not brand new. Maybe sometime in the last year. The evidence all seems to support this.
+	leave Alexandra
+	[signal arg="clear_drink"]
+else:
+	# Bad
+	join Alexandra (Sad) center
+	Alexandra: This drink feels like it's a criminal interference with my case.
+	leave Alexandra
+	[signal arg="clear_drink"]
+	[signal arg="craft_drink"]
+[signal arg="end_encounter"]
+[end_timeline]

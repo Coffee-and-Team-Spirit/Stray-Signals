@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cayjmysuaoyqk"
-path="res://.godot/imported/Loren_Happy.png-14290e831cb26667fb7ebd6d06e436db.ctex"
+uid="uid://ds0nw7rf6mvsw"
+path="res://.godot/imported/Zara_Neutral.png-3dc32a6aae4803f510b6a84aa13b1abf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/characters/Loren/Loren_Happy.png"
-dest_files=["res://.godot/imported/Loren_Happy.png-14290e831cb26667fb7ebd6d06e436db.ctex"]
+source_file="res://assets/art/characters/Zara/Zara_Neutral.png"
+dest_files=["res://.godot/imported/Zara_Neutral.png-3dc32a6aae4803f510b6a84aa13b1abf.ctex"]
 
 [params]
 

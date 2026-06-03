@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cayjmysuaoyqk"
-path="res://.godot/imported/Loren_Happy.png-14290e831cb26667fb7ebd6d06e436db.ctex"
+uid="uid://ciwx7nyoxh8v2"
+path="res://.godot/imported/Wiskerly_Happy.png-31ca2f6c3055bab44e447cdc10177a06.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/characters/Loren/Loren_Happy.png"
-dest_files=["res://.godot/imported/Loren_Happy.png-14290e831cb26667fb7ebd6d06e436db.ctex"]
+source_file="res://assets/art/characters/Whiskerly/Wiskerly_Happy.png"
+dest_files=["res://.godot/imported/Wiskerly_Happy.png-31ca2f6c3055bab44e447cdc10177a06.ctex"]
 
 [params]
 

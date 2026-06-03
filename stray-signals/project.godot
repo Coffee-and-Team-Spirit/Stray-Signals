@@ -30,13 +30,27 @@ DrinkTraits="*uid://dggsag4eurpkd"
 [dialogic]
 
 directories/dch_directory={
+"Alexandra": "res://characters/Alexandra.dch",
+"Archimedes": "res://characters/Archimedes.dch",
+"GG": "res://characters/GG.dch",
 "Loren": "res://characters/Loren.dch",
 "Player": "res://characters/Player.dch",
+"Whiskerly": "res://characters/Whiskerly.dch",
 "Zara": "res://characters/Zara.dch"
 }
 directories/dtl_directory={
 "d1s1": "res://timelines/d1s1.dtl",
 "d1s2": "res://timelines/d1s2.dtl",
+"d2s1": "res://timelines/d2s1.dtl",
+"d2s2": "res://timelines/d2s2.dtl",
+"d2s3": "res://timelines/d2s3.dtl",
+"d3s1": "res://timelines/d3s1.dtl",
+"d3s2": "res://timelines/d3s2.dtl",
+"d3s3": "res://timelines/d3s3.dtl",
+"d4s1": "res://timelines/d4s1.dtl",
+"d4s2": "res://timelines/d4s2.dtl",
+"d4s3A": "res://timelines/d4s3A.dtl",
+"d4s3B": "res://timelines/d4s3B.dtl",
 "test": "res://timelines/test.dtl"
 }
 layout/style_directory={}

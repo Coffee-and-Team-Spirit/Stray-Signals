@@ -1,0 +1,61 @@
+[background arg="res://assets/temp/tempCafe/Cafe_Interior.jpg" fade="1.5"]
+if {Drink.Rating} == "none":
+	jump begin_timeline
+else:
+	jump drink_rating
+label begin_timeline
+audio music "res://assets/audio/cafe_bgm.ogg" [fade="2.0" volume="-8.0"]
+# DAY 4, SCENE 1
+join Whiskerly center
+Player: [i]Whiskerly is back. Could they be a human turned into a cat like people are saying?[/i]
+Player: Hello, Whiskerly. Welcome back.
+Whiskerly: Meow, I am a cat.
+Player: Yes, you mentioned that last time.
+Player: [i]Honestly, it might be stranger if he isn't a human.[/i]
+Player: I have a strange question to ask you Whiskerly.
+Whiskerly: Oh? And what might that be?
+Player: Are you by chance…..
+Player: A human that's been transformed into a cat?
+Whiskerly: ....
+Player: ....
+Whiskerly: ....
+Whiskerly (Happy): You always were clever {Player.PlayerName}.
+Whiskerly (Neutral): I don't think I can say more for some reason, but I hope my previous comment was enough.
+Player: Sorry, do we know each other? From before you were a cat I assume.
+Whiskerly (Sad): I hope you haven't forgotten your best customer.
+Whiskerly: I would hope my years of loyalty have bought me some familiarity, even in a less human form.
+Player: Loren! I can't believe it's you!
+Player: Why didn't you tell me it was you? I would have tried to help. Tried to do something...
+Whiskerly (Neutral): Honestly it's all a little fuzzy to be honest. Things come and go. Not sure my brain was really meant for a cat body. Some times are better than others.
+Whiskerly: And how could you have helped me? I'm a cat. No, the only way to help me is to catch the person that did this to me.
+Player: Then tell me who did this to you!
+Whiskerly: If only it was that easy. But again, I can't quite remember everything. Maybe if you could make me a drink like you used to.
+Whiskerly: That might jog my memory. At least I hope it will.
+[signal arg="drink_hint"]
+Whiskerly: **DRINK HINT HERE**
+leave Whiskerly
+[signal arg="craft_drink"]
+label drink_rating (Scene 2 Drink Rating)
+[background arg="res://assets/temp/tempCafe/Cafe_Interior.jpg" fade="1.5" wait="true"]
+audio music "res://assets/audio/craft_drink_bgm.ogg" [fade="2.0" volume="-5.0"]
+if {Drink.Rating} == "mediocre":
+	join Whiskerly center
+	Whiskerly: Some of it is coming back, but not everything.
+	Whiskerly: **MORE DIALOGUE HERE**
+	leave Whiskerly
+	[signal arg="clear_drink"]
+elif {Drink.Rating} == "good":
+	join Whiskerly (Happy) center
+	Whiskerly: Yes, that's great. I feel more like myself. Thank you.
+	Whiskerly: **MORE DIALOGUE HERE**
+	leave Whiskerly
+	[signal arg="clear_drink"]
+else:
+	# Bad
+	join Whiskerly (Sad) center
+	Whiskerly: You and I both know you can make a better drink than this.
+	leave Whiskerly
+	[signal arg="clear_drink"]
+	[signal arg="craft_drink"]
+[signal arg="end_encounter"]
+[end_timeline]

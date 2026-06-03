@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cayjmysuaoyqk"
-path="res://.godot/imported/Loren_Happy.png-14290e831cb26667fb7ebd6d06e436db.ctex"
+uid="uid://c6xyvhv3bbk4t"
+path="res://.godot/imported/Archimedes_Happy.png-b4a26f29cdedae315f9f773f274c0791.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/characters/Loren/Loren_Happy.png"
-dest_files=["res://.godot/imported/Loren_Happy.png-14290e831cb26667fb7ebd6d06e436db.ctex"]
+source_file="res://assets/art/characters/Archimedes/Archimedes_Happy.png"
+dest_files=["res://.godot/imported/Archimedes_Happy.png-b4a26f29cdedae315f9f773f274c0791.ctex"]
 
 [params]
 

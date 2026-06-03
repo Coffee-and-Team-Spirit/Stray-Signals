@@ -1,0 +1,41 @@
+[background arg="res://assets/temp/tempCafe/Cafe_Interior.jpg" fade="1.5"]
+if {Drink.Rating} == "none":
+	jump begin_timeline
+else:
+	jump drink_rating
+label begin_timeline
+audio music "res://assets/audio/cafe_bgm.ogg" [fade="2.0" volume="-8.0"]
+# DAY 4, SCENE 3A
+join Zara center
+Player: [i]Zara has returned, I need to get this drink right if I want what she's offering.[/i]
+Zara: Well, as I promised and against my better judgment, I have returned to give you a second shot.
+Player: I appreciate that. I promise to do better this time.
+Zara: I'm sure you think you will.
+Zara: Maybe this time we could do a little less human tasting, if you please.
+Zara: Now, as for my drink...
+[signal arg="drink_hint"]
+Zara: **DRINK HINT HERE**
+leave Zara
+[signal arg="craft_drink"]
+label drink_rating (Scene 2 Drink Rating)
+[background arg="res://assets/temp/tempCafe/Cafe_Interior.jpg" fade="1.5" wait="true"]
+audio music "res://assets/audio/craft_drink_bgm.ogg" [fade="2.0" volume="-5.0"]
+if {Drink.Rating} == "mediocre":
+	join Zara (Sad) center
+	Zara: How very disappointing. I will not be returning, I can promise you that.
+	leave Zara
+	[signal arg="clear_drink"]
+elif {Drink.Rating} == "good":
+	join Zara (Happy) center
+	Zara: Much better. At least you have managed adequacy. Here you go, serve this to the traitor and you may yet be able to stop them.
+	leave Zara
+	[signal arg="clear_drink"]
+else:
+	# Bad
+	join Zara center
+	Zara (Sad): How very, very, very disappointing. I will not be returning, I can promise you that.
+	leave Zara
+	[signal arg="clear_drink"]
+	[signal arg="craft_drink"]
+[signal arg="end_encounter"]
+[end_timeline]
