@@ -7,16 +7,25 @@ var target_drinks = {
 			"fancy_cozy": 8, 
 			"bitter_sweet": 5,
 			"cool_warm": 6,
-			"required": {
-				"stats": {
-					},
+			"perfect": {
 				"ingredients": {
 					"flavors": ["matcha", "mango"],
-					"cup": "mug",
 					"topping": "boba",
+					"cup": "mug",
 					"modification": "heat"
-				}
-			}
+				},
+				"stats": {}
+			},
+			"good": {
+				"ingredients": {
+					"flavors": ["matcha", "mango"],
+					"topping": "boba",
+					"cup": "mug",
+					"modification": "heat"
+				},
+				"stats": {}
+			},
+			"bad": {}
 		},
 		2: {
 			"fancy_cozy": 8, 

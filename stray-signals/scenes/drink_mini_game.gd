@@ -173,56 +173,131 @@ func update_drink_components_display():
 		$DrinkComponents/DrinkInformation/MarginContainer/DrinkComponents/SelectModification.add_theme_color_override("default_color", Color(0, 0, 0))
 
 
-func get_flavor_category(category_value) -> String:
-	var absolute_category_value = abs(category_value)
-	
-	if absolute_category_value >= 8:
-		return "extremely"
-	elif absolute_category_value >= 6:
-		return "very"
-	elif absolute_category_value == 5:
-		return "half"
-	elif absolute_category_value >= 3:
-		return "slight"
-	elif absolute_category_value >= 1:
-		return "hint"
-	
-	return "none"
+func get_flavor_category_id(value) -> int:
+	if value >= 8:
+		return 4      # extremely
+	elif value >= 6:
+		return 3      # very
+	elif value == 5:
+		return 2      # half
+	elif value >= 3:
+		return 1      # slight
+	elif value >= 1:
+		return 0      # hint
+	else:
+		return -1     # none
 
 
-func get_flavor_direction(flavor_value) -> String:
-	if flavor_value > 0:
-		return "positive"
-	elif flavor_value < 0:
-		return "negative"
-	
-	return "none"
+# Matches perfect
+func matches_all(criteria, stats) -> bool:
+	if criteria.has("ingredients"):
+		var ing = criteria["ingredients"]
+		if ing.has("flavors"):
+			for f in ing["flavors"]:
+				if f not in chosen_flavors:
+					return false
+					
+		if ing.has("topping") and chosen_topping != ing["topping"]:
+			return false
+			
+		if ing.has("cup") and chosen_cup != ing["cup"]:
+			return false
+		
+		if ing.has("modification") and chosen_modification != ing["modification"]:
+			return false
+			
+	if criteria.has("stats"):
+		for key in criteria["stats"].keys():
+			var required = criteria["stats"][key]
+			var player = stats.get(key)
+			
+			if required is Array:
+				if player not in required:
+					return false
+			else:
+				if player != required:
+					return false
+	return true
 
 
-func get_drink_trait_categories(drink_traits) -> Dictionary:
-	var drink_result : Dictionary = {}
+# Matches good
+func matches_any(criteria, stats) -> bool:
+	var matched = false
 	
-	for key in drink_traits.keys():
-		var value = drink_traits[key]
-		drink_result[key] = {
-			"direction": get_flavor_direction(value),
-			"category": get_flavor_category(value)
-		}
+	if criteria.has("ingredients"):
+		var ing = criteria["ingredients"]
+		
+		if ing.has("flavors"):
+			for f in ing["flavors"]:
+				if f in chosen_flavors:
+					matched = true
+					
+		if ing.has("topping") and chosen_topping == ing["topping"]:
+			matched = true
+		
+		if ing.has("cup") and chosen_cup == ing["cup"]:
+			matched = true
+			
+		if ing.has("modification") and chosen_modification == ing["modification"]:
+			matched = true
+			
+	if criteria.has("stats"):
+		for key in criteria["stats"].keys():
+			var required = criteria["stats"][key]
+			var player = stats.get(key)
+			
+			if required is Array:
+				if player in required:
+					matched = true
+			else:
+				if player == required:
+					matched = true
+	return matched
+
+# Ingredient only puzzles
+func count_matching_ingredients(target_ing) -> int:
+	var count = 0
 	
-	return drink_result
+	if target_ing.has("flavors"):
+		for f in target_ing["flavors"]:
+			if f in chosen_flavors:
+				count += 1
+				
+	if target_ing.has("topping") and chosen_topping == target_ing["topping"]:
+		count += 1
+		
+	if target_ing.has("cup") and chosen_cup == target_ing["cup"]:
+		count += 1
+	
+	if target_ing.has("modification") and chosen_modification == target_ing["modification"]:
+		count += 1
+	
+	return count
 
 
-func score_drink() -> int:
-	var score = 0
-	var player_categories = get_drink_trait_categories(player_drink_traits)
-	var target_categories = get_drink_trait_categories(DrinkData.target_drinks[DayManager.day][DayManager.encounter])
-	
-	for key in player_categories.keys():
-		if player_categories[key]["direction"] == target_categories[key]["direction"] and player_categories[key]["category"]  == target_categories[key]["category"]:
-			score += 1
-	
-	print(score)
-	return score
+func score_drink(puzzle, player_stats) -> int:
+	var player_cat = {}
+	for key in player_stats.keys():
+		player_cat[key + "_category"] = get_flavor_category_id(player_stats[key])
+		
+	if matches_all(puzzle["perfect"], player_cat):
+		return 3
+		
+	if matches_all(puzzle["good"], player_cat):
+		return 2
+		
+	if puzzle["perfect"]["stats"].is_empty() and puzzle["perfect"]["ingredients"].size() > 0:
+		var target_ing = puzzle["perfect"]["ingredients"]
+		var matches = count_matching_ingredients(target_ing)
+		
+		if matches == target_ing.size():
+			return 3
+		elif matches == target_ing.size() - 1:
+			return 2
+		else:
+			return 0
+			
+	return 0
 
 
 func evaluate_drink_rating(score) -> String:
@@ -238,7 +313,7 @@ func evaluate_drink_rating(score) -> String:
 
 
 func _on_serve_pressed() -> void:
-	GameState.drink_result = evaluate_drink_rating(score_drink())
+	GameState.drink_result = evaluate_drink_rating(score_drink(DrinkData.target_drinks[DayManager.day][DayManager.encounter], player_drink_traits))
 	
 	var game_root = get_tree().current_scene
 	queue_free()
