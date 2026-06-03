@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ds0nw7rf6mvsw"
-path="res://.godot/imported/Zara_Neutral.png-3dc32a6aae4803f510b6a84aa13b1abf.ctex"
+path="res://.godot/imported/Zara_Neutral.png-e4ae41a3b2e2e87cf79e6be565ca8c78.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/characters/Zara/Zara_Neutral.png"
-dest_files=["res://.godot/imported/Zara_Neutral.png-3dc32a6aae4803f510b6a84aa13b1abf.ctex"]
+source_file="res://assets/art/characters/zara/Zara_Neutral.png"
+dest_files=["res://.godot/imported/Zara_Neutral.png-e4ae41a3b2e2e87cf79e6be565ca8c78.ctex"]
 
 [params]
 

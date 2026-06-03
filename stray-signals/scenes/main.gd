@@ -53,8 +53,9 @@ func _on_signal(signal_passed_in):
 			
 			print("end_encounter flag")
 			DayManager.advance_encounter()
-			Dialogic.end_timeline()
+			#Dialogic.end_timeline()
 			var current_timeline = DayManager.get_current_timeline()
+			print("DAY:", DayManager.day, " ENCOUNTER:", DayManager.encounter)
 			Dialogic.start("res://timelines/%s.dtl" % current_timeline)
 
 

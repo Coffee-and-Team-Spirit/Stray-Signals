@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://2yis56upfbln"
-path="res://.godot/imported/Archimedes_Sad.png-39b1cb1bda2ee1b8f49f4ca438b0a257.ctex"
+path="res://.godot/imported/Archimedes_Sad.png-02ead8aa5556a1a44b9d391dcc195aa5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/characters/Archimedes/Archimedes_Sad.png"
-dest_files=["res://.godot/imported/Archimedes_Sad.png-39b1cb1bda2ee1b8f49f4ca438b0a257.ctex"]
+source_file="res://assets/art/characters/archimedes/Archimedes_Sad.png"
+dest_files=["res://.godot/imported/Archimedes_Sad.png-02ead8aa5556a1a44b9d391dcc195aa5.ctex"]
 
 [params]
 

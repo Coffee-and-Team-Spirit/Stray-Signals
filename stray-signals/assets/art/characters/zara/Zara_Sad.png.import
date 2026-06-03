@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://65bnitvravyj"
-path="res://.godot/imported/Zara_Sad.png-214f0ca8291a99781b9a2293471f24f0.ctex"
+path="res://.godot/imported/Zara_Sad.png-ab12559a6b701c042925a88b5d0541d3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/characters/Zara/Zara_Sad.png"
-dest_files=["res://.godot/imported/Zara_Sad.png-214f0ca8291a99781b9a2293471f24f0.ctex"]
+source_file="res://assets/art/characters/zara/Zara_Sad.png"
+dest_files=["res://.godot/imported/Zara_Sad.png-ab12559a6b701c042925a88b5d0541d3.ctex"]
 
 [params]
 

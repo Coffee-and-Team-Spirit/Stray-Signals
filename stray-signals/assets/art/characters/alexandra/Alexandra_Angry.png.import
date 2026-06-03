@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://byxk5ibiciajv"
-path="res://.godot/imported/Alexandra_Angry.png-c4a7def207422cc9094a5c6fdca4259f.ctex"
+path="res://.godot/imported/Alexandra_Angry.png-eceb22689ffd78e521a1f19f241468e6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/characters/Alexandra/Alexandra_Angry.png"
-dest_files=["res://.godot/imported/Alexandra_Angry.png-c4a7def207422cc9094a5c6fdca4259f.ctex"]
+source_file="res://assets/art/characters/alexandra/Alexandra_Angry.png"
+dest_files=["res://.godot/imported/Alexandra_Angry.png-eceb22689ffd78e521a1f19f241468e6.ctex"]
 
 [params]
 
