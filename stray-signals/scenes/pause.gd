@@ -53,6 +53,7 @@ func _on_main_menu_pressed() -> void:
 
 func _on_settings_pressed() -> void:
 	GameState.settings_return_target = "pause_menu"
+
 	visible = false
 	
 	$Background.mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -96,14 +97,9 @@ func close_settings_overlay():
 	$PauseMenu.mouse_filter = Control.MOUSE_FILTER_STOP
 	
 	if GameState.settings_return_target == "pause_menu":
-		get_tree().paused = false
 		
 		var game_root = get_tree().root.get_node("GameRoot")
 		game_root.get_node("SettingsOverlay").visible = false
-		
-		# Resume Dialogic
-		if Dialogic.paused:
-			Dialogic.paused = false
 
 
 func _input(event):

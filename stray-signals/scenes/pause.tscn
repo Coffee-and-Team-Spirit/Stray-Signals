@@ -58,6 +58,10 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cml1b"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jl8xs"]
+content_margin_left = 10.0
+bg_color = Color(1, 0.49019608, 0, 0.5019608)
+
 [node name="Pause" type="CanvasLayer" unique_id=1108024468]
 layer = 10
 script = ExtResource("1_f1d2v")
@@ -148,10 +152,12 @@ alignment = 0
 layout_mode = 2
 theme_override_colors/font_pressed_color = Color(0.10404196, 0.08853788, 0.34181657, 1)
 theme_override_colors/font_hover_color = Color(1, 0.66993517, 0.4684493, 1)
+theme_override_colors/font_disabled_color = Color(0.05882353, 0.05490196, 0.13725491, 1)
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_wen6a")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_xw83q")
 theme_override_styles/hover = SubResource("StyleBoxFlat_cml1b")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_jl8xs")
 text = "SETTINGS"
 alignment = 0
 
