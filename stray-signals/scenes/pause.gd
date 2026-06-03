@@ -80,3 +80,7 @@ func close_pause_menu() -> void:
 func _input(event):
 	if visible and event.is_action_pressed("ui_cancel"):
 		close_pause_menu()
+
+
+func _on_back_pressed() -> void:
+	close_pause_menu()
