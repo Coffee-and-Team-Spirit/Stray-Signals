@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://px13jr3oerwy"
-path="res://.godot/imported/Alexandra_Happy.png-f3e66d34fc2b6a7a5b75928b3c2b4148.ctex"
+path="res://.godot/imported/Alexandra_Happy.png-24fb7c83293a229c85ec2c80b3edb6b6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/characters/alexandra/Alexandra_Happy.png"
-dest_files=["res://.godot/imported/Alexandra_Happy.png-f3e66d34fc2b6a7a5b75928b3c2b4148.ctex"]
+source_file="res://assets/art/characters/Alexandra/Alexandra_Happy.png"
+dest_files=["res://.godot/imported/Alexandra_Happy.png-24fb7c83293a229c85ec2c80b3edb6b6.ctex"]
 
 [params]
 

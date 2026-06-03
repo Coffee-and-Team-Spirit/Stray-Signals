@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c6xyvhv3bbk4t"
-path="res://.godot/imported/Archimedes_Happy.png-a9e9028786718c4475afe30d18546238.ctex"
+path="res://.godot/imported/Archimedes_Happy.png-b4a26f29cdedae315f9f773f274c0791.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/characters/archimedes/Archimedes_Happy.png"
-dest_files=["res://.godot/imported/Archimedes_Happy.png-a9e9028786718c4475afe30d18546238.ctex"]
+source_file="res://assets/art/characters/Archimedes/Archimedes_Happy.png"
+dest_files=["res://.godot/imported/Archimedes_Happy.png-b4a26f29cdedae315f9f773f274c0791.ctex"]
 
 [params]
 
