@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://c5w85ihkcf3dp"]
+
+[ext_resource type="PackedScene" uid="uid://brp6e32b60vj0" path="res://scenes/settings.tscn" id="1_tvg1h"]
+[ext_resource type="Script" uid="uid://b60jysk5xmkfd" path="res://scenes/pause_overlay.gd" id="1_v34cv"]
+[ext_resource type="PackedScene" uid="uid://cqnah8bf2730h" path="res://scenes/pause.tscn" id="2_62ixu"]
+
+[node name="PauseOverlay" type="CanvasLayer" unique_id=837282808]
+process_mode = 3
+layer = 20
+script = ExtResource("1_v34cv")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1151562842]
+process_mode = 3
+z_index = 1
+custom_minimum_size = Vector2(1920, 1080)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+color = Color(0, 0, 0, 0.38431373)
+
+[node name="Pause" parent="." unique_id=1108024468 instance=ExtResource("2_62ixu")]
+z_index = 2
+
+[node name="Settings" parent="." unique_id=490838427 instance=ExtResource("1_tvg1h")]
+visible = false
+z_index = 2
+
+[connection signal="gui_input" from="Background" to="." method="_on_background_gui_input"]

@@ -18,6 +18,6 @@ func _process(delta: float) -> void:
 
 func _on_menu_button_pressed() -> void:
 	var root = get_tree().current_scene  # GameRoot
-	var pause = root.get_node("Pause")
+	var pause = root.get_node("PauseOverlay")
 	
 	pause.open_pause_menu()

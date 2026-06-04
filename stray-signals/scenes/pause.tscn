@@ -58,21 +58,16 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cml1b"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
-[node name="Pause" type="CanvasLayer" unique_id=1108024468]
-layer = 10
+[node name="Pause" type="Control" unique_id=763711160]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 1
 script = ExtResource("1_f1d2v")
-
-[node name="Background" type="ColorRect" parent="." unique_id=1544118276]
-z_index = 1
-custom_minimum_size = Vector2(1920, 1080)
-offset_right = 1920.0
-offset_bottom = 1080.0
-size_flags_horizontal = 4
-size_flags_vertical = 4
-color = Color(0, 0, 0, 0.38431373)
 
 [node name="PauseMenu" type="ColorRect" parent="." unique_id=1296776827]
 z_index = 2
+layout_mode = 0
 offset_left = 158.0
 offset_right = 540.0
 offset_bottom = 498.0
@@ -155,30 +150,8 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_cml1b")
 text = "SETTINGS"
 alignment = 0
 
-[node name="Button" type="Button" parent="." unique_id=1855056681]
-visible = false
-offset_left = 459.0
-offset_top = 437.0
-offset_right = 736.0
-offset_bottom = 513.0
-theme_override_font_sizes/font_size = 36
-text = "Quit"
-
-[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1127124328]
-visible = false
-offset_left = 356.0
-offset_top = 38.0
-offset_right = 825.0
-offset_bottom = 125.0
-theme_override_font_sizes/normal_font_size = 58
-text = "Pause Menu"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[connection signal="gui_input" from="Background" to="." method="_on_background_gui_input"]
 [connection signal="pressed" from="PauseMenu/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="PauseMenu/MarginContainer/MainMenuContainer/SaveGame" to="." method="_on_save_game_pressed"]
 [connection signal="pressed" from="PauseMenu/MarginContainer/MainMenuContainer/LoadGame" to="." method="_on_load_game_pressed"]
 [connection signal="pressed" from="PauseMenu/MarginContainer/MainMenuContainer/MainMenu" to="." method="_on_main_menu_pressed"]
 [connection signal="pressed" from="PauseMenu/MarginContainer/MainMenuContainer/Settings" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

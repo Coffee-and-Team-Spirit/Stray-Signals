@@ -1,8 +1,0 @@
-[gd_scene format=3 uid="uid://c5w85ihkcf3dp"]
-
-[ext_resource type="PackedScene" uid="uid://brp6e32b60vj0" path="res://scenes/settings.tscn" id="1_tvg1h"]
-
-[node name="SettingsOverlay" type="CanvasLayer" unique_id=837282808]
-layer = 20
-
-[node name="Settings" parent="." unique_id=490838427 instance=ExtResource("1_tvg1h")]
