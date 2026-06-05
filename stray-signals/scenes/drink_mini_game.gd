@@ -82,6 +82,17 @@ func select_modification(modification_name):
 	chosen_modification = modification_name
 	update_cup_display()
 	update_drink_components_display()
+	
+	match modification_name:
+		"heat":
+			modification_sparkle(Color.INDIAN_RED)
+		"chill":
+			modification_sparkle(Color.SKY_BLUE)
+		"shake":
+			modification_sparkle(Color.LIME_GREEN)
+		"stir":
+			modification_sparkle(Color.MEDIUM_PURPLE)
+			
 	print(chosen_modification)
 
 
@@ -416,20 +427,6 @@ func start_pouring(flavor : String):
 	print("Pouring flavor: ", pour_flavor)
 
 
-func _process(delta):
-	is_pouring_action = Input.is_action_pressed("pour_flavor")
-	
-	if is_pouring_action && is_flavor_hovering && not is_pouring_flavor:
-			start_pouring(current_hovered_flavor)
-			
-	if is_pouring_flavor and is_pouring_action:
-		pour_amount += delta
-		
-		var required_pour_time = POUR_TIME if pour_stage == 0 else POUR_TIME * 2
-		if pour_amount >= required_pour_time:
-			finish_pouring(current_hovered_flavor)
-
-
 func update_drink_traits(flavor_name):
 	print("drink flavors ", player_drink_traits)
 	if flavor_name in DrinkTraits.flavor_traits:
@@ -482,7 +479,28 @@ func finish_pouring(flavor):
 		
 	print("FINISH POURING: ", chosen_flavors)
 
+
+func modification_sparkle(color: Color):
+	var sparkle = $DrinkComponents/DrinkInformation/CupDisplayFX/SparkleParticles
+	sparkle.modulate = color
+	sparkle.restart()
+
+
 func _ready():
 	$DrinkComponents/DialogueHistory/DialogueHint.text = GameState.drink_hint
 	$DrinkComponents/DialogueHistory/CharacterImage.texture.atlas = load("res://assets/art/characters/%s/%s_%s.png" % [GameState.current_character, GameState.current_character, GameState.current_portrait_info])
 	$DrinkComponents/DialogueHistory/CharacterName.text = GameState.current_character
+
+
+func _process(delta):
+	is_pouring_action = Input.is_action_pressed("pour_flavor")
+	
+	if is_pouring_action && is_flavor_hovering && not is_pouring_flavor:
+			start_pouring(current_hovered_flavor)
+			
+	if is_pouring_flavor and is_pouring_action:
+		pour_amount += delta
+		
+		var required_pour_time = POUR_TIME if pour_stage == 0 else POUR_TIME * 2
+		if pour_amount >= required_pour_time:
+			finish_pouring(current_hovered_flavor)

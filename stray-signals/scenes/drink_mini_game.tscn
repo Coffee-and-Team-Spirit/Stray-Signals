@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://cb2m4871ckl5y" path="res://assets/art/cups/empty_cup.png" id="13_i647u"]
 [ext_resource type="Texture2D" uid="uid://d4j41dsdcvdbw" path="res://assets/art/characters/Loren/Loren_Neutral.png" id="14_n60d2"]
 [ext_resource type="Script" uid="uid://dlut1ikn4tx6h" path="res://scenes/cup_display_drop.gd" id="15_okdn2"]
+[ext_resource type="Texture2D" uid="uid://b5i22smay4y34" path="res://assets/art/sparkle.png" id="17_0saxs"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vlrg8"]
 content_margin_top = 5.0
@@ -50,6 +51,31 @@ content_margin_bottom = 5.0
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k0qsm"]
 content_margin_top = 5.0
 content_margin_bottom = 5.0
+
+[sub_resource type="Curve" id="Curve_0saxs"]
+_data = [Vector2(0.07466064, 0.9027618), 0.0, 0.0, 0, 0, Vector2(1, 0.4938627), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_cg4nb"]
+curve = SubResource("Curve_0saxs")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_0saxs"]
+lifetime_randomness = 0.5
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(180, 100, 1)
+angle_min = 1.0728835e-05
+angle_max = 360.00003
+inherit_velocity_ratio = 50.0
+spread = 180.0
+initial_velocity_min = 20.0
+initial_velocity_max = 50.0
+gravity = Vector3(0, -5, 0)
+scale_min = 0.099999994
+scale_max = 0.29999998
+scale_curve = SubResource("CurveTexture_cg4nb")
+turbulence_enabled = true
+turbulence_noise_strength = 5.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_okdn2"]
 corner_radius_top_left = 8
@@ -614,7 +640,22 @@ layout_mode = 2
 size_flags_horizontal = 4
 text = "RESET"
 
+[node name="CupDisplayFX" type="Node2D" parent="DrinkComponents/DrinkInformation" unique_id=1735735995]
+z_index = 1
+
+[node name="SparkleParticles" type="GPUParticles2D" parent="DrinkComponents/DrinkInformation/CupDisplayFX" unique_id=1643787877]
+position = Vector2(550, 16)
+emitting = false
+amount = 10
+texture = ExtResource("17_0saxs")
+lifetime = 10.0
+randomness = 0.5
+collision_base_size = 150.0
+visibility_rect = Rect2(-175, -100, 350, 200)
+process_material = SubResource("ParticleProcessMaterial_0saxs")
+
 [node name="CupDisplay" type="Control" parent="DrinkComponents/DrinkInformation" unique_id=1314586537]
+z_index = 2
 custom_minimum_size = Vector2(512, 512)
 layout_mode = 2
 size_flags_horizontal = 0
