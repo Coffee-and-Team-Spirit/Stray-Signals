@@ -14,7 +14,7 @@ Zara: I'm sure you think you will.
 Zara: Maybe this time we could do a little less human tasting, if you please.
 Zara: Now, as for my drink...
 [signal arg="drink_hint"]
-Zara: **DRINK HINT HERE**
+Zara: I want something with boba but make sure the boba is dispersed evenly throughout the drink.
 leave Zara
 [signal arg="craft_drink"]
 label drink_rating (Scene 2 Drink Rating)

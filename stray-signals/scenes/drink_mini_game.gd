@@ -244,6 +244,11 @@ func matches_all(criteria, stats) -> bool:
 				if not ok:
 					return false
 					
+		if target_ingredients.has("flavors_not"):
+			for f in target_ingredients["flavors_not"]:
+				if f in chosen_flavors:
+					return false
+					
 		if target_ingredients.has("topping") and chosen_topping != target_ingredients["topping"]:
 			return false
 			
@@ -286,9 +291,18 @@ func matches_any(criteria, stats) -> bool:
 					matched = true
 				
 		if target_ingredients.has("flavors_or"):
+			var ok := false
 			for f in target_ingredients["flavors_or"]:
 				if f in chosen_flavors:
-					matched = true
+					ok = true
+					break
+				if not ok:
+					return false
+					
+		if target_ingredients.has("flavors_not"):
+			for f in target_ingredients["flavors_not"]:
+				if f in chosen_flavors:
+					return false
 					
 		if target_ingredients.has("topping") and chosen_topping == target_ingredients["topping"]:
 			matched = true

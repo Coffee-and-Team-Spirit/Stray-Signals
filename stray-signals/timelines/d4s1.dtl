@@ -32,7 +32,7 @@ Player: Then tell me who did this to you!
 Whiskerly: If only it was that easy. But again, I can't quite remember everything. Maybe if you could make me a drink like you used to.
 Whiskerly: That might jog my memory. At least I hope it will.
 [signal arg="drink_hint"]
-Whiskerly: **DRINK HINT HERE**
+Whiskerly: I love mango and I need more mango. Also sprinkle in some catnip.
 leave Whiskerly
 [signal arg="craft_drink"]
 label drink_rating (Scene 2 Drink Rating)

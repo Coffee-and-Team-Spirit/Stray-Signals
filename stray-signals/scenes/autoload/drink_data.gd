@@ -165,10 +165,38 @@ var drink_puzzles = {
 	},
 	4: {
 		1: {
-			
+			"perfect": {
+				"ingredients": {
+					"flavors": ["mango", "mango"], 
+					"toppings": ["catnip"]
+				},
+			"stats": {}
+			},
+			"good": {
+				"ingredients": {
+					"flavors": ["mango"],
+					"toppings": ["catnip"]
+				},
+				"stats": {}
+			},
 		},
 		2: {
-			
+			"perfect": {
+				"ingredients": {
+					"flavors_not": ["matcha"]
+				},
+				"stats": {
+					"fancy_cozy_intensity": [0, 1]
+				}
+			},
+			"good": {
+				"ingredients": {
+					"flavors_not": ["matcha"]
+				},
+				"stats": {
+					"fancy_cozy_intensity": [0, 1, 2]
+				}
+			},
 		},
 		3: {
 			
