@@ -199,11 +199,57 @@ var drink_puzzles = {
 			},
 		},
 		3: {
-			
+			"perfect": {
+				"ingredients": {
+					"topping": "boba",
+					"modification": "shake"
+				},
+				"stats": {}
+			},
+			"good": {
+				"ingredients": {
+					"topping": "boba"
+				},
+				"stats": {}
+			}	
+		},
+		4: {
+			"perfect": {
+				"ingredients": {
+					"cup": "cup",
+					"topping": "boba"
+				},
+				"stats": {
+					"cool_warm_direction": ["cold"],
+					"cool_warm_intensity": [3, 4]
+				}
+			},
+			"good": {
+				"ingredients": {
+					"cup": "cup",
+					"topping": "boba"
+				},
+				"stats": {
+					"cool_warm_direction": ["cold"],
+					"cool_warm_intensity": [2, 3, 4]
+				}
+			}
 		}
 	},
 	5: {
 		1: {
+			
+		},
+		2: {
+			
+		},
+		3: {
+			
+		},
+		4: {
+			
+		},
+		5: {
 			
 		}
 	}
