@@ -27,3 +27,4 @@ visible = false
 visible = false
 
 [node name="PauseOverlay" parent="." unique_id=837282808 instance=ExtResource("7_j7aru")]
+visible = false

@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dg0vwi8mwerfy" path="res://assets/art/backgrounds/Main_Menu_Background.png" id="1_bqqt6"]
 [ext_resource type="Script" uid="uid://cdailehem08kr" path="res://scenes/main_menu.gd" id="1_ekxnf"]
-[ext_resource type="Texture2D" uid="uid://deaxcxk7u6wsv" path="res://assets/temp/logo.png" id="1_l6cm7"]
+[ext_resource type="Texture2D" uid="uid://butdw4fdwv31e" path="res://assets/art/logo.png" id="2_bqqt6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l6cm7"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -77,7 +77,7 @@ theme_override_constants/separation = 15
 
 [node name="StraySignalsLogo" type="TextureRect" parent="MarginContainer/MainMenuContainer" unique_id=256125351]
 layout_mode = 2
-texture = ExtResource("1_l6cm7")
+texture = ExtResource("2_bqqt6")
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/MainMenuContainer" unique_id=808057563]
 layout_mode = 2
