@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://d1pkrbdjn820w" path="res://scenes/sub_menu.tscn" id="1_5p8wc"]
 [ext_resource type="Script" uid="uid://fyxcg6y47cmq" path="res://scenes/settings.gd" id="1_r6d6q"]
 [ext_resource type="Texture2D" uid="uid://dg0vwi8mwerfy" path="res://assets/art/backgrounds/Main_Menu_Background.png" id="2_f4mfi"]
+[ext_resource type="PackedScene" uid="uid://cqnah8bf2730h" path="res://scenes/pause.tscn" id="4_am25x"]
 [ext_resource type="Texture2D" uid="uid://nvkr0ljxpqlw" path="res://assets/temp/settings_doodles.png" id="4_es4n0"]
 [ext_resource type="Texture2D" uid="uid://cqg3gi3megs3e" path="res://assets/temp/music_off.png" id="5_gis3k"]
 [ext_resource type="Texture2D" uid="uid://dxv56n3kd14t6" path="res://assets/temp/music_on.png" id="6_83j8s"]
@@ -46,6 +47,7 @@ mouse_filter = 2
 texture = ExtResource("2_f4mfi")
 
 [node name="SubMenu" parent="." unique_id=710927500 instance=ExtResource("1_5p8wc")]
+z_index = 2
 layout_mode = 0
 mouse_filter = 1
 
@@ -225,3 +227,6 @@ theme_override_styles/grabber_area = SubResource("StyleBoxFlat_gis3k")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_83j8s")
 max_value = 2.0
 value = 2.0
+
+[node name="Pause" parent="." unique_id=1108024468 instance=ExtResource("4_am25x")]
+visible = false

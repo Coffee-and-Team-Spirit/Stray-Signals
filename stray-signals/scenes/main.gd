@@ -48,8 +48,8 @@ func _on_signal(signal_passed_in):
 			GameState.drink_result = "none"
 			Dialogic.VAR.set_variable("Drink.Rating", GameState.drink_result)
 			
-			if Dialogic.Text.about_to_show_text.is_connected(_on_about_to_show_text):
-				Dialogic.Text.about_to_show_text.disconnect(_on_about_to_show_text)
+			#if Dialogic.Text.about_to_show_text.is_connected(_on_about_to_show_text):
+				#Dialogic.Text.about_to_show_text.disconnect(_on_about_to_show_text)
 			
 			print("end_encounter flag")
 			DayManager.advance_encounter()
@@ -64,6 +64,7 @@ func _on_about_to_show_text(info: Dictionary):
 	print(info)
 	print(info.get("text"))
 	print("CHARACTER IMAGE ", info.get("portrait"))
+	
 	var dialogue_drink_hint = info.get("text")
 	if GameState.drink_hint == "none":
 		GameState.drink_hint = dialogue_drink_hint
@@ -84,8 +85,5 @@ func _on_about_to_show_text(info: Dictionary):
 		
 		print("Gamestate: curr char ", GameState.current_character)
 		print("Gamestate: curr portrait info ", GameState.current_portrait_info)
-
-
-#func _input(event):
-	#if event.is_action_pressed("ui_cancel"):
-		#get_tree().quit()
+		
+	Dialogic.Text.about_to_show_text.disconnect(_on_about_to_show_text)

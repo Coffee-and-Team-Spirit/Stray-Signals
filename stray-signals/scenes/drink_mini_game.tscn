@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://cof8hgx2vd0dw" path="res://assets/art/ingredients/ingredient_catnip.png" id="11_3cihv"]
 [ext_resource type="StyleBox" uid="uid://d16gnpc5j64h7" path="res://ui/drink_components_panel.tres" id="13_1ck7w"]
 [ext_resource type="Texture2D" uid="uid://cb2m4871ckl5y" path="res://assets/art/cups/empty_cup.png" id="13_i647u"]
-[ext_resource type="Texture2D" uid="uid://d4j41dsdcvdbw" path="res://assets/art/characters/Loren/Loren_Neutral.png" id="14_n60d2"]
+[ext_resource type="Texture2D" uid="uid://cayjmysuaoyqk" path="res://assets/art/characters/Loren/Loren_Happy.png" id="14_n60d2"]
 [ext_resource type="Script" uid="uid://dlut1ikn4tx6h" path="res://scenes/cup_display_drop.gd" id="15_okdn2"]
 [ext_resource type="Texture2D" uid="uid://b5i22smay4y34" path="res://assets/art/sparkle.png" id="17_0saxs"]
 
