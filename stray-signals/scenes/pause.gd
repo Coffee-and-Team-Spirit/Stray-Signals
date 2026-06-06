@@ -36,7 +36,12 @@ func _on_main_menu_pressed() -> void:
 	var hud = game_root.get_node_or_null("HUD")
 	if hud:
 		hud.visible = false
-
+		
+	# Hide drink mini game
+	var mini_game = game_root.get_node_or_null("DrinkMiniGame")
+	if mini_game:
+		mini_game.visible = false
+		
 	# Hide pause
 	visible = false
 

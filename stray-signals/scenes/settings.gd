@@ -1,5 +1,6 @@
 extends Control
 
+
 func _ready() -> void:
 	var settings_button = $SubMenu/MenuBackground/MarginContainer/MainMenuContainer/Settings
 	settings_button.disabled = true
@@ -21,6 +22,9 @@ func _ready() -> void:
 	music_slider.value_changed.connect(_on_music_slider_changed.bind(music_bus_index))
 	sfx_slider.value_changed.connect(_on_sfx_slider_changed.bind(sfx_bus_index))
 	text_slider.value_changed.connect(_on_text_speed_slider_changed)
+	
+	# find Dialogic's hidden layout style for internal audio (typing sounds)
+	Dialogic.timeline_started.connect(_on_dialogic_timeline_started)
 
 
 func _on_music_slider_changed(new_speed, music_bus_index) -> void:
@@ -43,6 +47,17 @@ func _on_sfx_slider_changed(new_speed, sfx_bus_index) -> void:
 		AudioServer.set_bus_volume_db(sfx_bus_index, db)
 		AudioServer.set_bus_mute(sfx_bus_index, false)
 		print("SFX Bus Volume changed to: ", db, " dB (Linear: ", new_speed, ")")
+
+
+func _on_dialogic_timeline_started() -> void:
+	await get_tree().process_frame
+	
+	var current_layout = Dialogic.Styles.get_layout_node()
+	if current_layout:
+		var type_sounds_node = current_layout.find_child("*TypeSounds*", true, false)
+		
+		if type_sounds_node and "bus" in type_sounds_node:
+			type_sounds_node.bus = "One-Shot SFX"
 
 
 func _on_text_speed_slider_changed(new_speed: float) -> void:
