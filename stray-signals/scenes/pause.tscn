@@ -31,6 +31,9 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r8yp4"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jl8xs"]
+bg_color = Color(1, 0.49019608, 0, 0.5019608)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m0klm"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
@@ -98,6 +101,7 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 theme_override_constants/margin_left = 50
 theme_override_constants/margin_top = 115
+theme_override_constants/margin_right = 50
 
 [node name="MainMenuContainer" type="VBoxContainer" parent="PauseMenu/MarginContainer" unique_id=1471873596]
 custom_minimum_size = Vector2(50, 50)
@@ -110,10 +114,12 @@ custom_minimum_size = Vector2(25, 0)
 layout_mode = 2
 theme_override_colors/font_pressed_color = Color(0.105882354, 0.09019608, 0.34117648, 1)
 theme_override_colors/font_hover_color = Color(1, 0.66993517, 0.4684493, 1)
+theme_override_colors/font_disabled_color = Color(0.105882354, 0.09019608, 0.34117648, 1)
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_f1d2v")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_f1d2v")
 theme_override_styles/hover = SubResource("StyleBoxFlat_r8yp4")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_jl8xs")
 text = "SAVE GAME"
 alignment = 0
 
@@ -121,10 +127,12 @@ alignment = 0
 layout_mode = 2
 theme_override_colors/font_pressed_color = Color(0.10404196, 0.08853788, 0.34181657, 1)
 theme_override_colors/font_hover_color = Color(1, 0.66993517, 0.4684493, 1)
+theme_override_colors/font_disabled_color = Color(0.105882354, 0.09019608, 0.34117648, 1)
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_m0klm")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_1xtef")
 theme_override_styles/hover = SubResource("StyleBoxFlat_aicil")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_jl8xs")
 text = "LOAD GAME"
 alignment = 0
 
@@ -132,10 +140,12 @@ alignment = 0
 layout_mode = 2
 theme_override_colors/font_pressed_color = Color(0.10404196, 0.08853788, 0.34181657, 1)
 theme_override_colors/font_hover_color = Color(1, 0.66993517, 0.4684493, 1)
+theme_override_colors/font_disabled_color = Color(0.105882354, 0.09019608, 0.34117648, 1)
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_jn4bt")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_xmhi0")
 theme_override_styles/hover = SubResource("StyleBoxFlat_r1fnm")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_jl8xs")
 text = "MAIN MENU"
 alignment = 0
 
@@ -143,10 +153,12 @@ alignment = 0
 layout_mode = 2
 theme_override_colors/font_pressed_color = Color(0.10404196, 0.08853788, 0.34181657, 1)
 theme_override_colors/font_hover_color = Color(1, 0.66993517, 0.4684493, 1)
+theme_override_colors/font_disabled_color = Color(0.105882354, 0.09019608, 0.34117648, 1)
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_wen6a")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_xw83q")
 theme_override_styles/hover = SubResource("StyleBoxFlat_cml1b")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_jl8xs")
 text = "SETTINGS"
 alignment = 0
 

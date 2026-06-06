@@ -415,6 +415,9 @@ func _on_reset_pressed() -> void:
 	
 	pour_stage = 0
 	
+	$DrinkComponents/DrinkInformation/CupDisplayFX/SparkleParticles.restart()
+	$DrinkComponents/DrinkInformation/CupDisplayFX/SparkleParticles.emitting = false
+	
 	update_cup_display()
 	update_drink_components_display()
 
@@ -480,15 +483,31 @@ func finish_pouring(flavor):
 	print("FINISH POURING: ", chosen_flavors)
 
 
-func modification_sparkle(color: Color):
+func modification_sparkle(color):
 	var sparkle = $DrinkComponents/DrinkInformation/CupDisplayFX/SparkleParticles
 	sparkle.modulate = color
 	sparkle.restart()
+	$DrinkComponents/DrinkInformation/CupDisplayFX/SparkleParticles.emitting = true
 
 
 func _ready():
 	$DrinkComponents/DialogueHistory/DialogueHint.text = GameState.drink_hint
 	$DrinkComponents/DialogueHistory/CharacterImage.texture.atlas = load("res://assets/art/characters/%s/%s_%s.png" % [GameState.current_character, GameState.current_character, GameState.current_portrait_info])
+	
+	match GameState.current_character:
+		"Alexandra":
+			$DrinkComponents/DialogueHistory/CharacterImage.texture.region.position.y = 50
+		"Archimedes":
+			$DrinkComponents/DialogueHistory/CharacterImage.texture.region.position.y = 350
+		"GG":
+			$DrinkComponents/DialogueHistory/CharacterImage.texture.region.position.y = 400
+		"Loren":
+			$DrinkComponents/DialogueHistory/CharacterImage.texture.region.position.y = 25
+		"Whiskerly":
+			$DrinkComponents/DialogueHistory/CharacterImage.texture.region.position.y = 325
+		"Zara":
+			$DrinkComponents/DialogueHistory/CharacterImage.texture.region.position.y = 150
+	
 	$DrinkComponents/DialogueHistory/CharacterName.text = GameState.current_character
 
 

@@ -23,6 +23,10 @@ func close_pause_menu() -> void:
 	Dialogic.paused = false
 	
 	$Pause.visible = false
+	
+	var settings_button = $Pause/PauseMenu/MarginContainer/MainMenuContainer/Settings
+	settings_button.disabled = false
+	settings_button.set_pressed_no_signal(false)
 
 
 func close_everything() -> void:
@@ -38,6 +42,10 @@ func close_everything() -> void:
 
 
 func open_settings_from_pause():
+	var settings_button = $Pause/PauseMenu/MarginContainer/MainMenuContainer/Settings
+	settings_button.disabled = true
+	settings_button.set_pressed_no_signal(true)
+	
 	$Settings.visible = true
 	$Settings.get_node("Background").mouse_filter = Control.MOUSE_FILTER_IGNORE
 	$Settings.get_node("SubMenu").mouse_filter = Control.MOUSE_FILTER_IGNORE
