@@ -82,6 +82,17 @@ func select_modification(modification_name):
 	chosen_modification = modification_name
 	update_cup_display()
 	update_drink_components_display()
+	
+	match modification_name:
+		"heat":
+			modification_sparkle(Color.INDIAN_RED)
+		"chill":
+			modification_sparkle(Color.SKY_BLUE)
+		"shake":
+			modification_sparkle(Color.LIME_GREEN)
+		"stir":
+			modification_sparkle(Color.MEDIUM_PURPLE)
+			
 	print(chosen_modification)
 
 
@@ -173,56 +184,201 @@ func update_drink_components_display():
 		$DrinkComponents/DrinkInformation/MarginContainer/DrinkComponents/SelectModification.add_theme_color_override("default_color", Color(0, 0, 0))
 
 
-func get_flavor_category(category_value) -> String:
-	var absolute_category_value = abs(category_value)
+func get_flavor_category_id(flavor_name, value) -> Dictionary:
+	var direction := "neutral"
 	
-	if absolute_category_value >= 8:
-		return "extremely"
-	elif absolute_category_value >= 6:
-		return "very"
-	elif absolute_category_value == 5:
-		return "half"
-	elif absolute_category_value >= 3:
-		return "slight"
-	elif absolute_category_value >= 1:
-		return "hint"
+	if flavor_name == "fancy_cozy":
+		if value < 0:
+			direction = "fancy"
+		elif value > 0:
+			direction = "cozy"
+	elif flavor_name == "bitter_sweet":
+		if value < 0:
+			direction = "bitter"
+		elif value > 0:
+			direction = "sweet"
+	elif flavor_name == "cool_warm":
+		if value < 0:
+			direction = "cold"
+		elif value > 0:
+			direction = "warm"
+		
+	var abs_value = abs(value)
+	var intensity = -1;
 	
-	return "none"
+	if abs_value >= 8:
+		intensity = 4      # extremely
+	elif abs_value >= 6:
+		intensity = 3      # very
+	elif abs_value == 5:
+		intensity = 2      # half
+	elif abs_value >= 3:
+		intensity = 1      # slight
+	elif abs_value >= 1:
+		intensity = 0      # hint
+		
+	return {
+		"direction": direction,
+		"intensity": intensity
+	}
 
 
-func get_flavor_direction(flavor_value) -> String:
-	if flavor_value > 0:
-		return "positive"
-	elif flavor_value < 0:
-		return "negative"
+# Matches perfect
+func matches_all(criteria, stats) -> bool:
+	print("CRITERIA: ", criteria)
+	print("STATS: ", stats)
 	
-	return "none"
+	if criteria.has("ingredients"):
+		var target_ingredients = criteria["ingredients"]
+		if target_ingredients.has("flavors"):
+			for f in target_ingredients["flavors"]:
+				if f not in chosen_flavors:
+					return false
+		
+		if target_ingredients.has("flavors_or"):
+			var ok := false
+			for f in target_ingredients["flavors_or"]:
+				if f in chosen_flavors:
+					ok = true
+					break
+				if not ok:
+					return false
+					
+		if target_ingredients.has("flavors_not"):
+			for f in target_ingredients["flavors_not"]:
+				if f in chosen_flavors:
+					return false
+					
+		if target_ingredients.has("topping") and chosen_topping != target_ingredients["topping"]:
+			return false
+			
+		if target_ingredients.has("cup") and chosen_cup != target_ingredients["cup"]:
+			return false
+		
+		if target_ingredients.has("modification") and chosen_modification != target_ingredients["modification"]:
+			return false
+			
+	if criteria.has("stats"):
+		for key in criteria["stats"].keys():
+			var required = criteria["stats"][key]
+			var player = stats.get(key)
+			
+			print("REQUIRED!!!! ", required)
+			print("PLAYER ", player)
+			
+			if key.ends_with("_direction") and player == "neutral":
+				continue
+				
+			if required is Array:
+				if player not in required:
+					return false
+			else:
+				if player != required:
+					return false
+	return true
 
 
-func get_drink_trait_categories(drink_traits) -> Dictionary:
-	var drink_result : Dictionary = {}
+# Matches good
+func matches_any(criteria, stats) -> bool:
+	var matched = false
 	
-	for key in drink_traits.keys():
-		var value = drink_traits[key]
-		drink_result[key] = {
-			"direction": get_flavor_direction(value),
-			"category": get_flavor_category(value)
-		}
+	if criteria.has("ingredients"):
+		var target_ingredients = criteria["ingredients"]
+		
+		if target_ingredients.has("flavors"):
+			for f in target_ingredients["flavors"]:
+				if f in chosen_flavors:
+					matched = true
+				
+		if target_ingredients.has("flavors_or"):
+			var ok := false
+			for f in target_ingredients["flavors_or"]:
+				if f in chosen_flavors:
+					ok = true
+					break
+				if not ok:
+					return false
+					
+		if target_ingredients.has("flavors_not"):
+			for f in target_ingredients["flavors_not"]:
+				if f in chosen_flavors:
+					return false
+					
+		if target_ingredients.has("topping") and chosen_topping == target_ingredients["topping"]:
+			matched = true
+			print("TOPPING MATCH ", matched)
+		
+		if target_ingredients.has("cup") and chosen_cup == target_ingredients["cup"]:
+			matched = true
+			
+		if target_ingredients.has("modification") and chosen_modification == target_ingredients["modification"]:
+			matched = true
+			
+	if criteria.has("stats"):
+		for key in criteria["stats"].keys():
+			var required = criteria["stats"][key]
+			var player = stats.get(key)
+			
+			if key.ends_with("_direction") and player == "neutral":
+				matched = true
+				continue
+				
+			if required is Array:
+				if player in required:
+					matched = true
+			else:
+				if player == required:
+					matched = true
+	return matched
+
+# Ingredient only puzzles
+func count_matching_ingredients(target_ingredients) -> int:
+	var count = 0
 	
-	return drink_result
+	if target_ingredients.has("flavors"):
+		for f in target_ingredients["flavors"]:
+			if f in chosen_flavors:
+				count += 1
+				
+	if target_ingredients.has("topping") and chosen_topping == target_ingredients["topping"]:
+		count += 1
+		
+	if target_ingredients.has("cup") and chosen_cup == target_ingredients["cup"]:
+		count += 1
+	
+	if target_ingredients.has("modification") and chosen_modification == target_ingredients["modification"]:
+		count += 1
+	
+	return count
 
 
-func score_drink() -> int:
-	var score = 0
-	var player_categories = get_drink_trait_categories(player_drink_traits)
-	var target_categories = get_drink_trait_categories(DrinkData.target_drinks[DayManager.day][DayManager.encounter])
+func score_drink(puzzle, player_stats) -> int:
+	var player_category = {}
+	for key in player_stats.keys():
+		var result = get_flavor_category_id(key, player_stats[key])
+		player_category[key + "_direction"] = result.direction
+		player_category[key + "_intensity"] = result.intensity
 	
-	for key in player_categories.keys():
-		if player_categories[key]["direction"] == target_categories[key]["direction"] and player_categories[key]["category"]  == target_categories[key]["category"]:
-			score += 1
-	
-	print(score)
-	return score
+	print("PLAYER STATS ", player_stats)
+	print("PLAYER CATEGORY ", player_category)
+	if matches_all(puzzle["perfect"], player_category):
+		return 3
+		
+	if matches_all(puzzle["good"], player_category) or matches_any(puzzle["good"], player_category):
+		return 2
+		
+	if puzzle["perfect"]["stats"].is_empty() and puzzle["perfect"]["ingredients"].size() > 0:
+		var target_ingredients = puzzle["perfect"]["ingredients"]
+		var matches = count_matching_ingredients(target_ingredients)
+		
+		if matches == target_ingredients.size():
+			return 3
+		elif matches == target_ingredients.size() - 1:
+			return 2
+		else:
+			return 0
+			
+	return 0
 
 
 func evaluate_drink_rating(score) -> String:
@@ -238,7 +394,7 @@ func evaluate_drink_rating(score) -> String:
 
 
 func _on_serve_pressed() -> void:
-	GameState.drink_result = evaluate_drink_rating(score_drink())
+	GameState.drink_result = evaluate_drink_rating(score_drink(DrinkData.drink_puzzles[DayManager.day][DayManager.encounter], player_drink_traits))
 	
 	var game_root = get_tree().current_scene
 	queue_free()
@@ -264,14 +420,17 @@ func _on_reset_pressed() -> void:
 		"cool_warm": 0
 	}
 	
-	$DrinkComponents/FlavorBars/FancyCozyBar/FancyBar.value = player_drink_traits["fancy_cozy"]
-	$DrinkComponents/FlavorBars/FancyCozyBar/CozyBar.value = player_drink_traits["fancy_cozy"]
-	$DrinkComponents/FlavorBars/BitterSweetBar/BitterBar.value = player_drink_traits["bitter_sweet"]
-	$DrinkComponents/FlavorBars/BitterSweetBar/SweetBar.value = player_drink_traits["bitter_sweet"]
-	$DrinkComponents/FlavorBars/CoolWarmBar/CoolBar.value = player_drink_traits["cool_warm"]
-	$DrinkComponents/FlavorBars/CoolWarmBar/WarmBar.value = player_drink_traits["cool_warm"]
+	$DrinkComponents/DrinkInformation/FlavorBars/FancyCozyBar/FancyBar.value = player_drink_traits["fancy_cozy"]
+	$DrinkComponents/DrinkInformation/FlavorBars/FancyCozyBar/CozyBar.value = player_drink_traits["fancy_cozy"]
+	$DrinkComponents/DrinkInformation/FlavorBars/BitterSweetBar/BitterBar.value = player_drink_traits["bitter_sweet"]
+	$DrinkComponents/DrinkInformation/FlavorBars/BitterSweetBar/SweetBar.value = player_drink_traits["bitter_sweet"]
+	$DrinkComponents/DrinkInformation/FlavorBars/CoolWarmBar/CoolBar.value = player_drink_traits["cool_warm"]
+	$DrinkComponents/DrinkInformation/FlavorBars/CoolWarmBar/WarmBar.value = player_drink_traits["cool_warm"]
 	
 	pour_stage = 0
+	
+	$DrinkComponents/DrinkInformation/CupDisplayFX/SparkleParticles.restart()
+	$DrinkComponents/DrinkInformation/CupDisplayFX/SparkleParticles.emitting = false
 	
 	update_cup_display()
 	update_drink_components_display()
@@ -283,20 +442,6 @@ func start_pouring(flavor : String):
 	pour_amount = 0.0
 	pour_stage = 0
 	print("Pouring flavor: ", pour_flavor)
-
-
-func _process(delta):
-	is_pouring_action = Input.is_action_pressed("pour_flavor")
-	
-	if is_pouring_action && is_flavor_hovering && not is_pouring_flavor:
-			start_pouring(current_hovered_flavor)
-			
-	if is_pouring_flavor and is_pouring_action:
-		pour_amount += delta
-		
-		var required_pour_time = POUR_TIME if pour_stage == 0 else POUR_TIME * 2
-		if pour_amount >= required_pour_time:
-			finish_pouring(current_hovered_flavor)
 
 
 func update_drink_traits(flavor_name):
@@ -351,7 +496,44 @@ func finish_pouring(flavor):
 		
 	print("FINISH POURING: ", chosen_flavors)
 
+
+func modification_sparkle(color):
+	var sparkle = $DrinkComponents/DrinkInformation/CupDisplayFX/SparkleParticles
+	sparkle.modulate = color
+	sparkle.restart()
+	$DrinkComponents/DrinkInformation/CupDisplayFX/SparkleParticles.emitting = true
+
+
 func _ready():
 	$DrinkComponents/DialogueHistory/DialogueHint.text = GameState.drink_hint
 	$DrinkComponents/DialogueHistory/CharacterImage.texture.atlas = load("res://assets/art/characters/%s/%s_%s.png" % [GameState.current_character, GameState.current_character, GameState.current_portrait_info])
+	
+	match GameState.current_character:
+		"Alexandra":
+			$DrinkComponents/DialogueHistory/CharacterImage.texture.region.position.y = 50
+		"Archimedes":
+			$DrinkComponents/DialogueHistory/CharacterImage.texture.region.position.y = 350
+		"GG":
+			$DrinkComponents/DialogueHistory/CharacterImage.texture.region.position.y = 400
+		"Loren":
+			$DrinkComponents/DialogueHistory/CharacterImage.texture.region.position.y = 25
+		"Whiskerly":
+			$DrinkComponents/DialogueHistory/CharacterImage.texture.region.position.y = 325
+		"Zara":
+			$DrinkComponents/DialogueHistory/CharacterImage.texture.region.position.y = 150
+	
 	$DrinkComponents/DialogueHistory/CharacterName.text = GameState.current_character
+
+
+func _process(delta):
+	is_pouring_action = Input.is_action_pressed("pour_flavor")
+	
+	if is_pouring_action && is_flavor_hovering && not is_pouring_flavor:
+			start_pouring(current_hovered_flavor)
+			
+	if is_pouring_flavor and is_pouring_action:
+		pour_amount += delta
+		
+		var required_pour_time = POUR_TIME if pour_stage == 0 else POUR_TIME * 2
+		if pour_amount >= required_pour_time:
+			finish_pouring(current_hovered_flavor)

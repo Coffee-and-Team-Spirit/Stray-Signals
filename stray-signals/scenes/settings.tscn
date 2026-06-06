@@ -33,19 +33,23 @@ corner_radius_bottom_left = 10
 corner_detail = 20
 
 [node name="Settings" type="Control" unique_id=490838427]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 0
+mouse_filter = 1
 script = ExtResource("1_r6d6q")
 
 [node name="Background" type="TextureRect" parent="." unique_id=644793827]
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
+mouse_filter = 2
 texture = ExtResource("2_f4mfi")
 
 [node name="SubMenu" parent="." unique_id=710927500 instance=ExtResource("1_5p8wc")]
 z_index = 2
 layout_mode = 0
+mouse_filter = 1
 
 [node name="SettingsBackground" type="ColorRect" parent="." unique_id=1267164169]
 layout_mode = 0
@@ -53,6 +57,7 @@ offset_left = 640.0
 offset_top = 182.0
 offset_right = 1862.0
 offset_bottom = 1014.0
+mouse_filter = 2
 color = Color(0.105882354, 0.09019608, 0.34117648, 1)
 
 [node name="Pagination" type="ColorRect" parent="SettingsBackground" unique_id=1966541774]

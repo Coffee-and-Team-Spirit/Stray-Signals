@@ -2,7 +2,7 @@ extends Control
 
 
 func _on_back_pressed() -> void:
-	get_tree().current_scene.get_node("SettingsOverlay").visible = false
+	get_tree().current_scene.get_node("PauseOverlay").visible = false
 	get_tree().current_scene.get_node("Settings").visible = false
 	get_tree().current_scene.get_node("Credits").visible = false
 	

@@ -29,7 +29,7 @@ Player: Sorry to hear things haven't been great for ya. Here's hoping a drink fo
 Loren (Happy): Ah yes, a drink. That would be just great. [pause=0.3]Clear my mind and all that.
 Player: Your usual then?
 [signal arg="drink_hint"]
-Loren: That would be just perfect. A mug with Mango and Matcha. Some Boba. Oh, and make it hot of course. My bones could use some heat.
+Loren: That would be just perfect. A mug of mango and matcha. Some boba. Oh, and make it hot of course. My bones could use some heat.
 Player: On it!
 leave Loren
 audio music "res://assets/audio/craft_drink_bgm.ogg" [fade="2.0" volume="-8.0"]

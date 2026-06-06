@@ -20,7 +20,7 @@ Player: I appreciate that. But unless you can tell me who is behind turning Huma
 GG (Neutral): Oh, I don't know about that.
 GG: But If you want to serve me one of those fantastic drinks of yours, I might spill some beans on what I know about such people.
 [signal arg="drink_hint"]
-GG: **DRINK HINT HERE**
+GG: Anything but matcha, it's too performative and fancy.
 leave GG
 [signal arg="craft_drink"]
 label drink_rating (Scene 2 Drink Rating)
@@ -28,12 +28,12 @@ label drink_rating (Scene 2 Drink Rating)
 audio music "res://assets/audio/craft_drink_bgm.ogg" [fade="2.0" volume="-5.0"]
 if {Drink.Rating} == "mediocre":
 	join GG center
-	GG: **FINAL DRINK CLUE**
+	GG: MEDIOCRE **FINAL DRINK CLUE**
 	leave GG
 	[signal arg="clear_drink"]
 elif {Drink.Rating} == "good":
 	join GG center
-	GG: **FINAL DRINK CLUE**
+	GG: GOOD **FINAL DRINK CLUE**
 	leave GG
 	[signal arg="clear_drink"]
 else:

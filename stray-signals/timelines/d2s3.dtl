@@ -26,7 +26,7 @@ Archimedes: No, I don't think I will. I would much rather help you. More enterta
 Archimedes: Now, I have some information I'm willing to share with you. But I'm going to need to see how good you are with that drink making of yours.
 Player: Okay? So you just want a drink.
 [signal arg="drink_hint"]
-Archimedes (Happy): **DRINK HINT HERE**
+Archimedes (Happy): It's nice and cozy in here, that makes me want something hot. Add cat treats on top.
 leave Archimedes
 [signal arg="craft_drink"]
 label drink_rating (Scene 2 Drink Rating)

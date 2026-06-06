@@ -3,6 +3,8 @@ extends Node
 var day : int = 1
 var encounter : int = 1
 
+signal day_changed(new_day)
+
 
 func get_current_timeline() -> String:
 	print("TIMELINE : d%ss%s" % [day, encounter])
@@ -13,3 +15,4 @@ func advance_encounter():
 	if (encounter > 3) or (day == 1 && encounter > 2):
 		encounter = 1
 		day += 1
+		emit_signal("day_changed", day)
