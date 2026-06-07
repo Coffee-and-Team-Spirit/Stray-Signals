@@ -1,4 +1,4 @@
-[background arg="res://assets/temp/tempCafe/Cafe_Interior.jpg" fade="1.5"]
+[background arg="res://assets/art/backgrounds/Cafe_Background.png" fade="1.5" wait="true"]
 if {Drink.Rating} == "none":
 	jump begin_timeline
 else:
@@ -25,7 +25,7 @@ Archimedes: **DRINK HINT HERE**
 leave Archimedes
 [signal arg="craft_drink"]
 label drink_rating (Scene 2 Drink Rating)
-[background arg="res://assets/temp/tempCafe/Cafe_Interior.jpg" fade="1.5" wait="true"]
+[background arg="res://assets/art/backgrounds/Cafe_Background.png" fade="1.5" wait="true"]
 audio music "res://assets/audio/craft_drink_bgm.ogg" [fade="2.0" volume="-5.0"]
 if {Drink.Rating} == "mediocre":
 	join Archimedes (Neutral) center

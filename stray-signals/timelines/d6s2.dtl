@@ -1,4 +1,4 @@
-[background arg="res://assets/temp/tempCafe/Cafe_Interior.jpg" fade="1.5"]
+[background arg="res://assets/art/backgrounds/Final_Cutscene.png" fade="1.5"]
 label begin_timeline
 audio music "res://assets/audio/cafe_bgm.ogg" [fade="2.0" volume="-8.0"]
 # Outro 2: True Ending

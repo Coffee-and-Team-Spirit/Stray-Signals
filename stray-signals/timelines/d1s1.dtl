@@ -1,4 +1,4 @@
-[background arg="res://assets/temp/tempCafe/Cafe_Interior.jpg" fade="1.5" wait="true"]
+[background arg="res://assets/art/backgrounds/Cafe_Background.png" fade="1.5" wait="true"]
 if {Drink.Rating} == "none":
 	jump begin_timeline
 else:
@@ -6,7 +6,7 @@ else:
 label begin_timeline
 audio music "res://assets/audio/cafe_bgm.ogg" [fade="2.0" volume="-8.0"]
 [text_input text="What is your name?" var="Player.PlayerName" placeholder="Enter your name" allow_empty="true"]
-Player: [i]Ah… [pause=0.5]another day at Cafe <Name>. [pause=0.8]After three years here, you think I’d get bored of making drinks.[/i]
+Player: [i]Ah… [pause=0.5]another day at Stray Signals. [pause=0.8]After three years here, you think I’d get bored of making drinks.[/i]
 Player: [i]But everyone who stops by leaves behind a little something.[/i]
 Player: [i]I wonder who I’ll be serving today…[/i]
 join Loren (Neutral) center
@@ -36,7 +36,7 @@ audio music "res://assets/audio/craft_drink_bgm.ogg" [fade="2.0" volume="-8.0"]
 label d1s1_drink_rating (Scene 1 Drink Rating)
 [signal arg="craft_drink"]
 label drink_rating (Scene 1 Drink Rating)
-[background arg="res://assets/temp/tempCafe/Cafe_Interior.jpg" fade="1.0" wait="true"]
+[background arg="res://assets/art/backgrounds/Cafe_Background.png" fade="1.0" wait="true"]
 audio music "res://assets/audio/craft_drink_bgm.ogg" [fade="2.0" volume="-5.0"]
 if {Drink.Rating} == "mediocre":
 	join Loren (Neutral) center
