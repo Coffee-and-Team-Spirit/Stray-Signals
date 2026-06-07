@@ -1,0 +1,12 @@
+[background arg="res://assets/temp/tempCafe/Cafe_Interior.jpg" fade="1.5"]
+label begin_timeline
+audio music "res://assets/audio/cafe_bgm.ogg" [fade="2.0" volume="-8.0"]
+# Outro 1: Alternate Ending
+Narrator: The Human Kidnapper is still out there.
+Narrator: Maybe they will stop.
+Narrator: Maybe they will come for you next.
+Narrator: The City is still dark.
+Narrator: It is still cold.
+Narrator: But Stray Signals is still here for those that need it.
+Narrator: Maybe that will be enough.
+Narrator: One can hope at least.

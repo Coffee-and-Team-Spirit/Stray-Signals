@@ -1,0 +1,52 @@
+[background arg="res://assets/temp/tempCafe/Cafe_Interior.jpg" fade="1.5"]
+if {Drink.Rating} == "none":
+	jump begin_timeline
+else:
+	jump drink_rating
+label begin_timeline
+audio music "res://assets/audio/cafe_bgm.ogg" [fade="2.0" volume="-8.0"]
+# Ending: Alexander
+join Alexandra (Neutral) center
+Player: Hello, Alexandra. How are things?
+Alexandra: [pause=.3]Things are not well {Player.PlayerName}. Despite my best efforts I'm no closer to solving this case than I was when this all started.
+Alexandra: I was really hoping that coming to this cafe would help. But the only thing I've gotten out of this place is nice chats with you and decent drinks.
+Alexandra: That’s fine and all, but I needed more than that.
+Player: I'm sure you will catch them eventually. We both know you are good at your job.
+Alexandra: [pause=.3]I really appreciate that. You are right, I think I will eventually catch them. But how many more humans will be turned before that happens?
+Alexandra: I’m still finding out more cats are appearing each day out of nowhere, acting strange and confused.
+Alexandra: It wouldn't bother me so much if I didn't feel like I was so close to figuring it out.
+Alexandra: Who knows, maybe I should have listened to the blue cat.
+Alexandra: No. No, that cat was crazy, I'm sure of it.
+Player: Archimedes is as "peculiar" as they might describe themselves.
+Player: Well, should I get you a drink before you head back out into the dark city of ours?
+Alexandra (Happy): [pause=.3]I’d rather stay in Stray Signals than go back out into the jungle, but a drink will make it a little easier. Thanks.
+[signal arg="drink_hint"]
+Alexandra: **DRINK HINT HERE**
+leave Alexandra
+[signal arg="craft_drink"]
+label drink_rating (Scene 2 Drink Rating)
+[background arg="res://assets/temp/tempCafe/Cafe_Interior.jpg" fade="1.5" wait="true"]
+audio music "res://assets/audio/craft_drink_bgm.ogg" [fade="2.0" volume="-5.0"]
+if {Drink.Rating} == "mediocre":
+	join Alexandra (Neutral) center
+	Alexandra: Thanks for the drink.
+	Alexandra: I want to say I will find them, I'm just not sure.
+	Alexandra: Well, have a good day.
+	leave Alexandra
+	[signal arg="clear_drink"]
+elif {Drink.Rating} == "good":
+	join Alexandra (Happy) center
+	Alexandra: Fantsic as always!
+	Alexandra: I really hope I will catch them, but I just don’t know.
+	Alexandra: ...I think….[pause=0.3]I think I will find them.
+	Alexandra: Thanks for your help.
+	leave Alexandra
+	[signal arg="clear_drink"]
+else:
+	# Bad
+	join Alexandra (Sad) center
+	Alexandra: You seem to have made my bad slightly worse, but I imagine that was not your intent.
+	leave Alexandra
+	[signal arg="clear_drink"]
+[signal arg="end_encounter"]
+jump d6s1/

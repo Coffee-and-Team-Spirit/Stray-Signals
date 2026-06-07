@@ -1,0 +1,51 @@
+[background arg="res://assets/temp/tempCafe/Cafe_Interior.jpg" fade="1.5"]
+if {Drink.Rating} == "none":
+	jump begin_timeline
+else:
+	jump drink_rating
+label begin_timeline
+audio music "res://assets/audio/cafe_bgm.ogg" [fade="2.0" volume="-8.0"]
+# Ending: Zara
+join Zara (Neutral) center
+Player: Hello Zara. Welcome in.
+Zara: Hmmm… I must admit I had no desire to return to this pedestrian place at any point in the near or far future.
+Zara: But I am nothing if not polite and gracious.
+Zara: As such I would never reject an invitation for a drink, even from a place like this one.
+Player: Wellm I'm glad you came to join me today. It clearly was a big sacrifice for you.
+Zara (Happy): [pause=.3]Yes, precisely!
+Zara: I dare say. You may yet be coming to understand my glorious self. What a rare treat in such a boorish city as the one we both occupy at this present time.
+Player: I always aim to connect with my customers. Especially one as unique as yourself.
+Zara: [pause=.3]And you do seem to have a speciality for it. At least for one working in a palace such as this.
+Zara: Though, in a moment of weakness, I do feel a growing fondness for this hovel.
+Zara (Neutral): As one may enjoy an unpleasant smell if subjected to it after a long enough time.
+Player: Or like acquiring the taste for an unusual beverage?
+Zara (Neutral): [pause=.3]Again, I  must agree with you. Speaking of averages, I would very much like to order one from you if you would be so kind.
+Player: Of course, let me get right on that. What will it be?
+[signal arg="drink_hint"]
+Zara: **DRINK HINT HERE**
+leave Zara
+[signal arg="craft_drink"]
+label drink_rating (Scene 2 Drink Rating)
+[background arg="res://assets/temp/tempCafe/Cafe_Interior.jpg" fade="1.5" wait="true"]
+audio music "res://assets/audio/craft_drink_bgm.ogg" [fade="2.0" volume="-5.0"]
+if {Drink.Rating} == "mediocre":
+	join Zara (Happy) center
+	Zara: Thank… [pause=0.3]so much for this… [pause=0.3]drink. I hope everything… [pause=0.3]well for you here. And that… [pause=0.3]more usual, befalls….
+	Zara: Perphas we … [pause=0.3]meet again.
+	leave Zara
+	[signal arg="clear_drink"]
+elif {Drink.Rating} == "good":
+	join Zara (Happy) center
+	Zara: Thank you so much for this wonderful drink. I hope everything goes well for you here. And that nothing, more usual, befalls you.
+	Zara: Perphas we shall meet again.
+	leave Zara
+	[signal arg="clear_drink"]
+else:
+	# Bad
+	join Zara (Sad) center
+	Zara: Once more please. This just won't do.
+	leave Zara
+	[signal arg="clear_drink"]
+	[signal arg="craft_drink"]
+[signal arg="end_encounter"]
+jump d6s1/

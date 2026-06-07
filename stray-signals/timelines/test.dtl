@@ -7,8 +7,8 @@ label begin_timeline
 audio music "res://assets/audio/cafe_bgm.ogg" [fade="2.0" volume="-8.0"]
 # DAY #, SCENE #
 join  center
-Player: [i]A cat's coming to the counter. I don't think I've seen this one before.[/i]
-What a simply marvelous place you have here. So wonderous. So perfect in its imperfect way.
+Oh my gosh, hello!
+Player: Hi. It's all good. I'm doing okay. Things have been strange of late, but I enjoy my job.
 [signal arg="drink_hint"]
 **DRINK HINT HERE**
 leave 
@@ -18,21 +18,20 @@ label drink_rating (Scene 2 Drink Rating)
 audio music "res://assets/audio/craft_drink_bgm.ogg" [fade="2.0" volume="-5.0"]
 if {Drink.Rating} == "mediocre":
 	join  center
-	That was quite a nice little drink. Thank you for your service to my needs.
+	**FINAL DRINK CLUE** for mediocre drink
 	leave 
 	[signal arg="clear_drink"]
 elif {Drink.Rating} == "good":
 	join  center
-	Now that was just pure perfection. No more. No Less.
+	**FINAL DRINK CLUE** for perfect/good drink
 	leave 
 	[signal arg="clear_drink"]
 else:
 	# Bad
 	join  center
-	What a most interesting mystery. You seem to have made a truly undrinkable concoction. Let's see if you can attempt this endeavor again.
+	I don't mean to be rude, but can I perhaps have another drink? Something feels a little off with mine.
 	leave 
 	[signal arg="clear_drink"]
 	[signal arg="craft_drink"]
-Player: [i]What a strange cat. And what was all that he was going on about?[/i]
 [signal arg="end_encounter"]
 [end_timeline]

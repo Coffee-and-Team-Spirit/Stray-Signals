@@ -1,0 +1,52 @@
+[background arg="res://assets/temp/tempCafe/Cafe_Interior.jpg" fade="1.5"]
+if {Drink.Rating} == "none":
+	jump begin_timeline
+else:
+	jump drink_rating
+label begin_timeline
+audio music "res://assets/audio/cafe_bgm.ogg" [fade="2.0" volume="-8.0"]
+# Ending: Archimedes
+join Archimedes (Happy) center
+Player: Hello, Archimedes.
+Archimedes: [pause=1]Hello, {Player.PlayerName}!
+Player: How are you today?
+Archimedes (Sad): [pause=1]Slightly disappointed, if I must be completely honest with myself and you.
+Archimedes: In fact, in a rare moment I must immediately admit I have erred, and chosen my words poorly. [pause=.3]I am very disappointed.
+Player: I'm sorry to hear that. What has you so disappointed?
+Archimedes: [pause=1]I expected to see you here with the person responsible for all that has been happening. [pause=.3]Solve the peculiar mystery and all that comes with it. [pause=.3]And yet here you are…[pause=.3] ...with me.
+Archimedes: [pause=.3]Do you theorize me responsible?
+Player: I'm sorry you are disappointed.
+Player: I just wanted to make one more drink for you.
+Player: Is that okay?
+Archimedes (Neutral): [pause=.3]You wish to see if you have it right?
+Archimedes (Neutral): [pause=.3]Let's find out shall we?
+[signal arg="drink_hint"]
+Archimedes: **DRINK HINT HERE**
+leave Archimedes
+[signal arg="craft_drink"]
+label drink_rating (Scene 2 Drink Rating)
+[background arg="res://assets/temp/tempCafe/Cafe_Interior.jpg" fade="1.5" wait="true"]
+audio music "res://assets/audio/craft_drink_bgm.ogg" [fade="2.0" volume="-5.0"]
+if {Drink.Rating} == "mediocre":
+	join Archimedes (Neutral) center
+	Archimedes: Was nice. However, I must regret to… [pause=.3]you that I am not… [pause=.3]person responsible for… [pause=.3]has been going on.
+	Archimedes: If you had… [pause=.3]suspected me, I suppose… [pause=.3]may be worse… [pause=.3]you have not… [pause=.3]this situation… [pause=.3]seriously.
+	Archimedes: I wanted… [pause=.3]for you… [pause=.3]disappointing.
+	leave Archimedes
+	[signal arg="clear_drink"]
+elif {Drink.Rating} == "good":
+	join Archimedes (Happy) center
+	Archimedes: Excellent taste and styles as always. However, I must regret to inform you that I am not the person responsible for what has been going on.
+	Archimedes (Neutral): If you had not suspected me, I suppose that may be worse because you have not taken this situation very seriously.
+	Archimedes (Sad): I wanted more for you. How disappointing.
+	leave Archimedes
+	[signal arg="clear_drink"]
+else:
+	# Bad
+	join Archimedes (Sad) center
+	Archimedes: Even if I did do it, this drink would not have succeeded. I will allow you to try your testing again.
+	leave Archimedes
+	[signal arg="clear_drink"]
+	[signal arg="craft_drink"]
+[signal arg="end_encounter"]
+jump d6s1/

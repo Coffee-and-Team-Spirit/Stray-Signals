@@ -1,0 +1,47 @@
+[background arg="res://assets/temp/tempCafe/Cafe_Interior.jpg" fade="1.5"]
+if {Drink.Rating} == "none":
+	jump begin_timeline
+else:
+	jump drink_rating
+label begin_timeline
+audio music "res://assets/audio/cafe_bgm.ogg" [fade="2.0" volume="-8.0"]
+# Ending: GG
+join GG (Happy) center
+GG: Thank you so much for inviting me here today! It's so nice to see you again.
+GG: Man, Stay Signals is just such a nice place.
+Player: [pause=.3]It's always nice to see you GG.
+Player: How are you today?
+GG: Truly, just fantastic.
+GG: You however look a bit stressed.
+Player: [pause=.3]I am still a bit stressed to be honest. This mystery stuff has been more than my usual week for sure.
+GG: I'm sorry to hear that. Human life sounds so stressful.
+GG: Not like cats. Cat lives are so nice and happy. I love being a cat!
+GG: Don't you want to be a Cat?
+Player: [pause=1]No, I think I'm good as a Human. [pause=.5]Thanks though.
+GG: Oh you don’t know what you are missing, I'm telling you.
+GG: Even Whiskerly likes being a cat now, just ask him!
+GG: Here, why don't you make me a drink, then we can talk more about how great being a Cat really is?
+[signal arg="drink_hint"]
+GG: **DRINK HINT HERE**
+leave GG
+[signal arg="craft_drink"]
+label drink_rating (Scene 2 Drink Rating)
+[background arg="res://assets/temp/tempCafe/Cafe_Interior.jpg" fade="1.5" wait="true"]
+audio music "res://assets/audio/craft_drink_bgm.ogg" [fade="2.0" volume="-5.0"]
+if {Drink.Rating} == "good":
+	join GG (Neutral) center
+	GG: This tastes so….. [pause=.3]…. [pause=.3]…. [pause=.3]unusual.
+	GG: [pause=.3]Ahhh, you are so so smart.
+	GG: Well done. You got me. I can feel myself falling asleep now.
+	GG: I hope you enjoyed our week together.
+	GG (Happy): I certainly did.
+	leave GG
+else:
+	# Bad/Mediocre
+	join GG (Neutral) center
+	GG: Sorry, but I will not be drinking that this time.
+	GG: Not really my type of drink at the end of the day.
+	GG: Now, about how great being a Cat is...
+	[signal arg="clear_drink"]
+[signal arg="end_encounter"]
+jump d6s2/
