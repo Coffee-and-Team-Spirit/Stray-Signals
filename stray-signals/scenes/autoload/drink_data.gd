@@ -121,7 +121,7 @@ var drink_puzzles = {
 			},
 			"good": {
 				"ingredients": {
-					"flavors": ["milk_tea"],
+					"flavors_or": ["strawberry", "mango"],
 					"topping": "boba",
 				},
 				"stats": {}
@@ -186,7 +186,7 @@ var drink_puzzles = {
 					"flavors_not": ["matcha"]
 				},
 				"stats": {
-					"fancy_cozy_intensity": [0, 1]
+					"fancy_cozy_intensity": [0,1]
 				}
 			},
 			"good": {
@@ -194,7 +194,7 @@ var drink_puzzles = {
 					"flavors_not": ["matcha"]
 				},
 				"stats": {
-					"fancy_cozy_intensity": [0, 1, 2]
+					"fancy_cozy_intensity": [0,1,2]
 				}
 			},
 		},
