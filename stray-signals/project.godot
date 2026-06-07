@@ -49,8 +49,8 @@ directories/dtl_directory={
 "d3s3": "res://timelines/d3s3.dtl",
 "d4s1": "res://timelines/d4s1.dtl",
 "d4s2": "res://timelines/d4s2.dtl",
-"d4s3A": "res://timelines/d4s3A.dtl",
-"d4s3B": "res://timelines/d4s3B.dtl",
+"d4s3": "res://timelines/d4s3.dtl",
+"d4s4": "res://timelines/d4s4.dtl",
 "test": "res://timelines/test.dtl"
 }
 layout/style_directory={}

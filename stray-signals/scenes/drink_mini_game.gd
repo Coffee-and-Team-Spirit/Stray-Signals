@@ -223,7 +223,7 @@ func get_flavor_category_id(flavor_name, value) -> Dictionary:
 	}
 
 
-# Matches perfect
+# Matches perfect/good
 func matches_all(criteria, stats) -> bool:
 	print("CRITERIA: ", criteria)
 	print("STATS: ", stats)
@@ -263,6 +263,14 @@ func matches_all(criteria, stats) -> bool:
 			var required = criteria["stats"][key]
 			var player = stats.get(key)
 			
+			if key.ends_with("_intensity"):
+				var direction_key = key.replace("_intensity", "_direction")
+				var direction = stats.get(direction_key, "neutral")
+				
+				if not criteria["stats"].has(direction_key):
+					if direction == "cozy":
+						player = 0
+			
 			print("REQUIRED!!!! ", required)
 			print("PLAYER ", player)
 			
@@ -278,7 +286,7 @@ func matches_all(criteria, stats) -> bool:
 	return true
 
 
-# Matches good
+# Matches good/mediocre
 func matches_any(criteria, stats) -> bool:
 	var matched = false
 	

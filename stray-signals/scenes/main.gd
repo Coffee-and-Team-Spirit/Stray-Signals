@@ -2,16 +2,10 @@ extends Node2D
 
 @export var drink_hint : Node
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if not Dialogic.signal_event.is_connected(_on_signal):
 		Dialogic.signal_event.connect(_on_signal)
-	#Dialogic.signal_event.connect(_on_signal)
-	
-	#if Dialogic.get_full_state().timeline == "":
-		#var current_timeline = DayManager.get_current_timeline()
-		#Dialogic.start("res://timelines/%s.dtl" % current_timeline)
-	
+
 	Dialogic.VAR.set_variable("Drink.Rating", GameState.drink_result)
 	GameState.target_drink = DrinkData.drink_puzzles[DayManager.day][DayManager.encounter]
 
@@ -48,15 +42,16 @@ func _on_signal(signal_passed_in):
 			GameState.drink_result = "none"
 			Dialogic.VAR.set_variable("Drink.Rating", GameState.drink_result)
 			
-			#if Dialogic.Text.about_to_show_text.is_connected(_on_about_to_show_text):
-				#Dialogic.Text.about_to_show_text.disconnect(_on_about_to_show_text)
-			
 			print("end_encounter flag")
 			DayManager.advance_encounter()
-			#Dialogic.end_timeline()
+
 			var current_timeline = DayManager.get_current_timeline()
 			print("DAY:", DayManager.day, " ENCOUNTER:", DayManager.encounter)
 			Dialogic.start("res://timelines/%s.dtl" % current_timeline)
+		
+		"receive_special_ingredient":
+			GameState.has_special_ingredient = true;
+			print("!received special ingredient from zara!")
 
 
 func _on_about_to_show_text(info: Dictionary):
