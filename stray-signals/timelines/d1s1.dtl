@@ -53,7 +53,7 @@ else:
 	leave Loren
 	[signal arg="clear_drink"]
 	[signal arg="craft_drink"]
-Loren (Sad): Before I go, I've heard that the wavelengths in the air are wacky lately... making it hard to decipher words in normal, every day conversations... [pause=0.5] but that can't be true, that would be...
+Loren (Sad): Before I go, I've heard that the wavelengths in the air are weird lately... making it hard to decipher words in normal, every day conversations... [pause=0.5] but that can't be true, that would be...
 [signal arg="clue|...impossible, there's enough crazy going on around here..."]
 [font=res\://styles/fonts/Nervous.ttf]{Drink.DistortedClue}[/font]
 Loren (Happy): I can't be going... crazy too, right? [speed=5]Right?! [speed=1]Well, I'll see you tomorrow.

@@ -68,7 +68,7 @@ func _on_signal(signal_passed_in):
 func distort_clue(text: String) -> String:
 	var chars := text.split("")
 	for i in chars.size():
-		if randf() < 0.5: 
+		if randf() < 0.2: 
 			chars[i] = char(randi_range(33, 126))
 	return "".join(chars)
 

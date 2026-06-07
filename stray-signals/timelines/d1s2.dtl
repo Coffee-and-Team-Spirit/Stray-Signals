@@ -30,6 +30,8 @@ if {Drink.Rating} == "mediocre":
 	Archimedes: A nice drink deserves some knowledge, I would think. Proportional to the drinks' qualitative nature of course.
 	Archimedes: I do not wish to alarm…well, I might be inclined to alarm for curiosity's sake. Regardless of my own proclivities, I should warn you...
 	Archimedes: Unusual things are about. Humans are going missing. More Cats are about.
+	[signal arg="clue|And that friend of yours. He is being followed."]
+	Archimedes: [font=res\://styles/fonts/Nervous.ttf]{Drink.DistortedClue}[/font]
 	leave Archimedes
 	[signal arg="clear_drink"]
 elif {Drink.Rating} == "good":
