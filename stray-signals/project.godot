@@ -55,7 +55,7 @@ directories/dtl_directory={
 }
 layout/style_directory={}
 layout/style_list=[]
-layout/default_style=""
+layout/default_style="res://styles/New_File.tres"
 glossary/default_case_sensitive=true
 text/letter_speed=0.03
 text/initial_text_reveal_skippable=true
@@ -91,6 +91,7 @@ audio/channel_defaults={
 }
 variables={
 "Drink": {
+"DistortedClue": "",
 "Rating": ""
 },
 "Player": {
