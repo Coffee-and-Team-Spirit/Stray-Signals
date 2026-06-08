@@ -61,4 +61,4 @@ func _on_dialogic_timeline_started() -> void:
 
 
 func _on_text_speed_slider_changed(new_speed: float) -> void:
-	Dialogic.Settings.text_speed = new_speed
+	Dialogic.Settings.text_speed = 2.0 - new_speed
