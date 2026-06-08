@@ -1,4 +1,4 @@
-[background arg="res://assets/temp/tempCafe/Cafe_Interior.jpg" fade="1.5"]
+[background arg="res://assets/art/backgrounds/Cafe_Background.png" fade="1.5"]
 if {Drink.Rating} == "none":
 	jump begin_timeline
 else:

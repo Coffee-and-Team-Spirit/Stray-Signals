@@ -106,6 +106,8 @@ variables={
 "PlayerName": "Player"
 }
 }
+history/simple_history_enabled=true
+history/full_history_enabled=false
 
 [display]
 
