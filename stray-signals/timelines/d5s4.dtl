@@ -21,7 +21,7 @@ Player: Archimedes is as "peculiar" as they might describe themselves.
 Player: Well, should I get you a drink before you head back out into the dark city of ours?
 Alexandra (Happy): [pause=.3]I’d rather stay in Stray Signals than go back out into the jungle, but a drink will make it a little easier. Thanks.
 [signal arg="drink_hint"]
-Alexandra: **DRINK HINT HERE**
+Alexandra: I want something with boba, but shake it up to make sure the boba is dispersed evenly throughout the drink.
 leave Alexandra
 [signal arg="craft_drink"]
 label drink_rating (Scene 2 Drink Rating)

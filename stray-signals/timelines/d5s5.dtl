@@ -23,7 +23,7 @@ Player: I think that sounds like a great plan.
 Player: Shall we proceed then to the drink portation of said plan?
 Whiskerly (Happy): I think we should.
 [signal arg="drink_hint"]
-Whiskerly: **DRINK HINT HERE**
+Whiskerly: I want a strawberry-milk tea with boba in a glass. And make it with less sugar.
 leave Whiskerly
 [signal arg="craft_drink"]
 label drink_rating (Scene 2 Drink Rating)

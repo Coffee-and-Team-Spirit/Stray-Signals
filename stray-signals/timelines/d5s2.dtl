@@ -22,7 +22,7 @@ Player: Or like acquiring the taste for an unusual beverage?
 Zara (Neutral): [pause=.3]Again, I  must agree with you. Speaking of averages, I would very much like to order one from you if you would be so kind.
 Player: Of course, let me get right on that. What will it be?
 [signal arg="drink_hint"]
-Zara: **DRINK HINT HERE**
+Zara: I want a hot drink on this chilly day. And I want all the flavors to be infused with one another so make sure to stir it well.
 leave Zara
 [signal arg="craft_drink"]
 label drink_rating (Scene 2 Drink Rating)

@@ -21,7 +21,7 @@ Player: Is that okay?
 Archimedes (Neutral): [pause=.3]You wish to see if you have it right?
 Archimedes (Neutral): [pause=.3]Let's find out shall we?
 [signal arg="drink_hint"]
-Archimedes: **DRINK HINT HERE**
+Archimedes: I want something super bland. I get overstimulated with all the different flavors.
 leave Archimedes
 [signal arg="craft_drink"]
 label drink_rating (Scene 2 Drink Rating)

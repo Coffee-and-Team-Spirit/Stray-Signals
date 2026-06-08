@@ -21,7 +21,7 @@ Whiskerly (Happy): No no, it's all well enough {Player.PlayerName}. Life goes in
 Player: Well, maybe we can get you that drink to cheer you up? What do ya say?
 Whiskerly (Neutral): Yes, let us do that, thank you.
 [signal arg="drink_hint"]
-Whiskerly: I want a fruit based milk tea... and add boba on top.
+Whiskerly: I'm looking for a fruit based milk tea, and add boba on top. I think that's what us cats like.
 leave Whiskerly
 [signal arg="craft_drink"]
 label drink_rating (Scene 2 Drink Rating)
