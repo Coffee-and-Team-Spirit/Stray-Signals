@@ -7,6 +7,7 @@ signal day_changed(new_day)
 
 
 func get_current_timeline() -> String:
+	Dialogic.VAR.set_variable("CurrentDay", DayManager.day)
 	print("TIMELINE : d%ss%s" % [day, encounter])
 	return "d%ss%s" % [day, encounter]
 

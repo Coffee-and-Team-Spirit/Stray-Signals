@@ -99,6 +99,7 @@ audio/channel_defaults={
 }
 }
 variables={
+"CurrentDay": "",
 "Drink": {
 "Rating": ""
 },
@@ -106,6 +107,8 @@ variables={
 "PlayerName": "Player"
 }
 }
+history/simple_history_enabled=true
+history/full_history_enabled=false
 
 [display]
 
