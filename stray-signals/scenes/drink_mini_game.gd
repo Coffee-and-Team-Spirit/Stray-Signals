@@ -512,7 +512,17 @@ func modification_sparkle(color):
 	$DrinkComponents/DrinkInformation/CupDisplayFX/SparkleParticles.emitting = true
 
 
+func show_tutorial():
+	var tutorial := preload("res://scenes/tutorial_overlay.tscn").instantiate()
+	get_tree().current_scene.add_child(tutorial)
+	tutorial.start_tutorial()
+
 func _ready():
+	if not GameState.has_seen_tutorial:
+		GameState.has_seen_tutorial = true
+		await get_tree().create_timer(2.0).timeout
+		show_tutorial()
+		
 	$DrinkComponents/DialogueHistory/DialogueHint.text = GameState.drink_hint
 	$DrinkComponents/DialogueHistory/CharacterImage.texture.atlas = load("res://assets/art/characters/%s/%s_%s.png" % [GameState.current_character, GameState.current_character, GameState.current_portrait_info])
 	

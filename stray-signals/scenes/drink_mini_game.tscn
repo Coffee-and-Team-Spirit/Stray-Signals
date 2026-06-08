@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://tl5kmk2pirsv" path="res://assets/art/mini_game/cup/empty_cup_cup.png" id="2_n60d2"]
 [ext_resource type="Texture2D" uid="uid://boktyguirdtbg" path="res://assets/art/mini_game/mug/empty_cup_mug.png" id="3_0saxs"]
 [ext_resource type="Texture2D" uid="uid://dyj3ga7eecao0" path="res://assets/art/mini_game/glass/empty_cup_glass.png" id="4_cg4nb"]
-[ext_resource type="Texture2D" uid="uid://dqt5hf1uxoxka" path="res://assets/art/mini_game/ingredients/ingredient_coffee.png" id="5_0saxs"]
 [ext_resource type="Script" uid="uid://o7hmrsu5brlx" path="res://scenes/flavor_button_pour.gd" id="5_1ck7w"]
 [ext_resource type="Texture2D" uid="uid://cbgkffqpkyllb" path="res://assets/art/mini_game/ingredients/ingredient_mango.png" id="7_cg4nb"]
 [ext_resource type="Texture2D" uid="uid://ciol1t7k1o37f" path="res://assets/art/mini_game/ingredients/ingredient_matcha.png" id="8_odn5p"]
@@ -26,6 +25,9 @@ content_margin_top = 5.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0yecb"]
 content_margin_top = 5.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_q5ega"]
+load_path = "res://.godot/imported/ingredient_coffee.png-0590a99ec5ca73d160663a340ba415ab.ctex"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0saxs"]
 atlas = ExtResource("14_n60d2")
@@ -208,7 +210,7 @@ alignment = 1
 custom_minimum_size = Vector2(180, 250)
 layout_mode = 2
 tooltip_text = "Flavor: Coffee"
-texture_normal = ExtResource("5_0saxs")
+texture_normal = SubResource("CompressedTexture2D_q5ega")
 ignore_texture_size = true
 stretch_mode = 4
 script = ExtResource("5_1ck7w")
