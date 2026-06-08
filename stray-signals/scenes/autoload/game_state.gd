@@ -21,8 +21,8 @@ func new_game() -> void:
 	DayManager.day = 1
 	DayManager.encounter = 1
 	
-	if Dialogic.Save.has_slot("autosave"):
-		Dialogic.Save.delete_slot("autosave")
+	#if Dialogic.Save.has_slot("autosave"):
+		#Dialogic.Save.delete_slot("autosave")
 		
 	var game_root = get_tree().current_scene
 		
