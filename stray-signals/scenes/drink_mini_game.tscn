@@ -1,20 +1,19 @@
 [gd_scene format=3 uid="uid://bgsmb4ojxsmv4"]
 
 [ext_resource type="Script" uid="uid://bf15e30xys6qa" path="res://scenes/drink_mini_game.gd" id="1_dqtyw"]
-[ext_resource type="Texture2D" uid="uid://dmmj6g7iakwxo" path="res://assets/art/cups/empty_cup_cup.png" id="1_o1c78"]
-[ext_resource type="Texture2D" uid="uid://cx803hothqib7" path="res://assets/art/cups/empty_cup_mug.png" id="2_1a4ix"]
-[ext_resource type="Texture2D" uid="uid://d3l7spk8fxpi5" path="res://assets/art/cups/empty_cup_wine_glass.png" id="3_4ybsq"]
-[ext_resource type="Texture2D" uid="uid://b0ks6b18uhdsf" path="res://assets/art/ingredients/ingredient_coffee.png" id="4_cgw06"]
+[ext_resource type="Texture2D" uid="uid://tl5kmk2pirsv" path="res://assets/art/mini_game/cup/empty_cup_cup.png" id="2_n60d2"]
+[ext_resource type="Texture2D" uid="uid://boktyguirdtbg" path="res://assets/art/mini_game/mug/empty_cup_mug.png" id="3_0saxs"]
+[ext_resource type="Texture2D" uid="uid://dyj3ga7eecao0" path="res://assets/art/mini_game/glass/empty_cup_glass.png" id="4_cg4nb"]
+[ext_resource type="Texture2D" uid="uid://dqt5hf1uxoxka" path="res://assets/art/mini_game/ingredients/ingredient_coffee.png" id="5_0saxs"]
 [ext_resource type="Script" uid="uid://o7hmrsu5brlx" path="res://scenes/flavor_button_pour.gd" id="5_1ck7w"]
-[ext_resource type="Texture2D" uid="uid://btl5tkmiio1re" path="res://assets/art/ingredients/ingredient_mango.png" id="5_nrfi6"]
-[ext_resource type="Texture2D" uid="uid://dg47jfvwy0ic5" path="res://assets/art/ingredients/ingredient_matcha.png" id="6_dqtyw"]
-[ext_resource type="Texture2D" uid="uid://c35frs4ecjsys" path="res://assets/art/ingredients/ingredient_milk_tea.png" id="7_i647u"]
-[ext_resource type="Texture2D" uid="uid://dqv2qnrce8mou" path="res://assets/art/ingredients/ingredient_strawberry.png" id="8_1ck7w"]
-[ext_resource type="Texture2D" uid="uid://cmaigw5l0kd4" path="res://assets/art/ingredients/ingredient_boba.png" id="9_okdn2"]
-[ext_resource type="Texture2D" uid="uid://chd6sfxr8ly6m" path="res://assets/art/ingredients/ingredient_cream_and_cat_treats.png" id="10_id7fa"]
-[ext_resource type="Texture2D" uid="uid://cof8hgx2vd0dw" path="res://assets/art/ingredients/ingredient_catnip.png" id="11_3cihv"]
+[ext_resource type="Texture2D" uid="uid://cbgkffqpkyllb" path="res://assets/art/mini_game/ingredients/ingredient_mango.png" id="7_cg4nb"]
+[ext_resource type="Texture2D" uid="uid://ciol1t7k1o37f" path="res://assets/art/mini_game/ingredients/ingredient_matcha.png" id="8_odn5p"]
+[ext_resource type="Texture2D" uid="uid://binjhggphvptb" path="res://assets/art/mini_game/ingredients/ingredient_milk_tea.png" id="9_proi2"]
+[ext_resource type="Texture2D" uid="uid://g1wj3l1c83rk" path="res://assets/art/mini_game/ingredients/ingredient_strawberry.png" id="10_05sac"]
+[ext_resource type="Texture2D" uid="uid://cpy0hfld8ce80" path="res://assets/art/mini_game/ingredients/ingredient_boba.png" id="11_n60d2"]
+[ext_resource type="Texture2D" uid="uid://cmdmj7ooalfls" path="res://assets/art/mini_game/ingredients/ingredient_catnip.png" id="12_0saxs"]
 [ext_resource type="StyleBox" uid="uid://d16gnpc5j64h7" path="res://ui/drink_components_panel.tres" id="13_1ck7w"]
-[ext_resource type="Texture2D" uid="uid://cb2m4871ckl5y" path="res://assets/art/cups/empty_cup.png" id="13_i647u"]
+[ext_resource type="Texture2D" uid="uid://brhvb6q5cly1l" path="res://assets/art/mini_game/ingredients/ingredient_cream.png" id="13_cg4nb"]
 [ext_resource type="Texture2D" uid="uid://jxydegqi4wqj" path="res://assets/art/characters/Loren/Loren_Happy.png" id="14_n60d2"]
 [ext_resource type="Script" uid="uid://dlut1ikn4tx6h" path="res://scenes/cup_display_drop.gd" id="15_okdn2"]
 [ext_resource type="Texture2D" uid="uid://b5i22smay4y34" path="res://assets/art/sparkle.png" id="17_0saxs"]
@@ -121,11 +120,11 @@ alignment = 1
 layout_mode = 2
 
 [node name="CupCup" type="TextureButton" parent="PlayerComponents/CupSelector/Cup" unique_id=1370005641]
-custom_minimum_size = Vector2(250, 250)
+custom_minimum_size = Vector2(180, 250)
 layout_mode = 2
-texture_normal = ExtResource("1_o1c78")
+texture_normal = ExtResource("2_n60d2")
 ignore_texture_size = true
-stretch_mode = 0
+stretch_mode = 4
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PlayerComponents/CupSelector/Cup/CupCup" unique_id=1225347686]
 custom_minimum_size = Vector2(20, 20)
@@ -147,11 +146,11 @@ horizontal_alignment = 1
 layout_mode = 2
 
 [node name="CupMug" type="TextureButton" parent="PlayerComponents/CupSelector/Mug" unique_id=1744952382]
-custom_minimum_size = Vector2(250, 250)
+custom_minimum_size = Vector2(180, 250)
 layout_mode = 2
-texture_normal = ExtResource("2_1a4ix")
+texture_normal = ExtResource("3_0saxs")
 ignore_texture_size = true
-stretch_mode = 0
+stretch_mode = 4
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PlayerComponents/CupSelector/Mug/CupMug" unique_id=1071963484]
 custom_minimum_size = Vector2(20, 20)
@@ -174,11 +173,11 @@ horizontal_alignment = 1
 layout_mode = 2
 
 [node name="CupGlass" type="TextureButton" parent="PlayerComponents/CupSelector/Glass" unique_id=2031028854]
-custom_minimum_size = Vector2(250, 250)
+custom_minimum_size = Vector2(180, 250)
 layout_mode = 2
-texture_normal = ExtResource("3_4ybsq")
+texture_normal = ExtResource("4_cg4nb")
 ignore_texture_size = true
-stretch_mode = 0
+stretch_mode = 4
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PlayerComponents/CupSelector/Glass/CupGlass" unique_id=1286621732]
 custom_minimum_size = Vector2(20, 20)
@@ -198,18 +197,20 @@ horizontal_alignment = 1
 
 [node name="FlavorSelector" type="HBoxContainer" parent="PlayerComponents" unique_id=1776169496]
 layout_mode = 2
-theme_override_constants/separation = -100
+theme_override_constants/separation = 0
 alignment = 1
 
 [node name="Coffee" type="VBoxContainer" parent="PlayerComponents/FlavorSelector" unique_id=1760435040]
 layout_mode = 2
+alignment = 1
 
 [node name="FlavorCoffee" type="TextureButton" parent="PlayerComponents/FlavorSelector/Coffee" unique_id=1834787374]
-custom_minimum_size = Vector2(250, 250)
+custom_minimum_size = Vector2(180, 250)
 layout_mode = 2
-texture_normal = ExtResource("4_cgw06")
+tooltip_text = "Flavor: Coffee"
+texture_normal = ExtResource("5_0saxs")
 ignore_texture_size = true
-stretch_mode = 0
+stretch_mode = 4
 script = ExtResource("5_1ck7w")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PlayerComponents/FlavorSelector/Coffee/FlavorCoffee" unique_id=1112100249]
@@ -232,11 +233,11 @@ horizontal_alignment = 1
 layout_mode = 2
 
 [node name="FlavorMango" type="TextureButton" parent="PlayerComponents/FlavorSelector/Mango" unique_id=1532154947]
-custom_minimum_size = Vector2(250, 250)
+custom_minimum_size = Vector2(180, 250)
 layout_mode = 2
-texture_normal = ExtResource("5_nrfi6")
+texture_normal = ExtResource("7_cg4nb")
 ignore_texture_size = true
-stretch_mode = 0
+stretch_mode = 4
 script = ExtResource("5_1ck7w")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PlayerComponents/FlavorSelector/Mango/FlavorMango" unique_id=902840133]
@@ -260,11 +261,11 @@ horizontal_alignment = 1
 layout_mode = 2
 
 [node name="FlavorMatcha" type="TextureButton" parent="PlayerComponents/FlavorSelector/Matcha" unique_id=1428392137]
-custom_minimum_size = Vector2(250, 250)
+custom_minimum_size = Vector2(180, 250)
 layout_mode = 2
-texture_normal = ExtResource("6_dqtyw")
+texture_normal = ExtResource("8_odn5p")
 ignore_texture_size = true
-stretch_mode = 0
+stretch_mode = 4
 script = ExtResource("5_1ck7w")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PlayerComponents/FlavorSelector/Matcha/FlavorMatcha" unique_id=678070690]
@@ -287,11 +288,11 @@ horizontal_alignment = 1
 layout_mode = 2
 
 [node name="FlavorMilkTea" type="TextureButton" parent="PlayerComponents/FlavorSelector/MilkTea" unique_id=1672283427]
-custom_minimum_size = Vector2(250, 250)
+custom_minimum_size = Vector2(180, 250)
 layout_mode = 2
-texture_normal = ExtResource("7_i647u")
+texture_normal = ExtResource("9_proi2")
 ignore_texture_size = true
-stretch_mode = 0
+stretch_mode = 4
 script = ExtResource("5_1ck7w")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PlayerComponents/FlavorSelector/MilkTea/FlavorMilkTea" unique_id=359524067]
@@ -314,11 +315,11 @@ horizontal_alignment = 1
 layout_mode = 2
 
 [node name="FlavorStrawberry" type="TextureButton" parent="PlayerComponents/FlavorSelector/Strawberry" unique_id=192415704]
-custom_minimum_size = Vector2(250, 250)
+custom_minimum_size = Vector2(180, 250)
 layout_mode = 2
-texture_normal = ExtResource("8_1ck7w")
+texture_normal = ExtResource("10_05sac")
 ignore_texture_size = true
-stretch_mode = 0
+stretch_mode = 4
 script = ExtResource("5_1ck7w")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PlayerComponents/FlavorSelector/Strawberry/FlavorStrawberry" unique_id=133307959]
@@ -345,11 +346,11 @@ alignment = 1
 layout_mode = 2
 
 [node name="ToppingBoba" type="TextureButton" parent="PlayerComponents/ToppingSelector/Boba" unique_id=1749017085]
-custom_minimum_size = Vector2(250, 250)
+custom_minimum_size = Vector2(180, 250)
 layout_mode = 2
-texture_normal = ExtResource("9_okdn2")
+texture_normal = ExtResource("11_n60d2")
 ignore_texture_size = true
-stretch_mode = 0
+stretch_mode = 4
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PlayerComponents/ToppingSelector/Boba/ToppingBoba" unique_id=1215256745]
 custom_minimum_size = Vector2(20, 20)
@@ -371,11 +372,11 @@ horizontal_alignment = 1
 layout_mode = 2
 
 [node name="ToppingCatnip" type="TextureButton" parent="PlayerComponents/ToppingSelector/Catnip" unique_id=1805034688]
-custom_minimum_size = Vector2(250, 250)
+custom_minimum_size = Vector2(180, 250)
 layout_mode = 2
-texture_normal = ExtResource("11_3cihv")
+texture_normal = ExtResource("12_0saxs")
 ignore_texture_size = true
-stretch_mode = 0
+stretch_mode = 4
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PlayerComponents/ToppingSelector/Catnip/ToppingCatnip" unique_id=1403553382]
 custom_minimum_size = Vector2(20, 20)
@@ -397,11 +398,11 @@ horizontal_alignment = 1
 layout_mode = 2
 
 [node name="ToppingCreamAndCatTreats" type="TextureButton" parent="PlayerComponents/ToppingSelector/CreamAndCatTreats" unique_id=185517999]
-custom_minimum_size = Vector2(250, 250)
+custom_minimum_size = Vector2(180, 250)
 layout_mode = 2
-texture_normal = ExtResource("10_id7fa")
+texture_normal = ExtResource("13_cg4nb")
 ignore_texture_size = true
-stretch_mode = 0
+stretch_mode = 4
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PlayerComponents/ToppingSelector/CreamAndCatTreats/ToppingCreamAndCatTreats" unique_id=1964790959]
 custom_minimum_size = Vector2(20, 20)
@@ -670,11 +671,10 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_top = -64.0
-offset_bottom = 64.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = ExtResource("13_i647u")
+texture = ExtResource("2_n60d2")
 expand_mode = 1
 stretch_mode = 5
 
