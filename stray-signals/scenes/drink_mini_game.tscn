@@ -27,6 +27,9 @@ content_margin_top = 5.0
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0yecb"]
 content_margin_top = 5.0
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_q5ega"]
+load_path = "res://.godot/imported/ingredient_coffee.png-0590a99ec5ca73d160663a340ba415ab.ctex"
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_0saxs"]
 atlas = ExtResource("14_n60d2")
 region = Rect2(0, 25, 0, 900)
@@ -208,7 +211,7 @@ alignment = 1
 custom_minimum_size = Vector2(180, 250)
 layout_mode = 2
 tooltip_text = "Flavor: Coffee"
-texture_normal = ExtResource("5_0saxs")
+texture_normal = SubResource("CompressedTexture2D_q5ega")
 ignore_texture_size = true
 stretch_mode = 4
 script = ExtResource("5_1ck7w")

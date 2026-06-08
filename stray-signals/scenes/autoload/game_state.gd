@@ -7,6 +7,7 @@ var current_character: String = "none"
 var current_portrait_info : String = "none"
 var target_drink : Dictionary = {}
 var has_special_ingredient : bool = false
+var has_seen_tutorial : bool = false
 
 var settings_return_target := "main_menu"
 
