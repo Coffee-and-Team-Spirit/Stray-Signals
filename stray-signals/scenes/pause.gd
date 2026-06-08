@@ -1,7 +1,23 @@
 extends Control
 
+func get_confirmation_box():
+	var overlay = get_tree().get_root().find_child("PauseOverlay", true, false)
+	if overlay:
+		return overlay.get_node("ConfirmationBox")
 
 func _on_save_game_pressed() -> void:
+	var confirmation_box = get_confirmation_box()
+	if not confirmation_box:
+		return
+		
+	if Dialogic.Save.has_slot("autosave"):
+		confirmation_box.show_confirmation("Are you sure you want to overwrite your existing saved game?")
+	else:
+		confirmation_box.show_confirmation("Would you like to save your game?")
+	confirmation_box.confirmed.connect(_do_save, CONNECT_ONE_SHOT)
+
+
+func _do_save() -> void:
 	var extra_gamestate_data = {
 		"drink_result": GameState.drink_result,
 		"drink_hint": GameState.drink_hint,
@@ -11,13 +27,35 @@ func _on_save_game_pressed() -> void:
 	}
 	
 	Dialogic.Save.save("autosave", false, Dialogic.Save.ThumbnailMode.NONE, extra_gamestate_data)
+	
+	var confirmation_box = get_confirmation_box()
+	if confirmation_box:
+		confirmation_box.show_info("Successfully saved!")
 
 
 func _on_load_game_pressed() -> void:
+	var confirmation_box = get_confirmation_box()
+	if not confirmation_box:
+		return
+		
+	confirmation_box.show_confirmation("Would you like to load your saved game?")
+	confirmation_box.confirmed.connect(_do_load, CONNECT_ONE_SHOT)
+
+
+func _do_load() -> void:
 	GameState.load_game()
 
 
 func _on_main_menu_pressed() -> void:
+	var confirmation_box = get_confirmation_box()
+	if not confirmation_box:
+		return
+		
+	confirmation_box.show_confirmation("Are you sure you want to go back to the main menu? Any unsaved progress will be lost.")
+	confirmation_box.confirmed.connect(_do_main_menu, CONNECT_ONE_SHOT)
+
+
+func _do_main_menu() -> void:
 	get_tree().current_scene.get_node("PauseOverlay").close_everything()
 	
 	var game_root = get_tree().current_scene  # This is GameRoot
