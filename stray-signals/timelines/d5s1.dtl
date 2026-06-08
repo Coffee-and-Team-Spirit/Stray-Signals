@@ -1,0 +1,19 @@
+[background arg="res://assets/art/backgrounds/Cafe_Background.png" fade="1.5" wait="true"]
+label begin_timeline
+audio music "res://assets/audio/cafe_bgm.ogg" [fade="2.0" volume="-8.0"]
+# DAY 5, SCENE 1
+Player: [i]Today’s the day I should try to find the human kidnapper.[/i]
+Player: [i]Who do I think it is?[/i]
+# FINAL ENDING
+- Zara
+	jump d5s2/
+- GG
+	jump d5s3/
+- Alexandra
+	jump d5s4/
+- Whiskerly
+	jump d5s5/
+- Archimedes
+	jump d5s6/
+[signal arg="end_encounter"]
+[end_timeline]

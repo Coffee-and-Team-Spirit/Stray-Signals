@@ -34,6 +34,7 @@ directories/dch_directory={
 "Archimedes": "res://characters/Archimedes.dch",
 "GG": "res://characters/GG.dch",
 "Loren": "res://characters/Loren.dch",
+"Narrator": "res://characters/Narrator.dch",
 "Player": "res://characters/Player.dch",
 "Whiskerly": "res://characters/Whiskerly.dch",
 "Zara": "res://characters/Zara.dch"
@@ -51,6 +52,14 @@ directories/dtl_directory={
 "d4s2": "res://timelines/d4s2.dtl",
 "d4s3": "res://timelines/d4s3.dtl",
 "d4s4": "res://timelines/d4s4.dtl",
+"d5s1": "res://timelines/d5s1.dtl",
+"d5s2": "res://timelines/d5s2.dtl",
+"d5s3": "res://timelines/d5s3.dtl",
+"d5s4": "res://timelines/d5s4.dtl",
+"d5s5": "res://timelines/d5s5.dtl",
+"d5s6": "res://timelines/d5s6.dtl",
+"d6s1": "res://timelines/d6s1.dtl",
+"d6s2": "res://timelines/d6s2.dtl",
 "test": "res://timelines/test.dtl"
 }
 layout/style_directory={}
