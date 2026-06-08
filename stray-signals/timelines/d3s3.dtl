@@ -23,7 +23,7 @@ Alexandra: Truthfully, I came in here just to get another drink before heading b
 Player: [i]Acting like a cat. That sounds like Whiskerly. Hmmm...[/i]
 Player: Of course, what can I get for ya to get you recharged for your investigation?
 [signal arg="drink_hint"]
-Alexandra: It's really hot in here, I need something to cool down. How about an extra fruity drink?
+Alexandra: It's really hot in here... I need something to cool down. And let's make it extra fruity. Not exactly a detective drink but what can I say, it calls to me.
 leave Alexandra
 [signal arg="craft_drink"]
 label drink_rating (Scene 2 Drink Rating)

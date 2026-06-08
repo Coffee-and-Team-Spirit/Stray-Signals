@@ -22,7 +22,7 @@ GG: Oh you don’t know what you are missing, I'm telling you.
 GG: Even Whiskerly likes being a cat now, just ask him!
 GG: Here, why don't you make me a drink, then we can talk more about how great being a Cat really is?
 [signal arg="drink_hint"]
-GG: **DRINK HINT HERE**
+GG: Why don't you surprise me with a good drink? That sounds fun. And do whatever that doesn't require shaking at the end.
 leave GG
 [signal arg="craft_drink"]
 label drink_rating (Scene 2 Drink Rating)

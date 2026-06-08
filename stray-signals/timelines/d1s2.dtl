@@ -18,7 +18,7 @@ Archimedes: ..You know, I think this place will be a very important place in the
 Archimedes: But…my drink….yes.
 update Archimedes (Happy)
 [signal arg="drink_hint"]
-Archimedes: I'm feeling very elegant today. I'd like a nice, cool matcha. Make sure to blend it well.
+Archimedes: Feeling very elegant today, as per my fascinating self of course. I'd also like a nice cool Matcha. And make sure to blend it well. But please don't shake it. That just distracts me to watch.
 leave Archimedes
 [signal arg="craft_drink"]
 label drink_rating (Scene 2 Drink Rating)

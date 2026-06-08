@@ -19,7 +19,7 @@ GG: This place smells like sweets and Mango. I love mango.
 Player: Would you like a mango flavored drink then?
 GG: Oh yes please. I got so excited with it all, I nearly forgot the drink part!
 [signal arg="drink_hint"]
-GG: I need to relax after a long day, get me something with mango. Add catnip on top.
+GG: I need to relax after a long wonderful day. Get me something with mango. Add catnip on top. When the detective asked for it, I realized I just [i]had[/i] to have it.
 leave GG
 [signal arg="craft_drink"]
 label drink_rating (Scene 2 Drink Rating)

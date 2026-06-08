@@ -20,7 +20,7 @@ Player: I appreciate that. But unless you can tell me who is behind turning Huma
 GG (Neutral): Oh, I don't know about that.
 GG: But If you want to serve me one of those fantastic drinks of yours, I might spill some beans on what I know about such people.
 [signal arg="drink_hint"]
-GG: Anything but matcha, it's too performative and fancy.
+GG: Anything but matcha, it's too performative and fancy. Emphasis on avoiding silly fancy stuff.
 leave GG
 [signal arg="craft_drink"]
 label drink_rating (Scene 2 Drink Rating)
