@@ -52,6 +52,13 @@ func _on_signal(signal_passed_in):
 		"receive_special_ingredient":
 			GameState.has_special_ingredient = true;
 			print("!received special ingredient from zara!")
+			
+		"choose_villain":
+			GameState.villain = Dialogic.VAR.get_variable("Villain.VillainName")
+			DayManager.day_five_encounter()
+			
+			var current_timeline = DayManager.get_current_timeline()
+			Dialogic.start("res://timelines/%s.dtl" % current_timeline)
 
 
 func _on_about_to_show_text(info: Dictionary):

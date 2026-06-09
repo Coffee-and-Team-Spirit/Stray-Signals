@@ -7,13 +7,18 @@ Player: [i]Who do I think it is?[/i]
 # FINAL ENDING
 - Zara
 	jump d5s2/
+	set {Villain.VillainName} = "Zara"
 - GG
 	jump d5s3/
+	set {Villain.VillainName} = "GG"
 - Alexandra
 	jump d5s4/
+	set {Villain.VillainName} = "Alexandra"
 - Whiskerly
 	jump d5s5/
+	set {Villain.VillainName} = "Whiskerly"
 - Archimedes
 	jump d5s6/
-[signal arg="end_encounter"]
+	set {Villain.VillainName} = "Archimedes"
+[signal arg="choose_villain"]
 [end_timeline]

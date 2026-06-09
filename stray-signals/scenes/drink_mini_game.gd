@@ -270,6 +270,10 @@ func matches_all(criteria, stats) -> bool:
 				if not criteria["stats"].has(direction_key):
 					if direction == "cozy":
 						player = 0
+					if direction =="bitter":
+						player = 0
+					if direction == "cool":
+						player = 0
 			
 			print("REQUIRED!!!! ", required)
 			print("PLAYER ", player)
@@ -367,6 +371,10 @@ func score_drink(puzzle, player_stats) -> int:
 		player_category[key + "_direction"] = result.direction
 		player_category[key + "_intensity"] = result.intensity
 	
+	if (DayManager.Day == 3 && DayManager.Encounter == 2) or (DayManager.Day == 4 && DayManager.Encounter == 3):
+		if chosen_flavors[0] == chosen_flavors[1]:
+			return 0
+			
 	print("PLAYER STATS ", player_stats)
 	print("PLAYER CATEGORY ", player_category)
 	if matches_all(puzzle["perfect"], player_category):

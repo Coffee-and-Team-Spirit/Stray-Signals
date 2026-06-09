@@ -8,16 +8,19 @@ var current_portrait_info : String = "none"
 var target_drink : Dictionary = {}
 var has_special_ingredient : bool = false
 var has_seen_tutorial : bool = false
+var villain : String = "none"
 
 var settings_return_target := "main_menu"
 
 func new_game() -> void:
-	GameState.drink_result = "none"
-	GameState.drink_hint = "none"
-	GameState.target_drink = {}
-	GameState.current_character = "none"
-	GameState.current_portrait_info = "none"
-	GameState.has_special_ingredient = false
+	drink_result = "none"
+	drink_hint = "none"
+	target_drink = {}
+	current_character = "none"
+	current_portrait_info = "none"
+	has_special_ingredient = false
+	has_seen_tutorial = false
+	villain = "none"
 	
 	DayManager.day = 1
 	DayManager.encounter = 1
