@@ -28,12 +28,16 @@ label drink_rating (Scene 2 Drink Rating)
 audio music "res://assets/audio/craft_drink_bgm.ogg" [fade="2.0" volume="-5.0"]
 if {Drink.Rating} == "mediocre":
 	join GG center
-	GG: MEDIOCRE **FINAL DRINK CLUE**
+	GG (Neutral): Pretty decent drink, thank you.
+	GG: Another thing I've heard about people that turn humans into cats… they seem to like things on the more elegant side of the line.
+	GG: Anyways, thanks for the drink.
 	leave GG
 	[signal arg="clear_drink"]
 elif {Drink.Rating} == "good":
 	join GG center
-	GG: GOOD **FINAL DRINK CLUE**
+	GG (Happy): That’s a [speed=5]realllllly [speed=1]good drink, thank you.
+	GG (Neutral): Another thing I've heard about people that turn humans into cats… that just like them, they like their drinks pretty fancy overall. Nothing crazy, but still. [speed=5]Fancy.
+	GG (Neutral): Anyways, thanks for the drink.
 	leave GG
 	[signal arg="clear_drink"]
 else:

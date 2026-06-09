@@ -9,3 +9,5 @@ Narrator: And still cold.
 Narrator: But Stray Signals is once again a Safe place for those that need it.
 Narrator: Maybe tomorrow will finally be calm and simple.
 Narrator: Maybe it won't.
+[signal arg="main_menu"]
+[end_timeline]

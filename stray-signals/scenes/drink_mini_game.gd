@@ -199,7 +199,7 @@ func get_flavor_category_id(flavor_name, value) -> Dictionary:
 			direction = "sweet"
 	elif flavor_name == "cool_warm":
 		if value < 0:
-			direction = "cold"
+			direction = "cool"
 		elif value > 0:
 			direction = "warm"
 		
@@ -269,6 +269,10 @@ func matches_all(criteria, stats) -> bool:
 				
 				if not criteria["stats"].has(direction_key):
 					if direction == "cozy":
+						player = 0
+					if direction =="bitter":
+						player = 0
+					if direction == "cool":
 						player = 0
 			
 			print("REQUIRED!!!! ", required)
@@ -367,6 +371,10 @@ func score_drink(puzzle, player_stats) -> int:
 		player_category[key + "_direction"] = result.direction
 		player_category[key + "_intensity"] = result.intensity
 	
+	if (DayManager.day == 3 && DayManager.encounter == 2) or (DayManager.day == 4 && DayManager.encounter == 3):
+		if chosen_flavors[0] == chosen_flavors[1]:
+			return 0
+			
 	print("PLAYER STATS ", player_stats)
 	print("PLAYER CATEGORY ", player_category)
 	if matches_all(puzzle["perfect"], player_category):
@@ -402,6 +410,9 @@ func evaluate_drink_rating(score) -> String:
 
 
 func _on_serve_pressed() -> void:
+	print("SERVE DAY ", DayManager.day)
+	print("SERVE ENCOUNTER ", DayManager.encounter)
+	print("VILLAIN ", GameState.villain)
 	GameState.drink_result = evaluate_drink_rating(score_drink(DrinkData.drink_puzzles[DayManager.day][DayManager.encounter], player_drink_traits))
 	
 	var game_root = get_tree().current_scene
