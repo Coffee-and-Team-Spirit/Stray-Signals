@@ -104,8 +104,13 @@ variables={
 },
 "Player": {
 "PlayerName": "Player"
+},
+"Villain": {
+"VillainName": ""
 }
 }
+history/simple_history_enabled=true
+history/full_history_enabled=false
 
 [display]
 

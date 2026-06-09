@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://dne6qhe4cqnio" path="res://assets/art/mini_game/cups/empty_cup_cup.png" id="2_n60d2"]
 [ext_resource type="Texture2D" uid="uid://cwamu4r6blp0g" path="res://assets/art/mini_game/cups/empty_cup_mug.png" id="3_0saxs"]
 [ext_resource type="Texture2D" uid="uid://bd7ypgl80b10w" path="res://assets/art/mini_game/cups/empty_cup_glass.png" id="4_cg4nb"]
-[ext_resource type="Texture2D" uid="uid://dqt5hf1uxoxka" path="res://assets/art/mini_game/ingredients/ingredient_coffee.png" id="5_0saxs"]
 [ext_resource type="Script" uid="uid://o7hmrsu5brlx" path="res://scenes/flavor_button_pour.gd" id="5_1ck7w"]
 [ext_resource type="Texture2D" uid="uid://cbgkffqpkyllb" path="res://assets/art/mini_game/ingredients/ingredient_mango.png" id="7_cg4nb"]
 [ext_resource type="Texture2D" uid="uid://ciol1t7k1o37f" path="res://assets/art/mini_game/ingredients/ingredient_matcha.png" id="8_odn5p"]
@@ -498,6 +497,7 @@ stretch_mode = 5
 [node name="DialogueHint" type="RichTextLabel" parent="DrinkComponents/DialogueHistory" unique_id=147450619]
 custom_minimum_size = Vector2(150, 50)
 layout_mode = 2
+bbcode_enabled = true
 text = "Dialogue hint"
 
 [node name="DrinkInformation" type="HBoxContainer" parent="DrinkComponents" unique_id=2058362915]

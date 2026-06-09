@@ -6,14 +6,23 @@ Player: [i]Today’s the day I should try to find the human kidnapper.[/i]
 Player: [i]Who do I think it is?[/i]
 # FINAL ENDING
 - Zara
+	set {Villain.VillainName} = "Zara"
+	[signal arg="choose_villain"]
 	jump d5s2/
 - GG
+	set {Villain.VillainName} = "GG"
+	[signal arg="choose_villain"]
 	jump d5s3/
 - Alexandra
+	set {Villain.VillainName} = "Alexandra"
+	[signal arg="choose_villain"]
 	jump d5s4/
 - Whiskerly
+	set {Villain.VillainName} = "Whiskerly"
+	[signal arg="choose_villain"]
 	jump d5s5/
 - Archimedes
+	set {Villain.VillainName} = "Archimedes"
+	[signal arg="choose_villain"]
 	jump d5s6/
-[signal arg="end_encounter"]
 [end_timeline]

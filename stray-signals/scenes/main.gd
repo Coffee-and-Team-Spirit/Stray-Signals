@@ -7,7 +7,10 @@ func _ready() -> void:
 		Dialogic.signal_event.connect(_on_signal)
 
 	Dialogic.VAR.set_variable("Drink.Rating", GameState.drink_result)
-	GameState.target_drink = DrinkData.drink_puzzles[DayManager.day][DayManager.encounter]
+	if DayManager.day == 5 && DayManager.encounter == 1:
+		GameState.target_drink = {}
+	else:
+		GameState.target_drink = DrinkData.drink_puzzles[DayManager.day][DayManager.encounter]
 
 
 func _on_signal(signal_passed_in):
@@ -52,6 +55,22 @@ func _on_signal(signal_passed_in):
 		"receive_special_ingredient":
 			GameState.has_special_ingredient = true;
 			print("!received special ingredient from zara!")
+			
+		"choose_villain":
+			GameState.villain = Dialogic.VAR.get_variable("Villain.VillainName")
+			DayManager.day_five_encounter()
+			
+			var current_timeline = DayManager.get_current_timeline()
+			Dialogic.start("res://timelines/%s.dtl" % current_timeline)
+			
+		"main_menu":
+			var game_root = get_tree().current_scene
+			var main_menu_scene = preload("res://scenes/main_menu.tscn").instantiate()
+			main_menu_scene.name = "MainMenu"
+			
+			game_root.add_child(main_menu_scene)
+			
+			get_tree().current_scene.get_node("HUD").visible = false
 
 
 func _on_about_to_show_text(info: Dictionary):

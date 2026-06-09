@@ -36,7 +36,7 @@ if {Drink.Rating} == "mediocre":
 	[signal arg="clear_drink"]
 elif {Drink.Rating} == "good":
 	join Alexandra (Happy) center
-	Alexandra: Fantsic as always!
+	Alexandra: Fantaastic as always!
 	Alexandra: I really hope I will catch them, but I just don’t know.
 	Alexandra: ...I think….[pause=0.3]I think I will find them.
 	Alexandra: Thanks for your help.
@@ -48,5 +48,5 @@ else:
 	Alexandra: You seem to have made my bad slightly worse, but I imagine that was not your intent.
 	leave Alexandra
 	[signal arg="clear_drink"]
-[signal arg="end_encounter"]
+	[signal arg="craft_drink"]
 jump d6s1/

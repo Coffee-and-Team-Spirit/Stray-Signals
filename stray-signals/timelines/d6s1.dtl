@@ -10,3 +10,5 @@ Narrator: It is still cold.
 Narrator: But Stray Signals is still here for those that need it.
 Narrator: Maybe that will be enough.
 Narrator: One can hope at least.
+[signal arg="main_menu"]
+[end_timeline]
