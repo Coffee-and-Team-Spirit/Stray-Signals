@@ -5,6 +5,7 @@ var chosen_cup : String = ""
 var chosen_flavors : Array = []
 var chosen_topping : String = ""
 var chosen_modification : String = ""
+var chosen_special_topping : String = ""
 var next_index : int = 0 # track what flavor layer the player is on
 
 # Flavor bar tracking
@@ -72,7 +73,15 @@ func select_flavor(flavor_name):
 
 
 func select_topping(topping_name):
-	chosen_topping = topping_name
+	DayManager.day = 5
+	if topping_name == "magical_mushroom_fish":
+		if DayManager.day == 5:
+			chosen_special_topping = topping_name
+			$DrinkComponents/DrinkInformation/MarginContainer/DrinkComponents/SelectSpecialTopping.visible = true
+		else:
+			print("NOT DAY 5")
+	else:
+		chosen_topping = topping_name
 	update_cup_display()
 	update_drink_components_display()
 	print(chosen_topping)
@@ -120,12 +129,18 @@ func update_cup_display():
 	else:
 		$DrinkComponents/DrinkInformation/CupDisplay/BaseFlavorLayer.texture = null
 		$DrinkComponents/DrinkInformation/CupDisplay/SecondaryFlavorLayer.texture = null
-
+		
 	if chosen_topping != "":
 		$DrinkComponents/DrinkInformation/CupDisplay/ToppingLayer.texture = load("res://assets/art/mini_game/toppings/topping_%s_%s.png" % [chosen_topping, chosen_cup])
 		update_drink_traits(chosen_topping)
 	else:
 		$DrinkComponents/DrinkInformation/CupDisplay/ToppingLayer.texture = null
+		
+	if chosen_special_topping != "":
+		$DrinkComponents/DrinkInformation/CupDisplay/SpecialToppingLayer.texture = load("res://assets/art/mini_game/toppings/topping_%s_%s.png" % [chosen_special_topping, chosen_cup])
+		update_drink_traits(chosen_special_topping)
+	else:
+		$DrinkComponents/DrinkInformation/CupDisplay/SpecialToppingLayer.texture = null
 		
 	if chosen_modification != "":
 		update_drink_traits(chosen_modification)
@@ -173,7 +188,16 @@ func update_drink_components_display():
 		$DrinkComponents/DrinkInformation/MarginContainer/DrinkComponents/SelectTopping.text = "Topping"
 		$DrinkComponents/DrinkInformation/MarginContainer/DrinkComponents/SelectTopping/Panel.add_theme_stylebox_override("panel", unfilled_panel_stylebox)
 		$DrinkComponents/DrinkInformation/MarginContainer/DrinkComponents/SelectTopping.add_theme_color_override("default_color", Color(0, 0, 0))
-	
+		
+	if chosen_special_topping != "":
+		$DrinkComponents/DrinkInformation/MarginContainer/DrinkComponents/SelectSpecialTopping.text = chosen_special_topping.capitalize()
+		$DrinkComponents/DrinkInformation/MarginContainer/DrinkComponents/SelectSpecialTopping/Panel.add_theme_stylebox_override("panel", filled_panel_stylebox)
+		$DrinkComponents/DrinkInformation/MarginContainer/DrinkComponents/SelectSpecialTopping.add_theme_color_override("default_color", Color(256, 256, 256))
+	else:
+		$DrinkComponents/DrinkInformation/MarginContainer/DrinkComponents/SelectSpecialTopping.text = "Special Ingredient"
+		$DrinkComponents/DrinkInformation/MarginContainer/DrinkComponents/SelectSpecialTopping/Panel.add_theme_stylebox_override("panel", unfilled_panel_stylebox)
+		$DrinkComponents/DrinkInformation/MarginContainer/DrinkComponents/SelectSpecialTopping.add_theme_color_override("default_color", Color(0, 0, 0))
+		
 	if chosen_modification != "":
 		$DrinkComponents/DrinkInformation/MarginContainer/DrinkComponents/SelectModification.text = chosen_modification.capitalize()
 		$DrinkComponents/DrinkInformation/MarginContainer/DrinkComponents/SelectModification/Panel.add_theme_stylebox_override("panel", filled_panel_stylebox)
@@ -252,6 +276,9 @@ func matches_all(criteria, stats) -> bool:
 		if target_ingredients.has("topping") and chosen_topping != target_ingredients["topping"]:
 			return false
 			
+		if target_ingredients.has("special_topping") and chosen_special_topping != target_ingredients["special_topping"]:
+			return false
+			
 		if target_ingredients.has("cup") and chosen_cup != target_ingredients["cup"]:
 			return false
 		
@@ -319,7 +346,10 @@ func matches_any(criteria, stats) -> bool:
 		if target_ingredients.has("topping") and chosen_topping == target_ingredients["topping"]:
 			matched = true
 			print("TOPPING MATCH ", matched)
-		
+			
+		if target_ingredients.has("special_topping") and chosen_special_topping == target_ingredients["special_topping"]:
+			matched = true
+			
 		if target_ingredients.has("cup") and chosen_cup == target_ingredients["cup"]:
 			matched = true
 			
@@ -431,6 +461,8 @@ func _on_reset_pressed() -> void:
 	chosen_cup = ""
 	chosen_flavors = []
 	chosen_topping = ""
+	chosen_special_topping = ""
+	$DrinkComponents/DrinkInformation/MarginContainer/DrinkComponents/SelectSpecialTopping.visible = false
 	chosen_modification = ""
 	
 	player_drink_traits = {
@@ -531,14 +563,19 @@ func show_tutorial():
 
 func _ready():
 	GameState.has_seen_tutorial = true
+	GameState.has_special_ingredient = true
+	
 	if not GameState.has_seen_tutorial:
 		GameState.has_seen_tutorial = true
 		await get_tree().create_timer(2.0).timeout
 		show_tutorial()
 		
+	if GameState.has_special_ingredient:
+		$PlayerComponents/ToppingSelector/MagicalMushroomFish/ToppingMagicalMushroomFish.visible = true
+		
 	$DrinkComponents/DialogueHistory/DialogueHint.text = GameState.drink_hint
 	$DrinkComponents/DialogueHistory/CharacterImage.texture.atlas = load("res://assets/art/characters/%s/%s_%s.png" % [GameState.current_character, GameState.current_character, GameState.current_portrait_info])
-	
+		
 	match GameState.current_character:
 		"Alexandra":
 			$DrinkComponents/DialogueHistory/CharacterImage.texture.region.position.y = 50

@@ -56,6 +56,11 @@ var flavor_traits : Dictionary = {
 		"bitter_sweet": 3,
 		"cool_warm": 1
 	},
+	"magical_mushroom_fish": {
+		"fancy_cozy": 0,
+		"bitter_sweet": 0,
+		"cool_warm": 0
+	},
 	"chill": {
 		"fancy_cozy": -2,
 		"bitter_sweet": -1,

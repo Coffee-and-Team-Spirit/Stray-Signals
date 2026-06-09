@@ -429,6 +429,7 @@ horizontal_alignment = 1
 layout_mode = 2
 
 [node name="ToppingMagicalMushroomFish" type="TextureButton" parent="PlayerComponents/ToppingSelector/MagicalMushroomFish" unique_id=54871425]
+visible = false
 custom_minimum_size = Vector2(180, 250)
 layout_mode = 2
 texture_normal = ExtResource("13_n60d2")
@@ -631,6 +632,29 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = ExtResource("13_1ck7w")
 
+[node name="SelectSpecialTopping" type="RichTextLabel" parent="DrinkComponents/DrinkInformation/MarginContainer/DrinkComponents" unique_id=55030804]
+visible = false
+clip_contents = false
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vjac4")
+text = "Special Topping"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="Panel" type="Panel" parent="DrinkComponents/DrinkInformation/MarginContainer/DrinkComponents/SelectSpecialTopping" unique_id=575890842]
+show_behind_parent = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("13_1ck7w")
+
 [node name="SelectModification" type="RichTextLabel" parent="DrinkComponents/DrinkInformation/MarginContainer/DrinkComponents" unique_id=1883354255]
 clip_contents = false
 custom_minimum_size = Vector2(250, 0)
@@ -736,6 +760,15 @@ stretch_mode = 5
 
 [node name="ToppingLayer" type="TextureRect" parent="DrinkComponents/DrinkInformation/CupDisplay" unique_id=16210692]
 layout_mode = 1
+offset_left = 10.0
+offset_top = -98.0
+offset_right = 510.0
+offset_bottom = 551.0
+mouse_filter = 2
+stretch_mode = 5
+
+[node name="SpecialToppingLayer" type="TextureRect" parent="DrinkComponents/DrinkInformation/CupDisplay" unique_id=1598285008]
+layout_mode = 0
 offset_left = 10.0
 offset_top = -98.0
 offset_right = 510.0
