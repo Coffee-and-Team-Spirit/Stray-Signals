@@ -31,9 +31,9 @@ label drink_rating (Scene 2 Drink Rating)
 audio music "res://assets/audio/craft_drink_bgm.ogg" [fade="2.0" volume="-5.0"]
 if {Drink.Rating} == "mediocre":
 	join Whiskerly (Neutral) center
-	Whiskerly: This… [pause0.3]why I still here... [pause0.3]even in my new state.
-	Whiskerly: I still... [pause0.3]to change back... [pause0.3]day.
-	Whiskerly: But... [pause0.3]is okay. After all, I've... [pause0.3]got Stray Signals so it... [pause0.3]be too bad.
+	Whiskerly: This… [pause=0.3]why I still here... [pause=0.3]even in my new state.
+	Whiskerly: I still... [pause=0.3]to change back... [pause=0.3]day.
+	Whiskerly: But... [pause=0.3]is okay. After all, I've... [pause=0.3]got Stray Signals so it... [pause=0.3]be too bad.
 	leave Whiskerly
 	[signal arg="clear_drink"]
 elif {Drink.Rating} == "good":

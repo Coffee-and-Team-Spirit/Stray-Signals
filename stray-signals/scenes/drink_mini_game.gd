@@ -371,7 +371,7 @@ func score_drink(puzzle, player_stats) -> int:
 		player_category[key + "_direction"] = result.direction
 		player_category[key + "_intensity"] = result.intensity
 	
-	if (DayManager.Day == 3 && DayManager.Encounter == 2) or (DayManager.Day == 4 && DayManager.Encounter == 3):
+	if (DayManager.day == 3 && DayManager.encounter == 2) or (DayManager.day == 4 && DayManager.encounter == 3):
 		if chosen_flavors[0] == chosen_flavors[1]:
 			return 0
 			
@@ -410,6 +410,9 @@ func evaluate_drink_rating(score) -> String:
 
 
 func _on_serve_pressed() -> void:
+	print("SERVE DAY ", DayManager.day)
+	print("SERVE ENCOUNTER ", DayManager.encounter)
+	print("VILLAIN ", GameState.villain)
 	GameState.drink_result = evaluate_drink_rating(score_drink(DrinkData.drink_puzzles[DayManager.day][DayManager.encounter], player_drink_traits))
 	
 	var game_root = get_tree().current_scene

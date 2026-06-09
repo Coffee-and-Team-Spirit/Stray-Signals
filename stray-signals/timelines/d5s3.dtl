@@ -42,6 +42,7 @@ else:
 	GG: Sorry, but I will not be drinking that this time.
 	GG: Not really my type of drink at the end of the day.
 	GG: Now, about how great being a Cat is...
+	leave GG
 	[signal arg="clear_drink"]
 if {Drink.Rating} == "good":
 	jump d6s2/

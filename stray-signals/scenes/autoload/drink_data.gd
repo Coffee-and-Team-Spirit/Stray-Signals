@@ -340,7 +340,10 @@ var drink_puzzles = {
 					"bitter_sweet_intensity": [-1, 0, 2],
 					"cool_warm_intensity": [-1, 0, 2]
 				}
-			}	
+			}
+			
+			
+				
 		}
 	}
 }

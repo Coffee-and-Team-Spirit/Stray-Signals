@@ -28,7 +28,7 @@ Archimedes: I'd like my drink to go. I'll need something I can put a lid on. And
 leave Archimedes
 [signal arg="craft_drink"]
 label drink_rating (Scene 2 Drink Rating)
-[background arg="res://assets/temp/tempCafe/Cafe_Interior.jpg" fade="1.5" wait="true"]
+[background arg="res://assets/art/backgrounds/Cafe_Background.png" fade="1.5" wait="true"]
 audio music "res://assets/audio/craft_drink_bgm.ogg" [fade="2.0" volume="-5.0"]
 if {Drink.Rating} == "mediocre":
 	join Archimedes center

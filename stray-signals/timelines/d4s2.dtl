@@ -35,8 +35,8 @@ if {Drink.Rating} == "mediocre":
 	[signal arg="clear_drink"]
 elif {Drink.Rating} == "good":
 	join GG center
-	GG (Happy): That’s a [speed=5]realllllly[/speed] good drink, thank you.
-	GG (Neutral): Another thing I've heard about people that turn humans into cats… that just like them, they like their drinks pretty fancy overall. Nothing crazy, but still. [speed=5]Fancy.[/speed]
+	GG (Happy): That’s a [speed=5]realllllly [speed=1]good drink, thank you.
+	GG (Neutral): Another thing I've heard about people that turn humans into cats… that just like them, they like their drinks pretty fancy overall. Nothing crazy, but still. [speed=5]Fancy.
 	GG (Neutral): Anyways, thanks for the drink.
 	leave GG
 	[signal arg="clear_drink"]
