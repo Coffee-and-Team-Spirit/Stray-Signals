@@ -104,17 +104,17 @@ func update_cup_display():
 	}
 	
 	if chosen_cup !="":
-		$DrinkComponents/DrinkInformation/CupDisplay/CupBase.texture = load("res://assets/art/cups/empty_cup_%s.png" % chosen_cup)
+		$DrinkComponents/DrinkInformation/CupDisplay/CupBase.texture = load("res://assets/art/mini_game/cups/empty_cup_%s.png" % chosen_cup)
 		update_drink_traits(chosen_cup)
 	else:
-		$DrinkComponents/DrinkInformation/CupDisplay/CupBase.texture = load("res://assets/art/cups/empty_cup.png")
+		$DrinkComponents/DrinkInformation/CupDisplay/CupBase.texture = load("res://assets/art/mini_game/cups/empty_cup_cup.png")
 	
 	if chosen_flavors.size() > 0:
 		if chosen_flavors.size() == 1:
-			$DrinkComponents/DrinkInformation/CupDisplay/BaseFlavorLayer.texture = load("res://assets/art/flavors/base_flavor_%s.png" % chosen_flavors[0])
+			$DrinkComponents/DrinkInformation/CupDisplay/BaseFlavorLayer.texture = load("res://assets/art/mini_game/flavors/base_flavor_%s_%s.png" % [chosen_flavors[0], chosen_cup])
 		else:
-			$DrinkComponents/DrinkInformation/CupDisplay/BaseFlavorLayer.texture = load("res://assets/art/flavors/base_flavor_%s.png" % chosen_flavors[0])
-			$DrinkComponents/DrinkInformation/CupDisplay/SecondaryFlavorLayer.texture = load("res://assets/art/flavors/secondary_flavor_%s.png" % chosen_flavors[1])
+			$DrinkComponents/DrinkInformation/CupDisplay/BaseFlavorLayer.texture = load("res://assets/art/mini_game/flavors/base_flavor_%s_%s.png" % [chosen_flavors[0], chosen_cup])
+			$DrinkComponents/DrinkInformation/CupDisplay/SecondaryFlavorLayer.texture = load("res://assets/art/mini_game/flavors/secondary_flavor_%s_%s.png" % [chosen_flavors[1], chosen_cup])
 			update_drink_traits(chosen_flavors[1])
 		update_drink_traits(chosen_flavors[0])
 	else:
@@ -122,7 +122,7 @@ func update_cup_display():
 		$DrinkComponents/DrinkInformation/CupDisplay/SecondaryFlavorLayer.texture = null
 
 	if chosen_topping != "":
-		$DrinkComponents/DrinkInformation/CupDisplay/ToppingLayer.texture = load("res://assets/art/toppings/topping_%s.png" % chosen_topping)
+		$DrinkComponents/DrinkInformation/CupDisplay/ToppingLayer.texture = load("res://assets/art/mini_game/toppings/topping_%s_%s.png" % [chosen_topping, chosen_cup])
 		update_drink_traits(chosen_topping)
 	else:
 		$DrinkComponents/DrinkInformation/CupDisplay/ToppingLayer.texture = null
@@ -528,7 +528,9 @@ func show_tutorial():
 	get_tree().current_scene.add_child(tutorial)
 	tutorial.start_tutorial()
 
+
 func _ready():
+	GameState.has_seen_tutorial = true
 	if not GameState.has_seen_tutorial:
 		GameState.has_seen_tutorial = true
 		await get_tree().create_timer(2.0).timeout

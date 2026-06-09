@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://cmdmj7ooalfls" path="res://assets/art/mini_game/ingredients/ingredient_catnip.png" id="12_0saxs"]
 [ext_resource type="StyleBox" uid="uid://d16gnpc5j64h7" path="res://ui/drink_components_panel.tres" id="13_1ck7w"]
 [ext_resource type="Texture2D" uid="uid://b8ec0bo3troq3" path="res://assets/art/mini_game/ingredients/ingredient_cream_and_cat_treats.png" id="13_cg4nb"]
+[ext_resource type="Texture2D" uid="uid://1eqbdxuw8mwi" path="res://assets/art/mini_game/ingredients/ingredient_magical_mushroom_fish.png" id="13_n60d2"]
 [ext_resource type="Texture2D" uid="uid://jxydegqi4wqj" path="res://assets/art/characters/Loren/Loren_Happy.png" id="14_n60d2"]
 [ext_resource type="Script" uid="uid://dlut1ikn4tx6h" path="res://scenes/cup_display_drop.gd" id="15_okdn2"]
 [ext_resource type="Texture2D" uid="uid://b5i22smay4y34" path="res://assets/art/sparkle.png" id="17_0saxs"]
@@ -413,14 +414,43 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -8.0
-offset_bottom = 32.0
+offset_top = -15.0
+offset_bottom = 46.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_vertical = 8
-theme_override_font_sizes/normal_font_size = 25
+theme_override_font_sizes/normal_font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxEmpty_a01rs")
 text = "Cream & Cat Treats"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="MagicalMushroomFish" type="VBoxContainer" parent="PlayerComponents/ToppingSelector" unique_id=1901736239]
+layout_mode = 2
+
+[node name="ToppingMagicalMushroomFish" type="TextureButton" parent="PlayerComponents/ToppingSelector/MagicalMushroomFish" unique_id=54871425]
+custom_minimum_size = Vector2(180, 250)
+layout_mode = 2
+texture_normal = ExtResource("13_n60d2")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PlayerComponents/ToppingSelector/MagicalMushroomFish/ToppingMagicalMushroomFish" unique_id=464539973]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -15.0
+offset_bottom = 46.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 8
+theme_override_font_sizes/normal_font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_a01rs")
+text = "Magical Mushroom Fish"
+fit_content = true
 horizontal_alignment = 1
 
 [node name="ModificationSelector" type="HBoxContainer" parent="PlayerComponents" unique_id=1570383195]
@@ -648,7 +678,7 @@ text = "RESET"
 z_index = 1
 
 [node name="SparkleParticles" type="GPUParticles2D" parent="DrinkComponents/DrinkInformation/CupDisplayFX" unique_id=1643787877]
-position = Vector2(550, 16)
+position = Vector2(565, 75)
 emitting = false
 amount = 10
 texture = ExtResource("17_0saxs")
@@ -663,7 +693,7 @@ process_material = SubResource("ParticleProcessMaterial_0saxs")
 z_index = 2
 custom_minimum_size = Vector2(512, 512)
 layout_mode = 2
-size_flags_horizontal = 0
+size_flags_horizontal = 4
 mouse_filter = 1
 script = ExtResource("15_okdn2")
 
@@ -678,12 +708,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("2_n60d2")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="ToppingLayer" type="TextureRect" parent="DrinkComponents/DrinkInformation/CupDisplay" unique_id=16210692]
-layout_mode = 1
-mouse_filter = 2
 stretch_mode = 5
 
 [node name="SecondaryFlavorLayer" type="TextureRect" parent="DrinkComponents/DrinkInformation/CupDisplay" unique_id=1781846496]
@@ -691,10 +715,11 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -101.5
+offset_bottom = 35.5
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-expand_mode = 1
 stretch_mode = 5
 
 [node name="BaseFlavorLayer" type="TextureRect" parent="DrinkComponents/DrinkInformation/CupDisplay" unique_id=2142162753]
@@ -702,10 +727,20 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -95.5
+offset_bottom = 41.5
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-expand_mode = 1
+stretch_mode = 5
+
+[node name="ToppingLayer" type="TextureRect" parent="DrinkComponents/DrinkInformation/CupDisplay" unique_id=16210692]
+layout_mode = 1
+offset_left = 10.0
+offset_top = -98.0
+offset_right = 510.0
+offset_bottom = 551.0
+mouse_filter = 2
 stretch_mode = 5
 
 [node name="FlavorBars" type="VBoxContainer" parent="DrinkComponents/DrinkInformation" unique_id=191993797]
@@ -887,6 +922,7 @@ horizontal_alignment = 2
 [connection signal="pressed" from="PlayerComponents/ToppingSelector/Boba/ToppingBoba" to="." method="_on_topping_button_pressed" binds= [NodePath("PlayerComponents/ToppingSelector/Boba/ToppingBoba")]]
 [connection signal="pressed" from="PlayerComponents/ToppingSelector/Catnip/ToppingCatnip" to="." method="_on_topping_button_pressed" binds= [NodePath("PlayerComponents/ToppingSelector/Catnip/ToppingCatnip")]]
 [connection signal="pressed" from="PlayerComponents/ToppingSelector/CreamAndCatTreats/ToppingCreamAndCatTreats" to="." method="_on_topping_button_pressed" binds= [NodePath("PlayerComponents/ToppingSelector/CreamAndCatTreats/ToppingCreamAndCatTreats")]]
+[connection signal="pressed" from="PlayerComponents/ToppingSelector/MagicalMushroomFish/ToppingMagicalMushroomFish" to="." method="_on_topping_button_pressed" binds= [NodePath("PlayerComponents/ToppingSelector/MagicalMushroomFish/ToppingMagicalMushroomFish")]]
 [connection signal="pressed" from="PlayerComponents/ModificationSelector/Modification/ModRow1/ModificationHeat" to="." method="_on_modification_button_pressed" binds= [NodePath("PlayerComponents/ModificationSelector/Modification/ModRow1/ModificationHeat")]]
 [connection signal="pressed" from="PlayerComponents/ModificationSelector/Modification/ModRow1/ModificationChill" to="." method="_on_modification_button_pressed" binds= [NodePath("PlayerComponents/ModificationSelector/Modification/ModRow1/ModificationChill")]]
 [connection signal="pressed" from="PlayerComponents/ModificationSelector/Modification/ModRow2/ModificationStir" to="." method="_on_modification_button_pressed" binds= [NodePath("PlayerComponents/ModificationSelector/Modification/ModRow2/ModificationStir")]]

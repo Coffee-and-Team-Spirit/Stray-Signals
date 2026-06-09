@@ -9,6 +9,7 @@ func _get_drag_data(_position):
 	flavor_preview.modulate = Color(1, 1, 1, 1)  # force full opacity
 	flavor_preview.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 	flavor_preview.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	flavor_preview.z_index = 999
 	
 	set_drag_preview(flavor_preview)
 	return name
