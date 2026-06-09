@@ -73,13 +73,15 @@ func select_flavor(flavor_name):
 
 
 func select_topping(topping_name):
-	DayManager.day = 5
+	#DayManager.day = 5
 	if topping_name == "magical_mushroom_fish":
 		if DayManager.day == 5:
 			chosen_special_topping = topping_name
 			$DrinkComponents/DrinkInformation/MarginContainer/DrinkComponents/SelectSpecialTopping.visible = true
 		else:
-			print("NOT DAY 5")
+			var confirmation_box = $ConfirmationBox
+			if confirmation_box:
+				confirmation_box.show_info("Rememeber, Zara suggested to save the special ingredient to stop the villain.")
 	else:
 		chosen_topping = topping_name
 	update_cup_display()
