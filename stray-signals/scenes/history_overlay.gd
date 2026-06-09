@@ -30,6 +30,13 @@ func open_history():
 	
 	for child in dialogue_list.get_children():
 		child.queue_free()
+		
+	$Panel/MarginContainer/MarginContainer/Day.text = "NOTEBOOK HISTORY"
+	$Panel/MarginContainer2/DayList/Day1.disabled = false
+	$Panel/MarginContainer2/DayList/Day2.disabled = false
+	$Panel/MarginContainer2/DayList/Day3.disabled = false
+	$Panel/MarginContainer2/DayList/Day4.disabled = false
+	$Panel/MarginContainer2/DayList/Day5.disabled = false
 
 
 func close_history():
@@ -73,6 +80,8 @@ func populate_day_list():
 			day_button.visible = true
 			
 			day_button.disabled = (day == selected_day)
+			if selected_day != 0:
+				$Panel/MarginContainer/MarginContainer/Day.text = "DAY " + str(selected_day)
 
 
 func _on_show_day(day: int) -> void:

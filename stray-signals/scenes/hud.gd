@@ -7,7 +7,7 @@ func _ready() -> void:
 	_on_day_changed(DayManager.day)
 
 func _on_day_changed(new_day):
-	$"../../Day/DayText".text = "Day " + str(new_day)
+	$"../../Day/DayText".text = "[font_size=15]DAY[/font_size][br][font_size=35]%s[/font_size]" % str(new_day)
 
 func _on_menu_button_pressed() -> void:
 	var root = get_tree().current_scene  # GameRoot
