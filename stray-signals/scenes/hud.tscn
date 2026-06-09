@@ -60,5 +60,7 @@ size_flags_horizontal = 10
 texture_normal = ExtResource("3_uo2fv")
 ignore_texture_size = true
 stretch_mode = 5
+script = ExtResource("4_6fi6k")
 
 [connection signal="pressed" from="MarginContainer/HUDDay/HUDOptions/Menu" to="MarginContainer/HUDDay/HUDOptions/Menu" method="_on_menu_button_pressed"]
+[connection signal="pressed" from="MarginContainer/HUDDay/HUDOptions/Notebook" to="MarginContainer/HUDDay/HUDOptions/Notebook" method="_on_notebook_button_pressed"]

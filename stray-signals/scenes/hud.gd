@@ -14,3 +14,10 @@ func _on_menu_button_pressed() -> void:
 	var pause = root.get_node("PauseOverlay")
 	
 	pause.open_pause_menu()
+
+
+func _on_notebook_button_pressed() -> void:
+	var root = get_tree().current_scene  # GameRoot
+	var history = root.get_node("HistoryOverlay")
+	
+	history.open_history()

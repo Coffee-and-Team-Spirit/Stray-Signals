@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://cx7t88u86muax"]
+[gd_scene format=3 uid="uid://dgrip8mdxc6df"]
 
-[ext_resource type="Script" path="res://scenes/history_overlay.gd" id="1_ep4ll"]
+[ext_resource type="Script" uid="uid://b2tfpr77vhh68" path="res://scenes/history_overlay.gd" id="1_ep4ll"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aekhm"]
 bg_color = Color(0.28235295, 0.27058825, 0.50980395, 1)
