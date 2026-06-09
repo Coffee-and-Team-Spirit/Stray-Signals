@@ -48,5 +48,5 @@ else:
 	Alexandra: You seem to have made my bad slightly worse, but I imagine that was not your intent.
 	leave Alexandra
 	[signal arg="clear_drink"]
-[signal arg="end_encounter"]
+	[signal arg="craft_drink"]
 jump d6s1/

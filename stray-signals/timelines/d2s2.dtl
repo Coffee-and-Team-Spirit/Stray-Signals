@@ -27,12 +27,20 @@ label drink_rating (Scene 2 Drink Rating)
 audio music "res://assets/audio/craft_drink_bgm.ogg" [fade="2.0" volume="-5.0"]
 if {Drink.Rating} == "mediocre":
 	join GG (Happy) center
-	GG: **FINAL DRINK CLUE** for mediocre drink
+	GG: That was pretty dang decent. Thank you.
+	GG (Neutral): You know, I heard that people that do things like... [pause=0.3]turning people into [i]cats[/i] like energy juice in their drinks...
+	GG: Also, I think they have strange, boring thoughts on the a drink's temperature.
+	GG (Angry): Are you writing this down?
+	GG (Happy): Anyways, thanks for the drink.
 	leave GG
 	[signal arg="clear_drink"]
 elif {Drink.Rating} == "good":
 	join GG (Happy) center
-	GG: **FINAL DRINK CLUE** for perfect/good drink
+	GG: That was pretty dang great. Thank you.
+	GG (Neutral): You know, I heard that people that do things like... [pause=0.3]turning people into [i]cats[/i] like coffee in their drinks...
+	GG: Also, I think they like their drinks neither warm nor cold.
+	GG (Angry): Are you writing this down?
+	GG (Happy): Anyways, thanks for the drink.
 	leave GG
 	[signal arg="clear_drink"]
 else:

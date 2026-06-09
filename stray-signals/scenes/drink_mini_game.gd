@@ -199,7 +199,7 @@ func get_flavor_category_id(flavor_name, value) -> Dictionary:
 			direction = "sweet"
 	elif flavor_name == "cool_warm":
 		if value < 0:
-			direction = "cold"
+			direction = "cool"
 		elif value > 0:
 			direction = "warm"
 		

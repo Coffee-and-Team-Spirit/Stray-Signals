@@ -31,7 +31,7 @@ var drink_puzzles = {
 				},
 				"stats": {
 					"fancy_cozy_direction": ["fancy"],
-					"fancy_cozy_intensity": [4, 3]
+					"fancy_cozy_intensity": [3, 4]
 				}
 			},
 			"good": {
@@ -40,7 +40,7 @@ var drink_puzzles = {
 				},
 				"stats": {
 					"fancy_cozy_direction": ["fancy"],
-					"fancy_cozy_intensity": [2]
+					"fancy_cozy_intensity": [2, 3, 4]
 				}
 			}
 		},
@@ -52,10 +52,9 @@ var drink_puzzles = {
 					"topping": "cream_and_cat_treats"
 				},
 				"stats": {
-					"bitter_sweet_direction": ["sweet"],
-					"bitter_sweet_intensity": [-1, 0, 1],   # less than half sweet
-					"cool_warm_direction": ["cold"],
-					"cool_warm_intensity": [4, 3]           # extremely or very cool
+					"bitter_sweet_intensity": [-1, 0, 1],   # less than slightly sweet
+					"cool_warm_direction": ["cool"],
+					"cool_warm_intensity": [1, 2, 3, 4]     # all intensities of cool
 				}
 			},
 			"good": {
@@ -63,10 +62,7 @@ var drink_puzzles = {
 					"topping": "cream_and_cat_treats"
 				},
 				"stats": {
-					"bitter_sweet_direction": ["sweet"],
-					"bitter_sweet_intensity": [-1, 0, 1, 2],  # < 6 sweet
-					"cool_warm_direction": ["cold"],
-					"cool_warm_intensity": [3, 2]             # > 5 cool
+					"bitter_sweet_intensity": [-1, 0, 1], 
 				}
 			}
 		},
@@ -103,7 +99,9 @@ var drink_puzzles = {
 					"topping": "cream_and_cat_treats"
 				},
 				"stats": {
+					"fancy_cozy_direction": ["cozy"],
 					"fancy_cozy_intensity": [2, 1],
+					"cool_warm_direction": ["warm"],
 					"cool_warm_intensity": [2, 1]
 				}
 			}
