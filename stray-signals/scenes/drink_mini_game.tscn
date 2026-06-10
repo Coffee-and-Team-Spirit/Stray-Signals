@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://o7hmrsu5brlx" path="res://scenes/flavor_button_pour.gd" id="5_1ck7w"]
 [ext_resource type="Texture2D" uid="uid://cbgkffqpkyllb" path="res://assets/art/mini_game/ingredients/ingredient_mango.png" id="7_cg4nb"]
 [ext_resource type="Texture2D" uid="uid://ciol1t7k1o37f" path="res://assets/art/mini_game/ingredients/ingredient_matcha.png" id="8_odn5p"]
+[ext_resource type="Texture2D" uid="uid://dqt5hf1uxoxka" path="res://assets/art/mini_game/ingredients/ingredient_coffee.png" id="8_proi2"]
 [ext_resource type="Texture2D" uid="uid://binjhggphvptb" path="res://assets/art/mini_game/ingredients/ingredient_milk_tea.png" id="9_proi2"]
 [ext_resource type="Texture2D" uid="uid://g1wj3l1c83rk" path="res://assets/art/mini_game/ingredients/ingredient_strawberry.png" id="10_05sac"]
 [ext_resource type="Texture2D" uid="uid://cpy0hfld8ce80" path="res://assets/art/mini_game/ingredients/ingredient_boba.png" id="11_n60d2"]
@@ -52,9 +53,6 @@ content_margin_top = 5.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0yecb"]
 content_margin_top = 5.0
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_q5ega"]
-load_path = "res://.godot/imported/ingredient_coffee.png-0590a99ec5ca73d160663a340ba415ab.ctex"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_udkbo"]
 bg_color = Color(0.28235295, 0.27058825, 0.50980395, 1)
@@ -195,8 +193,8 @@ color = Color(0, 0, 0, 0.38431373)
 
 [node name="Customer" type="Panel" parent="." unique_id=1677956663]
 layout_mode = 0
-offset_left = 33.0
-offset_top = 33.0
+offset_left = 24.0
+offset_top = 23.0
 offset_right = 853.0
 offset_bottom = 462.0
 mouse_filter = 2
@@ -223,6 +221,7 @@ custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 20
 text = "Character Name"
+horizontal_alignment = 2
 
 [node name="CharacterImage" type="TextureRect" parent="Customer/MarginContainer/DialogueHistory" unique_id=219258141]
 custom_minimum_size = Vector2(0, 250)
@@ -239,7 +238,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_odn5p")
 [node name="MarginContainer" type="MarginContainer" parent="Customer/MarginContainer/DialogueHistory/Panel" unique_id=2003354866]
 layout_mode = 0
 offset_right = 762.0
-offset_bottom = 102.0
+offset_bottom = 79.5
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
@@ -251,6 +250,7 @@ layout_mode = 2
 theme_override_font_sizes/normal_font_size = 18
 bbcode_enabled = true
 text = "Dialogue hint"
+vertical_alignment = 1
 
 [node name="IngredientShelves" type="VBoxContainer" parent="." unique_id=283428844]
 layout_mode = 0
@@ -375,7 +375,7 @@ alignment = 1
 custom_minimum_size = Vector2(180, 250)
 layout_mode = 2
 tooltip_text = "Flavor: Coffee"
-texture_normal = SubResource("CompressedTexture2D_q5ega")
+texture_normal = ExtResource("8_proi2")
 ignore_texture_size = true
 stretch_mode = 4
 script = ExtResource("5_1ck7w")

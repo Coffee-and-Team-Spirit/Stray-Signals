@@ -51,7 +51,6 @@ func _on_signal(signal_passed_in):
 			var current_timeline = DayManager.get_current_timeline()
 			print("DAY:", DayManager.day, " ENCOUNTER:", DayManager.encounter)
 			Dialogic.start("res://timelines/%s.dtl" % current_timeline)
-			GameState.remove_default_history()
 		
 		"receive_special_ingredient":
 			GameState.has_special_ingredient = true;

@@ -61,6 +61,12 @@ func select_cup(cup_name):
 
 
 func select_flavor(flavor_name):
+	if chosen_cup == "":
+		var confirmation_box = $ConfirmationBox
+		if confirmation_box:
+			confirmation_box.show_info("Please select a cup first.")
+			return
+			
 	if chosen_flavors.size() < 2:
 		chosen_flavors.append(flavor_name)
 	else:
@@ -73,6 +79,12 @@ func select_flavor(flavor_name):
 
 
 func select_topping(topping_name):
+	if chosen_cup == "":
+		var confirmation_box = $ConfirmationBox
+		if confirmation_box:
+			confirmation_box.show_info("Please select a cup first.")
+			return
+			
 	#DayManager.day = 5
 	if topping_name == "magical_mushroom_fish":
 		if DayManager.day == 5:
@@ -90,6 +102,12 @@ func select_topping(topping_name):
 
 
 func select_modification(modification_name):
+	if chosen_cup == "":
+		var confirmation_box = $ConfirmationBox
+		if confirmation_box:
+			confirmation_box.show_info("Please select a cup first.")
+			return
+			
 	chosen_modification = modification_name
 	update_cup_display()
 	update_drink_components_display()
