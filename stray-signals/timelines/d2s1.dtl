@@ -35,7 +35,10 @@ audio music "res://assets/audio/craft_drink_bgm.ogg" [fade="2.0" volume="-5.0"]
 if {Drink.Rating} == "mediocre":
 	join Alexandra center
 	Alexandra: That was decent.
-	Alexandra: It's not impossible that another human is doing this, but maybe it's something else… [pause=.5] I should depart, thanks for the drink. I will return.
+	Alexandra: It's not impossible that another human is doing this, but maybe it's something else… [pause=.5]
+	[signal arg="clue|I think it may be the cats. I know it seems out there, but that's what my gut is saying, and I try not to ignore it too often.”"]
+	Alexandra: [font=res\://styles/fonts/Nervous.ttf]{Drink.DistortedClue}[/font]
+	Alexandra: I should depart, thanks for the drink. I will return.
 	leave Alexandra
 	[signal arg="clear_drink"]
 elif {Drink.Rating} == "good":
