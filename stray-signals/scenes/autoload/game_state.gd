@@ -40,8 +40,6 @@ func new_game() -> void:
 	# Start first timeline
 	var first_timeline = DayManager.get_current_timeline()
 	Dialogic.start("res://timelines/%s.dtl" % first_timeline)
-	
-	remove_default_history()
 
 
 func load_game() -> void:
@@ -68,14 +66,3 @@ func load_game() -> void:
 	
 	# Show HUD
 	get_tree().current_scene.get_node("HUD").visible = true
-	
-	remove_default_history()
-
-
-func remove_default_history() -> void:
-	await get_tree().process_frame
-	var layout_node = Dialogic.Styles.get_layout_node()
-	if layout_node:
-		var built_in_history = layout_node.find_child("ExampleHistoryScene", true, false)
-		if built_in_history:
-			built_in_history.queue_free()

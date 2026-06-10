@@ -5,7 +5,7 @@ extends Node2D
 func _ready() -> void:
 	if not Dialogic.signal_event.is_connected(_on_signal):
 		Dialogic.signal_event.connect(_on_signal)
-
+	
 	Dialogic.VAR.set_variable("Drink.Rating", GameState.drink_result)
 	if DayManager.day == 5 && DayManager.encounter == 1:
 		GameState.target_drink = {}
