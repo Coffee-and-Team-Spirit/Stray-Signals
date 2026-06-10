@@ -264,7 +264,7 @@ var drink_puzzles = {
 				"ingredients": {
 					"modification": "stir",
 					"flavors": ["coffee"],
-					"topping": "magical_mushroom_fish"
+					"special_topping": "magical_mushroom_fish"
 				},
 				"stats": {
 					"cool_warm_intensity": [-1],
@@ -275,7 +275,7 @@ var drink_puzzles = {
 			"good": {
 				"ingredients": {
 					"flavors": ["coffee"],
-					"topping": "magical_mushroom_fish"
+					"special_topping": "magical_mushroom_fish"
 				},
 				"stats": {
 					"cool_warm_intensity": [-1, 0],

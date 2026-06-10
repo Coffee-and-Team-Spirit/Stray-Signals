@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dk16c6jvufq0s"
-path="res://.godot/imported/topping_catnip_glass.png-8db6cbf12d90d3ff7ef264e826b833de.ctex"
+uid="uid://bhitv207ix26j"
+path="res://.godot/imported/topping_cream_and_cat_treats_cup.png-fd2ee6a05201868e143b8081ad9e976b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/mini_game/toppings/topping_catnip_glass.png"
-dest_files=["res://.godot/imported/topping_catnip_glass.png-8db6cbf12d90d3ff7ef264e826b833de.ctex"]
+source_file="res://assets/art/mini_game/toppings/topping_cream_and_cat_treats_cup.png"
+dest_files=["res://.godot/imported/topping_cream_and_cat_treats_cup.png-fd2ee6a05201868e143b8081ad9e976b.ctex"]
 
 [params]
 

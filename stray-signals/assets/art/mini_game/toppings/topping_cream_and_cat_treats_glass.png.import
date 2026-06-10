@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5ukldtan0cah"
-path="res://.godot/imported/topping_cream_and_cats_treat_cup.png-8950c519b495e55a378e1be1302dd83f.ctex"
+uid="uid://bodl2rj0o23ub"
+path="res://.godot/imported/topping_cream_and_cat_treats_glass.png-75aebbf4a5d3e5c2bd27b6c30ac1cdec.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/mini_game/toppings/topping_cream_and_cats_treat_cup.png"
-dest_files=["res://.godot/imported/topping_cream_and_cats_treat_cup.png-8950c519b495e55a378e1be1302dd83f.ctex"]
+source_file="res://assets/art/mini_game/toppings/topping_cream_and_cat_treats_glass.png"
+dest_files=["res://.godot/imported/topping_cream_and_cat_treats_glass.png-75aebbf4a5d3e5c2bd27b6c30ac1cdec.ctex"]
 
 [params]
 

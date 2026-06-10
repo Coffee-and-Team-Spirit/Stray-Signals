@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bgsmb4ojxsmv4"]
 
 [ext_resource type="Script" uid="uid://bf15e30xys6qa" path="res://scenes/drink_mini_game.gd" id="1_dqtyw"]
+[ext_resource type="Texture2D" uid="uid://dli13vb00lauu" path="res://assets/art/backgrounds/Cafe_Background.png" id="2_cg4nb"]
 [ext_resource type="Texture2D" uid="uid://dne6qhe4cqnio" path="res://assets/art/mini_game/cups/empty_cup_cup.png" id="2_n60d2"]
 [ext_resource type="Texture2D" uid="uid://cwamu4r6blp0g" path="res://assets/art/mini_game/cups/empty_cup_mug.png" id="3_0saxs"]
 [ext_resource type="Texture2D" uid="uid://bd7ypgl80b10w" path="res://assets/art/mini_game/cups/empty_cup_glass.png" id="4_cg4nb"]
@@ -13,9 +14,35 @@
 [ext_resource type="Texture2D" uid="uid://cmdmj7ooalfls" path="res://assets/art/mini_game/ingredients/ingredient_catnip.png" id="12_0saxs"]
 [ext_resource type="StyleBox" uid="uid://d16gnpc5j64h7" path="res://ui/drink_components_panel.tres" id="13_1ck7w"]
 [ext_resource type="Texture2D" uid="uid://b8ec0bo3troq3" path="res://assets/art/mini_game/ingredients/ingredient_cream_and_cat_treats.png" id="13_cg4nb"]
+[ext_resource type="Texture2D" uid="uid://1eqbdxuw8mwi" path="res://assets/art/mini_game/ingredients/ingredient_magical_mushroom_fish.png" id="13_n60d2"]
 [ext_resource type="Texture2D" uid="uid://jxydegqi4wqj" path="res://assets/art/characters/Loren/Loren_Happy.png" id="14_n60d2"]
 [ext_resource type="Script" uid="uid://dlut1ikn4tx6h" path="res://scenes/cup_display_drop.gd" id="15_okdn2"]
 [ext_resource type="Texture2D" uid="uid://b5i22smay4y34" path="res://assets/art/sparkle.png" id="17_0saxs"]
+[ext_resource type="PackedScene" uid="uid://ch7wgofik7qpe" path="res://scenes/confirmation_box.tscn" id="19_odn5p"]
+[ext_resource type="Texture2D" uid="uid://blg7cpyf77gtq" path="res://assets/art/backgrounds/Shelf.png" id="22_lxyvm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cg4nb"]
+bg_color = Color(0.105882354, 0.09019608, 0.34117648, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.28235295, 0.27058825, 0.50980395, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0saxs"]
+atlas = ExtResource("14_n60d2")
+region = Rect2(0, 25, 0, 700)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_odn5p"]
+bg_color = Color(0.28235295, 0.27058825, 0.50980395, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vlrg8"]
 content_margin_top = 5.0
@@ -29,9 +56,25 @@ content_margin_top = 5.0
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_q5ega"]
 load_path = "res://.godot/imported/ingredient_coffee.png-0590a99ec5ca73d160663a340ba415ab.ctex"
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0saxs"]
-atlas = ExtResource("14_n60d2")
-region = Rect2(0, 25, 0, 900)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_udkbo"]
+bg_color = Color(0.28235295, 0.27058825, 0.50980395, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eurnq"]
+bg_color = Color(0.105882354, 0.09019608, 0.34117648, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w4u68"]
+bg_color = Color(0.105882354, 0.09019608, 0.34117648, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_okdn2"]
 content_margin_top = 5.0
@@ -52,6 +95,31 @@ content_margin_bottom = 5.0
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k0qsm"]
 content_margin_top = 5.0
 content_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lxyvm"]
+bg_color = Color(0.28235295, 0.27058825, 0.50980395, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_okdn2"]
+corner_radius_top_left = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_id7fa"]
+bg_color = Color(0.90576947, 0.90576947, 0.90576947, 1)
+corner_radius_top_left = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3cihv"]
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vjac4"]
+bg_color = Color(0.90576947, 0.90576947, 0.90576947, 1)
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
 
 [sub_resource type="Curve" id="Curve_0saxs"]
 _data = [Vector2(0.07466064, 0.9027618), 0.0, 0.0, 0, 0, Vector2(1, 0.4938627), 0.0, 0.0, 0, 0]
@@ -78,23 +146,26 @@ scale_curve = SubResource("CurveTexture_cg4nb")
 turbulence_enabled = true
 turbulence_noise_strength = 5.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_okdn2"]
-corner_radius_top_left = 8
-corner_radius_bottom_left = 8
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pxsg2"]
+bg_color = Color(0.105882354, 0.09019608, 0.34117648, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_id7fa"]
-bg_color = Color(0.90576947, 0.90576947, 0.90576947, 1)
-corner_radius_top_left = 8
-corner_radius_bottom_left = 8
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hcbeg"]
+bg_color = Color(0.28235295, 0.27058825, 0.50980395, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3cihv"]
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vjac4"]
-bg_color = Color(0.90576947, 0.90576947, 0.90576947, 1)
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2v6ef"]
+bg_color = Color(0.28235295, 0.27058825, 0.50980395, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [node name="DrinkMiniGame" type="Control" unique_id=230215315]
 layout_mode = 3
@@ -103,40 +174,140 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 script = ExtResource("1_dqtyw")
 
-[node name="PlayerComponents" type="VBoxContainer" parent="." unique_id=1577458315]
+[node name="Background" type="TextureRect" parent="." unique_id=97525481]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_cg4nb")
+
+[node name="BackgroundOverlay" type="ColorRect" parent="." unique_id=1792471637]
+process_mode = 3
+custom_minimum_size = Vector2(1920, 1080)
 layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -850.0
-grow_horizontal = 0
+grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 60
+size_flags_horizontal = 4
+size_flags_vertical = 4
+color = Color(0, 0, 0, 0.38431373)
 
-[node name="CupSelector" type="HBoxContainer" parent="PlayerComponents" unique_id=42541506]
+[node name="Customer" type="Panel" parent="." unique_id=1677956663]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 33.0
+offset_right = 853.0
+offset_bottom = 462.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_cg4nb")
+
+[node name="MarginContainer" type="MarginContainer" parent="Customer" unique_id=986714758]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="DialogueHistory" type="VBoxContainer" parent="Customer/MarginContainer" unique_id=2073230424]
 layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="CharacterName" type="RichTextLabel" parent="Customer/MarginContainer/DialogueHistory" unique_id=798647992]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 20
+text = "Character Name"
+
+[node name="CharacterImage" type="TextureRect" parent="Customer/MarginContainer/DialogueHistory" unique_id=219258141]
+custom_minimum_size = Vector2(0, 250)
+layout_mode = 2
+texture = SubResource("AtlasTexture_0saxs")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Panel" type="Panel" parent="Customer/MarginContainer/DialogueHistory" unique_id=208098718]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_odn5p")
+
+[node name="MarginContainer" type="MarginContainer" parent="Customer/MarginContainer/DialogueHistory/Panel" unique_id=2003354866]
+layout_mode = 0
+offset_right = 762.0
+offset_bottom = 102.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="DialogueHint" type="RichTextLabel" parent="Customer/MarginContainer/DialogueHistory/Panel/MarginContainer" unique_id=147450619]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "Dialogue hint"
+
+[node name="IngredientShelves" type="VBoxContainer" parent="." unique_id=283428844]
+layout_mode = 0
+offset_left = 893.0
+offset_top = 69.0
+offset_right = 1884.0
+offset_bottom = 666.0
+theme_override_constants/separation = 150
+
+[node name="MarginContainer" type="MarginContainer" parent="IngredientShelves" unique_id=1356589695]
+layout_mode = 2
+theme_override_constants/margin_top = 100
+
+[node name="CupShelf" type="TextureRect" parent="IngredientShelves/MarginContainer" unique_id=2044243229]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+texture = ExtResource("22_lxyvm")
+expand_mode = 2
+
+[node name="IngredientShelf" type="TextureRect" parent="IngredientShelves" unique_id=1474353616]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+texture = ExtResource("22_lxyvm")
+expand_mode = 2
+
+[node name="ToppingShelf" type="TextureRect" parent="IngredientShelves" unique_id=1997887518]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+texture = ExtResource("22_lxyvm")
+expand_mode = 2
+
+[node name="CupSelector" type="HBoxContainer" parent="." unique_id=42541506]
+layout_mode = 0
+offset_left = 903.0
+offset_top = -50.0
+offset_right = 1885.0
+offset_bottom = 200.0
+theme_override_constants/separation = 200
 alignment = 1
 
-[node name="Cup" type="VBoxContainer" parent="PlayerComponents/CupSelector" unique_id=1265148803]
-layout_mode = 2
-
-[node name="CupCup" type="TextureButton" parent="PlayerComponents/CupSelector/Cup" unique_id=1370005641]
+[node name="CupCup" type="TextureButton" parent="CupSelector" unique_id=1370005641]
 custom_minimum_size = Vector2(180, 250)
 layout_mode = 2
+size_flags_vertical = 0
 texture_normal = ExtResource("2_n60d2")
 ignore_texture_size = true
 stretch_mode = 4
 
-[node name="RichTextLabel" type="RichTextLabel" parent="PlayerComponents/CupSelector/Cup/CupCup" unique_id=1225347686]
+[node name="RichTextLabel" type="RichTextLabel" parent="CupSelector/CupCup" unique_id=1225347686]
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -7.0
-offset_bottom = 39.0
+offset_top = -25.0
+offset_bottom = 18.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/normal_font_size = 25
@@ -144,25 +315,22 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_vlrg8")
 text = "Cup"
 horizontal_alignment = 1
 
-[node name="Mug" type="VBoxContainer" parent="PlayerComponents/CupSelector" unique_id=1124344402]
-layout_mode = 2
-
-[node name="CupMug" type="TextureButton" parent="PlayerComponents/CupSelector/Mug" unique_id=1744952382]
+[node name="CupMug" type="TextureButton" parent="CupSelector" unique_id=1744952382]
 custom_minimum_size = Vector2(180, 250)
 layout_mode = 2
 texture_normal = ExtResource("3_0saxs")
 ignore_texture_size = true
 stretch_mode = 4
 
-[node name="RichTextLabel" type="RichTextLabel" parent="PlayerComponents/CupSelector/Mug/CupMug" unique_id=1071963484]
+[node name="RichTextLabel" type="RichTextLabel" parent="CupSelector/CupMug" unique_id=1071963484]
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -8.0
-offset_bottom = 32.0
+offset_top = -25.0
+offset_bottom = 17.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_vertical = 8
@@ -171,25 +339,22 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_a01rs")
 text = "Mug"
 horizontal_alignment = 1
 
-[node name="Glass" type="VBoxContainer" parent="PlayerComponents/CupSelector" unique_id=1021402601]
-layout_mode = 2
-
-[node name="CupGlass" type="TextureButton" parent="PlayerComponents/CupSelector/Glass" unique_id=2031028854]
+[node name="CupGlass" type="TextureButton" parent="CupSelector" unique_id=2031028854]
 custom_minimum_size = Vector2(180, 250)
 layout_mode = 2
 texture_normal = ExtResource("4_cg4nb")
 ignore_texture_size = true
 stretch_mode = 4
 
-[node name="RichTextLabel" type="RichTextLabel" parent="PlayerComponents/CupSelector/Glass/CupGlass" unique_id=1286621732]
+[node name="RichTextLabel" type="RichTextLabel" parent="CupSelector/CupGlass" unique_id=1286621732]
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -7.0
-offset_bottom = 36.0
+offset_top = -25.0
+offset_bottom = 10.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/normal_font_size = 25
@@ -197,16 +362,16 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_0yecb")
 text = "Glass"
 horizontal_alignment = 1
 
-[node name="FlavorSelector" type="HBoxContainer" parent="PlayerComponents" unique_id=1776169496]
-layout_mode = 2
-theme_override_constants/separation = 0
+[node name="FlavorSelector" type="HBoxContainer" parent="." unique_id=1776169496]
+layout_mode = 0
+offset_left = 897.0
+offset_top = 145.0
+offset_right = 1880.0
+offset_bottom = 395.0
+theme_override_constants/separation = 12
 alignment = 1
 
-[node name="Coffee" type="VBoxContainer" parent="PlayerComponents/FlavorSelector" unique_id=1760435040]
-layout_mode = 2
-alignment = 1
-
-[node name="FlavorCoffee" type="TextureButton" parent="PlayerComponents/FlavorSelector/Coffee" unique_id=1834787374]
+[node name="FlavorCoffee" type="TextureButton" parent="FlavorSelector" unique_id=1834787374]
 custom_minimum_size = Vector2(180, 250)
 layout_mode = 2
 tooltip_text = "Flavor: Coffee"
@@ -215,15 +380,15 @@ ignore_texture_size = true
 stretch_mode = 4
 script = ExtResource("5_1ck7w")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="PlayerComponents/FlavorSelector/Coffee/FlavorCoffee" unique_id=1112100249]
+[node name="RichTextLabel" type="RichTextLabel" parent="FlavorSelector/FlavorCoffee" unique_id=1112100249]
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -7.0
-offset_bottom = 36.0
+offset_top = -25.0
+offset_bottom = 18.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/normal_font_size = 25
@@ -231,10 +396,7 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_0yecb")
 text = "Coffee"
 horizontal_alignment = 1
 
-[node name="Mango" type="VBoxContainer" parent="PlayerComponents/FlavorSelector" unique_id=1379471884]
-layout_mode = 2
-
-[node name="FlavorMango" type="TextureButton" parent="PlayerComponents/FlavorSelector/Mango" unique_id=1532154947]
+[node name="FlavorMango" type="TextureButton" parent="FlavorSelector" unique_id=1532154947]
 custom_minimum_size = Vector2(180, 250)
 layout_mode = 2
 texture_normal = ExtResource("7_cg4nb")
@@ -242,15 +404,15 @@ ignore_texture_size = true
 stretch_mode = 4
 script = ExtResource("5_1ck7w")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="PlayerComponents/FlavorSelector/Mango/FlavorMango" unique_id=902840133]
+[node name="RichTextLabel" type="RichTextLabel" parent="FlavorSelector/FlavorMango" unique_id=902840133]
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -8.0
-offset_bottom = 32.0
+offset_top = -25.0
+offset_bottom = 15.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_vertical = 8
@@ -259,10 +421,7 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_a01rs")
 text = "Mango"
 horizontal_alignment = 1
 
-[node name="Matcha" type="VBoxContainer" parent="PlayerComponents/FlavorSelector" unique_id=354894160]
-layout_mode = 2
-
-[node name="FlavorMatcha" type="TextureButton" parent="PlayerComponents/FlavorSelector/Matcha" unique_id=1428392137]
+[node name="FlavorMatcha" type="TextureButton" parent="FlavorSelector" unique_id=1428392137]
 custom_minimum_size = Vector2(180, 250)
 layout_mode = 2
 texture_normal = ExtResource("8_odn5p")
@@ -270,15 +429,15 @@ ignore_texture_size = true
 stretch_mode = 4
 script = ExtResource("5_1ck7w")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="PlayerComponents/FlavorSelector/Matcha/FlavorMatcha" unique_id=678070690]
+[node name="RichTextLabel" type="RichTextLabel" parent="FlavorSelector/FlavorMatcha" unique_id=678070690]
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -7.0
-offset_bottom = 36.0
+offset_top = -25.0
+offset_bottom = 18.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/normal_font_size = 25
@@ -286,10 +445,7 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_0yecb")
 text = "Matcha"
 horizontal_alignment = 1
 
-[node name="MilkTea" type="VBoxContainer" parent="PlayerComponents/FlavorSelector" unique_id=2075079866]
-layout_mode = 2
-
-[node name="FlavorMilkTea" type="TextureButton" parent="PlayerComponents/FlavorSelector/MilkTea" unique_id=1672283427]
+[node name="FlavorMilkTea" type="TextureButton" parent="FlavorSelector" unique_id=1672283427]
 custom_minimum_size = Vector2(180, 250)
 layout_mode = 2
 texture_normal = ExtResource("9_proi2")
@@ -297,15 +453,15 @@ ignore_texture_size = true
 stretch_mode = 4
 script = ExtResource("5_1ck7w")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="PlayerComponents/FlavorSelector/MilkTea/FlavorMilkTea" unique_id=359524067]
+[node name="RichTextLabel" type="RichTextLabel" parent="FlavorSelector/FlavorMilkTea" unique_id=359524067]
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -7.0
-offset_bottom = 36.0
+offset_top = -25.0
+offset_bottom = 18.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/normal_font_size = 25
@@ -313,10 +469,7 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_0yecb")
 text = "Milk Tea"
 horizontal_alignment = 1
 
-[node name="Strawberry" type="VBoxContainer" parent="PlayerComponents/FlavorSelector" unique_id=1948220624]
-layout_mode = 2
-
-[node name="FlavorStrawberry" type="TextureButton" parent="PlayerComponents/FlavorSelector/Strawberry" unique_id=192415704]
+[node name="FlavorStrawberry" type="TextureButton" parent="FlavorSelector" unique_id=192415704]
 custom_minimum_size = Vector2(180, 250)
 layout_mode = 2
 texture_normal = ExtResource("10_05sac")
@@ -324,15 +477,15 @@ ignore_texture_size = true
 stretch_mode = 4
 script = ExtResource("5_1ck7w")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="PlayerComponents/FlavorSelector/Strawberry/FlavorStrawberry" unique_id=133307959]
+[node name="RichTextLabel" type="RichTextLabel" parent="FlavorSelector/FlavorStrawberry" unique_id=133307959]
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -7.0
-offset_bottom = 39.0
+offset_top = -25.0
+offset_bottom = 21.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/normal_font_size = 25
@@ -340,29 +493,31 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_vlrg8")
 text = "Strawberry"
 horizontal_alignment = 1
 
-[node name="ToppingSelector" type="HBoxContainer" parent="PlayerComponents" unique_id=1343872630]
-layout_mode = 2
+[node name="ToppingSelector" type="HBoxContainer" parent="." unique_id=1343872630]
+layout_mode = 0
+offset_left = 903.0
+offset_top = 351.0
+offset_right = 1883.0
+offset_bottom = 601.0
+theme_override_constants/separation = 65
 alignment = 1
 
-[node name="Boba" type="VBoxContainer" parent="PlayerComponents/ToppingSelector" unique_id=1605193544]
-layout_mode = 2
-
-[node name="ToppingBoba" type="TextureButton" parent="PlayerComponents/ToppingSelector/Boba" unique_id=1749017085]
+[node name="ToppingBoba" type="TextureButton" parent="ToppingSelector" unique_id=1749017085]
 custom_minimum_size = Vector2(180, 250)
 layout_mode = 2
 texture_normal = ExtResource("11_n60d2")
 ignore_texture_size = true
 stretch_mode = 4
 
-[node name="RichTextLabel" type="RichTextLabel" parent="PlayerComponents/ToppingSelector/Boba/ToppingBoba" unique_id=1215256745]
+[node name="RichTextLabel" type="RichTextLabel" parent="ToppingSelector/ToppingBoba" unique_id=1215256745]
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -7.0
-offset_bottom = 39.0
+offset_top = -25.0
+offset_bottom = 21.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/normal_font_size = 25
@@ -370,25 +525,22 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_vlrg8")
 text = "Boba"
 horizontal_alignment = 1
 
-[node name="Catnip" type="VBoxContainer" parent="PlayerComponents/ToppingSelector" unique_id=1658762002]
-layout_mode = 2
-
-[node name="ToppingCatnip" type="TextureButton" parent="PlayerComponents/ToppingSelector/Catnip" unique_id=1805034688]
+[node name="ToppingCatnip" type="TextureButton" parent="ToppingSelector" unique_id=1805034688]
 custom_minimum_size = Vector2(180, 250)
 layout_mode = 2
 texture_normal = ExtResource("12_0saxs")
 ignore_texture_size = true
 stretch_mode = 4
 
-[node name="RichTextLabel" type="RichTextLabel" parent="PlayerComponents/ToppingSelector/Catnip/ToppingCatnip" unique_id=1403553382]
+[node name="RichTextLabel" type="RichTextLabel" parent="ToppingSelector/ToppingCatnip" unique_id=1403553382]
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -7.0
-offset_bottom = 36.0
+offset_top = -25.0
+offset_bottom = 18.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/normal_font_size = 25
@@ -396,137 +548,141 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_0yecb")
 text = "Catnip"
 horizontal_alignment = 1
 
-[node name="CreamAndCatTreats" type="VBoxContainer" parent="PlayerComponents/ToppingSelector" unique_id=1189657040]
-layout_mode = 2
-
-[node name="ToppingCreamAndCatTreats" type="TextureButton" parent="PlayerComponents/ToppingSelector/CreamAndCatTreats" unique_id=185517999]
+[node name="ToppingCreamAndCatTreats" type="TextureButton" parent="ToppingSelector" unique_id=185517999]
 custom_minimum_size = Vector2(180, 250)
 layout_mode = 2
 texture_normal = ExtResource("13_cg4nb")
 ignore_texture_size = true
 stretch_mode = 4
 
-[node name="RichTextLabel" type="RichTextLabel" parent="PlayerComponents/ToppingSelector/CreamAndCatTreats/ToppingCreamAndCatTreats" unique_id=1964790959]
+[node name="RichTextLabel" type="RichTextLabel" parent="ToppingSelector/ToppingCreamAndCatTreats" unique_id=1964790959]
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -8.0
-offset_bottom = 32.0
+offset_left = -18.0
+offset_top = -25.0
+offset_right = 13.0
+offset_bottom = 36.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_vertical = 8
-theme_override_font_sizes/normal_font_size = 25
+theme_override_font_sizes/normal_font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxEmpty_a01rs")
 text = "Cream & Cat Treats"
+fit_content = true
 horizontal_alignment = 1
 
-[node name="ModificationSelector" type="HBoxContainer" parent="PlayerComponents" unique_id=1570383195]
+[node name="ToppingMagicalMushroomFish" type="TextureButton" parent="ToppingSelector" unique_id=54871425]
+visible = false
+custom_minimum_size = Vector2(180, 250)
 layout_mode = 2
-alignment = 1
+texture_normal = ExtResource("13_n60d2")
+ignore_texture_size = true
+stretch_mode = 4
 
-[node name="Modification" type="VBoxContainer" parent="PlayerComponents/ModificationSelector" unique_id=1435182483]
-custom_minimum_size = Vector2(150, 150)
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/separation = 15
-alignment = 1
-
-[node name="ModRow1" type="HBoxContainer" parent="PlayerComponents/ModificationSelector/Modification" unique_id=1610058282]
-custom_minimum_size = Vector2(100, 50)
-layout_mode = 2
-size_flags_vertical = 4
-theme_override_constants/separation = 15
-alignment = 1
-
-[node name="ModificationHeat" type="Button" parent="PlayerComponents/ModificationSelector/Modification/ModRow1" unique_id=47884781]
-custom_minimum_size = Vector2(100, 50)
-layout_mode = 2
-text = "Heat"
-
-[node name="ModificationChill" type="Button" parent="PlayerComponents/ModificationSelector/Modification/ModRow1" unique_id=1449620023]
-custom_minimum_size = Vector2(100, 50)
-layout_mode = 2
-text = "Chill"
-
-[node name="ModRow2" type="HBoxContainer" parent="PlayerComponents/ModificationSelector/Modification" unique_id=1869247898]
-custom_minimum_size = Vector2(100, 50)
-layout_mode = 2
-size_flags_vertical = 4
-theme_override_constants/separation = 15
-alignment = 1
-
-[node name="ModificationStir" type="Button" parent="PlayerComponents/ModificationSelector/Modification/ModRow2" unique_id=1904659201]
-custom_minimum_size = Vector2(100, 50)
-layout_mode = 2
-text = "Stir"
-
-[node name="ModificationShake" type="Button" parent="PlayerComponents/ModificationSelector/Modification/ModRow2" unique_id=1224586569]
-custom_minimum_size = Vector2(100, 50)
-layout_mode = 2
-text = "Shake"
-
-[node name="DrinkComponents" type="VBoxContainer" parent="." unique_id=1242483394]
+[node name="RichTextLabel" type="RichTextLabel" parent="ToppingSelector/ToppingMagicalMushroomFish" unique_id=464539973]
+custom_minimum_size = Vector2(20, 20)
 layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -356.0
-offset_right = 816.0
-offset_bottom = 356.0
-grow_vertical = 2
-theme_override_constants/separation = 75
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -51.0
+offset_top = -25.0
+offset_right = 30.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 8
+theme_override_font_sizes/normal_font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_a01rs")
+text = "Magical Mushroom Fish"
+fit_content = true
+horizontal_alignment = 1
 
-[node name="DialogueHistory" type="VBoxContainer" parent="DrinkComponents" unique_id=2073230424]
-layout_mode = 2
+[node name="ModificationSelector" type="HBoxContainer" parent="." unique_id=1570383195]
+layout_mode = 0
+offset_left = 897.0
+offset_top = 643.0
+offset_right = 1880.0
+offset_bottom = 693.0
+theme_override_constants/separation = 25
+alignment = 1
 
-[node name="CharacterName" type="RichTextLabel" parent="DrinkComponents/DialogueHistory" unique_id=798647992]
+[node name="ModificationHeat" type="Button" parent="ModificationSelector" unique_id=47884781]
 custom_minimum_size = Vector2(150, 50)
-layout_mode = 2
-text = "Character Name"
-
-[node name="CharacterImage" type="TextureRect" parent="DrinkComponents/DialogueHistory" unique_id=219258141]
-custom_minimum_size = Vector2(0, 385)
-layout_mode = 2
-texture = SubResource("AtlasTexture_0saxs")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="DialogueHint" type="RichTextLabel" parent="DrinkComponents/DialogueHistory" unique_id=147450619]
-custom_minimum_size = Vector2(150, 50)
-layout_mode = 2
-bbcode_enabled = true
-text = "Dialogue hint"
-
-[node name="DrinkInformation" type="HBoxContainer" parent="DrinkComponents" unique_id=2058362915]
-layout_mode = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="DrinkComponents/DrinkInformation" unique_id=348003988]
-layout_mode = 2
-theme_override_constants/margin_left = 50
-
-[node name="DrinkComponents" type="VBoxContainer" parent="DrinkComponents/DrinkInformation/MarginContainer" unique_id=1000015434]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_constants/separation = 10
+theme_override_styles/normal = SubResource("StyleBoxFlat_udkbo")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_eurnq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_w4u68")
+text = "Heat"
 
-[node name="SelectCup" type="RichTextLabel" parent="DrinkComponents/DrinkInformation/MarginContainer/DrinkComponents" unique_id=226446679]
-clip_contents = false
-custom_minimum_size = Vector2(250, 0)
+[node name="ModificationChill" type="Button" parent="ModificationSelector" unique_id=1449620023]
+custom_minimum_size = Vector2(150, 50)
 layout_mode = 2
-theme_override_colors/default_color = Color(0, 0, 0, 1)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_udkbo")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_eurnq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_w4u68")
+text = "Chill"
+
+[node name="ModificationStir" type="Button" parent="ModificationSelector" unique_id=1904659201]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_udkbo")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_eurnq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_w4u68")
+text = "Stir"
+
+[node name="ModificationShake" type="Button" parent="ModificationSelector" unique_id=1224586569]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_udkbo")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_eurnq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_w4u68")
+text = "Shake"
+
+[node name="DrinkInformation" type="HBoxContainer" parent="." unique_id=2058362915]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -1024.0
+offset_top = 180.0
+offset_right = -31.0
+offset_bottom = 280.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/separation = 25
+alignment = 1
+
+[node name="SelectCup" type="RichTextLabel" parent="DrinkInformation" unique_id=226446679]
+clip_contents = false
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_styles/normal = SubResource("StyleBoxEmpty_okdn2")
 text = "Cup"
 fit_content = true
 autowrap_mode = 0
 horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Panel" type="Panel" parent="DrinkComponents/DrinkInformation/MarginContainer/DrinkComponents/SelectCup" unique_id=1737600586]
+[node name="Panel" type="Panel" parent="DrinkInformation/SelectCup" unique_id=1737600586]
 show_behind_parent = true
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(80, 80)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -535,20 +691,22 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = ExtResource("13_1ck7w")
 
-[node name="SelectBaseFlavor" type="RichTextLabel" parent="DrinkComponents/DrinkInformation/MarginContainer/DrinkComponents" unique_id=1146954660]
+[node name="SelectBaseFlavor" type="RichTextLabel" parent="DrinkInformation" unique_id=1146954660]
 clip_contents = false
-custom_minimum_size = Vector2(250, 0)
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
-theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_styles/normal = SubResource("StyleBoxEmpty_id7fa")
-text = "Base Flavor"
+bbcode_enabled = true
+text = "Base[br]Flavor"
 fit_content = true
 autowrap_mode = 0
 horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Panel" type="Panel" parent="DrinkComponents/DrinkInformation/MarginContainer/DrinkComponents/SelectBaseFlavor" unique_id=1980145952]
+[node name="Panel" type="Panel" parent="DrinkInformation/SelectBaseFlavor" unique_id=1980145952]
 show_behind_parent = true
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(25, 80)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -557,20 +715,22 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = ExtResource("13_1ck7w")
 
-[node name="SelectSecondaryFlavor" type="RichTextLabel" parent="DrinkComponents/DrinkInformation/MarginContainer/DrinkComponents" unique_id=699688464]
+[node name="SelectSecondaryFlavor" type="RichTextLabel" parent="DrinkInformation" unique_id=699688464]
 clip_contents = false
-custom_minimum_size = Vector2(250, 0)
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
-theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_styles/normal = SubResource("StyleBoxEmpty_3cihv")
-text = "Secondary Flavor"
+bbcode_enabled = true
+text = "Secondary[br]Flavor"
 fit_content = true
 autowrap_mode = 0
 horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Panel" type="Panel" parent="DrinkComponents/DrinkInformation/MarginContainer/DrinkComponents/SelectSecondaryFlavor" unique_id=1796686658]
+[node name="Panel" type="Panel" parent="DrinkInformation/SelectSecondaryFlavor" unique_id=1796686658]
 show_behind_parent = true
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(25, 80)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -579,20 +739,21 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = ExtResource("13_1ck7w")
 
-[node name="SelectTopping" type="RichTextLabel" parent="DrinkComponents/DrinkInformation/MarginContainer/DrinkComponents" unique_id=1533706332]
+[node name="SelectTopping" type="RichTextLabel" parent="DrinkInformation" unique_id=1533706332]
 clip_contents = false
-custom_minimum_size = Vector2(250, 0)
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
-theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_styles/normal = SubResource("StyleBoxEmpty_vjac4")
 text = "Topping"
 fit_content = true
 autowrap_mode = 0
 horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Panel" type="Panel" parent="DrinkComponents/DrinkInformation/MarginContainer/DrinkComponents/SelectTopping" unique_id=798016380]
+[node name="Panel" type="Panel" parent="DrinkInformation/SelectTopping" unique_id=798016380]
 show_behind_parent = true
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(25, 80)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -601,20 +762,46 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = ExtResource("13_1ck7w")
 
-[node name="SelectModification" type="RichTextLabel" parent="DrinkComponents/DrinkInformation/MarginContainer/DrinkComponents" unique_id=1883354255]
+[node name="SelectSpecialTopping" type="RichTextLabel" parent="DrinkInformation" unique_id=55030804]
+visible = false
 clip_contents = false
-custom_minimum_size = Vector2(250, 0)
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
-theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vjac4")
+bbcode_enabled = true
+text = "Special[br]Topping"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="DrinkInformation/SelectSpecialTopping" unique_id=575890842]
+show_behind_parent = true
+custom_minimum_size = Vector2(25, 80)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("13_1ck7w")
+
+[node name="SelectModification" type="RichTextLabel" parent="DrinkInformation" unique_id=1883354255]
+clip_contents = false
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_styles/normal = SubResource("StyleBoxEmpty_k0qsm")
 text = "Modification"
 fit_content = true
 autowrap_mode = 0
 horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Panel" type="Panel" parent="DrinkComponents/DrinkInformation/MarginContainer/DrinkComponents/SelectModification" unique_id=1650089956]
+[node name="Panel" type="Panel" parent="DrinkInformation/SelectModification" unique_id=1650089956]
 show_behind_parent = true
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(25, 80)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -623,108 +810,43 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = ExtResource("13_1ck7w")
 
-[node name="MarginContainer" type="MarginContainer" parent="DrinkComponents/DrinkInformation/MarginContainer/DrinkComponents" unique_id=698630222]
-layout_mode = 2
-theme_override_constants/margin_top = 25
+[node name="FlavorMeters" type="Panel" parent="." unique_id=1588565667]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 0
+offset_left = 896.0
+offset_top = 851.0
+offset_right = 1886.0
+offset_bottom = 1067.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_lxyvm")
 
-[node name="DrinkActions" type="VBoxContainer" parent="DrinkComponents/DrinkInformation/MarginContainer/DrinkComponents/MarginContainer" unique_id=330370034]
-layout_mode = 2
-theme_override_constants/separation = 10
-
-[node name="Serve" type="Button" parent="DrinkComponents/DrinkInformation/MarginContainer/DrinkComponents/MarginContainer/DrinkActions" unique_id=1274002954]
-custom_minimum_size = Vector2(100, 50)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-text = "SERVE"
-
-[node name="Reset" type="Button" parent="DrinkComponents/DrinkInformation/MarginContainer/DrinkComponents/MarginContainer/DrinkActions" unique_id=141757990]
-custom_minimum_size = Vector2(100, 50)
-layout_mode = 2
-size_flags_horizontal = 4
-text = "RESET"
-
-[node name="CupDisplayFX" type="Node2D" parent="DrinkComponents/DrinkInformation" unique_id=1735735995]
-z_index = 1
-
-[node name="SparkleParticles" type="GPUParticles2D" parent="DrinkComponents/DrinkInformation/CupDisplayFX" unique_id=1643787877]
-position = Vector2(550, 16)
-emitting = false
-amount = 10
-texture = ExtResource("17_0saxs")
-lifetime = 10.0
-preprocess = 10.0
-randomness = 1.0
-collision_base_size = 150.0
-visibility_rect = Rect2(-175, -100, 350, 200)
-process_material = SubResource("ParticleProcessMaterial_0saxs")
-
-[node name="CupDisplay" type="Control" parent="DrinkComponents/DrinkInformation" unique_id=1314586537]
-z_index = 2
-custom_minimum_size = Vector2(512, 512)
-layout_mode = 2
-size_flags_horizontal = 0
-mouse_filter = 1
-script = ExtResource("15_okdn2")
-
-[node name="CupBase" type="TextureRect" parent="DrinkComponents/DrinkInformation/CupDisplay" unique_id=119191514]
-custom_minimum_size = Vector2(400, 400)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -64.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-texture = ExtResource("2_n60d2")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="ToppingLayer" type="TextureRect" parent="DrinkComponents/DrinkInformation/CupDisplay" unique_id=16210692]
-layout_mode = 1
-mouse_filter = 2
-stretch_mode = 5
-
-[node name="SecondaryFlavorLayer" type="TextureRect" parent="DrinkComponents/DrinkInformation/CupDisplay" unique_id=1781846496]
+[node name="MarginContainer" type="MarginContainer" parent="FlavorMeters" unique_id=2128979311]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
-expand_mode = 1
-stretch_mode = 5
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
 
-[node name="BaseFlavorLayer" type="TextureRect" parent="DrinkComponents/DrinkInformation/CupDisplay" unique_id=2142162753]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-expand_mode = 1
-stretch_mode = 5
-
-[node name="FlavorBars" type="VBoxContainer" parent="DrinkComponents/DrinkInformation" unique_id=191993797]
+[node name="FlavorBars" type="VBoxContainer" parent="FlavorMeters/MarginContainer" unique_id=191993797]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
 theme_override_constants/separation = 40
-metadata/_edit_use_anchors_ = true
 
-[node name="FancyCozyBar" type="HBoxContainer" parent="DrinkComponents/DrinkInformation/FlavorBars" unique_id=1649824980]
-custom_minimum_size = Vector2(150, 0)
+[node name="FancyCozyBar" type="HBoxContainer" parent="FlavorMeters/MarginContainer/FlavorBars" unique_id=1649824980]
+custom_minimum_size = Vector2(900, 0)
 layout_mode = 2
-size_flags_horizontal = 0
 size_flags_vertical = 0
 theme_override_constants/separation = 0
 
-[node name="FancyBar" type="ProgressBar" parent="DrinkComponents/DrinkInformation/FlavorBars/FancyCozyBar" unique_id=1236573220]
+[node name="FancyBar" type="ProgressBar" parent="FlavorMeters/MarginContainer/FlavorBars/FancyCozyBar" unique_id=1236573220]
 custom_minimum_size = Vector2(150, 25)
 layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 1
 theme_override_styles/background = SubResource("StyleBoxFlat_okdn2")
 theme_override_styles/fill = SubResource("StyleBoxFlat_id7fa")
@@ -733,7 +855,7 @@ step = 1.0
 fill_mode = 1
 show_percentage = false
 
-[node name="RichTextLabel" type="RichTextLabel" parent="DrinkComponents/DrinkInformation/FlavorBars/FancyCozyBar/FancyBar" unique_id=351007711]
+[node name="RichTextLabel" type="RichTextLabel" parent="FlavorMeters/MarginContainer/FlavorBars/FancyCozyBar/FancyBar" unique_id=351007711]
 custom_minimum_size = Vector2(70, 20)
 layout_mode = 1
 anchors_preset = 2
@@ -744,9 +866,10 @@ offset_right = 70.0
 grow_vertical = 0
 text = "Fancy"
 
-[node name="CozyBar" type="ProgressBar" parent="DrinkComponents/DrinkInformation/FlavorBars/FancyCozyBar" unique_id=184759930]
+[node name="CozyBar" type="ProgressBar" parent="FlavorMeters/MarginContainer/FlavorBars/FancyCozyBar" unique_id=184759930]
 custom_minimum_size = Vector2(150, 25)
 layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 1
 theme_override_styles/background = SubResource("StyleBoxFlat_3cihv")
 theme_override_styles/fill = SubResource("StyleBoxFlat_vjac4")
@@ -754,7 +877,7 @@ max_value = 10.0
 step = 1.0
 show_percentage = false
 
-[node name="RichTextLabel" type="RichTextLabel" parent="DrinkComponents/DrinkInformation/FlavorBars/FancyCozyBar/CozyBar" unique_id=668811503]
+[node name="RichTextLabel" type="RichTextLabel" parent="FlavorMeters/MarginContainer/FlavorBars/FancyCozyBar/CozyBar" unique_id=668811503]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 1
 anchors_preset = 3
@@ -769,15 +892,15 @@ grow_vertical = 0
 text = "Cozy"
 horizontal_alignment = 2
 
-[node name="BitterSweetBar" type="HBoxContainer" parent="DrinkComponents/DrinkInformation/FlavorBars" unique_id=1152294971]
-custom_minimum_size = Vector2(150, 0)
+[node name="BitterSweetBar" type="HBoxContainer" parent="FlavorMeters/MarginContainer/FlavorBars" unique_id=1152294971]
+custom_minimum_size = Vector2(900, 0)
 layout_mode = 2
-size_flags_horizontal = 0
 theme_override_constants/separation = 0
 
-[node name="BitterBar" type="ProgressBar" parent="DrinkComponents/DrinkInformation/FlavorBars/BitterSweetBar" unique_id=289720697]
+[node name="BitterBar" type="ProgressBar" parent="FlavorMeters/MarginContainer/FlavorBars/BitterSweetBar" unique_id=289720697]
 custom_minimum_size = Vector2(150, 25)
 layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 1
 theme_override_styles/background = SubResource("StyleBoxFlat_okdn2")
 theme_override_styles/fill = SubResource("StyleBoxFlat_id7fa")
@@ -786,7 +909,7 @@ step = 1.0
 fill_mode = 1
 show_percentage = false
 
-[node name="RichTextLabel" type="RichTextLabel" parent="DrinkComponents/DrinkInformation/FlavorBars/BitterSweetBar/BitterBar" unique_id=1654452992]
+[node name="RichTextLabel" type="RichTextLabel" parent="FlavorMeters/MarginContainer/FlavorBars/BitterSweetBar/BitterBar" unique_id=1654452992]
 custom_minimum_size = Vector2(70, 20)
 layout_mode = 1
 anchors_preset = 2
@@ -798,9 +921,10 @@ grow_vertical = 0
 text = "Bitter
 "
 
-[node name="SweetBar" type="ProgressBar" parent="DrinkComponents/DrinkInformation/FlavorBars/BitterSweetBar" unique_id=1593623341]
+[node name="SweetBar" type="ProgressBar" parent="FlavorMeters/MarginContainer/FlavorBars/BitterSweetBar" unique_id=1593623341]
 custom_minimum_size = Vector2(150, 25)
 layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 1
 theme_override_styles/background = SubResource("StyleBoxFlat_3cihv")
 theme_override_styles/fill = SubResource("StyleBoxFlat_vjac4")
@@ -808,7 +932,7 @@ max_value = 10.0
 step = 1.0
 show_percentage = false
 
-[node name="RichTextLabel" type="RichTextLabel" parent="DrinkComponents/DrinkInformation/FlavorBars/BitterSweetBar/SweetBar" unique_id=1299884752]
+[node name="RichTextLabel" type="RichTextLabel" parent="FlavorMeters/MarginContainer/FlavorBars/BitterSweetBar/SweetBar" unique_id=1299884752]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 1
 anchors_preset = 3
@@ -823,15 +947,16 @@ grow_vertical = 0
 text = "Sweet"
 horizontal_alignment = 2
 
-[node name="CoolWarmBar" type="HBoxContainer" parent="DrinkComponents/DrinkInformation/FlavorBars" unique_id=1322560786]
-custom_minimum_size = Vector2(150, 0)
+[node name="CoolWarmBar" type="HBoxContainer" parent="FlavorMeters/MarginContainer/FlavorBars" unique_id=1322560786]
+custom_minimum_size = Vector2(900, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_constants/separation = 0
 
-[node name="CoolBar" type="ProgressBar" parent="DrinkComponents/DrinkInformation/FlavorBars/CoolWarmBar" unique_id=1226552143]
+[node name="CoolBar" type="ProgressBar" parent="FlavorMeters/MarginContainer/FlavorBars/CoolWarmBar" unique_id=1226552143]
 custom_minimum_size = Vector2(150, 25)
 layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 1
 theme_override_styles/background = SubResource("StyleBoxFlat_okdn2")
 theme_override_styles/fill = SubResource("StyleBoxFlat_id7fa")
@@ -840,7 +965,7 @@ step = 1.0
 fill_mode = 1
 show_percentage = false
 
-[node name="RichTextLabel" type="RichTextLabel" parent="DrinkComponents/DrinkInformation/FlavorBars/CoolWarmBar/CoolBar" unique_id=748019095]
+[node name="RichTextLabel" type="RichTextLabel" parent="FlavorMeters/MarginContainer/FlavorBars/CoolWarmBar/CoolBar" unique_id=748019095]
 custom_minimum_size = Vector2(70, 20)
 layout_mode = 1
 anchors_preset = 2
@@ -851,9 +976,10 @@ offset_right = 70.0
 grow_vertical = 0
 text = "Cool"
 
-[node name="WarmBar" type="ProgressBar" parent="DrinkComponents/DrinkInformation/FlavorBars/CoolWarmBar" unique_id=804310655]
+[node name="WarmBar" type="ProgressBar" parent="FlavorMeters/MarginContainer/FlavorBars/CoolWarmBar" unique_id=804310655]
 custom_minimum_size = Vector2(150, 25)
 layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 1
 theme_override_styles/background = SubResource("StyleBoxFlat_3cihv")
 theme_override_styles/fill = SubResource("StyleBoxFlat_vjac4")
@@ -861,7 +987,7 @@ max_value = 10.0
 step = 1.0
 show_percentage = false
 
-[node name="RichTextLabel" type="RichTextLabel" parent="DrinkComponents/DrinkInformation/FlavorBars/CoolWarmBar/WarmBar" unique_id=1320340017]
+[node name="RichTextLabel" type="RichTextLabel" parent="FlavorMeters/MarginContainer/FlavorBars/CoolWarmBar/WarmBar" unique_id=1320340017]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 1
 anchors_preset = 3
@@ -876,20 +1002,148 @@ grow_vertical = 0
 text = "Warm"
 horizontal_alignment = 2
 
-[connection signal="pressed" from="PlayerComponents/CupSelector/Cup/CupCup" to="." method="_on_cup_button_pressed" binds= [NodePath("PlayerComponents/CupSelector/Cup/CupCup")]]
-[connection signal="pressed" from="PlayerComponents/CupSelector/Mug/CupMug" to="." method="_on_cup_button_pressed" binds= [NodePath("PlayerComponents/CupSelector/Mug/CupMug")]]
-[connection signal="pressed" from="PlayerComponents/CupSelector/Glass/CupGlass" to="." method="_on_cup_button_pressed" binds= [NodePath("PlayerComponents/CupSelector/Glass/CupGlass")]]
-[connection signal="pressed" from="PlayerComponents/FlavorSelector/Coffee/FlavorCoffee" to="." method="_on_flavor_button_pressed" binds= [NodePath("PlayerComponents/FlavorSelector/Coffee/FlavorCoffee")]]
-[connection signal="pressed" from="PlayerComponents/FlavorSelector/Mango/FlavorMango" to="." method="_on_flavor_button_pressed" binds= [NodePath("PlayerComponents/FlavorSelector/Mango/FlavorMango")]]
-[connection signal="pressed" from="PlayerComponents/FlavorSelector/Matcha/FlavorMatcha" to="." method="_on_flavor_button_pressed" binds= [NodePath("PlayerComponents/FlavorSelector/Matcha/FlavorMatcha")]]
-[connection signal="pressed" from="PlayerComponents/FlavorSelector/MilkTea/FlavorMilkTea" to="." method="_on_flavor_button_pressed" binds= [NodePath("PlayerComponents/FlavorSelector/MilkTea/FlavorMilkTea")]]
-[connection signal="pressed" from="PlayerComponents/FlavorSelector/Strawberry/FlavorStrawberry" to="." method="_on_flavor_button_pressed" binds= [NodePath("PlayerComponents/FlavorSelector/Strawberry/FlavorStrawberry")]]
-[connection signal="pressed" from="PlayerComponents/ToppingSelector/Boba/ToppingBoba" to="." method="_on_topping_button_pressed" binds= [NodePath("PlayerComponents/ToppingSelector/Boba/ToppingBoba")]]
-[connection signal="pressed" from="PlayerComponents/ToppingSelector/Catnip/ToppingCatnip" to="." method="_on_topping_button_pressed" binds= [NodePath("PlayerComponents/ToppingSelector/Catnip/ToppingCatnip")]]
-[connection signal="pressed" from="PlayerComponents/ToppingSelector/CreamAndCatTreats/ToppingCreamAndCatTreats" to="." method="_on_topping_button_pressed" binds= [NodePath("PlayerComponents/ToppingSelector/CreamAndCatTreats/ToppingCreamAndCatTreats")]]
-[connection signal="pressed" from="PlayerComponents/ModificationSelector/Modification/ModRow1/ModificationHeat" to="." method="_on_modification_button_pressed" binds= [NodePath("PlayerComponents/ModificationSelector/Modification/ModRow1/ModificationHeat")]]
-[connection signal="pressed" from="PlayerComponents/ModificationSelector/Modification/ModRow1/ModificationChill" to="." method="_on_modification_button_pressed" binds= [NodePath("PlayerComponents/ModificationSelector/Modification/ModRow1/ModificationChill")]]
-[connection signal="pressed" from="PlayerComponents/ModificationSelector/Modification/ModRow2/ModificationStir" to="." method="_on_modification_button_pressed" binds= [NodePath("PlayerComponents/ModificationSelector/Modification/ModRow2/ModificationStir")]]
-[connection signal="pressed" from="PlayerComponents/ModificationSelector/Modification/ModRow2/ModificationShake" to="." method="_on_modification_button_pressed" binds= [NodePath("PlayerComponents/ModificationSelector/Modification/ModRow2/ModificationShake")]]
-[connection signal="pressed" from="DrinkComponents/DrinkInformation/MarginContainer/DrinkComponents/MarginContainer/DrinkActions/Serve" to="." method="_on_serve_pressed"]
-[connection signal="pressed" from="DrinkComponents/DrinkInformation/MarginContainer/DrinkComponents/MarginContainer/DrinkActions/Reset" to="." method="_on_reset_pressed"]
+[node name="CupDisplayFX" type="Node2D" parent="." unique_id=1735735995]
+z_index = 1
+position = Vector2(-112, 522)
+
+[node name="SparkleParticles" type="GPUParticles2D" parent="CupDisplayFX" unique_id=1643787877]
+position = Vector2(563, 64)
+emitting = false
+amount = 10
+texture = ExtResource("17_0saxs")
+lifetime = 10.0
+preprocess = 10.0
+randomness = 1.0
+collision_base_size = 150.0
+visibility_rect = Rect2(-175, -100, 350, 200)
+process_material = SubResource("ParticleProcessMaterial_0saxs")
+
+[node name="CupDisplay" type="Control" parent="." unique_id=1314586537]
+z_index = 2
+custom_minimum_size = Vector2(512, 512)
+anchors_preset = 0
+offset_left = 192.0
+offset_top = 522.0
+offset_right = 704.0
+offset_bottom = 1034.0
+size_flags_horizontal = 4
+mouse_filter = 1
+script = ExtResource("15_okdn2")
+
+[node name="CupBase" type="TextureRect" parent="CupDisplay" unique_id=119191514]
+custom_minimum_size = Vector2(350, 350)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -92.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_n60d2")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="SecondaryFlavorLayer" type="TextureRect" parent="CupDisplay/CupBase" unique_id=1781846496]
+custom_minimum_size = Vector2(350, 350)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = 2.0
+offset_right = -1.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="BaseFlavorLayer" type="TextureRect" parent="CupDisplay/CupBase" unique_id=2142162753]
+custom_minimum_size = Vector2(350, 350)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = 2.0
+offset_right = -1.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ToppingLayer" type="TextureRect" parent="CupDisplay" unique_id=16210692]
+layout_mode = 1
+offset_left = 10.0
+offset_top = -145.0
+offset_right = 510.0
+offset_bottom = 504.0
+mouse_filter = 2
+stretch_mode = 5
+
+[node name="SpecialToppingLayer" type="TextureRect" parent="CupDisplay" unique_id=1598285008]
+visible = false
+layout_mode = 0
+offset_left = 10.0
+offset_top = -98.0
+offset_right = 510.0
+offset_bottom = 551.0
+mouse_filter = 2
+stretch_mode = 5
+
+[node name="DrinkActions" type="HBoxContainer" parent="." unique_id=1824180005]
+layout_mode = 0
+offset_left = 275.0
+offset_top = 987.0
+offset_right = 585.0
+offset_bottom = 1097.0
+theme_override_constants/separation = 10
+
+[node name="Serve" type="Button" parent="DrinkActions" unique_id=1274002954]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_pxsg2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hcbeg")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2v6ef")
+text = "SERVE"
+
+[node name="Reset" type="Button" parent="DrinkActions" unique_id=141757990]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_pxsg2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hcbeg")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2v6ef")
+text = "RESTART
+"
+
+[node name="ConfirmationBox" parent="." unique_id=1636681851 instance=ExtResource("19_odn5p")]
+visible = false
+layout_mode = 1
+
+[connection signal="pressed" from="CupSelector/CupCup" to="." method="_on_cup_button_pressed" binds= [NodePath("CupSelector/CupCup")]]
+[connection signal="pressed" from="CupSelector/CupMug" to="." method="_on_cup_button_pressed" binds= [NodePath("CupSelector/CupMug")]]
+[connection signal="pressed" from="CupSelector/CupGlass" to="." method="_on_cup_button_pressed" binds= [NodePath("CupSelector/CupGlass")]]
+[connection signal="pressed" from="FlavorSelector/FlavorCoffee" to="." method="_on_flavor_button_pressed" binds= [NodePath("FlavorSelector/FlavorCoffee")]]
+[connection signal="pressed" from="FlavorSelector/FlavorMango" to="." method="_on_flavor_button_pressed" binds= [NodePath("FlavorSelector/FlavorMango")]]
+[connection signal="pressed" from="FlavorSelector/FlavorMatcha" to="." method="_on_flavor_button_pressed" binds= [NodePath("FlavorSelector/FlavorMatcha")]]
+[connection signal="pressed" from="FlavorSelector/FlavorMilkTea" to="." method="_on_flavor_button_pressed" binds= [NodePath("FlavorSelector/FlavorMilkTea")]]
+[connection signal="pressed" from="FlavorSelector/FlavorStrawberry" to="." method="_on_flavor_button_pressed" binds= [NodePath("FlavorSelector/FlavorStrawberry")]]
+[connection signal="pressed" from="ToppingSelector/ToppingBoba" to="." method="_on_topping_button_pressed" binds= [NodePath("ToppingSelector/ToppingBoba")]]
+[connection signal="pressed" from="ToppingSelector/ToppingCatnip" to="." method="_on_topping_button_pressed" binds= [NodePath("ToppingSelector/ToppingCatnip")]]
+[connection signal="pressed" from="ToppingSelector/ToppingCreamAndCatTreats" to="." method="_on_topping_button_pressed" binds= [NodePath("ToppingSelector/ToppingCreamAndCatTreats")]]
+[connection signal="pressed" from="ToppingSelector/ToppingMagicalMushroomFish" to="." method="_on_topping_button_pressed" binds= [NodePath("ToppingSelector/ToppingMagicalMushroomFish")]]
+[connection signal="pressed" from="ModificationSelector/ModificationHeat" to="." method="_on_modification_button_pressed" binds= [NodePath("ModificationSelector/ModificationHeat")]]
+[connection signal="pressed" from="ModificationSelector/ModificationChill" to="." method="_on_modification_button_pressed" binds= [NodePath("ModificationSelector/ModificationChill")]]
+[connection signal="pressed" from="ModificationSelector/ModificationStir" to="." method="_on_modification_button_pressed" binds= [NodePath("ModificationSelector/ModificationStir")]]
+[connection signal="pressed" from="ModificationSelector/ModificationShake" to="." method="_on_modification_button_pressed" binds= [NodePath("ModificationSelector/ModificationShake")]]
+[connection signal="pressed" from="DrinkActions/Serve" to="." method="_on_serve_pressed"]
+[connection signal="pressed" from="DrinkActions/Reset" to="." method="_on_reset_pressed"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkhtxkoqgpaen"
-path="res://.godot/imported/topping_cream_and_cats_treat_glass.png-964f19e8e3d08e41fff322ac30f8eac8.ctex"
+uid="uid://blg7cpyf77gtq"
+path="res://.godot/imported/Shelf.png-8556b69c3fb03a499ad60ae2dd65de4b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/mini_game/toppings/topping_cream_and_cats_treat_glass.png"
-dest_files=["res://.godot/imported/topping_cream_and_cats_treat_glass.png-964f19e8e3d08e41fff322ac30f8eac8.ctex"]
+source_file="res://assets/art/backgrounds/Shelf.png"
+dest_files=["res://.godot/imported/Shelf.png-8556b69c3fb03a499ad60ae2dd65de4b.ctex"]
 
 [params]
 
