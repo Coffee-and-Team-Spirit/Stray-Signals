@@ -7,10 +7,10 @@ label begin_timeline
 audio music "res://assets/audio/cafe_bgm.ogg" [fade="2.0" volume="-8.0"]
 # DAY 3, SCENE 1
 join Whiskerly center
-Player: [i]A new cat. A normal customer today would be nice.[/i]
+PlayerThink: [i]A new cat. A normal customer today would be nice.[/i]
 Player: Hello. Welcome in. Watcha looking for today?
 Whiskerly: Meow, I am a cat.
-Player: [i]I should stop wishing for things. The city seems less than apathetic to my needs.[/i]
+PlayerThink: [i]I should stop wishing for things. The city seems less than apathetic to my needs.[/i]
 Player: I did notice you are a cat.[pause=.3] What did the cat want to drink?
 Whiskerly (Sad): I suppose a cat type drink would be good.
 Whiskerly: Yes, I will have whatever cats have. That will have to do, I guess.

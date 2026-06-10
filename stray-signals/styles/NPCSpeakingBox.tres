@@ -1,0 +1,10 @@
+[gd_resource type="StyleBoxTexture" format=3 uid="uid://dqxbss27r77a4"]
+
+[ext_resource type="Texture2D" uid="uid://h1qs48ymy3jv" path="res://assets/art/hud/NPCSpeakingBox.png" id="1_dqoiv"]
+
+[resource]
+content_margin_left = 50.0
+content_margin_top = 135.0
+content_margin_right = 65.0
+content_margin_bottom = 50.0
+texture = ExtResource("1_dqoiv")

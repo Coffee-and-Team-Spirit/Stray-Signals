@@ -7,7 +7,7 @@ label begin_timeline
 audio music "res://assets/audio/cafe_bgm.ogg" [fade="2.0" volume="-8.0"]
 # DAY 2, SCENE 3
 join Archimedes center
-Player: [i]The strange Blue cat is back? What does he want this time?[/i]
+PlayerThink: [i]The strange Blue cat is back? What does he want this time?[/i]
 Player: Welcome back. What can I get you today?
 Archimedes (Happy): [pause=.3] Pleasant greetings {Player.PlayerName}. I hope your day has been as exciting for you to experience as it was for me to observe.
 Player: ...You're watching me?
@@ -51,8 +51,8 @@ else:
 	leave Archimedes
 	[signal arg="clear_drink"]
 	[signal arg="craft_drink"]
-Player: [i]What a strange cat.[/i]
-Player: [i]Can I really solve this?[/i]
-Player: [i]Can I save Loren?[/i]
+PlayerThink: [i]What a strange cat.[/i]
+PlayerThink: [i]Can I really solve this?[/i]
+PlayerThink: [i]Can I save Loren?[/i]
 [signal arg="end_encounter"]
 [end_timeline]
