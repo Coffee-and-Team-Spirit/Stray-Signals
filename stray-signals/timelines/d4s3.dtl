@@ -30,8 +30,12 @@ if {Drink.Rating} == "mediocre":
 elif {Drink.Rating} == "good":
 	join Zara (Happy) center
 	Zara: Much better. At least you have managed adequacy. Here you go, serve this to the traitor and you may yet be able to stop them.
+	Narrator: [center][b]You receive a special ingredient.[/b][/center]
+	PlayerThink: [i]Is that a....? [speed=2] Magical mushroom... [speed=5] f i s h?![/i]
+	Narrator: [center][img=200]res\://assets/art/mini_game/toppings/topping_magical_mushroom_fish.png[/img][/center]
 	leave Zara
 	[signal arg="clear_drink"]
+	[signal arg="receive_special_ingredient"]
 else:
 	# Bad
 	join Zara center

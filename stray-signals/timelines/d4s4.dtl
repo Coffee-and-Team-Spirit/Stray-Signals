@@ -33,7 +33,10 @@ audio music "res://assets/audio/craft_drink_bgm.ogg" [fade="2.0" volume="-5.0"]
 if {Drink.Rating} == "mediocre":
 	join Archimedes center
 	Archimedes: You still have room to improve your craft, though not much time to do it in.
-	Archimedes: Loren has always had an affinity for cats, to an unusual degree I might add. Likes our overall vibe I suppose.
+	Archimedes: Loren has always had an affinity for cats... Likes our overall vibe I suppose.
+	[signal arg="clue|to an unusual degree I might add."]
+	Archimedes: [font=res\://styles/fonts/Nervous.ttf]{Drink.DistortedClue}[/font]
+	Archimedes: Likes our overall vibe I suppose.
 	leave Archimedes
 	[signal arg="clear_drink"]
 elif {Drink.Rating} == "good":
