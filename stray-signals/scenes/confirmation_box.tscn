@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://ch7wgofik7qpe"]
+
+[ext_resource type="Script" uid="uid://crmpd0avly0t7" path="res://scenes/confirmation_box.gd" id="1_e4ifo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_je4kr"]
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="ConfirmationBox" type="Control" unique_id=1636681851]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e4ifo")
+
+[node name="Panel" type="Panel" parent="." unique_id=641326410]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -226.5
+offset_top = -105.5
+offset_right = 226.5
+offset_bottom = 105.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_je4kr")
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=614486828]
+layout_mode = 0
+offset_right = 454.0
+offset_bottom = 211.0
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer" unique_id=1777586071]
+layout_mode = 2
+theme_override_constants/separation = 25
+alignment = 1
+
+[node name="ConfirmationLabel" type="RichTextLabel" parent="Panel/MarginContainer/VBoxContainer" unique_id=646166927]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "This is the label asking if it's okay to save, load, or go to main menu?"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OkButton" type="Button" parent="Panel/MarginContainer/VBoxContainer" unique_id=1336404319]
+visible = false
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "OK"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer" unique_id=980756212]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 60
+
+[node name="YesButton" type="Button" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=523898529]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+text = "YES
+"
+
+[node name="NoButton" type="Button" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=2084624986]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+text = "NO"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1512109610]
+
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/OkButton" to="." method="_on_ok_button_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/HBoxContainer/YesButton" to="." method="_on_yes_button_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/HBoxContainer/NoButton" to="." method="_on_no_button_pressed"]

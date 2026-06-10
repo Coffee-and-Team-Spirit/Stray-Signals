@@ -1,4 +1,4 @@
-[background arg="res://assets/temp/tempCafe/Cafe_Interior.jpg" fade="1.5"]
+[background arg="res://assets/art/backgrounds/Cafe_Background.png" fade="1.5" wait="true"]
 if {Drink.Rating} == "none":
 	jump begin_timeline
 else:
@@ -7,7 +7,7 @@ label begin_timeline
 audio music "res://assets/audio/cafe_bgm.ogg" [fade="2.0" volume="-8.0"]
 # DAY 2, SCENE 3
 join Archimedes center
-Player: [i]The strange Blue cat is back? What does he want this time?[/i]
+PlayerThink: [i]The strange Blue cat is back? What does he want this time?[/i]
 Player: Welcome back. What can I get you today?
 Archimedes (Happy): [pause=.3] Pleasant greetings {Player.PlayerName}. I hope your day has been as exciting for you to experience as it was for me to observe.
 Player: ...You're watching me?
@@ -26,11 +26,11 @@ Archimedes: No, I don't think I will. I would much rather help you. More enterta
 Archimedes: Now, I have some information I'm willing to share with you. But I'm going to need to see how good you are with that drink making of yours.
 Player: Okay? So you just want a drink.
 [signal arg="drink_hint"]
-Archimedes (Happy): It's nice and cozy in here, that makes me want something hot. Add cat treats on top.
+Archimedes (Happy): It's nice and cozy in here, makes me want something of the higher temperature variety. Add cat treats on the top layer of my beverage as well if you would be so amenable.
 leave Archimedes
 [signal arg="craft_drink"]
 label drink_rating (Scene 2 Drink Rating)
-[background arg="res://assets/temp/tempCafe/Cafe_Interior.jpg" fade="1.5" wait="true"]
+[background arg="res://assets/art/backgrounds/Cafe_Background.png" fade="1.5" wait="true"]
 audio music "res://assets/audio/craft_drink_bgm.ogg" [fade="2.0" volume="-5.0"]
 if {Drink.Rating} == "mediocre":
 	join Archimedes center
@@ -51,8 +51,8 @@ else:
 	leave Archimedes
 	[signal arg="clear_drink"]
 	[signal arg="craft_drink"]
-Player: [i]What a strange cat.[/i]
-Player: [i]Can I really solve this?[/i]
-Player: [i]Can I save Loren?[/i]
+PlayerThink: [i]What a strange cat.[/i]
+PlayerThink: [i]Can I really solve this?[/i]
+PlayerThink: [i]Can I save Loren?[/i]
 [signal arg="end_encounter"]
 [end_timeline]

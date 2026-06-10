@@ -7,22 +7,26 @@ var current_character: String = "none"
 var current_portrait_info : String = "none"
 var target_drink : Dictionary = {}
 var has_special_ingredient : bool = false
+var has_seen_tutorial : bool = false
+var villain : String = "none"
 
 var settings_return_target := "main_menu"
 
 func new_game() -> void:
-	GameState.drink_result = "none"
-	GameState.drink_hint = "none"
-	GameState.target_drink = {}
-	GameState.current_character = "none"
-	GameState.current_portrait_info = "none"
-	GameState.has_special_ingredient = false
+	drink_result = "none"
+	drink_hint = "none"
+	target_drink = {}
+	current_character = "none"
+	current_portrait_info = "none"
+	has_special_ingredient = false
+	has_seen_tutorial = false
+	villain = "none"
 	
 	DayManager.day = 1
 	DayManager.encounter = 1
 	
-	if Dialogic.Save.has_slot("autosave"):
-		Dialogic.Save.delete_slot("autosave")
+	#if Dialogic.Save.has_slot("autosave"):
+		#Dialogic.Save.delete_slot("autosave")
 		
 	var game_root = get_tree().current_scene
 		
@@ -42,9 +46,12 @@ func load_game() -> void:
 	if Dialogic.Save.has_slot("autosave"):
 		var game_data = Dialogic.Save.get_slot_info("autosave")
 		
-		GameState.drink_result = game_data.get("drink_result", "none")
-		GameState.drink_hint = game_data.get("drink_hint", "none")
-		GameState.target_drink = game_data.get("target_drink", {})
+		drink_result = game_data.get("drink_result", "none")
+		drink_hint = game_data.get("drink_hint", "none")
+		target_drink = game_data.get("target_drink", {})
+		has_special_ingredient  = game_data.get("has_special_ingredient", false)
+		has_seen_tutorial = game_data.get("has_seen_tutorial", false)
+		villain = game_data.get("villain", "none")
 		DayManager.day = game_data.get("day", 1)
 		DayManager.encounter = game_data.get("encounter", 1)
 		

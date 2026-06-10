@@ -1,0 +1,13 @@
+[background arg="res://assets/art/backgrounds/Final_Cutscene.png" fade="1.5"]
+label begin_timeline
+audio music "res://assets/audio/cafe_bgm.ogg" [fade="2.0" volume="-8.0"]
+# Outro 2: True Ending
+Narrator: The Human Kidnapper has been stopped.
+Narrator: The Humans have all been turned back.
+Narrator: The City is still dark.
+Narrator: And still cold.
+Narrator: But Stray Signals is once again a Safe place for those that need it.
+Narrator: Maybe tomorrow will finally be calm and simple.
+Narrator: Maybe it won't.
+[signal arg="main_menu"]
+[end_timeline]

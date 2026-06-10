@@ -34,7 +34,9 @@ directories/dch_directory={
 "Archimedes": "res://characters/Archimedes.dch",
 "GG": "res://characters/GG.dch",
 "Loren": "res://characters/Loren.dch",
+"Narrator": "res://characters/Narrator.dch",
 "Player": "res://characters/Player.dch",
+"PlayerThink": "res://characters/PlayerThink.dch",
 "Whiskerly": "res://characters/Whiskerly.dch",
 "Zara": "res://characters/Zara.dch"
 }
@@ -51,11 +53,24 @@ directories/dtl_directory={
 "d4s2": "res://timelines/d4s2.dtl",
 "d4s3": "res://timelines/d4s3.dtl",
 "d4s4": "res://timelines/d4s4.dtl",
+"d5s1": "res://timelines/d5s1.dtl",
+"d5s2": "res://timelines/d5s2.dtl",
+"d5s3": "res://timelines/d5s3.dtl",
+"d5s4": "res://timelines/d5s4.dtl",
+"d5s5": "res://timelines/d5s5.dtl",
+"d5s6": "res://timelines/d5s6.dtl",
+"d6s1": "res://timelines/d6s1.dtl",
+"d6s2": "res://timelines/d6s2.dtl",
 "test": "res://timelines/test.dtl"
 }
-layout/style_directory={}
-layout/style_list=[]
-layout/default_style="res://styles/New_File.tres"
+layout/style_directory={
+"": "res://styles/NPCSpeaking.tres",
+"NPCSpeaking": "res://styles/NPCSpeaking.tres",
+"PlayerSpeaking": "res://styles/PlayerSpeaking.tres",
+"PlayerThinking": "res://styles/PlayerThinking.tres"
+}
+layout/style_list=["res://styles/NPCSpeaking.tres", "res://styles/PlayerSpeaking.tres", "res://styles/PlayerThinking.tres"]
+layout/default_style="res://styles/NPCSpeaking.tres"
 glossary/default_case_sensitive=true
 text/letter_speed=0.03
 text/initial_text_reveal_skippable=true
@@ -90,14 +105,20 @@ audio/channel_defaults={
 }
 }
 variables={
+"CurrentDay": "",
 "Drink": {
 "DistortedClue": "",
 "Rating": ""
 },
 "Player": {
 "PlayerName": "Player"
+},
+"Villain": {
+"VillainName": ""
 }
 }
+history/simple_history_enabled=true
+history/full_history_enabled=false
 
 [display]
 

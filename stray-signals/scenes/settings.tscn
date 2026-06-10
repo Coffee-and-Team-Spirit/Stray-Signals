@@ -13,7 +13,7 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gjs24"]
 content_margin_top = 10.0
 content_margin_bottom = 10.0
-bg_color = Color(1, 0.49019608, 0, 1)
+bg_color = Color(1, 0.66993517, 0.4684493, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
@@ -21,13 +21,13 @@ corner_radius_bottom_left = 10
 corner_detail = 20
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gis3k"]
-bg_color = Color(0.05882353, 0.05490196, 0.13725491, 0.4862745)
+bg_color = Color(1, 0.49019608, 0, 1)
 corner_radius_top_left = 10
 corner_radius_bottom_left = 10
 corner_detail = 20
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_83j8s"]
-bg_color = Color(0.05882353, 0.05490196, 0.13725491, 0.4862745)
+bg_color = Color(1, 0.49019608, 0, 1)
 corner_radius_top_left = 10
 corner_radius_bottom_left = 10
 corner_detail = 20
@@ -230,3 +230,4 @@ value = 2.0
 
 [node name="Pause" parent="." unique_id=1108024468 instance=ExtResource("4_am25x")]
 visible = false
+layout_mode = 0

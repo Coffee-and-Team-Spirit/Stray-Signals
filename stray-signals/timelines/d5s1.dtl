@@ -1,0 +1,28 @@
+[background arg="res://assets/art/backgrounds/Cafe_Background.png" fade="1.5" wait="true"]
+label begin_timeline
+audio music "res://assets/audio/cafe_bgm.ogg" [fade="2.0" volume="-8.0"]
+# DAY 5, SCENE 1
+Player: [i]Today’s the day I should try to find the human kidnapper.[/i]
+Player: [i]Who do I think it is?[/i]
+# FINAL ENDING
+- Zara
+	set {Villain.VillainName} = "Zara"
+	[signal arg="choose_villain"]
+	jump d5s2/
+- GG
+	set {Villain.VillainName} = "GG"
+	[signal arg="choose_villain"]
+	jump d5s3/
+- Alexandra
+	set {Villain.VillainName} = "Alexandra"
+	[signal arg="choose_villain"]
+	jump d5s4/
+- Whiskerly
+	set {Villain.VillainName} = "Whiskerly"
+	[signal arg="choose_villain"]
+	jump d5s5/
+- Archimedes
+	set {Villain.VillainName} = "Archimedes"
+	[signal arg="choose_villain"]
+	jump d5s6/
+[end_timeline]

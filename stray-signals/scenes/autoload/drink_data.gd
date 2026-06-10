@@ -31,7 +31,7 @@ var drink_puzzles = {
 				},
 				"stats": {
 					"fancy_cozy_direction": ["fancy"],
-					"fancy_cozy_intensity": [4, 3]
+					"fancy_cozy_intensity": [3, 4]
 				}
 			},
 			"good": {
@@ -40,7 +40,7 @@ var drink_puzzles = {
 				},
 				"stats": {
 					"fancy_cozy_direction": ["fancy"],
-					"fancy_cozy_intensity": [2]
+					"fancy_cozy_intensity": [2, 3, 4]
 				}
 			}
 		},
@@ -52,10 +52,9 @@ var drink_puzzles = {
 					"topping": "cream_and_cat_treats"
 				},
 				"stats": {
-					"bitter_sweet_direction": ["sweet"],
-					"bitter_sweet_intensity": [-1, 0, 1],   # less than half sweet
-					"cool_warm_direction": ["cold"],
-					"cool_warm_intensity": [4, 3]           # extremely or very cool
+					"bitter_sweet_intensity": [-1, 0, 1],   # less than slightly sweet
+					"cool_warm_direction": ["cool"],
+					"cool_warm_intensity": [1, 2, 3, 4]     # all intensities of cool
 				}
 			},
 			"good": {
@@ -63,10 +62,7 @@ var drink_puzzles = {
 					"topping": "cream_and_cat_treats"
 				},
 				"stats": {
-					"bitter_sweet_direction": ["sweet"],
-					"bitter_sweet_intensity": [-1, 0, 1, 2],  # < 6 sweet
-					"cool_warm_direction": ["cold"],
-					"cool_warm_intensity": [3, 2]             # > 5 cool
+					"bitter_sweet_intensity": [-1, 0, 1], 
 				}
 			}
 		},
@@ -103,7 +99,9 @@ var drink_puzzles = {
 					"topping": "cream_and_cat_treats"
 				},
 				"stats": {
+					"fancy_cozy_direction": ["cozy"],
 					"fancy_cozy_intensity": [2, 1],
+					"cool_warm_direction": ["warm"],
 					"cool_warm_intensity": [2, 1]
 				}
 			}
@@ -130,14 +128,16 @@ var drink_puzzles = {
 		2: {
 			"perfect": {
 				"ingredients": {
-					"topping": "boba",
 					"modification": "shake"
 				},
-				"stats": {}
+				"stats": {
+					"bitter_sweet_direction": ["sweet"],
+					"bitter_sweet_intensity": [2, 3, 4]
+				}
 			},
 			"good": {
 				"ingredients": {
-					"topping": "boba"
+					"modification": "shake"
 				},
 				"stats": {}
 			}	
@@ -148,8 +148,8 @@ var drink_puzzles = {
 					"flavors": ["strawberry", "mango"]
 				},
 				"stats": {
-					"cool_warm_direction": ["cold"],
-					"cool_warm_intensity": [4, 3]
+					"cool_warm_direction": ["cool"],
+					"cool_warm_intensity": [3, 4]
 				}
 			},
 			"good": {
@@ -157,8 +157,8 @@ var drink_puzzles = {
 					"flavors_or": ["strawberry", "mango"]
 				},
 				"stats": {
-					"cool_warm_direction": ["cold"],
-					"cool_warm_intensity": [2]
+					"cool_warm_direction": ["cool"],
+					"cool_warm_intensity": [2, 3, 4]
 				}
 			}
 		}
@@ -186,7 +186,7 @@ var drink_puzzles = {
 					"flavors_not": ["matcha"]
 				},
 				"stats": {
-					"fancy_cozy_intensity": [0,1]
+					"fancy_cozy_intensity": [-1, 0]
 				}
 			},
 			"good": {
@@ -194,24 +194,26 @@ var drink_puzzles = {
 					"flavors_not": ["matcha"]
 				},
 				"stats": {
-					"fancy_cozy_intensity": [0,1,2]
+					"fancy_cozy_intensity": [-1, 0, 1, 2]
 				}
 			},
 		},
 		3: {
 			"perfect": {
 				"ingredients": {
-					"topping": "boba",
 					"modification": "shake"
 				},
-				"stats": {}
+				"stats": {
+					"bitter_sweet_direction": ["sweet"],
+					"bitter_sweet_intensity": [2, 3, 4]
+				}
 			},
 			"good": {
 				"ingredients": {
-					"topping": "boba"
+					"modification": "shake"
 				},
 				"stats": {}
-			}	
+			}		
 		},
 		4: {
 			"perfect": {
@@ -220,7 +222,7 @@ var drink_puzzles = {
 					"topping": "boba"
 				},
 				"stats": {
-					"cool_warm_direction": ["cold"],
+					"cool_warm_direction": ["cool"],
 					"cool_warm_intensity": [3, 4]
 				}
 			},
@@ -230,27 +232,118 @@ var drink_puzzles = {
 					"topping": "boba"
 				},
 				"stats": {
-					"cool_warm_direction": ["cold"],
-					"cool_warm_intensity": [2, 3, 4]
+					"cool_warm_direction": ["cool"],
+					"cool_warm_intensity": [1, 2, 3, 4]
 				}
 			}
 		}
 	},
 	5: {
-		1: {
-			
-		},
 		2: {
-			
+			"perfect": {
+				"ingredients": {
+					"modification": "stir"
+				},
+				"stats": {
+					"cool_warm_direction": ["warm"],
+					"cool_warm_intensity": [3, 4]
+				}
+			},
+			"good": {
+				"ingredients": {
+					"modification": "stir"
+				},
+				"stats": {
+					"cool_warm_direction": ["warm"],
+					"cool_warm_intensity": [2, 3, 4]
+				}
+			}
 		},
 		3: {
-			
+			"perfect": {
+				"ingredients": {
+					"modification": "stir",
+					"flavors": ["coffee"],
+					"special_topping": "magical_mushroom_fish"
+				},
+				"stats": {
+					"cool_warm_intensity": [-1],
+					"fancy_cozy_direction": ["fancy"],      
+					"fancy_cozy_intensity": [0, 1, 2, 3, 4] 
+				}
+			},
+			"good": {
+				"ingredients": {
+					"flavors": ["coffee"],
+					"special_topping": "magical_mushroom_fish"
+				},
+				"stats": {
+					"cool_warm_intensity": [-1, 0],
+					"fancy_cozy_direction": ["fancy"],      
+					"fancy_cozy_intensity": [0, 1, 2, 3, 4] 
+				}
+			}
 		},
 		4: {
-			
+			"perfect": {
+				"ingredients": {
+					"modification": "shake",
+					"topping": "boba"
+				},
+				"stats": {
+				}
+			},
+			"good": {
+				"ingredients": {
+					"topping": "boba"
+				},
+				"stats": {
+				}
+			}
 		},
 		5: {
+			"perfect": {
+				"ingredients": {
+					"flavors": ["strawberry", "milk_tea"],
+					"cup": "glass"
+				},
+				"stats": {
+					"bitter_sweet_direction": ["sweet"],
+					"bitter_sweet_intensity": [-1, 0]
+				}
+			},
+			"good": {
+				"ingredients": {
+					"flavors": ["strawberry", "milk_tea"],
+					"cup": "glass"
+				},
+				"stats": {
+				}
+			}
 			
+		},
+		6: {
+			"perfect": {
+				"ingredients": {
+				},
+				"stats": {
+					"fancy_cozy_intensity": [-1, 0],
+					"bitter_sweet_intensity": [-1, 0],
+					"cool_warm_intensity": [-1, 0]
+				}
+			},
+			"good": {
+				"ingredients": {
+				},
+				"stats": {
+					"fancy_cozy_intensity": [-1, 0, 2],
+					"bitter_sweet_intensity": [-1, 0, 2],
+					"cool_warm_intensity": [-1, 0, 2]
+				}
+			}
+			
+			
+				
 		}
 	}
 }

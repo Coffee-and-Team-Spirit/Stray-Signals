@@ -1,4 +1,4 @@
-[background arg="res://assets/temp/tempCafe/Cafe_Interior.jpg" fade="1.5"]
+[background arg="res://assets/art/backgrounds/Cafe_Background.png" fade="1.5"]
 if {Drink.Rating} == "none":
 	jump begin_timeline
 else:
@@ -24,11 +24,11 @@ Archimedes: I may. Though I can not promise its efficacy or reliability. I have 
 Player: I assume I will need to make you a drink to gain this tidbit?
 Archimedes (Happy): Why, look how much you have learned. You may solve this yet, me two legged friend.
 [signal arg="drink_hint"]
-Archimedes: I'd like my drink to go, I'll need something I can put a lid on. And make it cold with boba too.
+Archimedes: I'd like my drink to go. I'll need something I can put a lid on. And make it cold with boba too.
 leave Archimedes
 [signal arg="craft_drink"]
 label drink_rating (Scene 2 Drink Rating)
-[background arg="res://assets/temp/tempCafe/Cafe_Interior.jpg" fade="1.5" wait="true"]
+[background arg="res://assets/art/backgrounds/Cafe_Background.png" fade="1.5" wait="true"]
 audio music "res://assets/audio/craft_drink_bgm.ogg" [fade="2.0" volume="-5.0"]
 if {Drink.Rating} == "mediocre":
 	join Archimedes center

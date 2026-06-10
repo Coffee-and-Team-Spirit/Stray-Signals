@@ -1,4 +1,4 @@
-[background arg="res://assets/temp/tempCafe/Cafe_Interior.jpg" fade="1.5"]
+[background arg="res://assets/art/backgrounds/Cafe_Background.png" fade="1.5" wait="true"]
 if {Drink.Rating} == "none":
 	jump begin_timeline
 else:
@@ -7,11 +7,11 @@ label begin_timeline
 audio music "res://assets/audio/cafe_bgm.ogg" [fade="2.0" volume="-8.0"]
 # DAY 4, SCENE 1
 join Whiskerly center
-Player: [i]Whiskerly is back. Could they be a human turned into a cat like people are saying?[/i]
+PlayerThink: [i]Whiskerly is back. Could they be a human turned into a cat like people are saying?[/i]
 Player: Hello, Whiskerly. Welcome back.
 Whiskerly: Meow, I am a cat.
 Player: Yes, you mentioned that last time.
-Player: [i]Honestly, it might be stranger if he isn't a human.[/i]
+PlayerThink: [i]Honestly, it might be stranger if he isn't a human.[/i]
 Player: I have a strange question to ask you Whiskerly.
 Whiskerly: Oh? And what might that be?
 Player: Are you by chance…..
@@ -32,11 +32,11 @@ Player: Then tell me who did this to you!
 Whiskerly: If only it was that easy. But again, I can't quite remember everything. Maybe if you could make me a drink like you used to.
 Whiskerly: That might jog my memory. At least I hope it will.
 [signal arg="drink_hint"]
-Whiskerly: I love mango and I need more mango. Also sprinkle in some catnip.
+Whiskerly: I'm looking for mango to an unusually high degree. Also sprinkle in some catnip.
 leave Whiskerly
 [signal arg="craft_drink"]
 label drink_rating (Scene 2 Drink Rating)
-[background arg="res://assets/temp/tempCafe/Cafe_Interior.jpg" fade="1.5" wait="true"]
+[background arg="res://assets/art/backgrounds/Cafe_Background.png" fade="1.5" wait="true"]
 audio music "res://assets/audio/craft_drink_bgm.ogg" [fade="2.0" volume="-5.0"]
 if {Drink.Rating} == "mediocre":
 	join Whiskerly center

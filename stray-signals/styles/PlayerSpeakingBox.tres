@@ -1,0 +1,10 @@
+[gd_resource type="StyleBoxTexture" format=3 uid="uid://cx6dh57dfywmo"]
+
+[ext_resource type="Texture2D" uid="uid://5a8cjtw4jf0w" path="res://assets/art/hud/PlayerSpeaking.png" id="1_0pkx5"]
+
+[resource]
+content_margin_left = 65.0
+content_margin_top = 35.0
+content_margin_right = 85.0
+content_margin_bottom = 60.0
+texture = ExtResource("1_0pkx5")

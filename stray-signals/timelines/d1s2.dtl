@@ -1,4 +1,4 @@
-[background arg="res://assets/temp/tempCafe/Cafe_Interior.jpg" fade="1.5"]
+[background arg="res://assets/art/backgrounds/Cafe_Background.png" fade="1.5" wait="true"]
 if {Drink.Rating} == "none":
 	jump begin_timeline
 else:
@@ -7,7 +7,7 @@ label begin_timeline
 audio music "res://assets/audio/cafe_bgm.ogg" [fade="2.0" volume="-8.0"]
 # DAY 1, SCENE 2
 join Archimedes center
-Player: [i]A cat's coming to the counter. I don't think I've seen this one before.[/i]
+PlayerThink: [i]A cat's coming to the counter. I don't think I've seen this one before.[/i]
 Player: Hello! Welcome to the cafe. What can I get you?
 Archimedes (Happy): What a simply marvelous place you have here. So wonderous. So perfect in its imperfect way.
 Player: Um, thank you?
@@ -18,11 +18,11 @@ Archimedes: ..You know, I think this place will be a very important place in the
 Archimedes: But…my drink….yes.
 update Archimedes (Happy)
 [signal arg="drink_hint"]
-Archimedes: I'm feeling very elegant today. I'd like a nice, cool matcha. Make sure to blend it well.
+Archimedes: Feeling very elegant today, as per my fascinating self of course. I'd also like a nice cool Matcha. And make sure to blend it well. But please don't shake it. That just distracts me to watch.
 leave Archimedes
 [signal arg="craft_drink"]
 label drink_rating (Scene 2 Drink Rating)
-[background arg="res://assets/temp/tempCafe/Cafe_Interior.jpg" fade="1.5" wait="true"]
+[background arg="res://assets/art/backgrounds/Cafe_Background.png" fade="1.5" wait="true"]
 audio music "res://assets/audio/craft_drink_bgm.ogg" [fade="2.0" volume="-5.0"]
 if {Drink.Rating} == "mediocre":
 	join Archimedes (Happy) center
@@ -50,6 +50,6 @@ else:
 	leave Loren
 	[signal arg="clear_drink"]
 	[signal arg="craft_drink"]
-Player: [i]What a strange cat. And what was all that he was going on about?[/i]
+PlayerThink: [i]What a strange cat. And what was all that he was going on about?[/i]
 [signal arg="end_encounter"]
 [end_timeline]

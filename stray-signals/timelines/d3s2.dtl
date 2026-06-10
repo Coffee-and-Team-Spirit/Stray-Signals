@@ -1,4 +1,4 @@
-[background arg="res://assets/temp/tempCafe/Cafe_Interior.jpg" fade="1.5"]
+[background arg="res://assets/art/backgrounds/Cafe_Background.png" fade="1.5" wait="true"]
 if {Drink.Rating} == "none":
 	jump begin_timeline
 else:
@@ -7,7 +7,7 @@ label begin_timeline
 audio music "res://assets/audio/cafe_bgm.ogg" [fade="2.0" volume="-8.0"]
 # DAY 3, SCENE 2
 join Zara center
-Player: [i]I wonder if this is the cat Archimedes talked about yesterday.[/i]
+PlayerThink: [i]I wonder if this is the cat Archimedes talked about yesterday.[/i]
 Player: Welcome in, would–
 Zara (Sad): Can you believe places like this still exist? I had to come all the way up to the counter instead of being served in a comfortable lounge or the like.
 Zara: Completely absurd! My ancient ancestors we treated like gods. But I must grovel before you for basic sustenance. Oh, how we have fallen.
@@ -23,11 +23,11 @@ Zara: And I will not have humans be turned into such magnificent creatures as us
 Player: So... you are going to help me?
 Zara: Yes, of course. I have something you need. But first, serve me at least to your barest minimum ability, then I will assist you.
 [signal arg="drink_hint"]
-Zara: I want something with boba but make sure the boba is dispersed evenly throughout the drink.
+Zara: I’m looking for some more variety today, make sure to shake it up so the flavors mix. And make it sweet.
 leave Zara
 [signal arg="craft_drink"]
 label drink_rating (Scene 2 Drink Rating)
-[background arg="res://assets/temp/tempCafe/Cafe_Interior.jpg" fade="1.5" wait="true"]
+[background arg="res://assets/art/backgrounds/Cafe_Background.png" fade="1.5" wait="true"]
 audio music "res://assets/audio/craft_drink_bgm.ogg" [fade="2.0" volume="-5.0"]
 if {Drink.Rating} == "mediocre":
 	join Zara center
@@ -37,9 +37,9 @@ if {Drink.Rating} == "mediocre":
 elif {Drink.Rating} == "good":
 	join Zara (Happy) center
 	Zara: Well, I suppose that was adequate. Here you go, serve this to the traitor and you may yet be able to stop them.
-	[center][b]You receive a special ingredient.[/b][/center]
-	Player: [i]Is that a....? [speed=2] Magical mushroom... [speed=5] f i s h?![/i]
-	[center][img=200]res\://assets/art/toppings/topping_magical_mushroom_fish.png[/img][/center]
+	Narrator: [center][b]You receive a special ingredient.[/b][/center]
+	PlayerThink: [i]Is that a....? [speed=2] Magical mushroom... [speed=5] f i s h?![/i]
+	Narrator: [center][img=200]res\://assets/art/toppings/topping_magical_mushroom_fish.png[/img][/center]
 	leave Zara
 	[signal arg="clear_drink"]
 	[signal arg="receive_special_ingredient"]

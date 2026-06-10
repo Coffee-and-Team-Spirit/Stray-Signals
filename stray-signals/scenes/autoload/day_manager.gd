@@ -7,6 +7,7 @@ signal day_changed(new_day)
 
 
 func get_current_timeline() -> String:
+	Dialogic.VAR.set_variable("CurrentDay", DayManager.day)
 	print("TIMELINE : d%ss%s" % [day, encounter])
 	return "d%ss%s" % [day, encounter]
 
@@ -24,3 +25,17 @@ func advance_encounter():
 		encounter = 1
 		day += 1
 		emit_signal("day_changed", day)
+
+
+func day_five_encounter():
+	day = 5
+	if GameState.villain == "Zara":
+		encounter = 2
+	elif GameState.villain == "GG":
+		encounter = 3
+	elif GameState.villain == "Alexandra":
+		encounter = 4
+	elif GameState.villain == "Whiskerly":
+		encounter = 5
+	elif GameState.villain == "Archimedes":
+		encounter = 6

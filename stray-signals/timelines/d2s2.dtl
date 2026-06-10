@@ -1,4 +1,4 @@
-[background arg="res://assets/temp/tempCafe/Cafe_Interior.jpg" fade="1.5"]
+[background arg="res://assets/art/backgrounds/Cafe_Background.png" fade="1.5" wait="true"]
 if {Drink.Rating} == "none":
 	jump begin_timeline
 else:
@@ -19,20 +19,28 @@ GG: This place smells like sweets and Mango. I love mango.
 Player: Would you like a mango flavored drink then?
 GG: Oh yes please. I got so excited with it all, I nearly forgot the drink part!
 [signal arg="drink_hint"]
-GG: I need to relax after a long day, get me something with mango. Add catnip on top.
+GG: I need to relax after a long wonderful day. Get me something with mango. Add catnip on top. When the detective asked for it, I realized I just [i]had[/i] to have it.
 leave GG
 [signal arg="craft_drink"]
 label drink_rating (Scene 2 Drink Rating)
-[background arg="res://assets/temp/tempCafe/Cafe_Interior.jpg" fade="1.5" wait="true"]
+[background arg="res://assets/art/backgrounds/Cafe_Background.png" fade="1.5" wait="true"]
 audio music "res://assets/audio/craft_drink_bgm.ogg" [fade="2.0" volume="-5.0"]
 if {Drink.Rating} == "mediocre":
 	join GG (Happy) center
-	GG: **FINAL DRINK CLUE** for mediocre drink
+	GG: That was pretty dang decent. Thank you.
+	GG (Neutral): You know, I heard that people that do things like... [pause=0.3]turning people into [i]cats[/i]... enjoy energy juice in their drinks...
+	GG: Also, I think they have strange, boring thoughts on the a drink's temperature.
+	GG (Angry): Are you writing this down?
+	GG (Happy): Anyways, thanks for the drink.
 	leave GG
 	[signal arg="clear_drink"]
 elif {Drink.Rating} == "good":
 	join GG (Happy) center
-	GG: **FINAL DRINK CLUE** for perfect/good drink
+	GG: That was pretty dang great. Thank you.
+	GG (Neutral): You know, I heard that people that do things like... [pause=0.3]turning people into [i]cats[/i]... enjoy coffee in their drinks...
+	GG: Also, I think they like their drinks neither warm nor cold.
+	GG (Angry): Are you writing this down?
+	GG (Happy): Anyways, thanks for the drink.
 	leave GG
 	[signal arg="clear_drink"]
 else:

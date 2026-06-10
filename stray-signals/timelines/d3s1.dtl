@@ -1,4 +1,4 @@
-[background arg="res://assets/temp/tempCafe/Cafe_Interior.jpg" fade="1.5"]
+[background arg="res://assets/art/backgrounds/Cafe_Background.png" fade="1.5" wait="true"]
 if {Drink.Rating} == "none":
 	jump begin_timeline
 else:
@@ -7,10 +7,10 @@ label begin_timeline
 audio music "res://assets/audio/cafe_bgm.ogg" [fade="2.0" volume="-8.0"]
 # DAY 3, SCENE 1
 join Whiskerly center
-Player: [i]A new cat. A normal customer today would be nice.[/i]
+PlayerThink: [i]A new cat. A normal customer today would be nice.[/i]
 Player: Hello. Welcome in. Watcha looking for today?
 Whiskerly: Meow, I am a cat.
-Player: [i]I should stop wishing for things. The city seems less than apathetic to my needs.[/i]
+PlayerThink: [i]I should stop wishing for things. The city seems less than apathetic to my needs.[/i]
 Player: I did notice you are a cat.[pause=.3] What did the cat want to drink?
 Whiskerly (Sad): I suppose a cat type drink would be good.
 Whiskerly: Yes, I will have whatever cats have. That will have to do, I guess.
@@ -21,11 +21,11 @@ Whiskerly (Happy): No no, it's all well enough {Player.PlayerName}. Life goes in
 Player: Well, maybe we can get you that drink to cheer you up? What do ya say?
 Whiskerly (Neutral): Yes, let us do that, thank you.
 [signal arg="drink_hint"]
-Whiskerly: I want a fruit based milk tea... and add boba on top.
+Whiskerly: I'm looking for a fruit based milk tea, and add boba on top. I think that's what us cats like.
 leave Whiskerly
 [signal arg="craft_drink"]
 label drink_rating (Scene 2 Drink Rating)
-[background arg="res://assets/temp/tempCafe/Cafe_Interior.jpg" fade="1.5" wait="true"]
+[background arg="res://assets/art/backgrounds/Cafe_Background.png" fade="1.5" wait="true"]
 audio music "res://assets/audio/craft_drink_bgm.ogg" [fade="2.0" volume="-5.0"]
 if {Drink.Rating} == "mediocre":
 	join Whiskerly center
