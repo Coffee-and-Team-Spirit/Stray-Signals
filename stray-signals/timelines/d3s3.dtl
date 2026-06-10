@@ -32,7 +32,10 @@ audio music "res://assets/audio/craft_drink_bgm.ogg" [fade="2.0" volume="-5.0"]
 if {Drink.Rating} == "mediocre":
 	join Alexandra (Happy) center
 	Alexandra: A fine enough drink for the day.
-	Alexandra: My investigation has led me to believe that the culprit is new to the area, but that's just a best guess at this point.
+	Alexandra: My investigation has led me to believe that the culprit...
+	[signal arg="clue|is new to the area"]
+	Alexandra: [font=res\://styles/fonts/Nervous.ttf]{Drink.DistortedClue}[/font]
+	Alexandra: ...but that's just a best guess at this point.
 	leave Alexandra
 	[signal arg="clear_drink"]
 elif {Drink.Rating} == "good":

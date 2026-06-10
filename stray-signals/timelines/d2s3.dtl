@@ -35,7 +35,10 @@ audio music "res://assets/audio/craft_drink_bgm.ogg" [fade="2.0" volume="-5.0"]
 if {Drink.Rating} == "mediocre":
 	join Archimedes center
 	Archimedes: This will suffice for now. Though I may encourage you to practice before this is all over.
-	Archimedes: A cat is coming tomorrow. They have something you will need. They like... non-human things.
+	Archimedes: A cat is coming tomorrow.
+	[signal arg="clue|They have something you will need. "]
+	Archimedes: [font=res\://styles/fonts/Nervous.ttf]{Drink.DistortedClue}[/font]
+	Archimedes: They like... non-human things.
 	leave Archimedes
 	[signal arg="clear_drink"]
 elif {Drink.Rating} == "good":

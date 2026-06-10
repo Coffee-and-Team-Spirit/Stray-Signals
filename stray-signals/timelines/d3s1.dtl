@@ -31,7 +31,9 @@ if {Drink.Rating} == "mediocre":
 	join Whiskerly center
 	Whiskerly: Cat drinks are okay I guess. Will grow to like them I think.
 	Whiskerly: I heard you may want to know things about the cat stuff going on.
-	Whiskerly: They are… an odd person I must say. Odd indeed.
+	Whiskerly: They are…
+	[signal arg="clue|an odd person I must say. Odd indeed."]
+	Whiskerly: [font=res\://styles/fonts/Nervous.ttf]{Drink.DistortedClue}[/font]
 	leave Whiskerly
 	[signal arg="clear_drink"]
 elif {Drink.Rating} == "good":

@@ -23,6 +23,8 @@ audio music "res://assets/audio/craft_drink_bgm.ogg" [fade="2.0" volume="-5.0"]
 if {Drink.Rating} == "mediocre":
 	join Zara (Sad) center
 	Zara: How very disappointing. I will not be returning, I can promise you that.
+	[signal arg="clue|You will never be able to stop them now."]
+	Zara: [font=res\://styles/fonts/Nervous.ttf]{Drink.DistortedClue}[/font]
 	leave Zara
 	[signal arg="clear_drink"]
 elif {Drink.Rating} == "good":
@@ -34,8 +36,9 @@ else:
 	# Bad
 	join Zara center
 	Zara (Sad): How very, very, very disappointing. I will not be returning, I can promise you that.
+	[signal arg="clue|You will never be able to stop them now."]
+	Zara (Sad): [font=res\://styles/fonts/Nervous.ttf]{Drink.DistortedClue}[/font]
 	leave Zara
 	[signal arg="clear_drink"]
-	[signal arg="craft_drink"]
 [signal arg="end_encounter"]
 [end_timeline]

@@ -29,6 +29,8 @@ if {Drink.Rating} == "mediocre":
 	join GG (Happy) center
 	GG: That was pretty dang decent. Thank you.
 	GG (Neutral): You know, I heard that people that do things like... [pause=0.3]turning people into [i]cats[/i]... enjoy energy juice in their drinks...
+	[signal arg="clue|enjoy energy juice in their drinks..."]
+	GG (Neutral): [font=res\://styles/fonts/Nervous.ttf]{Drink.DistortedClue}[/font]
 	GG: Also, I think they have strange, boring thoughts on the a drink's temperature.
 	GG (Angry): Are you writing this down?
 	GG (Happy): Anyways, thanks for the drink.

@@ -31,7 +31,10 @@ label drink_rating (Scene 2 Drink Rating)
 audio music "res://assets/audio/craft_drink_bgm.ogg" [fade="2.0" volume="-5.0"]
 if {Drink.Rating} == "mediocre":
 	join Zara center
-	Zara: I have had worse, not much better, but still worse. I will come back tomorrow. Perhaps you can impress me then.
+	Zara: I have had worse, not much better, but still worse.
+	[signal arg="clue|I will come back tomorrow."]
+	Zara: [font=res\://styles/fonts/Nervous.ttf]{Drink.DistortedClue}[/font]
+	Zara: Perhaps you can impress me then.
 	leave Zara
 	[signal arg="clear_drink"]
 elif {Drink.Rating} == "good":
@@ -46,7 +49,9 @@ elif {Drink.Rating} == "good":
 else:
 	# Bad
 	join Zara (Sad) center
-	Zara: You attempt to kill me! What a horrid life I live. I will return tomorrow. Perhaps you can impress me then.
+	Zara: You attempt to kill me! What a horrid life I live.
+	[signal arg="clue|I will come back tomorrow."]
+	Zara: [font=res\://styles/fonts/Nervous.ttf]{Drink.DistortedClue}[/font]
 	leave Zara
 	[signal arg="clear_drink"]
 [signal arg="end_encounter"]

@@ -41,13 +41,19 @@ audio music "res://assets/audio/craft_drink_bgm.ogg" [fade="2.0" volume="-5.0"]
 if {Drink.Rating} == "mediocre":
 	join Whiskerly center
 	Whiskerly: Some of it is coming back, but not everything.
-	Whiskerly: **MORE DIALOGUE HERE**
+	Whiskerly (Sad): I remember the person that did this being…happy?
+	[signal arg="clue|Like they were happy for me for some reason..."]
+	Whiskerly: [font=res\://styles/fonts/Nervous.ttf]{Drink.DistortedClue}[/font]
+	Whiskerly: That's all I can remember right now.
 	leave Whiskerly
 	[signal arg="clear_drink"]
 elif {Drink.Rating} == "good":
 	join Whiskerly (Happy) center
 	Whiskerly: Yes, that's great. I feel more like myself. Thank you.
-	Whiskerly: **MORE DIALOGUE HERE**
+	Whiskerly (Sad): I remember the person that did this being happy.
+	Whiskerly: Almost giddy that I was going to become a cat...
+	Whiskerly: I think they did it for me in some messed up way.
+	Whiskerly: That's all I can remember right now.
 	leave Whiskerly
 	[signal arg="clear_drink"]
 else:

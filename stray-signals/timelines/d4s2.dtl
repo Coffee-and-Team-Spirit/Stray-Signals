@@ -29,7 +29,9 @@ audio music "res://assets/audio/craft_drink_bgm.ogg" [fade="2.0" volume="-5.0"]
 if {Drink.Rating} == "mediocre":
 	join GG center
 	GG (Neutral): Pretty decent drink, thank you.
-	GG: Another thing I've heard about people that turn humans into cats… they seem to like things on the more elegant side of the line.
+	GG: Another thing I've heard about people that turn humans into cats… they seem to like things...
+	[signal arg="clue|on the more elegant side of the line."]
+	GG: [font=res\://styles/fonts/Nervous.ttf]{Drink.DistortedClue}[/font]
 	GG: Anyways, thanks for the drink.
 	leave GG
 	[signal arg="clear_drink"]
