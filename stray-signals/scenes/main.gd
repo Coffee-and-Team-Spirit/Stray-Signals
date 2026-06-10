@@ -14,6 +14,7 @@ func _ready() -> void:
 
 
 func _on_signal(signal_passed_in):
+	print("SIGNAL ", signal_passed_in)
 	match signal_passed_in:
 		"craft_drink":
 			print("crafting drink...!")
@@ -56,6 +57,23 @@ func _on_signal(signal_passed_in):
 			GameState.has_special_ingredient = true;
 			print("!received special ingredient from zara!")
 			
+			
+	if signal_passed_in.begins_with("clue|"):
+		var parts = signal_passed_in.split("|")
+		
+		if parts.size() > 1:
+			var hidden_clue_text = parts[1]
+			var scrambled_result = distort_clue(hidden_clue_text)
+			
+			Dialogic.VAR.set_variable("Drink.DistortedClue", scrambled_result)
+
+
+func distort_clue(text: String) -> String:
+	var chars := text.split("")
+	for i in chars.size():
+		if randf() < 0.2: 
+			chars[i] = char(randi_range(33, 126))
+	return "".join(chars)
 		"choose_villain":
 			GameState.villain = Dialogic.VAR.get_variable("Villain.VillainName")
 			DayManager.day_five_encounter()

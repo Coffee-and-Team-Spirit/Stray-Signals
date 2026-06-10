@@ -107,6 +107,7 @@ audio/channel_defaults={
 variables={
 "CurrentDay": "",
 "Drink": {
+"DistortedClue": "",
 "Rating": ""
 },
 "Player": {

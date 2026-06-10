@@ -44,7 +44,7 @@ if {Drink.Rating} == "mediocre":
 	[signal arg="clear_drink"]
 elif {Drink.Rating} == "good":
 	join Loren (Happy) center
-	Loren: This was just perfect. Thanks a bunch! [pause=0.3]Anyways, I better get going. See you tomorrow!
+	Loren: This was just perfect. Thanks a bunch! [pause=0.3]Anyways, I better get going.
 	[signal arg="clear_drink"]
 else:
 	# Bad
@@ -53,6 +53,10 @@ else:
 	leave Loren
 	[signal arg="clear_drink"]
 	[signal arg="craft_drink"]
+Loren (Sad): Before I go, I've heard that the wavelengths in the air are weird lately... making it hard to decipher words in normal, every day conversations... [pause=0.5] but that can't be true, that would be...
+[signal arg="clue|...impossible, there's enough crazy going on around here..."]
+[font=res\://styles/fonts/Nervous.ttf]{Drink.DistortedClue}[/font]
+Loren (Happy): I can't be going... crazy too, right? [speed=5]Right?! [speed=1]Well, I'll see you tomorrow.
 leave Loren
 [signal arg="end_encounter"]
 [end_timeline]
