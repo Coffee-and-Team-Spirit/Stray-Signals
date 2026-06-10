@@ -7,11 +7,11 @@ label begin_timeline
 audio music "res://assets/audio/cafe_bgm.ogg" [fade="2.0" volume="-8.0"]
 # DAY 4, SCENE 1
 join Whiskerly center
-Player: [i]Whiskerly is back. Could they be a human turned into a cat like people are saying?[/i]
+PlayerThink: [i]Whiskerly is back. Could they be a human turned into a cat like people are saying?[/i]
 Player: Hello, Whiskerly. Welcome back.
 Whiskerly: Meow, I am a cat.
 Player: Yes, you mentioned that last time.
-Player: [i]Honestly, it might be stranger if he isn't a human.[/i]
+PlayerThink: [i]Honestly, it might be stranger if he isn't a human.[/i]
 Player: I have a strange question to ask you Whiskerly.
 Whiskerly: Oh? And what might that be?
 Player: Are you by chance…..

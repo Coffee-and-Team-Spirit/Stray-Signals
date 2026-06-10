@@ -1,17 +1,23 @@
 [gd_scene format=3 uid="uid://cq0cuu823f6cs"]
 
-[ext_resource type="Texture2D" uid="uid://flmec454gow" path="res://assets/temp/day.png" id="1_5ysmq"]
-[ext_resource type="Texture2D" uid="uid://cdb55wryw5vg7" path="res://assets/temp/menu.png" id="2_6fi6k"]
-[ext_resource type="Texture2D" uid="uid://vbtk0x2ojxjb" path="res://assets/temp/notebook.png" id="3_uo2fv"]
+[ext_resource type="Texture2D" uid="uid://bcubjwjwtffbx" path="res://assets/art/hud/day.png" id="1_6fi6k"]
+[ext_resource type="Texture2D" uid="uid://c8k1eo8qyd2dr" path="res://assets/art/hud/menu.png" id="2_uo2fv"]
+[ext_resource type="Texture2D" uid="uid://de1xwb6unofof" path="res://assets/art/hud/menu_pressed.png" id="3_hd3ao"]
+[ext_resource type="Texture2D" uid="uid://vvms15hleie5" path="res://assets/art/hud/menu_hover.png" id="4_0i1j5"]
 [ext_resource type="Script" uid="uid://bc4jq7yl223at" path="res://scenes/hud.gd" id="4_6fi6k"]
+[ext_resource type="Texture2D" uid="uid://b7nbkjtm7xsg3" path="res://assets/art/hud/notebook.png" id="4_047uy"]
+[ext_resource type="Texture2D" uid="uid://cmucymhb8tyge" path="res://assets/art/hud/notebook_pressed.png" id="7_mphia"]
+[ext_resource type="Texture2D" uid="uid://ckbv2u5uygvmw" path="res://assets/art/hud/notebook_hover.png" id="8_0m4u7"]
 
 [node name="HUD" type="CanvasLayer" unique_id=959292212]
 process_mode = 3
 layer = 5
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=292035484]
-offset_right = 100.0
-offset_bottom = 144.0
+offset_left = 29.0
+offset_top = 16.0
+offset_right = 183.0
+offset_bottom = 239.0
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
 
@@ -20,9 +26,9 @@ layout_mode = 2
 alignment = 1
 
 [node name="Day" type="TextureRect" parent="MarginContainer/HUDDay" unique_id=1290148431]
-custom_minimum_size = Vector2(100, 0)
+custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
-texture = ExtResource("1_5ysmq")
+texture = ExtResource("1_6fi6k")
 expand_mode = 4
 stretch_mode = 5
 
@@ -32,12 +38,15 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 3.0
+offset_right = -10.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 26
+theme_override_constants/line_separation = -12
+theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
-text = "[font_size=15]DAY[/font_size][br][font_size=35]1[/font_size]"
+text = "[font_size=20]DAY[/font_size][br][font_size=45]1[/font_size]"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -46,19 +55,23 @@ layout_mode = 2
 size_flags_vertical = 4
 
 [node name="Menu" type="TextureButton" parent="MarginContainer/HUDDay/HUDOptions" unique_id=699086782]
-custom_minimum_size = Vector2(40, 40)
+custom_minimum_size = Vector2(65, 65)
 layout_mode = 2
 size_flags_horizontal = 2
-texture_normal = ExtResource("2_6fi6k")
+texture_normal = ExtResource("2_uo2fv")
+texture_pressed = ExtResource("3_hd3ao")
+texture_hover = ExtResource("4_0i1j5")
 ignore_texture_size = true
 stretch_mode = 5
 script = ExtResource("4_6fi6k")
 
 [node name="Notebook" type="TextureButton" parent="MarginContainer/HUDDay/HUDOptions" unique_id=1174021524]
-custom_minimum_size = Vector2(40, 40)
+custom_minimum_size = Vector2(65, 65)
 layout_mode = 2
 size_flags_horizontal = 10
-texture_normal = ExtResource("3_uo2fv")
+texture_normal = ExtResource("4_047uy")
+texture_pressed = ExtResource("7_mphia")
+texture_hover = ExtResource("8_0m4u7")
 ignore_texture_size = true
 stretch_mode = 5
 script = ExtResource("4_6fi6k")

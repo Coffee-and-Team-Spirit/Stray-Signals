@@ -7,7 +7,7 @@ label begin_timeline
 audio music "res://assets/audio/cafe_bgm.ogg" [fade="2.0" volume="-8.0"]
 # DAY 3, SCENE 2
 join Zara center
-Player: [i]I wonder if this is the cat Archimedes talked about yesterday.[/i]
+PlayerThink: [i]I wonder if this is the cat Archimedes talked about yesterday.[/i]
 Player: Welcome in, would–
 Zara (Sad): Can you believe places like this still exist? I had to come all the way up to the counter instead of being served in a comfortable lounge or the like.
 Zara: Completely absurd! My ancient ancestors we treated like gods. But I must grovel before you for basic sustenance. Oh, how we have fallen.
@@ -37,9 +37,9 @@ if {Drink.Rating} == "mediocre":
 elif {Drink.Rating} == "good":
 	join Zara (Happy) center
 	Zara: Well, I suppose that was adequate. Here you go, serve this to the traitor and you may yet be able to stop them.
-	[center][b]You receive a special ingredient.[/b][/center]
-	Player: [i]Is that a....? [speed=2] Magical mushroom... [speed=5] f i s h?![/i]
-	[center][img=200]res\://assets/art/toppings/topping_magical_mushroom_fish.png[/img][/center]
+	Narrator: [center][b]You receive a special ingredient.[/b][/center]
+	PlayerThink: [i]Is that a....? [speed=2] Magical mushroom... [speed=5] f i s h?![/i]
+	Narrator: [center][img=200]res\://assets/art/toppings/topping_magical_mushroom_fish.png[/img][/center]
 	leave Zara
 	[signal arg="clear_drink"]
 	[signal arg="receive_special_ingredient"]
