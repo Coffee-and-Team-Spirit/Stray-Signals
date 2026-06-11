@@ -8,6 +8,13 @@
 [ext_resource type="Texture2D" uid="uid://1aakqjv71568" path="res://assets/ui/menu_book.png" id="6_ih6pn"]
 [ext_resource type="Texture2D" uid="uid://bmnfdyc7n21g0" path="res://assets/ui/credits_card.png" id="7_ih6pn"]
 [ext_resource type="Theme" uid="uid://neiecvchtv0m" path="res://styles/fonts/title_font.tres" id="7_ooihk"]
+[ext_resource type="Texture2D" uid="uid://du3st45cbl3lr" path="res://assets/ui/photos/Cup1.png" id="8_83ncp"]
+[ext_resource type="Texture2D" uid="uid://bqb2k1mjx7yam" path="res://assets/ui/photos/Cup2.png" id="9_sxold"]
+[ext_resource type="Texture2D" uid="uid://cmnmll7abilef" path="res://assets/ui/photos/Cup3.png" id="10_olp7g"]
+[ext_resource type="Texture2D" uid="uid://c7vtstgit5qo3" path="res://assets/ui/photos/Cup4.png" id="11_agqj7"]
+[ext_resource type="Texture2D" uid="uid://dl75kc823f13a" path="res://assets/ui/photos/Cup5.png" id="12_f3h2w"]
+[ext_resource type="Texture2D" uid="uid://b7lv4x8dlxrcn" path="res://assets/ui/photos/Cup6.png" id="14_e4uir"]
+[ext_resource type="Texture2D" uid="uid://digchklqrnyv3" path="res://assets/ui/photos/Cup7.png" id="15_g801i"]
 
 [node name="Credits" type="Control" unique_id=1204340958]
 layout_mode = 3
@@ -123,6 +130,17 @@ theme_override_font_sizes/normal_font_size = 24
 text = "Alexis Koss"
 fit_content = true
 
+[node name="CupPhoto" type="TextureRect" parent="Credits Page/VBoxContainer/Alexis" unique_id=969956215]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 0
+offset_left = -9.0
+offset_top = -19.0
+offset_right = 141.0
+offset_bottom = 131.0
+texture = ExtResource("8_83ncp")
+expand_mode = 1
+stretch_mode = 5
+
 [node name="Bryn" type="TextureRect" parent="Credits Page/VBoxContainer" unique_id=1566587048]
 z_index = 1
 custom_minimum_size = Vector2(450, 150)
@@ -155,6 +173,17 @@ theme_override_colors/default_color = Color(0.5019608, 0.22745098, 0.050980393, 
 theme_override_font_sizes/normal_font_size = 24
 text = "Bryn Bills"
 fit_content = true
+
+[node name="CupPhoto" type="TextureRect" parent="Credits Page/VBoxContainer/Bryn" unique_id=350719876]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 0
+offset_left = -9.0
+offset_top = -19.0
+offset_right = 141.0
+offset_bottom = 131.0
+texture = ExtResource("9_sxold")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="Lucas" type="TextureRect" parent="Credits Page/VBoxContainer" unique_id=672499773]
 z_index = 1
@@ -189,6 +218,17 @@ theme_override_font_sizes/normal_font_size = 24
 text = "Lucas Suarez"
 fit_content = true
 
+[node name="CupPhoto" type="TextureRect" parent="Credits Page/VBoxContainer/Lucas" unique_id=947732787]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 0
+offset_left = -9.0
+offset_top = -19.0
+offset_right = 141.0
+offset_bottom = 131.0
+texture = ExtResource("10_olp7g")
+expand_mode = 1
+stretch_mode = 5
+
 [node name="Sola" type="TextureRect" parent="Credits Page/VBoxContainer" unique_id=1070263173]
 z_index = 1
 custom_minimum_size = Vector2(450, 150)
@@ -222,6 +262,17 @@ theme_override_font_sizes/normal_font_size = 24
 text = "Sola Chang"
 fit_content = true
 
+[node name="CupPhoto" type="TextureRect" parent="Credits Page/VBoxContainer/Sola" unique_id=826943644]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 0
+offset_left = -9.0
+offset_top = -19.0
+offset_right = 141.0
+offset_bottom = 131.0
+texture = ExtResource("11_agqj7")
+expand_mode = 1
+stretch_mode = 5
+
 [node name="Spencer" type="TextureRect" parent="Credits Page/VBoxContainer" unique_id=749403563]
 z_index = 1
 custom_minimum_size = Vector2(450, 150)
@@ -254,6 +305,17 @@ theme_override_colors/default_color = Color(0.5019608, 0.22745098, 0.050980393, 
 theme_override_font_sizes/normal_font_size = 24
 text = "Spencer Jong"
 fit_content = true
+
+[node name="CupPhoto" type="TextureRect" parent="Credits Page/VBoxContainer/Spencer" unique_id=688985832]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 0
+offset_left = -9.0
+offset_top = -19.0
+offset_right = 141.0
+offset_bottom = 131.0
+texture = ExtResource("12_f3h2w")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="DevTeam" type="RichTextLabel" parent="Credits Page" unique_id=186698748]
 clip_contents = false
@@ -311,6 +373,17 @@ theme_override_font_sizes/normal_font_size = 24
 text = "Julia Graves"
 fit_content = true
 
+[node name="CupPhoto" type="TextureRect" parent="Credits Page/VBoxContainer2/Julia" unique_id=497964442]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 0
+offset_left = -9.0
+offset_top = -19.0
+offset_right = 141.0
+offset_bottom = 131.0
+texture = ExtResource("14_e4uir")
+expand_mode = 1
+stretch_mode = 5
+
 [node name="Danielle" type="TextureRect" parent="Credits Page/VBoxContainer2" unique_id=577880245]
 z_index = 1
 custom_minimum_size = Vector2(450, 150)
@@ -343,6 +416,17 @@ theme_override_colors/default_color = Color(0.5019608, 0.22745098, 0.050980393, 
 theme_override_font_sizes/normal_font_size = 24
 text = "Danielle Osterman"
 fit_content = true
+
+[node name="CupPhoto" type="TextureRect" parent="Credits Page/VBoxContainer2/Danielle" unique_id=1119553456]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 0
+offset_left = -9.0
+offset_top = -19.0
+offset_right = 141.0
+offset_bottom = 131.0
+texture = ExtResource("15_g801i")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="Steering Committee" type="RichTextLabel" parent="Credits Page" unique_id=1299549775]
 clip_contents = false

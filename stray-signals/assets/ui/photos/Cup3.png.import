@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dfq6s63x1b4ea"
-path="res://.godot/imported/drawer_button_hover.png-f8c0fee69887439074209cfac455780d.ctex"
+uid="uid://cmnmll7abilef"
+path="res://.godot/imported/Cup3.png-0c40fa1082158f550f489e5bafedfe03.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/buttons/drawer_button_hover.png"
-dest_files=["res://.godot/imported/drawer_button_hover.png-f8c0fee69887439074209cfac455780d.ctex"]
+source_file="res://assets/ui/photos/Cup3.png"
+dest_files=["res://.godot/imported/Cup3.png-0c40fa1082158f550f489e5bafedfe03.ctex"]
 
 [params]
 

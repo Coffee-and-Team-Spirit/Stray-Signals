@@ -5,7 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://butdw4fdwv31e" path="res://assets/art/logo.png" id="2_bqqt6"]
 [ext_resource type="FontFile" uid="uid://budnnkwdhk4wj" path="res://assets/fonts/SuperCartoon-6R791.ttf" id="3_8ln24"]
 [ext_resource type="Texture2D" uid="uid://c3ol5dipkjdu1" path="res://assets/ui/buttons/main_button.png" id="4_rtw2f"]
-[ext_resource type="Texture2D" uid="uid://b1kqcpnebwj4x" path="res://assets/ui/buttons/main_button_press.png" id="5_oa1go"]
 [ext_resource type="Texture2D" uid="uid://4pdh5f4qj7e4" path="res://assets/ui/buttons/main_button_hover.png" id="6_tbmy8"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oa1go"]
@@ -13,7 +12,7 @@ texture = ExtResource("4_rtw2f")
 texture_margin_bottom = 30.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jk1qb"]
-texture = ExtResource("5_oa1go")
+texture = ExtResource("6_tbmy8")
 texture_margin_bottom = 30.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5dd4i"]
@@ -89,7 +88,7 @@ custom_minimum_size = Vector2(300, 120)
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0.23928472, 0.0039076875, 0.5639104, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_8ln24")
 theme_override_font_sizes/font_size = 35
@@ -105,7 +104,7 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 focus_mode = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0.23928472, 0.0039076875, 0.5639104, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_8ln24")
 theme_override_font_sizes/font_size = 35
@@ -121,7 +120,7 @@ layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0.23928472, 0.0039076875, 0.5639104, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_8ln24")
 theme_override_font_sizes/font_size = 35
@@ -136,7 +135,7 @@ layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0.23928472, 0.0039076875, 0.5639104, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_8ln24")
 theme_override_font_sizes/font_size = 35
@@ -151,7 +150,7 @@ layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0.23928472, 0.0039076875, 0.5639104, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_8ln24")
 theme_override_font_sizes/font_size = 35
@@ -166,7 +165,7 @@ layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0.23928472, 0.0039076875, 0.5639104, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_8ln24")
 theme_override_font_sizes/font_size = 35

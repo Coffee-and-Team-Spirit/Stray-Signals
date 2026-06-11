@@ -3,11 +3,10 @@
 [ext_resource type="Script" uid="uid://cikv47r6bxojw" path="res://scenes/sub_menu.gd" id="1_k1p16"]
 [ext_resource type="FontFile" uid="uid://budnnkwdhk4wj" path="res://assets/fonts/SuperCartoon-6R791.ttf" id="2_toi0d"]
 [ext_resource type="Texture2D" uid="uid://b5hox0y0qiyh2" path="res://assets/ui/buttons/curled_button.png" id="3_focyq"]
-[ext_resource type="Texture2D" uid="uid://fwavcxsnjwho" path="res://assets/ui/buttons/curled_button_press.png" id="4_dwk4f"]
 [ext_resource type="Texture2D" uid="uid://b6v6wdgt3qpm7" path="res://assets/ui/buttons/curled_button_hover.png" id="5_rkcrk"]
 [ext_resource type="Texture2D" uid="uid://i5iosr0v0emq" path="res://assets/ui/drawer.png" id="6_f8rex"]
 [ext_resource type="Texture2D" uid="uid://blv8kxs7cao1x" path="res://assets/ui/buttons/drawer_button.png" id="7_h13je"]
-[ext_resource type="Texture2D" uid="uid://dyk00c4uigotg" path="res://assets/ui/buttons/drawer_button_hover.png" id="8_s28ia"]
+[ext_resource type="Texture2D" uid="uid://dfq6s63x1b4ea" path="res://assets/ui/buttons/drawer_button_hover.png" id="8_s28ia"]
 [ext_resource type="Texture2D" uid="uid://lxca5qe03fpj" path="res://assets/ui/buttons/drawer_button_press.png" id="9_st11w"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hw6l1"]
@@ -71,7 +70,7 @@ texture = ExtResource("3_focyq")
 expand_margin_right = 25.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hpoko"]
-texture = ExtResource("4_dwk4f")
+texture = ExtResource("5_rkcrk")
 expand_margin_right = 25.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nhb5k"]
@@ -287,9 +286,9 @@ theme_override_constants/separation = -25
 clip_contents = true
 custom_minimum_size = Vector2(220, 110)
 layout_mode = 2
-theme_override_colors/font_pressed_color = Color(0.105882354, 0.09019608, 0.34117648, 1)
+theme_override_colors/font_pressed_color = Color(0.007026533, 0.0054814275, 0.058417395, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_disabled_color = Color(0.105882354, 0.09019608, 0.34117648, 1)
+theme_override_colors/font_disabled_color = Color(0.024333451, 0.01898275, 0.13530704, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_toi0d")
 theme_override_font_sizes/font_size = 25
@@ -302,9 +301,9 @@ text = "NEW GAME"
 [node name="LoadGame" type="Button" parent="SubMenu/MarginContainer/MainMenuContainer" unique_id=1973030373]
 custom_minimum_size = Vector2(220, 110)
 layout_mode = 2
-theme_override_colors/font_pressed_color = Color(0.10404196, 0.08853788, 0.34181657, 1)
+theme_override_colors/font_pressed_color = Color(0.007026533, 0.0054814275, 0.058417395, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_disabled_color = Color(0.105882354, 0.09019608, 0.34117648, 1)
+theme_override_colors/font_disabled_color = Color(0.024333451, 0.01898275, 0.13530704, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_toi0d")
 theme_override_font_sizes/font_size = 25
@@ -317,9 +316,9 @@ text = "LOAD GAME"
 [node name="Gallery" type="Button" parent="SubMenu/MarginContainer/MainMenuContainer" unique_id=1104231600]
 custom_minimum_size = Vector2(220, 110)
 layout_mode = 2
-theme_override_colors/font_pressed_color = Color(0.10404196, 0.08853788, 0.34181657, 1)
+theme_override_colors/font_pressed_color = Color(0.007026533, 0.0054814275, 0.058417395, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_disabled_color = Color(0.105882354, 0.09019608, 0.34117648, 1)
+theme_override_colors/font_disabled_color = Color(0.024333451, 0.01898275, 0.13530704, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_toi0d")
 theme_override_font_sizes/font_size = 25
@@ -332,9 +331,9 @@ text = "GALLERY"
 [node name="Settings" type="Button" parent="SubMenu/MarginContainer/MainMenuContainer" unique_id=950881623]
 custom_minimum_size = Vector2(220, 110)
 layout_mode = 2
-theme_override_colors/font_pressed_color = Color(0.10404196, 0.08853788, 0.34181657, 1)
+theme_override_colors/font_pressed_color = Color(0.007026533, 0.0054814275, 0.058417395, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0.024333451, 0.01898275, 0.13530704, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_toi0d")
 theme_override_font_sizes/font_size = 25
@@ -347,9 +346,9 @@ text = "SETTINGS"
 [node name="Credits" type="Button" parent="SubMenu/MarginContainer/MainMenuContainer" unique_id=1483752918]
 custom_minimum_size = Vector2(220, 110)
 layout_mode = 2
-theme_override_colors/font_pressed_color = Color(0.10404196, 0.08853788, 0.34181657, 1)
+theme_override_colors/font_pressed_color = Color(0.007026533, 0.0054814275, 0.058417395, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_disabled_color = Color(0.105882354, 0.09019608, 0.34117648, 1)
+theme_override_colors/font_disabled_color = Color(0.024333451, 0.01898275, 0.13530704, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_toi0d")
 theme_override_font_sizes/font_size = 25

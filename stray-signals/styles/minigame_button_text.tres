@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://cffvens6xf6ks"]
+
+[ext_resource type="FontFile" uid="uid://budnnkwdhk4wj" path="res://assets/fonts/SuperCartoon-6R791.ttf" id="1_el5wi"]
+
+[resource]
+default_font = ExtResource("1_el5wi")
+default_font_size = 24
