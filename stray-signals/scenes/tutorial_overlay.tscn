@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bfiqu0aho2snv" path="res://assets/art/tutorial/image_1.png" id="2_cuu4x"]
 [ext_resource type="FontFile" uid="uid://budnnkwdhk4wj" path="res://assets/fonts/SuperCartoon-6R791.ttf" id="4_g20xr"]
 [ext_resource type="Texture2D" uid="uid://r3j3o3n2y6e6" path="res://assets/ui/buttons/short_button.png" id="5_ri6rx"]
-[ext_resource type="Texture2D" uid="uid://pwtnffjwe64q" path="res://assets/ui/buttons/short_button_hover.png" id="6_3mp0e"]
+[ext_resource type="Texture2D" uid="uid://b2b37w0e38me0" path="res://assets/ui/buttons/short_button_hover.png" id="6_3mp0e"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_so2e3"]
 

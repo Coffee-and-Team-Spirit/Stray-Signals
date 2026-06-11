@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://budnnkwdhk4wj" path="res://assets/fonts/SuperCartoon-6R791.ttf" id="3_8ln24"]
 [ext_resource type="Texture2D" uid="uid://c3ol5dipkjdu1" path="res://assets/ui/buttons/main_button.png" id="4_rtw2f"]
 [ext_resource type="Texture2D" uid="uid://4pdh5f4qj7e4" path="res://assets/ui/buttons/main_button_hover.png" id="6_tbmy8"]
+[ext_resource type="AudioStream" uid="uid://de3i4kqrseu0c" path="res://assets/audio/main_menu_bgm.ogg" id="7_oa1go"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oa1go"]
 texture = ExtResource("4_rtw2f")
@@ -173,6 +174,14 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_tbmy8")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_jk1qb")
 theme_override_styles/hover = SubResource("StyleBoxTexture_5dd4i")
 text = "Quit"
+
+[node name="BGM" type="AudioStreamPlayer2D" parent="." unique_id=185049976]
+process_mode = 3
+process_priority = 10
+stream = ExtResource("7_oa1go")
+volume_db = -0.503
+autoplay = true
+bus = &"music"
 
 [connection signal="pressed" from="MarginContainer/MainMenuContainer/MarginContainer/ButtonContainer/NewGame" to="MarginContainer/MainMenuContainer/MarginContainer/ButtonContainer/LoadGame" method="_on_new_game_pressed"]
 [connection signal="pressed" from="MarginContainer/MainMenuContainer/MarginContainer/ButtonContainer/LoadGame" to="MarginContainer/MainMenuContainer/MarginContainer/ButtonContainer/LoadGame" method="_on_load_game_pressed"]

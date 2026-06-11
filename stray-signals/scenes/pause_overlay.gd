@@ -10,6 +10,7 @@ func _ready():
 
 
 func open_pause_menu() -> void:
+	
 	visible = true
 	get_tree().paused = true
 	Dialogic.paused = true 

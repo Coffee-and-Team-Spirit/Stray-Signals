@@ -468,6 +468,13 @@ func _on_serve_pressed() -> void:
 	print("VILLAIN ", GameState.villain)
 	GameState.drink_result = evaluate_drink_rating(score_drink(DrinkData.drink_puzzles[DayManager.day][DayManager.encounter], player_drink_traits))
 	
+	# Fade out BGM BEFORE deleting mini-game
+	var bgm = $BGM
+	var tween := create_tween()
+	tween.tween_property(bgm, "volume_db", -40, 2.0)
+	await tween.finished
+	bgm.stop()
+	
 	var game_root = get_tree().current_scene
 	queue_free()
 	
@@ -477,6 +484,7 @@ func _on_serve_pressed() -> void:
 
 	var current_timeline = DayManager.get_current_timeline()
 	print("DEBUG TIMELINE: ", current_timeline)
+	
 	Dialogic.start("res://timelines/%s.dtl" % current_timeline, "drink_rating")
 
 

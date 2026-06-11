@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dli13vb00lauu" path="res://assets/art/backgrounds/Cafe_Background.png" id="2_cg4nb"]
 [ext_resource type="Texture2D" uid="uid://dne6qhe4cqnio" path="res://assets/art/mini_game/cups/empty_cup_cup.png" id="2_n60d2"]
 [ext_resource type="Texture2D" uid="uid://cwamu4r6blp0g" path="res://assets/art/mini_game/cups/empty_cup_mug.png" id="3_0saxs"]
+[ext_resource type="Texture2D" uid="uid://cpygcoacbxwb0" path="res://assets/ui/minigame/npc_window.png" id="3_lxyvm"]
 [ext_resource type="Texture2D" uid="uid://bd7ypgl80b10w" path="res://assets/art/mini_game/cups/empty_cup_glass.png" id="4_cg4nb"]
 [ext_resource type="Script" uid="uid://o7hmrsu5brlx" path="res://scenes/flavor_button_pour.gd" id="5_1ck7w"]
 [ext_resource type="Texture2D" uid="uid://cbgkffqpkyllb" path="res://assets/art/mini_game/ingredients/ingredient_mango.png" id="7_cg4nb"]
@@ -13,7 +14,6 @@
 [ext_resource type="Texture2D" uid="uid://g1wj3l1c83rk" path="res://assets/art/mini_game/ingredients/ingredient_strawberry.png" id="10_05sac"]
 [ext_resource type="Texture2D" uid="uid://cpy0hfld8ce80" path="res://assets/art/mini_game/ingredients/ingredient_boba.png" id="11_n60d2"]
 [ext_resource type="Texture2D" uid="uid://cmdmj7ooalfls" path="res://assets/art/mini_game/ingredients/ingredient_catnip.png" id="12_0saxs"]
-[ext_resource type="StyleBox" uid="uid://d16gnpc5j64h7" path="res://ui/drink_components_panel.tres" id="13_1ck7w"]
 [ext_resource type="Texture2D" uid="uid://b8ec0bo3troq3" path="res://assets/art/mini_game/ingredients/ingredient_cream_and_cat_treats.png" id="13_cg4nb"]
 [ext_resource type="Texture2D" uid="uid://1eqbdxuw8mwi" path="res://assets/art/mini_game/ingredients/ingredient_magical_mushroom_fish.png" id="13_n60d2"]
 [ext_resource type="Texture2D" uid="uid://jxydegqi4wqj" path="res://assets/art/characters/Loren/Loren_Happy.png" id="14_n60d2"]
@@ -21,30 +21,21 @@
 [ext_resource type="Texture2D" uid="uid://b5i22smay4y34" path="res://assets/art/sparkle.png" id="17_0saxs"]
 [ext_resource type="Theme" uid="uid://cffvens6xf6ks" path="res://styles/minigame_button_text.tres" id="18_05sac"]
 [ext_resource type="PackedScene" uid="uid://ch7wgofik7qpe" path="res://scenes/confirmation_box.tscn" id="19_odn5p"]
+[ext_resource type="Texture2D" uid="uid://hulo63t3qakn" path="res://assets/ui/minigame/drink_button.png" id="19_w4u68"]
+[ext_resource type="Texture2D" uid="uid://c807acoij7f8j" path="res://assets/ui/minigame/drink_button_press.png" id="20_lxyvm"]
+[ext_resource type="Texture2D" uid="uid://brknooqh258ef" path="res://assets/ui/minigame/drink_button_hover.png" id="21_pxsg2"]
 [ext_resource type="Texture2D" uid="uid://blg7cpyf77gtq" path="res://assets/art/backgrounds/Shelf.png" id="22_lxyvm"]
+[ext_resource type="Texture2D" uid="uid://hfqlyn6ap4dl" path="res://assets/ui/minigame/stats_bars.png" id="24_pxsg2"]
+[ext_resource type="Texture2D" uid="uid://dpemlboejcmi" path="res://assets/ui/minigame/stats_left_bar.png" id="25_hcbeg"]
+[ext_resource type="AudioStream" uid="uid://crwl70addl1qe" path="res://assets/audio/crafting_bgm.ogg" id="28_hcbeg"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cg4nb"]
-bg_color = Color(0.105882354, 0.09019608, 0.34117648, 1)
-border_width_left = 10
-border_width_top = 10
-border_width_right = 10
-border_width_bottom = 10
-border_color = Color(0.28235295, 0.27058825, 0.50980395, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pxsg2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0saxs"]
 atlas = ExtResource("14_n60d2")
 region = Rect2(0, 25, 0, 700)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_odn5p"]
-bg_color = Color(0.28235295, 0.27058825, 0.50980395, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lxyvm"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vlrg8"]
 content_margin_top = 5.0
@@ -55,29 +46,33 @@ content_margin_top = 5.0
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0yecb"]
 content_margin_top = 5.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_udkbo"]
-bg_color = Color(0.28235295, 0.27058825, 0.50980395, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hcbeg"]
+texture = ExtResource("19_w4u68")
+expand_margin_bottom = 5.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eurnq"]
-bg_color = Color(0.105882354, 0.09019608, 0.34117648, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2v6ef"]
+texture = ExtResource("20_lxyvm")
+expand_margin_bottom = 5.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w4u68"]
-bg_color = Color(0.105882354, 0.09019608, 0.34117648, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3718a"]
+texture = ExtResource("21_pxsg2")
+expand_margin_bottom = 5.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_okdn2"]
 content_margin_top = 5.0
 content_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pxsg2"]
+bg_color = Color(0.105882354, 0.09019608, 0.34117648, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.030456869, 0.023760268, 0.1539627, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_id7fa"]
 content_margin_top = 5.0
@@ -95,28 +90,16 @@ content_margin_bottom = 5.0
 content_margin_top = 5.0
 content_margin_bottom = 5.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lxyvm"]
-bg_color = Color(0.28235295, 0.27058825, 0.50980395, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_blk88"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_okdn2"]
 corner_radius_top_left = 8
 corner_radius_bottom_left = 8
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_id7fa"]
-bg_color = Color(0.90576947, 0.90576947, 0.90576947, 1)
-corner_radius_top_left = 8
-corner_radius_bottom_left = 8
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lkhrg"]
+texture = ExtResource("25_hcbeg")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3cihv"]
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vjac4"]
-bg_color = Color(0.90576947, 0.90576947, 0.90576947, 1)
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 
@@ -144,27 +127,6 @@ scale_max = 0.29999998
 scale_curve = SubResource("CurveTexture_cg4nb")
 turbulence_enabled = true
 turbulence_noise_strength = 5.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pxsg2"]
-bg_color = Color(0.105882354, 0.09019608, 0.34117648, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hcbeg"]
-bg_color = Color(0.28235295, 0.27058825, 0.50980395, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2v6ef"]
-bg_color = Color(0.28235295, 0.27058825, 0.50980395, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
 
 [node name="DrinkMiniGame" type="Control" unique_id=230215315]
 layout_mode = 3
@@ -195,17 +157,29 @@ color = Color(0, 0, 0, 0.38431373)
 [node name="Customer" type="Panel" parent="." unique_id=1677956663]
 layout_mode = 0
 offset_left = 24.0
-offset_top = 23.0
+offset_top = 29.0
 offset_right = 853.0
-offset_bottom = 462.0
+offset_bottom = 468.0
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_cg4nb")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_pxsg2")
+
+[node name="NPCWindow" type="TextureRect" parent="Customer" unique_id=1782148755]
+layout_mode = 0
+offset_left = -27.0
+offset_top = -19.0
+offset_right = 894.0
+offset_bottom = 504.0
+texture = ExtResource("3_lxyvm")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="MarginContainer" type="MarginContainer" parent="Customer" unique_id=986714758]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 13.0
+offset_right = -10.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 25
@@ -220,7 +194,8 @@ theme_override_constants/separation = 10
 [node name="CharacterName" type="RichTextLabel" parent="Customer/MarginContainer/DialogueHistory" unique_id=798647992]
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
-theme_override_font_sizes/normal_font_size = 20
+theme = ExtResource("18_05sac")
+theme_override_font_sizes/normal_font_size = 32
 text = "Character Name"
 horizontal_alignment = 2
 
@@ -234,12 +209,14 @@ stretch_mode = 5
 [node name="Panel" type="Panel" parent="Customer/MarginContainer/DialogueHistory" unique_id=208098718]
 custom_minimum_size = Vector2(100, 80)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_odn5p")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_lxyvm")
 
 [node name="MarginContainer" type="MarginContainer" parent="Customer/MarginContainer/DialogueHistory/Panel" unique_id=2003354866]
 layout_mode = 0
-offset_right = 762.0
-offset_bottom = 79.5
+offset_left = 5.0
+offset_top = -8.0
+offset_right = 749.0
+offset_bottom = 78.0
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
@@ -614,48 +591,52 @@ theme_override_constants/separation = 25
 alignment = 1
 
 [node name="ModificationHeat" type="Button" parent="ModificationSelector" unique_id=47884781]
-custom_minimum_size = Vector2(150, 50)
+custom_minimum_size = Vector2(160, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("18_05sac")
-theme_override_styles/normal = SubResource("StyleBoxFlat_udkbo")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_eurnq")
-theme_override_styles/hover = SubResource("StyleBoxFlat_w4u68")
-text = "Heat"
+theme_override_colors/font_pressed_color = Color(0, 9.62615e-08, 0.39341816, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_hcbeg")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_2v6ef")
+theme_override_styles/hover = SubResource("StyleBoxTexture_3718a")
+text = "HEAT"
 
 [node name="ModificationChill" type="Button" parent="ModificationSelector" unique_id=1449620023]
-custom_minimum_size = Vector2(150, 50)
+custom_minimum_size = Vector2(160, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("18_05sac")
-theme_override_styles/normal = SubResource("StyleBoxFlat_udkbo")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_eurnq")
-theme_override_styles/hover = SubResource("StyleBoxFlat_w4u68")
-text = "Chill"
+theme_override_colors/font_pressed_color = Color(0, 9.62615e-08, 0.39341816, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_hcbeg")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_2v6ef")
+theme_override_styles/hover = SubResource("StyleBoxTexture_3718a")
+text = "CHILL"
 
 [node name="ModificationStir" type="Button" parent="ModificationSelector" unique_id=1904659201]
-custom_minimum_size = Vector2(150, 50)
+custom_minimum_size = Vector2(160, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("18_05sac")
-theme_override_styles/normal = SubResource("StyleBoxFlat_udkbo")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_eurnq")
-theme_override_styles/hover = SubResource("StyleBoxFlat_w4u68")
-text = "Stir"
+theme_override_colors/font_pressed_color = Color(0, 9.62615e-08, 0.39341816, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_hcbeg")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_2v6ef")
+theme_override_styles/hover = SubResource("StyleBoxTexture_3718a")
+text = "STIR"
 
 [node name="ModificationShake" type="Button" parent="ModificationSelector" unique_id=1224586569]
-custom_minimum_size = Vector2(150, 50)
+custom_minimum_size = Vector2(160, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("18_05sac")
-theme_override_styles/normal = SubResource("StyleBoxFlat_udkbo")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_eurnq")
-theme_override_styles/hover = SubResource("StyleBoxFlat_w4u68")
-text = "Shake"
+theme_override_colors/font_pressed_color = Color(0, 9.62615e-08, 0.39341816, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_hcbeg")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_2v6ef")
+theme_override_styles/hover = SubResource("StyleBoxTexture_3718a")
+text = "SHAKE"
 
 [node name="DrinkInformation" type="HBoxContainer" parent="." unique_id=2058362915]
 layout_mode = 1
@@ -687,14 +668,14 @@ vertical_alignment = 1
 
 [node name="Panel" type="Panel" parent="DrinkInformation/SelectCup" unique_id=1737600586]
 show_behind_parent = true
-custom_minimum_size = Vector2(80, 80)
+custom_minimum_size = Vector2(25, 80)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = ExtResource("13_1ck7w")
+theme_override_styles/panel = SubResource("StyleBoxFlat_pxsg2")
 
 [node name="SelectBaseFlavor" type="RichTextLabel" parent="DrinkInformation" unique_id=1146954660]
 clip_contents = false
@@ -718,7 +699,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = ExtResource("13_1ck7w")
+theme_override_styles/panel = SubResource("StyleBoxFlat_pxsg2")
 
 [node name="SelectSecondaryFlavor" type="RichTextLabel" parent="DrinkInformation" unique_id=699688464]
 clip_contents = false
@@ -742,7 +723,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = ExtResource("13_1ck7w")
+theme_override_styles/panel = SubResource("StyleBoxFlat_pxsg2")
 
 [node name="SelectTopping" type="RichTextLabel" parent="DrinkInformation" unique_id=1533706332]
 clip_contents = false
@@ -765,7 +746,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = ExtResource("13_1ck7w")
+theme_override_styles/panel = SubResource("StyleBoxFlat_pxsg2")
 
 [node name="SelectSpecialTopping" type="RichTextLabel" parent="DrinkInformation" unique_id=55030804]
 visible = false
@@ -790,7 +771,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = ExtResource("13_1ck7w")
+theme_override_styles/panel = SubResource("StyleBoxFlat_pxsg2")
 
 [node name="SelectModification" type="RichTextLabel" parent="DrinkInformation" unique_id=1883354255]
 clip_contents = false
@@ -813,7 +794,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = ExtResource("13_1ck7w")
+theme_override_styles/panel = SubResource("StyleBoxFlat_pxsg2")
 
 [node name="FlavorMeters" type="Panel" parent="." unique_id=1588565667]
 custom_minimum_size = Vector2(150, 150)
@@ -822,18 +803,31 @@ offset_left = 896.0
 offset_top = 851.0
 offset_right = 1886.0
 offset_bottom = 1067.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_lxyvm")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_blk88")
+
+[node name="StatsBox" type="TextureRect" parent="FlavorMeters" unique_id=298920409]
+layout_mode = 0
+offset_left = -19.0
+offset_top = -27.0
+offset_right = 1035.0
+offset_bottom = 263.0
+texture = ExtResource("24_pxsg2")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="MarginContainer" type="MarginContainer" parent="FlavorMeters" unique_id=2128979311]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 8.0
+offset_right = -2.0
+offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 20
+theme_override_constants/margin_left = 60
 theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 20
+theme_override_constants/margin_right = 70
 theme_override_constants/margin_bottom = 20
 
 [node name="FlavorBars" type="VBoxContainer" parent="FlavorMeters/MarginContainer" unique_id=191993797]
@@ -854,7 +848,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 theme_override_styles/background = SubResource("StyleBoxFlat_okdn2")
-theme_override_styles/fill = SubResource("StyleBoxFlat_id7fa")
+theme_override_styles/fill = SubResource("StyleBoxTexture_lkhrg")
 max_value = 10.0
 step = 1.0
 fill_mode = 1
@@ -869,7 +863,12 @@ anchor_bottom = 1.0
 offset_top = -49.0
 offset_right = 70.0
 grow_vertical = 0
-text = "Fancy"
+text = "FANCY"
+
+[node name="MidGap" type="Control" parent="FlavorMeters/MarginContainer/FlavorBars/FancyCozyBar" unique_id=2113780076]
+clip_contents = true
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
 
 [node name="CozyBar" type="ProgressBar" parent="FlavorMeters/MarginContainer/FlavorBars/FancyCozyBar" unique_id=184759930]
 custom_minimum_size = Vector2(150, 25)
@@ -877,7 +876,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 theme_override_styles/background = SubResource("StyleBoxFlat_3cihv")
-theme_override_styles/fill = SubResource("StyleBoxFlat_vjac4")
+theme_override_styles/fill = SubResource("StyleBoxTexture_lkhrg")
 max_value = 10.0
 step = 1.0
 show_percentage = false
@@ -894,7 +893,7 @@ offset_left = -70.0
 offset_top = -49.0
 grow_horizontal = 0
 grow_vertical = 0
-text = "Cozy"
+text = "COZY"
 horizontal_alignment = 2
 
 [node name="BitterSweetBar" type="HBoxContainer" parent="FlavorMeters/MarginContainer/FlavorBars" unique_id=1152294971]
@@ -908,7 +907,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 theme_override_styles/background = SubResource("StyleBoxFlat_okdn2")
-theme_override_styles/fill = SubResource("StyleBoxFlat_id7fa")
+theme_override_styles/fill = SubResource("StyleBoxTexture_lkhrg")
 max_value = 10.0
 step = 1.0
 fill_mode = 1
@@ -923,8 +922,12 @@ anchor_bottom = 1.0
 offset_top = -49.0
 offset_right = 70.0
 grow_vertical = 0
-text = "Bitter
-"
+text = "BITTER"
+
+[node name="MidGap" type="Control" parent="FlavorMeters/MarginContainer/FlavorBars/BitterSweetBar" unique_id=1835931896]
+clip_contents = true
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
 
 [node name="SweetBar" type="ProgressBar" parent="FlavorMeters/MarginContainer/FlavorBars/BitterSweetBar" unique_id=1593623341]
 custom_minimum_size = Vector2(150, 25)
@@ -932,7 +935,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 theme_override_styles/background = SubResource("StyleBoxFlat_3cihv")
-theme_override_styles/fill = SubResource("StyleBoxFlat_vjac4")
+theme_override_styles/fill = SubResource("StyleBoxTexture_lkhrg")
 max_value = 10.0
 step = 1.0
 show_percentage = false
@@ -949,7 +952,7 @@ offset_left = -70.0
 offset_top = -49.0
 grow_horizontal = 0
 grow_vertical = 0
-text = "Sweet"
+text = "SWEET"
 horizontal_alignment = 2
 
 [node name="CoolWarmBar" type="HBoxContainer" parent="FlavorMeters/MarginContainer/FlavorBars" unique_id=1322560786]
@@ -964,7 +967,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 theme_override_styles/background = SubResource("StyleBoxFlat_okdn2")
-theme_override_styles/fill = SubResource("StyleBoxFlat_id7fa")
+theme_override_styles/fill = SubResource("StyleBoxTexture_lkhrg")
 max_value = 10.0
 step = 1.0
 fill_mode = 1
@@ -979,7 +982,12 @@ anchor_bottom = 1.0
 offset_top = -49.0
 offset_right = 70.0
 grow_vertical = 0
-text = "Cool"
+text = "COOL"
+
+[node name="MidGap" type="Control" parent="FlavorMeters/MarginContainer/FlavorBars/CoolWarmBar" unique_id=985709560]
+clip_contents = true
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
 
 [node name="WarmBar" type="ProgressBar" parent="FlavorMeters/MarginContainer/FlavorBars/CoolWarmBar" unique_id=804310655]
 custom_minimum_size = Vector2(150, 25)
@@ -987,7 +995,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 theme_override_styles/background = SubResource("StyleBoxFlat_3cihv")
-theme_override_styles/fill = SubResource("StyleBoxFlat_vjac4")
+theme_override_styles/fill = SubResource("StyleBoxTexture_lkhrg")
 max_value = 10.0
 step = 1.0
 show_percentage = false
@@ -1004,7 +1012,7 @@ offset_left = -70.0
 offset_top = -49.0
 grow_horizontal = 0
 grow_vertical = 0
-text = "Warm"
+text = "WARM"
 horizontal_alignment = 2
 
 [node name="CupDisplayFX" type="Node2D" parent="." unique_id=1735735995]
@@ -1110,31 +1118,40 @@ offset_bottom = 1097.0
 theme_override_constants/separation = 10
 
 [node name="Serve" type="Button" parent="DrinkActions" unique_id=1274002954]
-custom_minimum_size = Vector2(150, 50)
+custom_minimum_size = Vector2(160, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("18_05sac")
-theme_override_styles/normal = SubResource("StyleBoxFlat_pxsg2")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_hcbeg")
-theme_override_styles/hover = SubResource("StyleBoxFlat_2v6ef")
+theme_override_colors/font_pressed_color = Color(0, 9.62615e-08, 0.39341816, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_hcbeg")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_2v6ef")
+theme_override_styles/hover = SubResource("StyleBoxTexture_3718a")
 text = "SERVE"
 
 [node name="Reset" type="Button" parent="DrinkActions" unique_id=141757990]
-custom_minimum_size = Vector2(150, 50)
+custom_minimum_size = Vector2(160, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("18_05sac")
-theme_override_styles/normal = SubResource("StyleBoxFlat_pxsg2")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_hcbeg")
-theme_override_styles/hover = SubResource("StyleBoxFlat_2v6ef")
-text = "RESTART
-"
+theme_override_colors/font_pressed_color = Color(0, 9.62615e-08, 0.39341816, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_hcbeg")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_2v6ef")
+theme_override_styles/hover = SubResource("StyleBoxTexture_3718a")
+text = "RESTART"
 
 [node name="ConfirmationBox" parent="." unique_id=1636681851 instance=ExtResource("19_odn5p")]
 visible = false
 layout_mode = 1
+
+[node name="BGM" type="AudioStreamPlayer2D" parent="." unique_id=400222745]
+process_mode = 3
+process_priority = 10
+stream = ExtResource("28_hcbeg")
+volume_db = -0.503
+autoplay = true
+bus = &"music"
 
 [connection signal="pressed" from="CupSelector/CupCup" to="." method="_on_cup_button_pressed" binds= [NodePath("CupSelector/CupCup")]]
 [connection signal="pressed" from="CupSelector/CupMug" to="." method="_on_cup_button_pressed" binds= [NodePath("CupSelector/CupMug")]]

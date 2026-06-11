@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://blv8kxs7cao1x" path="res://assets/ui/buttons/drawer_button.png" id="3_m0klm"]
 [ext_resource type="FontFile" uid="uid://budnnkwdhk4wj" path="res://assets/fonts/SuperCartoon-6R791.ttf" id="3_r1fnm"]
 [ext_resource type="Texture2D" uid="uid://dfq6s63x1b4ea" path="res://assets/ui/buttons/drawer_button_hover.png" id="4_aicil"]
-[ext_resource type="Texture2D" uid="uid://fwavcxsnjwho" path="res://assets/ui/buttons/curled_button_press.png" id="4_xmhi0"]
 [ext_resource type="Texture2D" uid="uid://lxca5qe03fpj" path="res://assets/ui/buttons/drawer_button_press.png" id="5_jn4bt"]
 [ext_resource type="Texture2D" uid="uid://b6v6wdgt3qpm7" path="res://assets/ui/buttons/curled_button_hover.png" id="5_xw83q"]
 
@@ -15,7 +14,7 @@ texture = ExtResource("3_1xtef")
 expand_margin_right = 25.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_capb0"]
-texture = ExtResource("4_xmhi0")
+texture = ExtResource("5_xw83q")
 expand_margin_right = 25.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gcmcy"]

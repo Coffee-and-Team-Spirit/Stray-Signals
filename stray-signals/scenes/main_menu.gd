@@ -1,12 +1,23 @@
 extends Button
 
-
 func _on_new_game_pressed() -> void:
+	var bgm = get_tree().current_scene.get_node("MainMenu/BGM")
+	var tween := create_tween()
+	tween.tween_property(bgm, "volume_db", -40, 2.0)
+	await tween.finished
+	bgm.stop()
+	
 	GameState.new_game()
 	get_tree().current_scene.get_node("MainMenu").visible = false
 
 
 func _on_load_game_pressed() -> void:
+	var bgm = get_tree().current_scene.get_node("MainMenu/BGM")
+	var tween := create_tween()
+	tween.tween_property(bgm, "volume_db", -40, 2.0)
+	await tween.finished
+	bgm.stop()
+	
 	GameState.load_game()
 	get_tree().current_scene.get_node("MainMenu").visible = false
 
