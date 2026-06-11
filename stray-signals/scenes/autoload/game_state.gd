@@ -14,9 +14,13 @@ var gallery_unlocks : Dictionary = {}
 var settings_return_target := "main_menu"
 
 func _ready():
+	if Dialogic.Save.has_slot("autosave"):
+		var game_data = Dialogic.Save.get_slot_info("autosave")
+		gallery_unlocks = game_data.get("gallery_unlocks", {})
+		return
+		
 	if gallery_unlocks.is_empty():
 		gallery_unlocks = GalleryData.gallery_data.duplicate(true)
-	print("GameState READY — gallery unlocks initialized:", gallery_unlocks)
 
 
 func new_game() -> void:
@@ -33,9 +37,6 @@ func new_game() -> void:
 	DayManager.day = 1
 	DayManager.encounter = 1
 	
-	#if Dialogic.Save.has_slot("autosave"):
-		#Dialogic.Save.delete_slot("autosave")
-		
 	var game_root = get_tree().current_scene
 		
 	# Instance gameplay scene
@@ -45,6 +46,7 @@ func new_game() -> void:
 	# Show HUD
 	game_root.get_node("HUD").visible = true
 	
+	DayManager.emit_signal("day_changed", 1)
 	DayManager.gallery_unlocks()
 	
 	# Start first timeline
