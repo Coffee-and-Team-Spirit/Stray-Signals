@@ -36,6 +36,7 @@ func new_game() -> void:
 		
 	# Show HUD
 	game_root.get_node("HUD").visible = true
+	DayManager.emit_signal("day_changed", 1)
 	
 	# Start first timeline
 	var first_timeline = DayManager.get_current_timeline()
