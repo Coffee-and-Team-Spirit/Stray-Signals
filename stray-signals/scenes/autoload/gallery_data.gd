@@ -2,6 +2,8 @@ extends Node
 
 
 var gallery_data = {
+	cafe_background = false,
+	ending_background = false,
 	alexandra_neutral = false,
 	alexandra_happy = false,
 	alexandra_angry = false,
@@ -23,8 +25,6 @@ var gallery_data = {
 	zara_neutral = false,
 	zara_happy = false,
 	zara_sad = false,
-	cafe_background = false,
-	ending_background = false,
 	cup = false,
 	mug = false,
 	glass = false,

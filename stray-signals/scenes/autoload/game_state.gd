@@ -9,8 +9,15 @@ var target_drink : Dictionary = {}
 var has_special_ingredient : bool = false
 var has_seen_tutorial : bool = false
 var villain : String = "none"
+var gallery_unlocks : Dictionary = {}
 
 var settings_return_target := "main_menu"
+
+func _ready():
+	if gallery_unlocks.is_empty():
+		gallery_unlocks = GalleryData.gallery_data.duplicate(true)
+	print("GameState READY — gallery unlocks initialized:", gallery_unlocks)
+
 
 func new_game() -> void:
 	drink_result = "none"
@@ -21,6 +28,7 @@ func new_game() -> void:
 	has_special_ingredient = false
 	has_seen_tutorial = false
 	villain = "none"
+	gallery_unlocks = GalleryData.gallery_data.duplicate(true)
 	
 	DayManager.day = 1
 	DayManager.encounter = 1
@@ -36,6 +44,8 @@ func new_game() -> void:
 		
 	# Show HUD
 	game_root.get_node("HUD").visible = true
+	
+	DayManager.gallery_unlocks()
 	
 	# Start first timeline
 	var first_timeline = DayManager.get_current_timeline()
@@ -54,6 +64,7 @@ func load_game() -> void:
 		villain = game_data.get("villain", "none")
 		DayManager.day = game_data.get("day", 1)
 		DayManager.encounter = game_data.get("encounter", 1)
+		gallery_unlocks = game_data.get("gallery_unlocks", {})
 		
 		DayManager.emit_signal("day_changed", DayManager.day)
 		
@@ -66,3 +77,5 @@ func load_game() -> void:
 	
 	# Show HUD
 	get_tree().current_scene.get_node("HUD").visible = true
+
+	DayManager.gallery_unlocks()

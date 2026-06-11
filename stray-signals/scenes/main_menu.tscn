@@ -147,5 +147,6 @@ alignment = 0
 
 [connection signal="pressed" from="MarginContainer/MainMenuContainer/MarginContainer/ButtonContainer/NewGame" to="MarginContainer/MainMenuContainer/MarginContainer/ButtonContainer/LoadGame" method="_on_new_game_pressed"]
 [connection signal="pressed" from="MarginContainer/MainMenuContainer/MarginContainer/ButtonContainer/LoadGame" to="MarginContainer/MainMenuContainer/MarginContainer/ButtonContainer/LoadGame" method="_on_load_game_pressed"]
+[connection signal="pressed" from="MarginContainer/MainMenuContainer/MarginContainer/ButtonContainer/Gallery" to="MarginContainer/MainMenuContainer/MarginContainer/ButtonContainer/LoadGame" method="_on_gallery_pressed"]
 [connection signal="pressed" from="MarginContainer/MainMenuContainer/MarginContainer/ButtonContainer/Settings" to="MarginContainer/MainMenuContainer/MarginContainer/ButtonContainer/LoadGame" method="_on_settings_pressed"]
 [connection signal="pressed" from="MarginContainer/MainMenuContainer/MarginContainer/ButtonContainer/Credits" to="MarginContainer/MainMenuContainer/MarginContainer/ButtonContainer/LoadGame" method="_on_credits_pressed"]
