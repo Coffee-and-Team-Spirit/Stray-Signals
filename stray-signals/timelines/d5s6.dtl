@@ -11,7 +11,7 @@ Player: Hello, Archimedes.
 Archimedes: [pause=1]Hello, {Player.PlayerName}!
 Player: How are you today?
 Archimedes (Sad): [pause=1]Slightly disappointed, if I must be completely honest with myself and you.
-Archimedes: In fact, in a rare moment I must immediately admit I have erred, and chosen my words poorly. [pause=.3]I am very disappointed.
+Archimedes: In fact, in a rare moment, I must immediately admit I have erred, and chosen my words poorly. [pause=.3]I am very disappointed.
 Player: I'm sorry to hear that. What has you so disappointed?
 Archimedes: [pause=1]I expected to see you here with the person responsible for all that has been happening. [pause=.3]Solve the peculiar mystery and all that comes with it. [pause=.3]And yet here you are…[pause=.3] ...with me.
 Archimedes: [pause=.3]Do you theorize me responsible?

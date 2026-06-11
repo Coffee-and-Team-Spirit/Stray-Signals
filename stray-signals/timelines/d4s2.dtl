@@ -8,7 +8,7 @@ audio music "res://assets/audio/cafe_bgm.ogg" [fade="2.0" volume="-8.0"]
 # DAY 4, SCENE 2
 join GG (Happy) center
 GG: Hello again! It's so good to see you again. I hope things are just fantastic?
-Player: [pause=.3]Hello again GG. It's good to see you, too. Things are fine. Still a bit odd of a time but can't complain too much about the job.
+Player: [pause=.3]Hello again, GG. It's good to see you, too. Things are fine. Still a bit odd of a time but can't complain too much about the job.
 Player: It's nice seeing the people as always. Like yourself.
 GG: Oh my gosh, thank you so much for saying so. It feels so good to be included.
 GG: I'm glad you enjoy seeing me cause I very much enjoy seeing you.
@@ -18,7 +18,7 @@ GG: Oh, I very much do.
 GG (Sad): I just wish there was a good way to help you. Given how nice you have been to me and all.
 Player: I appreciate that. But unless you can tell me who is behind turning Humans into Cats, I’m afraid there isn’t much that can be done.
 GG (Neutral): Oh, I don't know about that.
-GG: But If you want to serve me one of those fantastic drinks of yours, I might spill some beans on what I know about such people.
+GG: But if you want to serve me one of those fantastic drinks of yours, I might spill some beans on what I know about such people.
 [signal arg="drink_hint"]
 GG: Anything but matcha, it's too performative and fancy. Emphasis on avoiding silly fancy stuff.
 leave GG

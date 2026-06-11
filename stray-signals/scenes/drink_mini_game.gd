@@ -45,6 +45,8 @@ func _on_topping_button_pressed(button_path: NodePath):
 	var button = get_node(button_path)
 	var topping_name = button.name.to_snake_case().replace("topping_", "")
 	select_topping(topping_name)
+	print("DEBUG TOPPING BUTTON PATH ", button_path)
+	print("DEBUG TOPPING NAME ", topping_name)
 
 
 func _on_modification_button_pressed(button_path: NodePath):
@@ -157,10 +159,12 @@ func update_cup_display():
 		$CupDisplay/ToppingLayer.texture = null
 		
 	if chosen_special_topping != "":
+		$CupDisplay/SpecialToppingLayer.visible = true
 		$CupDisplay/SpecialToppingLayer.texture = load("res://assets/art/mini_game/toppings/topping_%s_%s.png" % [chosen_special_topping, chosen_cup])
 		update_drink_traits(chosen_special_topping)
 	else:
 		$CupDisplay/SpecialToppingLayer.texture = null
+		$CupDisplay/SpecialToppingLayer.visible = false
 		
 	if chosen_modification != "":
 		update_drink_traits(chosen_modification)
@@ -206,10 +210,12 @@ func update_drink_components_display():
 		$DrinkInformation/SelectTopping/Panel.add_theme_stylebox_override("panel", unfilled_panel_stylebox)
 		
 	if chosen_special_topping != "":
+		$DrinkInformation/SelectSpecialTopping.visible = true
 		$DrinkInformation/SelectSpecialTopping.text = chosen_special_topping.capitalize()
 		$DrinkInformation/SelectSpecialTopping/Panel.add_theme_stylebox_override("panel", filled_panel_stylebox)
 		$DrinkInformation/SelectSpecialTopping.add_theme_color_override("default_color", Color(256, 256, 256))
 	else:
+		$DrinkInformation/SelectSpecialTopping.visible = false
 		$DrinkInformation/SelectSpecialTopping.text = "Special Ingredient"
 		$DrinkInformation/SelectSpecialTopping/Panel.add_theme_stylebox_override("panel", unfilled_panel_stylebox)
 		
@@ -409,6 +415,9 @@ func count_matching_ingredients(target_ingredients) -> int:
 
 
 func score_drink(puzzle, player_stats) -> int:
+	if DayManager.day == 5 && DayManager.encounter != 3 && chosen_special_topping == "magical_mushroom_fish":
+		return 0
+		
 	var player_category = {}
 	for key in player_stats.keys():
 		var result = get_flavor_category_id(key, player_stats[key])
@@ -576,8 +585,6 @@ func show_tutorial():
 
 
 func _ready():
-	#GameState.has_seen_tutorial = true
-	#GameState.has_special_ingredient = true
 	var game_root = get_tree().current_scene
 	game_root.get_node("HUD").visible = false
 	

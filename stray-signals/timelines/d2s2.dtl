@@ -15,7 +15,7 @@ GG: Even rumors of stranger things.
 GG (Happy): The city is such a scary place. Not like this fantastic place you have here. So safe and warm compared to the cold outside.
 Player: I'm glad you like the place so much. I hope you come around often.
 GG: Oh for sure I will!
-GG: This place smells like sweets and Mango. I love mango.
+GG: This place smells like sweets and mango. I love mango.
 Player: Would you like a mango flavored drink then?
 GG: Oh yes please. I got so excited with it all, I nearly forgot the drink part!
 [signal arg="drink_hint"]

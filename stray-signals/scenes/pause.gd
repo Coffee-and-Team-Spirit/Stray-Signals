@@ -23,7 +23,10 @@ func _do_save() -> void:
 		"drink_hint": GameState.drink_hint,
 		"target_drink": GameState.target_drink,
 		"day": DayManager.day,
-		"encounter": DayManager.encounter
+		"encounter": DayManager.encounter,
+		"has_special_ingredient": GameState.has_special_ingredient,
+		"has_seen_tutorial": GameState.has_seen_tutorial,
+		"villain": GameState.villain
 	}
 	
 	Dialogic.Save.save("autosave", false, Dialogic.Save.ThumbnailMode.NONE, extra_gamestate_data)

@@ -7,10 +7,10 @@ label begin_timeline
 audio music "res://assets/audio/cafe_bgm.ogg" [fade="2.0" volume="-8.0"]
 # Ending: Whiskerly
 join Whiskerly (Neutral) center
-Player: Hello Whiskerly, so glad to see you come in today.
-Whiskerly: [pause=.3]Helllo again {Player.PlayerName}. Hope things are well for you on this fine day, in this fine cafe, in this almost fine city.
-Player: Almost fine city? How unlike you. If I didn't know better I would say you are starting to enjoy being a Cat.
-Whiskerly: You know…. [pause=1]You might be right there. I hadn't really thought about it until just now but there are worse things than being a Cat.
+Player: Hello, Whiskerly, so glad to see you come in today.
+Whiskerly: [pause=.3]Helllo again, {Player.PlayerName}. Hope things are well for you on this fine day, in this fine cafe, in this almost fine city.
+Player: Almost fine city? How unlike you. If I didn't know better, I would say you are starting to enjoy being a Cat.
+Whiskerly: You know…. [pause=1]You might be right. I hadn't really thought about it until just now...[pause=0.3] but there are worse things than being a Cat.
 Whiskerly: I don't think it was a secret that I wasn't the happiest person in the world. In truth, this place was the only place that brought me much joy.
 Whiskerly: Now, the world is all a little different. Kind of like a breath of fresh air after spending a long time inside a stuffy room.
 Whiskerly: [pause=.3]Don’t get me wrong, I'm not happy someone did this to me, and I still hope they get stopped. But silver linings and all, you know?
@@ -20,10 +20,10 @@ Whiskerly: I think…
 Whiskerly: I will come to this cafe, chat with you for a little while, then order some of the best drinks in the city.
 Whiskerly: And then I will do it all again tomorrow.
 Player: I think that sounds like a great plan.
-Player: Shall we proceed then to the drink portation of said plan?
+Player: Shall we proceed then to the drink portion of said plan?
 Whiskerly (Happy): I think we should.
 [signal arg="drink_hint"]
-Whiskerly: I want a strawberry-milk tea with boba in a glass. And make it with less sugar.
+Whiskerly: I want a strawberry milk tea with boba in a glass. And make it with less sugar.
 leave Whiskerly
 [signal arg="craft_drink"]
 label drink_rating (Scene 2 Drink Rating)
@@ -33,7 +33,7 @@ if {Drink.Rating} == "mediocre":
 	join Whiskerly (Neutral) center
 	Whiskerly: This… [pause=0.3]why I still here... [pause=0.3]even in my new state.
 	Whiskerly: I still... [pause=0.3]to change back... [pause=0.3]day.
-	Whiskerly: But... [pause=0.3]is okay. After all, I've... [pause=0.3]got Stray Signals so it... [pause=0.3]be too bad.
+	Whiskerly: But... [pause=0.3]is okay. After all, I've... [pause=0.3]got Stray Signals so it... [pause=0.2]be too bad.
 	leave Whiskerly
 	[signal arg="clear_drink"]
 elif {Drink.Rating} == "good":

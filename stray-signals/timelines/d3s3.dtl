@@ -7,7 +7,7 @@ label begin_timeline
 audio music "res://assets/audio/cafe_bgm.ogg" [fade="2.0" volume="-8.0"]
 # DAY 3, SCENE 3
 join Alexandra center
-Player: Welcome in again detective. How goes the investigation?
+Player: Welcome in again, detective. How goes the investigation?
 Alexandra (Sad): Not very good if I must be honest.
 Alexandra: I have not answered the who, why or how of this case.
 Alexandra: And it's starting to weigh on me.

@@ -194,7 +194,7 @@ text = "DAY[br]2"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Day3" type="Button" parent="Panel/MarginContainer2/DayList" unique_id=1958936436]
+[node name="Day3" type="Button" parent="Panel/MarginContainer2/DayList" unique_id=1047364101]
 custom_minimum_size = Vector2(60, 120)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_ep4ll")
@@ -203,20 +203,21 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_dv4gx")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_p2fsa")
 metadata/day_number = 3
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Panel/MarginContainer2/DayList/Day3" unique_id=1271754307]
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel/MarginContainer2/DayList/Day3" unique_id=1291223705]
 layout_mode = 0
 offset_left = 0.7897339
 offset_top = 119.76068
 offset_right = 119.550415
 offset_bottom = 219.16327
 rotation = 4.712389
+mouse_filter = 1
 theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true
 text = "DAY[br]3"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Day4" type="Button" parent="Panel/MarginContainer2/DayList" unique_id=307259457]
+[node name="Day4" type="Button" parent="Panel/MarginContainer2/DayList" unique_id=609880081]
 custom_minimum_size = Vector2(60, 120)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_ep4ll")
@@ -225,20 +226,21 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_dv4gx")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_p2fsa")
 metadata/day_number = 4
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Panel/MarginContainer2/DayList/Day4" unique_id=1427833626]
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel/MarginContainer2/DayList/Day4" unique_id=706405008]
 layout_mode = 0
 offset_left = 0.7897339
 offset_top = 119.76068
 offset_right = 119.550415
 offset_bottom = 219.16327
 rotation = 4.712389
+mouse_filter = 1
 theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true
 text = "DAY[br]4"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Day5" type="Button" parent="Panel/MarginContainer2/DayList" unique_id=2024956472]
+[node name="Day5" type="Button" parent="Panel/MarginContainer2/DayList" unique_id=829467290]
 custom_minimum_size = Vector2(60, 120)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_ep4ll")
@@ -247,13 +249,14 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_dv4gx")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_p2fsa")
 metadata/day_number = 5
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Panel/MarginContainer2/DayList/Day5" unique_id=181563088]
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel/MarginContainer2/DayList/Day5" unique_id=916625177]
 layout_mode = 0
 offset_left = 0.7897339
 offset_top = 119.76068
 offset_right = 119.550415
 offset_bottom = 219.16327
 rotation = 4.712389
+mouse_filter = 1
 theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true
 text = "DAY[br]5"

@@ -8,12 +8,12 @@ audio music "res://assets/audio/cafe_bgm.ogg" [fade="2.0" volume="-8.0"]
 # Ending: Alexander
 join Alexandra (Neutral) center
 Player: Hello, Alexandra. How are things?
-Alexandra: [pause=.3]Things are not well {Player.PlayerName}. Despite my best efforts I'm no closer to solving this case than I was when this all started.
+Alexandra: [pause=.3]Things are not well, {Player.PlayerName}. Despite my best efforts, I'm no closer to solving this case than I was when this all started.
 Alexandra: I was really hoping that coming to this cafe would help. But the only thing I've gotten out of this place is nice chats with you and decent drinks.
 Alexandra: That’s fine and all, but I needed more than that.
 Player: I'm sure you will catch them eventually. We both know you are good at your job.
 Alexandra: [pause=.3]I really appreciate that. You are right, I think I will eventually catch them. But how many more humans will be turned before that happens?
-Alexandra: I’m still finding out more cats are appearing each day out of nowhere, acting strange and confused.
+Alexandra: I’m still finding out that more cats are appearing each day out of nowhere, acting strange and confused.
 Alexandra: It wouldn't bother me so much if I didn't feel like I was so close to figuring it out.
 Alexandra: Who knows, maybe I should have listened to the blue cat.
 Alexandra: No. No, that cat was crazy, I'm sure of it.
@@ -36,7 +36,7 @@ if {Drink.Rating} == "mediocre":
 	[signal arg="clear_drink"]
 elif {Drink.Rating} == "good":
 	join Alexandra (Happy) center
-	Alexandra: Fantaastic as always!
+	Alexandra: Fantastic as always!
 	Alexandra: I really hope I will catch them, but I just don’t know.
 	Alexandra: ...I think….[pause=0.3]I think I will find them.
 	Alexandra: Thanks for your help.

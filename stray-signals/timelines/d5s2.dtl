@@ -10,8 +10,8 @@ join Zara (Neutral) center
 Player: Hello Zara. Welcome in.
 Zara: Hmmm… I must admit I had no desire to return to this pedestrian place at any point in the near or far future.
 Zara: But I am nothing if not polite and gracious.
-Zara: As such I would never reject an invitation for a drink, even from a place like this one.
-Player: Wellm I'm glad you came to join me today. It clearly was a big sacrifice for you.
+Zara: As such, I would never reject an invitation for a drink, even from a place like this one.
+Player: Well, I'm glad you came to join me today. It clearly was a big sacrifice for you.
 Zara (Happy): [pause=.3]Yes, precisely!
 Zara: I dare say. You may yet be coming to understand my glorious self. What a rare treat in such a boorish city as the one we both occupy at this present time.
 Player: I always aim to connect with my customers. Especially one as unique as yourself.
@@ -19,7 +19,7 @@ Zara: [pause=.3]And you do seem to have a speciality for it. At least for one wo
 Zara: Though, in a moment of weakness, I do feel a growing fondness for this hovel.
 Zara (Neutral): As one may enjoy an unpleasant smell if subjected to it after a long enough time.
 Player: Or like acquiring the taste for an unusual beverage?
-Zara (Neutral): [pause=.3]Again, I  must agree with you. Speaking of averages, I would very much like to order one from you if you would be so kind.
+Zara (Neutral): [pause=.3]Again, I must agree with you. Speaking of averages, I would very much like to order one from you if you would be so kind.
 Player: Of course, let me get right on that. What will it be?
 [signal arg="drink_hint"]
 Zara: I want a hot drink on this chilly day. And I want all the flavors to be infused with one another so make sure to stir it well.
@@ -36,8 +36,8 @@ if {Drink.Rating} == "mediocre":
 	[signal arg="clear_drink"]
 elif {Drink.Rating} == "good":
 	join Zara (Happy) center
-	Zara: Thank you so much for this wonderful drink. I hope everything goes well for you here. And that nothing, more usual, befalls you.
-	Zara: Perphas we shall meet again.
+	Zara: Thank you so much for this wonderful drink. I hope everything goes well for you here. And that nothing, more unusual, befalls you.
+	Zara: Perhaps we shall meet again.
 	leave Zara
 	[signal arg="clear_drink"]
 else:

@@ -16,8 +16,8 @@ Whiskerly (Sad): I suppose a cat type drink would be good.
 Whiskerly: Yes, I will have whatever cats have. That will have to do, I guess.
 Player: If you don't want to, you don't have to have a cat drink. You can get whatever you want.
 Whiskerly: No, it will be sufficient for my needs.
-Player: Not to be intrusive,  but are you okay? You seem a bit down?
-Whiskerly (Happy): No no, it's all well enough {Player.PlayerName}. Life goes in strange ways is all. Got to roll with the punches. Like handing out in the great cafe in a crappy city.
+Player: Not to be intrusive, but are you okay? You seem a bit down?
+Whiskerly (Happy): No no, it's all well enough, {Player.PlayerName}. Life goes in strange ways is all. Got to roll with the punches. Like hanging out in this great cafe... in a crappy city nontheless.
 Player: Well, maybe we can get you that drink to cheer you up? What do ya say?
 Whiskerly (Neutral): Yes, let us do that, thank you.
 [signal arg="drink_hint"]
