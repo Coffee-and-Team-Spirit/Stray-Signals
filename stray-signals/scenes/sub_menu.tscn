@@ -176,6 +176,7 @@ text = "BACK"
 
 [connection signal="pressed" from="MenuBackground/MarginContainer/MainMenuContainer/NewGame" to="." method="_on_new_game_pressed"]
 [connection signal="pressed" from="MenuBackground/MarginContainer/MainMenuContainer/LoadGame" to="." method="_on_load_game_pressed"]
+[connection signal="pressed" from="MenuBackground/MarginContainer/MainMenuContainer/Gallery" to="." method="_on_gallery_pressed"]
 [connection signal="pressed" from="MenuBackground/MarginContainer/MainMenuContainer/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="MenuBackground/MarginContainer/MainMenuContainer/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

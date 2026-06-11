@@ -26,6 +26,7 @@ GameState="*uid://dfnl5hw1b8uai"
 DayManager="*uid://rt57ypssarld"
 DrinkData="*uid://d1eg6ghmcwcet"
 DrinkTraits="*uid://dggsag4eurpkd"
+GalleryData="*uid://dp4gam82utuxu"
 
 [dialogic]
 

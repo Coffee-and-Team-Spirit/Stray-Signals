@@ -5,6 +5,7 @@ func _on_back_pressed() -> void:
 	get_tree().current_scene.get_node("PauseOverlay").visible = false
 	get_tree().current_scene.get_node("Settings").visible = false
 	get_tree().current_scene.get_node("Credits").visible = false
+	get_tree().current_scene.get_node("Gallery").visible = false
 	
 	if GameState.settings_return_target == "pause_menu":
 		# Return to Dialogic
@@ -30,19 +31,29 @@ func _on_load_game_pressed() -> void:
 	GameState.load_game()
 	get_tree().current_scene.get_node("Settings").visible = false
 	get_tree().current_scene.get_node("Credits").visible = false
+	get_tree().current_scene.get_node("Gallery").visible = false
 
 
 func _on_new_game_pressed() -> void:
 	GameState.new_game()
 	get_tree().current_scene.get_node("Settings").visible = false
 	get_tree().current_scene.get_node("Credits").visible = false
+	get_tree().current_scene.get_node("Gallery").visible = false
 
 
 func _on_settings_pressed() -> void:
 	get_tree().current_scene.get_node("Settings").visible = true
 	get_tree().current_scene.get_node("Credits").visible = false
+	get_tree().current_scene.get_node("Gallery").visible = false
 
 
 func _on_credits_pressed() -> void:
 	get_tree().current_scene.get_node("Settings").visible = false
 	get_tree().current_scene.get_node("Credits").visible = true
+	get_tree().current_scene.get_node("Gallery").visible = false
+
+
+func _on_gallery_pressed() -> void:
+	get_tree().current_scene.get_node("Settings").visible = false
+	get_tree().current_scene.get_node("Credits").visible = false
+	get_tree().current_scene.get_node("Gallery").visible = true

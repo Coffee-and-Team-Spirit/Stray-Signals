@@ -26,7 +26,8 @@ func _do_save() -> void:
 		"encounter": DayManager.encounter,
 		"has_special_ingredient": GameState.has_special_ingredient,
 		"has_seen_tutorial": GameState.has_seen_tutorial,
-		"villain": GameState.villain
+		"villain": GameState.villain,
+		"gallery_unlocks": GameState.gallery_unlocks
 	}
 	
 	Dialogic.Save.save("autosave", false, Dialogic.Save.ThumbnailMode.NONE, extra_gamestate_data)

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://88dut8tid1kw" path="res://scenes/game_root.gd" id="1_ni5ms"]
 [ext_resource type="PackedScene" uid="uid://btapyl7u3unes" path="res://scenes/main_menu.tscn" id="2_jb3nc"]
 [ext_resource type="PackedScene" uid="uid://cqnah8bf2730h" path="res://scenes/pause.tscn" id="2_uebra"]
+[ext_resource type="PackedScene" uid="uid://bsmvwy6ge6ogu" path="res://scenes/gallery.tscn" id="3_6v30a"]
 [ext_resource type="PackedScene" uid="uid://brp6e32b60vj0" path="res://scenes/settings.tscn" id="3_iusj4"]
 [ext_resource type="PackedScene" uid="uid://b0vyjocrqsixo" path="res://scenes/credits.tscn" id="4_a1rh6"]
 [ext_resource type="PackedScene" uid="uid://cq0cuu823f6cs" path="res://scenes/hud.tscn" id="4_jb3nc"]
@@ -13,6 +14,9 @@
 script = ExtResource("1_ni5ms")
 
 [node name="MainMenu" parent="." unique_id=1281184125 instance=ExtResource("2_jb3nc")]
+visible = false
+
+[node name="Gallery" parent="." unique_id=1495662355 instance=ExtResource("3_6v30a")]
 visible = false
 
 [node name="Settings" parent="." unique_id=490838427 instance=ExtResource("3_iusj4")]
