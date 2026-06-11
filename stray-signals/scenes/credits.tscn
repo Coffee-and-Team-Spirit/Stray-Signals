@@ -23,12 +23,14 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_0ctdu")
 
 [node name="Background" type="TextureRect" parent="." unique_id=674863279]
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
+mouse_filter = 2
 texture = ExtResource("2_2fbfq")
 
 [node name="SubMenu" parent="." unique_id=1812428688 instance=ExtResource("3_8gwij")]

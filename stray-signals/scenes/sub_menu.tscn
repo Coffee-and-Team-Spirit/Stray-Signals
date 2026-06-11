@@ -9,62 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://dfq6s63x1b4ea" path="res://assets/ui/buttons/drawer_button_hover.png" id="8_s28ia"]
 [ext_resource type="Texture2D" uid="uid://lxca5qe03fpj" path="res://assets/ui/buttons/drawer_button_press.png" id="9_st11w"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hw6l1"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k1p16"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_57wf4"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ok6qt"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qujlp"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xcdrm"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_usog2"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f8rex"]
-content_margin_left = 10.0
-bg_color = Color(1, 0.49019608, 0, 0.5019608)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bovfg"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kg2r4"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rkcrk"]
-content_margin_left = 10.0
-bg_color = Color(1, 0.49019608, 0, 0.5019608)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_toi0d"]
-bg_color = Color(0.28235295, 0.27058825, 0.50980395, 1)
-expand_margin_left = 10.0
-expand_margin_top = 10.0
-expand_margin_right = 10.0
-expand_margin_bottom = 10.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_focyq"]
-bg_color = Color(0.28235295, 0.27058825, 0.50980395, 1)
-expand_margin_left = 10.0
-expand_margin_top = 10.0
-expand_margin_right = 10.0
-expand_margin_bottom = 10.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dwk4f"]
-bg_color = Color(0.28235295, 0.27058825, 0.50980395, 1)
-expand_margin_left = 10.0
-expand_margin_top = 10.0
-expand_margin_right = 10.0
-expand_margin_bottom = 10.0
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_35ri2"]
 texture = ExtResource("3_focyq")
 expand_margin_right = 25.0
@@ -112,126 +56,13 @@ anchors_preset = 0
 mouse_filter = 2
 script = ExtResource("1_k1p16")
 
-[node name="MenuBackground" type="ColorRect" parent="." unique_id=993696937]
-visible = false
-layout_mode = 0
-offset_left = 158.0
-offset_right = 540.0
-offset_bottom = 546.0
-color = Color(0.28235295, 0.27058825, 0.50980395, 1)
-
-[node name="MarginContainer" type="MarginContainer" parent="MenuBackground" unique_id=654227902]
-layout_mode = 0
-offset_top = -32.5
-offset_right = 381.0
-offset_bottom = 548.0
-size_flags_horizontal = 0
-size_flags_vertical = 0
-theme_override_constants/margin_left = 50
-theme_override_constants/margin_top = 125
-theme_override_constants/margin_right = 50
-
-[node name="MainMenuContainer" type="VBoxContainer" parent="MenuBackground/MarginContainer" unique_id=1888157916]
-layout_mode = 2
-theme_override_constants/separation = 50
-
-[node name="NewGame" type="Button" parent="MenuBackground/MarginContainer/MainMenuContainer" unique_id=230939614]
-layout_mode = 2
-theme_override_colors/font_pressed_color = Color(0.105882354, 0.09019608, 0.34117648, 1)
-theme_override_colors/font_hover_color = Color(1, 0.66993517, 0.4684493, 1)
-theme_override_colors/font_disabled_color = Color(0.05882353, 0.05490196, 0.13725491, 1)
-theme_override_font_sizes/font_size = 25
-theme_override_styles/normal = SubResource("StyleBoxFlat_hw6l1")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_k1p16")
-theme_override_styles/hover = SubResource("StyleBoxFlat_57wf4")
-text = "NEW GAME"
-alignment = 0
-
-[node name="LoadGame" type="Button" parent="MenuBackground/MarginContainer/MainMenuContainer" unique_id=562368500]
-layout_mode = 2
-theme_override_colors/font_pressed_color = Color(0.105882354, 0.09019608, 0.34117648, 1)
-theme_override_colors/font_hover_color = Color(1, 0.66993517, 0.4684493, 1)
-theme_override_colors/font_disabled_color = Color(0.05882353, 0.05490196, 0.13725491, 1)
-theme_override_font_sizes/font_size = 25
-theme_override_styles/normal = SubResource("StyleBoxFlat_ok6qt")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_k1p16")
-theme_override_styles/hover = SubResource("StyleBoxFlat_qujlp")
-text = "LOAD GAME"
-alignment = 0
-
-[node name="Gallery" type="Button" parent="MenuBackground/MarginContainer/MainMenuContainer" unique_id=2094251720]
-layout_mode = 2
-theme_override_colors/font_pressed_color = Color(0.105882354, 0.09019608, 0.34117648, 1)
-theme_override_colors/font_hover_color = Color(1, 0.66993517, 0.4684493, 1)
-theme_override_colors/font_disabled_color = Color(0.05882353, 0.05490196, 0.13725491, 1)
-theme_override_font_sizes/font_size = 25
-theme_override_styles/normal = SubResource("StyleBoxFlat_xcdrm")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_k1p16")
-theme_override_styles/hover = SubResource("StyleBoxFlat_usog2")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_f8rex")
-text = "GALLERY"
-alignment = 0
-
-[node name="Settings" type="Button" parent="MenuBackground/MarginContainer/MainMenuContainer" unique_id=1482477069]
-layout_mode = 2
-theme_override_colors/font_pressed_color = Color(0.105882354, 0.09019608, 0.34117648, 1)
-theme_override_colors/font_hover_color = Color(1, 0.66993517, 0.4684493, 1)
-theme_override_colors/font_disabled_color = Color(0.05882353, 0.05490196, 0.13725491, 1)
-theme_override_font_sizes/font_size = 25
-theme_override_styles/normal = SubResource("StyleBoxFlat_bovfg")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_k1p16")
-theme_override_styles/hover = SubResource("StyleBoxFlat_kg2r4")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_rkcrk")
-text = "SETTINGS"
-alignment = 0
-
-[node name="Credits" type="Button" parent="MenuBackground/MarginContainer/MainMenuContainer" unique_id=163308723]
-layout_mode = 2
-theme_override_colors/font_pressed_color = Color(0.105882354, 0.09019608, 0.34117648, 1)
-theme_override_colors/font_hover_color = Color(1, 0.66993517, 0.4684493, 1)
-theme_override_colors/font_disabled_color = Color(0.05882353, 0.05490196, 0.13725491, 1)
-theme_override_font_sizes/font_size = 25
-theme_override_styles/normal = SubResource("StyleBoxFlat_bovfg")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_k1p16")
-theme_override_styles/hover = SubResource("StyleBoxFlat_kg2r4")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_f8rex")
-text = "CREDITS"
-alignment = 0
-
-[node name="Background" type="ColorRect" parent="." unique_id=986083567]
-visible = false
-z_index = -1
-custom_minimum_size = Vector2(1920, 1080)
-layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
-size_flags_horizontal = 4
-size_flags_vertical = 4
-mouse_filter = 2
-color = Color(0, 0, 0, 1)
-
-[node name="Back" type="Button" parent="." unique_id=1827760479]
-visible = false
-layout_mode = 0
-offset_left = 136.0
-offset_top = 923.0
-offset_right = 219.0
-offset_bottom = 981.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(0.105882354, 0.09019608, 0.34117648, 1)
-theme_override_colors/font_hover_color = Color(1, 0.66993517, 0.4684493, 1)
-theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxFlat_toi0d")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_focyq")
-theme_override_styles/hover = SubResource("StyleBoxFlat_dwk4f")
-text = "BACK"
-
 [node name="SubMenu" type="ColorRect" parent="." unique_id=71326545]
 z_index = 2
 layout_mode = 0
 offset_left = 158.0
 offset_right = 458.0
 offset_bottom = 482.0
+mouse_filter = 2
 color = Color(0.28235295, 0.27058825, 0.50980395, 0)
 
 [node name="Back" type="Button" parent="SubMenu" unique_id=1937726481]
@@ -258,6 +89,7 @@ offset_left = -110.0
 offset_top = 2.0
 offset_right = 397.0
 offset_bottom = 632.0
+mouse_filter = 2
 texture = ExtResource("6_f8rex")
 expand_mode = 1
 stretch_mode = 5
@@ -268,12 +100,13 @@ layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.021000002
 anchor_right = -0.021000002
-offset_left = -0.9779997
+offset_left = -0.9779992
 offset_top = 1.0
-offset_right = 310.022
+offset_right = 310.02203
 offset_bottom = 482.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
+mouse_filter = 2
 theme_override_constants/margin_left = 25
 theme_override_constants/margin_top = 60
 theme_override_constants/margin_right = 25
@@ -281,6 +114,7 @@ theme_override_constants/margin_right = 25
 [node name="MainMenuContainer" type="VBoxContainer" parent="SubMenu/MarginContainer" unique_id=1442072645]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
+mouse_filter = 2
 theme_override_constants/separation = -25
 
 [node name="NewGame" type="Button" parent="SubMenu/MarginContainer/MainMenuContainer" unique_id=1333846473]
@@ -360,11 +194,6 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_vtsg5")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_toi0d")
 text = "CREDITS"
 
-[connection signal="pressed" from="MenuBackground/MarginContainer/MainMenuContainer/NewGame" to="." method="_on_new_game_pressed"]
-[connection signal="pressed" from="MenuBackground/MarginContainer/MainMenuContainer/LoadGame" to="." method="_on_load_game_pressed"]
-[connection signal="pressed" from="MenuBackground/MarginContainer/MainMenuContainer/Settings" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="MenuBackground/MarginContainer/MainMenuContainer/Credits" to="." method="_on_credits_pressed"]
-[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="SubMenu/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="SubMenu/MarginContainer/MainMenuContainer/NewGame" to="." method="_on_new_game_pressed"]
 [connection signal="pressed" from="SubMenu/MarginContainer/MainMenuContainer/LoadGame" to="." method="_on_load_game_pressed"]

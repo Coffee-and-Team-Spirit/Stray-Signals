@@ -5,6 +5,8 @@ func _on_back_pressed() -> void:
 	get_tree().current_scene.get_node("PauseOverlay").visible = false
 	get_tree().current_scene.get_node("Settings").visible = false
 	get_tree().current_scene.get_node("Credits").visible = false
+	$SubMenu/MarginContainer/MainMenuContainer/Settings.disabled = false
+	$SubMenu/MarginContainer/MainMenuContainer/Credits.disabled = false
 	
 	if GameState.settings_return_target == "pause_menu":
 		# Return to Dialogic
@@ -39,14 +41,23 @@ func _on_new_game_pressed() -> void:
 
 
 func _on_settings_pressed() -> void:
-	get_tree().current_scene.get_node("Settings").visible = true
+	_reset_menu_buttons()
 	get_tree().current_scene.get_node("Credits").visible = false
+	var settings = get_tree().current_scene.get_node("Settings")
+	settings.visible = true
+	settings.get_node("SubMenu/SubMenu/MarginContainer/MainMenuContainer/Settings").disabled = true
+	settings.get_node("SubMenu/SubMenu/MarginContainer/MainMenuContainer/Credits").disabled = false
 
 
 func _on_credits_pressed() -> void:
+	_reset_menu_buttons()
 	get_tree().current_scene.get_node("Settings").visible = false
-	get_tree().current_scene.get_node("Credits").visible = true
+	var credits = get_tree().current_scene.get_node("Credits")
+	credits.visible = true
+	credits.get_node("SubMenu/SubMenu/MarginContainer/MainMenuContainer/Settings").disabled = false
+	credits.get_node("SubMenu/SubMenu/MarginContainer/MainMenuContainer/Credits").disabled = true
 
 
-func _on_save_game_pressed() -> void:
-	pass # Replace with function body.
+func _reset_menu_buttons() -> void:
+	$SubMenu/MarginContainer/MainMenuContainer/Settings.disabled = false
+	$SubMenu/MarginContainer/MainMenuContainer/Credits.disabled = false

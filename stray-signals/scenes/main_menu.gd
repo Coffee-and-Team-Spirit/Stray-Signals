@@ -25,12 +25,17 @@ func _on_load_game_pressed() -> void:
 func _on_settings_pressed() -> void:
 	GameState.settings_return_target = "main_menu"
 	get_tree().current_scene.get_node("MainMenu").visible = false
-	get_tree().current_scene.get_node("Settings").visible = true
+	var settings = get_tree().current_scene.get_node("Settings")
+	settings.visible = true
+	settings.get_node("SubMenu/SubMenu/MarginContainer/MainMenuContainer/Settings").disabled = true
+	
 
 
 func _on_credits_pressed() -> void:
 	get_tree().current_scene.get_node("MainMenu").visible = false
-	get_tree().current_scene.get_node("Credits").visible = true
+	var credits = get_tree().current_scene.get_node("Credits")
+	credits.visible = true
+	credits.get_node("SubMenu/SubMenu/MarginContainer/MainMenuContainer/Credits").disabled = true
 
 
 func _on_quit_pressed() -> void:

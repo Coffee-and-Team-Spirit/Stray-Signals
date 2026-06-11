@@ -42,7 +42,7 @@ corner_detail = 20
 process_mode = 3
 layout_mode = 3
 anchors_preset = 0
-mouse_filter = 1
+mouse_filter = 2
 script = ExtResource("1_r6d6q")
 
 [node name="Background" type="TextureRect" parent="." unique_id=644793827]
@@ -55,7 +55,6 @@ texture = ExtResource("2_f4mfi")
 [node name="SubMenu" parent="." unique_id=710927500 instance=ExtResource("1_5p8wc")]
 z_index = 2
 layout_mode = 0
-mouse_filter = 1
 
 [node name="Pagination" type="ColorRect" parent="." unique_id=1966541774]
 layout_mode = 0

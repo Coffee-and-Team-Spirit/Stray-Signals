@@ -2,7 +2,7 @@ extends Control
 
 
 func _ready() -> void:
-	var settings_button = $SubMenu/MenuBackground/MarginContainer/MainMenuContainer/Settings
+	var settings_button = $SubMenu/SubMenu/MarginContainer/MainMenuContainer/Settings
 	settings_button.disabled = true
 	settings_button.set_pressed_no_signal(true)
 	
