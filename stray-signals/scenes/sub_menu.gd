@@ -46,3 +46,7 @@ func _on_settings_pressed() -> void:
 func _on_credits_pressed() -> void:
 	get_tree().current_scene.get_node("Settings").visible = false
 	get_tree().current_scene.get_node("Credits").visible = true
+
+
+func _on_save_game_pressed() -> void:
+	pass # Replace with function body.
