@@ -1,6 +1,6 @@
 [background arg="res://assets/art/backgrounds/Final_Cutscene.png" fade="1.5"]
 label begin_timeline
-audio music "res://assets/audio/cafe_bgm.ogg" [fade="2.0" volume="-8.0"]
+audio music "res://assets/audio/The Deep.wav" [fade="2.0" volume="-8.0"]
 # Outro 1: Alternate Ending
 Narrator: The Human Kidnapper is still out there.
 Narrator: Maybe they will stop.

@@ -6,6 +6,8 @@ else:
 label begin_timeline
 audio music "res://assets/audio/cafe_bgm.ogg" [fade="2.0" volume="-8.0"]
 # Ending: Alexander
+audio "res://assets/audio/doorbell.mp3" [volume="-8.0" bus=""]
+[wait time="1.0"]
 join Alexandra (Neutral) center
 Player: Hello, Alexandra. How are things?
 Alexandra: [pause=.3]Things are not well, {Player.PlayerName}. Despite my best efforts, I'm no closer to solving this case than I was when this all started.

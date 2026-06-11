@@ -8,6 +8,8 @@ audio music "res://assets/audio/cafe_bgm.ogg" [fade="2.0" volume="-8.0"]
 # DAY 2, SCENE 1
 PlayerThink: [i]Man, that cat yesterday was strange. Really not sure what he was talking about at the end there.[/i]
 PlayerThink: [i]Anyways, not really a big deal I suppose. Time for another fine day in the cafe. Little less strange, I'm hoping anyway.[/i]
+audio "res://assets/audio/doorbell.mp3" [volume="-8.0" bus=""]
+[wait time="1.0"]
 join Alexandra center
 PlayerThink: [i]Is she a detective? What is she doing here? My hope for a less strange day is not off to a great start.[/i]
 Player: Hello! Welcome in? What can I get you detective?

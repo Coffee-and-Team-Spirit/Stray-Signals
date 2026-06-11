@@ -33,5 +33,8 @@ else:
 	leave 
 	[signal arg="clear_drink"]
 	[signal arg="craft_drink"]
+[background arg="res://assets/art/backgrounds/black_bg.png" fade="1.5"]
+DayTransition: DAY 2
+[signal arg="hide_textbox"]
 [signal arg="end_encounter"]
 [end_timeline]

@@ -9,6 +9,8 @@ audio music "res://assets/audio/cafe_bgm.ogg" [fade="2.0" volume="-8.0"]
 PlayerThink: [i]Ah… [pause=0.5]another day at Stray Signals. [pause=0.8]After three years here, you think I’d get bored of making drinks.[/i]
 PlayerThink: [i]But everyone who stops by leaves behind a little something.[/i]
 PlayerThink: [i]I wonder who I’ll be serving today…[/i]
+audio "res://assets/audio/doorbell.mp3" [volume="-8.0" bus=""]
+[wait time="1.0"]
 join Loren (Neutral) center
 PlayerThink: [i]Ah, it’s Loren! [pause=0.5]He’s a good ol’ regular. Been coming here for nearly 20 years I hear.[/i]
 Player: Hello Loren, welcome in. How are you doing today?

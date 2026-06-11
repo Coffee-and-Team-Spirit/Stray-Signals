@@ -6,6 +6,8 @@ else:
 label begin_timeline
 audio music "res://assets/audio/cafe_bgm.ogg" [fade="2.0" volume="-8.0"]
 # DAY 3, SCENE 2
+audio "res://assets/audio/doorbell.mp3" [volume="-8.0" bus=""]
+[wait time="1.0"]
 join Zara center
 PlayerThink: [i]I wonder if this is the cat Archimedes talked about yesterday.[/i]
 Player: Welcome in, would–

@@ -81,6 +81,9 @@ func _on_signal(signal_passed_in):
 			game_root.add_child(main_menu_scene)
 			
 			get_tree().current_scene.get_node("HUD").visible = false
+			
+		"hide_textbox":
+			Dialogic.Text.hide_textbox()
 
 
 func distort_clue(text: String) -> String:

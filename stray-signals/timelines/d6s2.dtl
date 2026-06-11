@@ -1,6 +1,6 @@
 [background arg="res://assets/art/backgrounds/Final_Cutscene.png" fade="1.5"]
 label begin_timeline
-audio music "res://assets/audio/cafe_bgm.ogg" [fade="2.0" volume="-8.0"]
+audio music "res://assets/audio/resolution.ogg" [fade="2.0" volume="-8.0"]
 # Outro 2: True Ending
 Narrator: The Human Kidnapper has been stopped.
 Narrator: The Humans have all been turned back.

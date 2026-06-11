@@ -5,7 +5,9 @@ else:
 	jump drink_rating
 label begin_timeline
 audio music "res://assets/audio/cafe_bgm.ogg" [fade="2.0" volume="-8.0"]
-# DAY 4, SCENE 3A
+# DAY 4, SCENE 4A
+audio "res://assets/audio/doorbell.mp3" [volume="-8.0" bus=""]
+[wait time="1.0"]
 join Zara center
 PlayerThink: [i]Zara has returned, I need to get this drink right if I want what she's offering.[/i]
 Zara: Well, as I promised and against my better judgment, I have returned to give you a second shot.
@@ -44,5 +46,8 @@ else:
 	Zara (Sad): [font=res\://styles/fonts/Nervous.ttf]{Drink.DistortedClue}[/font]
 	leave Zara
 	[signal arg="clear_drink"]
+[background arg="res://assets/art/backgrounds/black_bg.png" fade="1.5"]
+DayTransition: DAY 5
+[signal arg="hide_textbox"]
 [signal arg="end_encounter"]
 [end_timeline]

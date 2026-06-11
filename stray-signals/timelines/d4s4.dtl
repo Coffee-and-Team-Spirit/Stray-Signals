@@ -6,6 +6,8 @@ else:
 label begin_timeline
 audio music "res://assets/audio/cafe_bgm.ogg" [fade="2.0" volume="-8.0"]
 # DAY 4, SCENE B
+audio "res://assets/audio/doorbell.mp3" [volume="-8.0" bus=""]
+[wait time="1.0"]
 join Archimedes (Happy) center
 Archimedes: Hello again {Player.PlayerName}. I hope your week has been pleasant. I hope you learned everything you needed to learn.
 Player: I have learned a lot. But I'm not sure if it is everything I need or not.
@@ -53,5 +55,8 @@ else:
 	leave Archimedes
 	[signal arg="clear_drink"]
 	[signal arg="craft_drink"]
+[background arg="res://assets/art/backgrounds/black_bg.png" fade="1.5"]
+DayTransition: DAY 5
+[signal arg="hide_textbox"]
 [signal arg="end_encounter"]
 [end_timeline]

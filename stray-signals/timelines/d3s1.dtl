@@ -6,6 +6,8 @@ else:
 label begin_timeline
 audio music "res://assets/audio/cafe_bgm.ogg" [fade="2.0" volume="-8.0"]
 # DAY 3, SCENE 1
+audio "res://assets/audio/doorbell.mp3" [volume="-8.0" bus=""]
+[wait time="1.0"]
 join Whiskerly center
 PlayerThink: [i]A new cat. A normal customer today would be nice.[/i]
 Player: Hello. Welcome in. Watcha looking for today?

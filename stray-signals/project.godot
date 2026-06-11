@@ -32,6 +32,7 @@ DrinkTraits="*uid://dggsag4eurpkd"
 directories/dch_directory={
 "Alexandra": "res://characters/Alexandra.dch",
 "Archimedes": "res://characters/Archimedes.dch",
+"DayTransition": "res://characters/DayTransition.dch",
 "GG": "res://characters/GG.dch",
 "Loren": "res://characters/Loren.dch",
 "Narrator": "res://characters/Narrator.dch",
@@ -65,11 +66,12 @@ directories/dtl_directory={
 }
 layout/style_directory={
 "": "res://styles/NPCSpeaking.tres",
+"DayTransition": "res://styles/DayTransition.tres",
 "NPCSpeaking": "res://styles/NPCSpeaking.tres",
 "PlayerSpeaking": "res://styles/PlayerSpeaking.tres",
 "PlayerThinking": "res://styles/PlayerThinking.tres"
 }
-layout/style_list=["res://styles/NPCSpeaking.tres", "res://styles/PlayerSpeaking.tres", "res://styles/PlayerThinking.tres"]
+layout/style_list=["res://styles/NPCSpeaking.tres", "res://styles/PlayerSpeaking.tres", "res://styles/PlayerThinking.tres", "res://styles/DayTransition.tres"]
 layout/default_style="res://styles/NPCSpeaking.tres"
 glossary/default_case_sensitive=true
 text/letter_speed=0.03

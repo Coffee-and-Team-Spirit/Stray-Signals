@@ -6,6 +6,8 @@ else:
 label begin_timeline
 audio music "res://assets/audio/cafe_bgm.ogg" [fade="2.0" volume="-8.0"]
 # DAY 2, SCENE 2
+audio "res://assets/audio/doorbell.mp3" [volume="-8.0" bus=""]
+[wait time="1.0"]
 join GG (Happy) center
 GG: Oh my gosh, hello!
 GG: It's so nice to meet you. I love your Cafe. Well not your cafe I guess, but still. It's so nice! [pause=.3] Sorry I'm just rambling already. That's my bad. How are you today?

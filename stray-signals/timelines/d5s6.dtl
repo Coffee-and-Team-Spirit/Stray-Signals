@@ -6,6 +6,8 @@ else:
 label begin_timeline
 audio music "res://assets/audio/cafe_bgm.ogg" [fade="2.0" volume="-8.0"]
 # Ending: Archimedes
+audio "res://assets/audio/doorbell.mp3" [volume="-8.0" bus=""]
+[wait time="1.0"]
 join Archimedes (Happy) center
 Player: Hello, Archimedes.
 Archimedes: [pause=1]Hello, {Player.PlayerName}!

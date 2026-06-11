@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://brp6e32b60vj0" path="res://scenes/settings.tscn" id="3_iusj4"]
 [ext_resource type="PackedScene" uid="uid://b0vyjocrqsixo" path="res://scenes/credits.tscn" id="4_a1rh6"]
 [ext_resource type="PackedScene" uid="uid://cq0cuu823f6cs" path="res://scenes/hud.tscn" id="4_jb3nc"]
-[ext_resource type="PackedScene" uid="uid://c5w85ihkcf3dp" path="res://scenes/pause_overlay.tscn" id="7_j7aru"]
+[ext_resource type="PackedScene" uid="uid://cx2lk3cgqyhbu" path="res://scenes/pause_overlay.tscn" id="7_j7aru"]
 [ext_resource type="PackedScene" uid="uid://dgrip8mdxc6df" path="res://scenes/history_overlay.tscn" id="8_ylec3"]
 
 [node name="GameRoot" type="Node2D" unique_id=1365270137]

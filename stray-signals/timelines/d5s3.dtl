@@ -6,6 +6,8 @@ else:
 label begin_timeline
 audio music "res://assets/audio/cafe_bgm.ogg" [fade="2.0" volume="-8.0"]
 # Ending: GG
+audio "res://assets/audio/doorbell.mp3" [volume="-8.0" bus=""]
+[wait time="1.0"]
 join GG (Happy) center
 GG: Thank you so much for inviting me here today! It's so nice to see you again.
 GG: Man, Stray Signals is just such a nice place.

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b2wrj6kxctivu"
+path="res://.godot/imported/The Deep.wav-362236b3127d4f49550918811f6cce67.sample"
+
+[deps]
+
+source_file="res://assets/audio/The Deep.wav"
+dest_files=["res://.godot/imported/The Deep.wav-362236b3127d4f49550918811f6cce67.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

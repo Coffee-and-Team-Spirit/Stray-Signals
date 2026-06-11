@@ -6,6 +6,8 @@ else:
 label begin_timeline
 audio music "res://assets/audio/cafe_bgm.ogg" [fade="2.0" volume="-8.0"]
 # Ending: Zara
+audio "res://assets/audio/doorbell.mp3" [volume="-8.0" bus=""]
+[wait time="1.0"]
 join Zara (Neutral) center
 Player: Hello Zara. Welcome in.
 Zara: Hmmm… I must admit I had no desire to return to this pedestrian place at any point in the near or far future.

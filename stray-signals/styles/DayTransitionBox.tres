@@ -1,0 +1,8 @@
+[gd_resource type="StyleBoxTexture" format=3 uid="uid://bqnitw68b2a6l"]
+
+[ext_resource type="Texture2D" uid="uid://d05sn6drqpb38" path="res://assets/ui/popup_small.png" id="1_y8ufa"]
+
+[resource]
+texture = ExtResource("1_y8ufa")
+expand_margin_left = 22.0
+expand_margin_top = 100.0

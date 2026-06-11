@@ -6,6 +6,8 @@ else:
 label begin_timeline
 audio music "res://assets/audio/cafe_bgm.ogg" [fade="2.0" volume="-8.0"]
 # Ending: Whiskerly
+audio "res://assets/audio/doorbell.mp3" [volume="-8.0" bus=""]
+[wait time="1.0"]
 join Whiskerly (Neutral) center
 Player: Hello, Whiskerly, so glad to see you come in today.
 Whiskerly: [pause=.3]Helllo again, {Player.PlayerName}. Hope things are well for you on this fine day, in this fine cafe, in this almost fine city.

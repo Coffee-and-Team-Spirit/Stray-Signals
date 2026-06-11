@@ -6,6 +6,8 @@ else:
 label begin_timeline
 audio music "res://assets/audio/cafe_bgm.ogg" [fade="2.0" volume="-8.0"]
 # DAY 3, SCENE 3
+audio "res://assets/audio/doorbell.mp3" [volume="-8.0" bus=""]
+[wait time="1.0"]
 join Alexandra center
 Player: Welcome in again, detective. How goes the investigation?
 Alexandra (Sad): Not very good if I must be honest.
@@ -51,5 +53,8 @@ else:
 	leave Alexandra
 	[signal arg="clear_drink"]
 	[signal arg="craft_drink"]
+[background arg="res://assets/art/backgrounds/black_bg.png" fade="1.5"]
+DayTransition: DAY 4
+[signal arg="hide_textbox"]
 [signal arg="end_encounter"]
 [end_timeline]

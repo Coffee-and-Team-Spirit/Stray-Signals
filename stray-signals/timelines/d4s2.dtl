@@ -6,6 +6,8 @@ else:
 label begin_timeline
 audio music "res://assets/audio/cafe_bgm.ogg" [fade="2.0" volume="-8.0"]
 # DAY 4, SCENE 2
+audio "res://assets/audio/doorbell.mp3" [volume="-8.0" bus=""]
+[wait time="1.0"]
 join GG (Happy) center
 GG: Hello again! It's so good to see you again. I hope things are just fantastic?
 Player: [pause=.3]Hello again, GG. It's good to see you, too. Things are fine. Still a bit odd of a time but can't complain too much about the job.

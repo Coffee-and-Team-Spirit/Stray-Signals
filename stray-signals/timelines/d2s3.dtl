@@ -6,6 +6,8 @@ else:
 label begin_timeline
 audio music "res://assets/audio/cafe_bgm.ogg" [fade="2.0" volume="-8.0"]
 # DAY 2, SCENE 3
+audio "res://assets/audio/doorbell.mp3" [volume="-8.0" bus=""]
+[wait time="1.0"]
 join Archimedes center
 PlayerThink: [i]The strange Blue cat is back? What does he want this time?[/i]
 Player: Welcome back. What can I get you today?
@@ -57,5 +59,8 @@ else:
 PlayerThink: [i]What a strange cat.[/i]
 PlayerThink: [i]Can I really solve this?[/i]
 PlayerThink: [i]Can I save Loren?[/i]
+[background arg="res://assets/art/backgrounds/black_bg.png" fade="1.5"]
+DayTransition: DAY 3
+[signal arg="hide_textbox"]
 [signal arg="end_encounter"]
 [end_timeline]

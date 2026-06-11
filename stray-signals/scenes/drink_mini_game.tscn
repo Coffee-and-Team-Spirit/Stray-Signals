@@ -1146,12 +1146,11 @@ visible = false
 layout_mode = 1
 
 [node name="BGM" type="AudioStreamPlayer2D" parent="." unique_id=400222745]
-process_mode = 3
-process_priority = 10
 stream = ExtResource("28_hcbeg")
 volume_db = -0.503
 autoplay = true
 bus = &"music"
+parameters/looping = false
 
 [connection signal="pressed" from="CupSelector/CupCup" to="." method="_on_cup_button_pressed" binds= [NodePath("CupSelector/CupCup")]]
 [connection signal="pressed" from="CupSelector/CupMug" to="." method="_on_cup_button_pressed" binds= [NodePath("CupSelector/CupMug")]]
