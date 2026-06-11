@@ -100,7 +100,6 @@ func _on_gallery_item_input(event: InputEvent, texture_rect):
 			return
 			
 		_show_expanded_view(id)
-		print("HELLLO")
 
 
 func _show_expanded_view(id):
