@@ -1,0 +1,8 @@
+[gd_resource type="Theme" format=3 uid="uid://neiecvchtv0m"]
+
+[ext_resource type="FontFile" uid="uid://budnnkwdhk4wj" path="res://assets/fonts/SuperCartoon-6R791.ttf" id="1_yky34"]
+
+[resource]
+default_font = ExtResource("1_yky34")
+default_font_size = 42
+RichTextLabel/colors/default_color = Color(0.5019608, 0.22745098, 0.050980393, 1)

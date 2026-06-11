@@ -89,7 +89,9 @@ func _do_main_menu() -> void:
 
 func _on_settings_pressed() -> void:
 	get_tree().current_scene.get_node("PauseOverlay").open_settings_from_pause()
-
+	
+func _on_quit_pressed() -> void:
+	get_tree().quit()
 
 func _on_back_pressed() -> void:
 	get_tree().current_scene.get_node("PauseOverlay").close_pause_menu()

@@ -20,3 +20,7 @@ func _on_settings_pressed() -> void:
 func _on_credits_pressed() -> void:
 	get_tree().current_scene.get_node("MainMenu").visible = false
 	get_tree().current_scene.get_node("Credits").visible = true
+
+
+func _on_quit_pressed() -> void:
+	get_tree().quit()

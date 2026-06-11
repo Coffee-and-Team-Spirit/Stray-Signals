@@ -1,6 +1,14 @@
 [gd_scene format=3 uid="uid://d1pkrbdjn820w"]
 
 [ext_resource type="Script" uid="uid://cikv47r6bxojw" path="res://scenes/sub_menu.gd" id="1_k1p16"]
+[ext_resource type="FontFile" uid="uid://budnnkwdhk4wj" path="res://assets/fonts/SuperCartoon-6R791.ttf" id="2_toi0d"]
+[ext_resource type="Texture2D" uid="uid://b5hox0y0qiyh2" path="res://assets/ui/buttons/curled_button.png" id="3_focyq"]
+[ext_resource type="Texture2D" uid="uid://fwavcxsnjwho" path="res://assets/ui/buttons/curled_button_press.png" id="4_dwk4f"]
+[ext_resource type="Texture2D" uid="uid://b6v6wdgt3qpm7" path="res://assets/ui/buttons/curled_button_hover.png" id="5_rkcrk"]
+[ext_resource type="Texture2D" uid="uid://i5iosr0v0emq" path="res://assets/ui/drawer.png" id="6_f8rex"]
+[ext_resource type="Texture2D" uid="uid://blv8kxs7cao1x" path="res://assets/ui/buttons/drawer_button.png" id="7_h13je"]
+[ext_resource type="Texture2D" uid="uid://dyk00c4uigotg" path="res://assets/ui/buttons/drawer_button_hover.png" id="8_s28ia"]
+[ext_resource type="Texture2D" uid="uid://lxca5qe03fpj" path="res://assets/ui/buttons/drawer_button_press.png" id="9_st11w"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hw6l1"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -58,6 +66,47 @@ expand_margin_top = 10.0
 expand_margin_right = 10.0
 expand_margin_bottom = 10.0
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_35ri2"]
+texture = ExtResource("3_focyq")
+expand_margin_right = 25.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hpoko"]
+texture = ExtResource("4_dwk4f")
+expand_margin_right = 25.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nhb5k"]
+texture = ExtResource("5_rkcrk")
+expand_margin_right = 25.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xhw23"]
+texture = ExtResource("7_h13je")
+texture_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2ocxu"]
+texture = ExtResource("8_s28ia")
+texture_margin_bottom = 15.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vtsg5"]
+texture = ExtResource("8_s28ia")
+texture_margin_bottom = 15.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h76mu"]
+bg_color = Color(1, 0.49019608, 0, 0.5019608)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w6b1d"]
+texture = ExtResource("7_h13je")
+texture_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_682tx"]
+texture = ExtResource("9_st11w")
+texture_margin_bottom = 25.0
+expand_margin_top = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_toi0d"]
+texture = ExtResource("9_st11w")
+texture_margin_bottom = 25.0
+expand_margin_top = 10.0
+
 [node name="SubMenu" type="Control" unique_id=1812428688]
 layout_mode = 3
 anchors_preset = 0
@@ -65,6 +114,7 @@ mouse_filter = 2
 script = ExtResource("1_k1p16")
 
 [node name="MenuBackground" type="ColorRect" parent="." unique_id=993696937]
+visible = false
 layout_mode = 0
 offset_left = 158.0
 offset_right = 540.0
@@ -154,12 +204,15 @@ visible = false
 z_index = -1
 custom_minimum_size = Vector2(1920, 1080)
 layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="Back" type="Button" parent="." unique_id=1827760479]
+visible = false
 layout_mode = 0
 offset_left = 136.0
 offset_top = 923.0
@@ -174,8 +227,145 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_focyq")
 theme_override_styles/hover = SubResource("StyleBoxFlat_dwk4f")
 text = "BACK"
 
+[node name="SubMenu" type="ColorRect" parent="." unique_id=71326545]
+z_index = 2
+layout_mode = 0
+offset_left = 158.0
+offset_right = 458.0
+offset_bottom = 482.0
+color = Color(0.28235295, 0.27058825, 0.50980395, 0)
+
+[node name="Back" type="Button" parent="SubMenu" unique_id=1937726481]
+z_index = 2
+custom_minimum_size = Vector2(200, 75)
+layout_mode = 0
+offset_left = -22.0
+offset_top = 923.0
+offset_right = 102.0
+offset_bottom = 981.0
+theme_override_colors/font_color = Color(0.3633598, 0.21214858, 0.13862908, 1)
+theme_override_colors/font_pressed_color = Color(0.105882354, 0.09019608, 0.34117648, 1)
+theme_override_colors/font_hover_color = Color(1, 0.66993517, 0.4684493, 1)
+theme_override_fonts/font = ExtResource("2_toi0d")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxTexture_35ri2")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_hpoko")
+theme_override_styles/hover = SubResource("StyleBoxTexture_nhb5k")
+text = "BACK"
+
+[node name="DrawerMenu" type="TextureRect" parent="SubMenu" unique_id=2004550455]
+layout_mode = 0
+offset_left = -110.0
+offset_right = 397.0
+offset_bottom = 660.0315
+texture = ExtResource("6_f8rex")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="SubMenu" unique_id=2059656564]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.021000002
+anchor_right = -0.021000002
+offset_left = -0.9779997
+offset_top = 1.0
+offset_right = 310.022
+offset_bottom = 482.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+
+[node name="MainMenuContainer" type="VBoxContainer" parent="SubMenu/MarginContainer" unique_id=1442072645]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_constants/separation = -25
+
+[node name="NewGame" type="Button" parent="SubMenu/MarginContainer/MainMenuContainer" unique_id=1333846473]
+clip_contents = true
+custom_minimum_size = Vector2(220, 110)
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(0.105882354, 0.09019608, 0.34117648, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(0.105882354, 0.09019608, 0.34117648, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_toi0d")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxTexture_xhw23")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_2ocxu")
+theme_override_styles/hover = SubResource("StyleBoxTexture_vtsg5")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_h76mu")
+text = "NEW GAME"
+
+[node name="LoadGame" type="Button" parent="SubMenu/MarginContainer/MainMenuContainer" unique_id=1973030373]
+custom_minimum_size = Vector2(220, 110)
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(0.10404196, 0.08853788, 0.34181657, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(0.105882354, 0.09019608, 0.34117648, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_toi0d")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxTexture_w6b1d")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_2ocxu")
+theme_override_styles/hover = SubResource("StyleBoxTexture_vtsg5")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_h76mu")
+text = "LOAD GAME"
+
+[node name="Gallery" type="Button" parent="SubMenu/MarginContainer/MainMenuContainer" unique_id=1104231600]
+custom_minimum_size = Vector2(220, 110)
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(0.10404196, 0.08853788, 0.34181657, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(0.105882354, 0.09019608, 0.34117648, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_toi0d")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxTexture_w6b1d")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_2ocxu")
+theme_override_styles/hover = SubResource("StyleBoxTexture_vtsg5")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_h76mu")
+text = "GALLERY"
+
+[node name="Settings" type="Button" parent="SubMenu/MarginContainer/MainMenuContainer" unique_id=950881623]
+custom_minimum_size = Vector2(220, 110)
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(0.10404196, 0.08853788, 0.34181657, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_toi0d")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxTexture_w6b1d")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_2ocxu")
+theme_override_styles/hover = SubResource("StyleBoxTexture_vtsg5")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_682tx")
+text = "SETTINGS"
+
+[node name="Credits" type="Button" parent="SubMenu/MarginContainer/MainMenuContainer" unique_id=1483752918]
+custom_minimum_size = Vector2(220, 110)
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(0.10404196, 0.08853788, 0.34181657, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(0.105882354, 0.09019608, 0.34117648, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_toi0d")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxTexture_w6b1d")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_2ocxu")
+theme_override_styles/hover = SubResource("StyleBoxTexture_vtsg5")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_toi0d")
+text = "CREDITS"
+
 [connection signal="pressed" from="MenuBackground/MarginContainer/MainMenuContainer/NewGame" to="." method="_on_new_game_pressed"]
 [connection signal="pressed" from="MenuBackground/MarginContainer/MainMenuContainer/LoadGame" to="." method="_on_load_game_pressed"]
 [connection signal="pressed" from="MenuBackground/MarginContainer/MainMenuContainer/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="MenuBackground/MarginContainer/MainMenuContainer/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="SubMenu/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="SubMenu/MarginContainer/MainMenuContainer/NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="SubMenu/MarginContainer/MainMenuContainer/LoadGame" to="." method="_on_load_game_pressed"]
+[connection signal="pressed" from="SubMenu/MarginContainer/MainMenuContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="SubMenu/MarginContainer/MainMenuContainer/Credits" to="." method="_on_credits_pressed"]

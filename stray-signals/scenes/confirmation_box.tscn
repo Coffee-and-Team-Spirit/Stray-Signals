@@ -1,16 +1,24 @@
 [gd_scene format=3 uid="uid://ch7wgofik7qpe"]
 
 [ext_resource type="Script" uid="uid://crmpd0avly0t7" path="res://scenes/confirmation_box.gd" id="1_e4ifo"]
+[ext_resource type="Texture2D" uid="uid://d05sn6drqpb38" path="res://assets/ui/popup_small.png" id="2_cgggg"]
+[ext_resource type="FontFile" uid="uid://budnnkwdhk4wj" path="res://assets/fonts/SuperCartoon-6R791.ttf" id="3_51fo1"]
+[ext_resource type="Texture2D" uid="uid://r3j3o3n2y6e6" path="res://assets/ui/buttons/short_button.png" id="4_34upt"]
+[ext_resource type="Texture2D" uid="uid://pwtnffjwe64q" path="res://assets/ui/buttons/short_button_hover.png" id="5_51fo1"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_je4kr"]
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vi5lk"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qxrdc"]
+texture = ExtResource("4_34upt")
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_34upt"]
+texture = ExtResource("5_51fo1")
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vi5lk"]
+texture = ExtResource("5_51fo1")
+expand_margin_bottom = 5.0
 
 [node name="ConfirmationBox" type="Control" unique_id=1636681851]
 layout_mode = 3
@@ -20,6 +28,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_e4ifo")
+
+[node name="PopupBox" type="TextureRect" parent="." unique_id=1015597290]
+layout_mode = 0
+offset_left = 710.0
+offset_top = 399.0
+offset_right = 1192.0
+offset_bottom = 684.0
+texture = ExtResource("2_cgggg")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="Panel" type="Panel" parent="." unique_id=641326410]
 layout_mode = 1
@@ -34,7 +52,7 @@ offset_right = 226.5
 offset_bottom = 105.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_je4kr")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_vi5lk")
 
 [node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=614486828]
 layout_mode = 0
@@ -53,6 +71,7 @@ alignment = 1
 [node name="ConfirmationLabel" type="RichTextLabel" parent="Panel/MarginContainer/VBoxContainer" unique_id=646166927]
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
+theme_override_colors/default_color = Color(0.40392157, 0.20392157, 0.039215688, 1)
 text = "This is the label asking if it's okay to save, load, or go to main menu?"
 fit_content = true
 horizontal_alignment = 1
@@ -60,25 +79,40 @@ vertical_alignment = 1
 
 [node name="OkButton" type="Button" parent="Panel/MarginContainer/VBoxContainer" unique_id=1336404319]
 visible = false
-custom_minimum_size = Vector2(80, 0)
+custom_minimum_size = Vector2(120, 50)
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3_51fo1")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_qxrdc")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_34upt")
+theme_override_styles/hover = SubResource("StyleBoxTexture_34upt")
 text = "OK"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer" unique_id=980756212]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_constants/separation = 60
+theme_override_constants/separation = 30
 
 [node name="YesButton" type="Button" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=523898529]
-custom_minimum_size = Vector2(80, 0)
+custom_minimum_size = Vector2(120, 50)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_51fo1")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_qxrdc")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_34upt")
+theme_override_styles/hover = SubResource("StyleBoxTexture_vi5lk")
 text = "YES
 "
 
 [node name="NoButton" type="Button" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=2084624986]
-custom_minimum_size = Vector2(80, 0)
+custom_minimum_size = Vector2(120, 50)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_51fo1")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_qxrdc")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_34upt")
+theme_override_styles/hover = SubResource("StyleBoxTexture_34upt")
 text = "NO"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1512109610]
