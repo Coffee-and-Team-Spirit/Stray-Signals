@@ -255,8 +255,9 @@ text = "BACK"
 [node name="DrawerMenu" type="TextureRect" parent="SubMenu" unique_id=2004550455]
 layout_mode = 0
 offset_left = -110.0
+offset_top = 2.0
 offset_right = 397.0
-offset_bottom = 660.0315
+offset_bottom = 632.0
 texture = ExtResource("6_f8rex")
 expand_mode = 1
 stretch_mode = 5
@@ -274,7 +275,7 @@ offset_bottom = 482.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme_override_constants/margin_left = 25
-theme_override_constants/margin_top = 25
+theme_override_constants/margin_top = 60
 theme_override_constants/margin_right = 25
 
 [node name="MainMenuContainer" type="VBoxContainer" parent="SubMenu/MarginContainer" unique_id=1442072645]
@@ -314,6 +315,7 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_h76mu")
 text = "LOAD GAME"
 
 [node name="Gallery" type="Button" parent="SubMenu/MarginContainer/MainMenuContainer" unique_id=1104231600]
+visible = false
 custom_minimum_size = Vector2(220, 110)
 layout_mode = 2
 theme_override_colors/font_pressed_color = Color(0.007026533, 0.0054814275, 0.058417395, 1)
