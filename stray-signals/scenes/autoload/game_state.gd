@@ -17,10 +17,14 @@ func _ready():
 	if Dialogic.Save.has_slot("autosave"):
 		var game_data = Dialogic.Save.get_slot_info("autosave")
 		gallery_unlocks = game_data.get("gallery_unlocks", {})
+		
+		for id in gallery_unlocks.keys():
+			if GalleryData.gallery_data.has(id):
+				GalleryData.gallery_data[id]["unlocked"] = gallery_unlocks[id]
 		return
 		
 	if gallery_unlocks.is_empty():
-		gallery_unlocks = GalleryData.gallery_data.duplicate(true)
+		sync_gallery_unlocks()
 
 
 func new_game() -> void:
@@ -48,6 +52,7 @@ func new_game() -> void:
 	
 	DayManager.emit_signal("day_changed", 1)
 	DayManager.gallery_unlocks()
+	sync_gallery_unlocks()
 	
 	# Start first timeline
 	var first_timeline = DayManager.get_current_timeline()
@@ -68,6 +73,10 @@ func load_game() -> void:
 		DayManager.encounter = game_data.get("encounter", 1)
 		gallery_unlocks = game_data.get("gallery_unlocks", {})
 		
+		for id in gallery_unlocks.keys():
+			if GalleryData.gallery_data.has(id):
+				GalleryData.gallery_data[id]["unlocked"] = gallery_unlocks[id]
+		
 		DayManager.emit_signal("day_changed", DayManager.day)
 		
 		print("LOAD")
@@ -81,3 +90,9 @@ func load_game() -> void:
 	get_tree().current_scene.get_node("HUD").visible = true
 
 	DayManager.gallery_unlocks()
+
+
+func sync_gallery_unlocks():
+	gallery_unlocks.clear()
+	for id in GalleryData.gallery_data.keys():
+		gallery_unlocks[id] = GalleryData.gallery_data[id]["unlocked"]

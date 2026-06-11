@@ -13,9 +13,10 @@ func _ready() -> void:
 	gallery_button.disabled = true
 	gallery_button.set_pressed_no_signal(true)
 	
+	GameState.sync_gallery_unlocks()
 	DayManager.gallery_unlocks()
 	
-	gallery_ids = GameState.gallery_unlocks.keys()
+	gallery_ids = GalleryData.gallery_data.keys()
 	gallery_ids.sort_custom(Callable(self, "_sort_by_unlock"))
 	total_pages = int(ceil(float(gallery_ids.size()) / ITEMS_PER_PAGE))
 	
@@ -60,7 +61,8 @@ func populate_page(page_index):
 	
 	for i in range(page_items.size()):
 		var id = page_items[i]
-		var unlocked = GameState.gallery_unlocks[id]
+		var data = GalleryData.gallery_data[id]
+		var unlocked = data["unlocked"]
 		
 		var art_piece = $SettingsBackground/MarginContainer/GridContainer.get_child(i)
 		var texture_rect = art_piece.get_node("TextureRect")
@@ -68,7 +70,7 @@ func populate_page(page_index):
 			
 		if unlocked:
 			texture_rect.texture = load(GALLERY_PATH + id + ".png")
-			label.text = id.replace("_", " ").capitalize()
+			label.text = data["title"].to_lower().capitalize()
 		else:
 			texture_rect.texture = LOCKED
 			label.text = "LOCKED"
@@ -84,8 +86,8 @@ func populate_page(page_index):
 
 
 func _sort_by_unlock(a, b):
-	var unlocked_a = GameState.gallery_unlocks[a]
-	var unlocked_b = GameState.gallery_unlocks[b]
+	var unlocked_a = GalleryData.gallery_data[a]["unlocked"]
+	var unlocked_b = GalleryData.gallery_data[b]["unlocked"]
 	
 	if unlocked_a != unlocked_b:
 		return unlocked_a
@@ -96,7 +98,7 @@ func _on_gallery_item_input(event: InputEvent, texture_rect):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		var id = texture_rect.get_meta("id")
 		
-		if not GameState.gallery_unlocks[id]:
+		if not GalleryData.gallery_data[id]["unlocked"]:
 			return
 			
 		_show_expanded_view(id)
@@ -104,7 +106,8 @@ func _on_gallery_item_input(event: InputEvent, texture_rect):
 
 func _show_expanded_view(id):
 	$ExpandedView/Panel/MarginContainer/TextureRect.texture = load(GALLERY_PATH + id + ".png")
-	$ExpandedView/Title.text = id.replace("_", " ").capitalize()
+	$ExpandedView/Title.text = GalleryData.gallery_data[id]["title"]
+	$ExpandedView/Caption.text = GalleryData.gallery_data[id]["description"]
 	$ExpandedView.visible = true
 
 

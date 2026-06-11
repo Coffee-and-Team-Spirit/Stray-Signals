@@ -46,42 +46,48 @@ func day_five_encounter():
 
 func gallery_unlocks():
 	if day > 1:
-		GameState.gallery_unlocks["cafe_background"] = true
-		GameState.gallery_unlocks["loren_neutral"] = true
-		GameState.gallery_unlocks["loren_happy"] = true
-		GameState.gallery_unlocks["loren_sad"] = true
-		GameState.gallery_unlocks["loren_angry"] = true
-		GameState.gallery_unlocks["cup"] = true
-		GameState.gallery_unlocks["mug"] = true
-		GameState.gallery_unlocks["glass"] = true
-		GameState.gallery_unlocks["boba"] = true
-		GameState.gallery_unlocks["catnip"] = true
-		GameState.gallery_unlocks["cream_and_cat_treats"] = true
-		GameState.gallery_unlocks["strawberry"] = true
-		GameState.gallery_unlocks["mango"] = true
-		GameState.gallery_unlocks["coffee"] = true
-		GameState.gallery_unlocks["matcha"] = true
-		GameState.gallery_unlocks["milk_tea"] = true
+		_unlock("cafe_background")
+		_unlock("loren_neutral")
+		_unlock("loren_happy")
+		_unlock("loren_sad")
+		_unlock("loren_angry")
+		_unlock("cup")
+		_unlock("mug")
+		_unlock("glass")
+		_unlock("boba")
+		_unlock("catnip")
+		_unlock("cream_and_cat_treats")
+		_unlock("strawberry")
+		_unlock("mango")
+		_unlock("coffee")
+		_unlock("matcha")
+		_unlock("milk_tea")
 	if day > 2:
-		GameState.gallery_unlocks["archimedes_neutral"] = true
-		GameState.gallery_unlocks["archimedes_sad"] = true
-		GameState.gallery_unlocks["archimedes_happy"] = true
-		GameState.gallery_unlocks["alexandra_neutral"] = true
-		GameState.gallery_unlocks["alexandra_happy"] = true
-		GameState.gallery_unlocks["alexandra_sad"] = true
-		GameState.gallery_unlocks["alexandra_angry"] = true
-		GameState.gallery_unlocks["gg_neutral"] = true
-		GameState.gallery_unlocks["gg_happy"] = true
-		GameState.gallery_unlocks["gg_sad"] = true
-		GameState.gallery_unlocks["gg_angry"] = true
+		_unlock("archimedes_neutral")
+		_unlock("archimedes_sad")
+		_unlock("archimedes_happy")
+		_unlock("alexandra_neutral")
+		_unlock("alexandra_happy")
+		_unlock("alexandra_sad")
+		_unlock("alexandra_angry")
+		_unlock("gg_neutral")
+		_unlock("gg_happy")
+		_unlock("gg_sad")
+		_unlock("gg_angry")
 	if day > 3:
-		GameState.gallery_unlocks["whiskerly_neutral"] = true
-		GameState.gallery_unlocks["whiskerly_sad"] = true
-		GameState.gallery_unlocks["whiskerly_happy"] = true
-		GameState.gallery_unlocks["zara_neutral"] = true
-		GameState.gallery_unlocks["zara_sad"] = true
-		GameState.gallery_unlocks["zara_happy"] = true
+		_unlock("whiskerly_neutral")
+		_unlock("whiskerly_sad")
+		_unlock("whiskerly_happy")
+		_unlock("zara_neutral")
+		_unlock("zara_sad")
+		_unlock("zara_happy")
 	if GameState.has_special_ingredient == true:
-		GameState.gallery_unlocks["magical_mushroom_fish"] = true
+		_unlock("magical_mushroom_fish")
 	if DayManager.day == 5:
-		GameState.gallery_unlocks["ending_background"] = true
+		_unlock("ending_background")
+
+
+func _unlock(id: String):
+	if GalleryData.gallery_data.has(id):
+		GalleryData.gallery_data[id]["unlocked"] = true
+		GameState.gallery_unlocks[id] = true

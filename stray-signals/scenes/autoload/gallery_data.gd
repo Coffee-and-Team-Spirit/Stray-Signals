@@ -4,177 +4,177 @@ extends Node
 var gallery_data = {
 	cafe_background = {
 		unlocked = false,
-		title = "Stray Signals Cafe",
+		title = "STRAY SIGNALS CAFE",
 		description = "The cafe where the story begins, the home of Stray Signals."
 	},
 	ending_background = {
 		unlocked = false,
-		title = "City Overview",
+		title = "CITY OVERVIEW",
 		description = "Where the story ends... the city that is the home to all of the characters and stories that is the heart of Stray Signals."
 	},
 	alexandra_neutral = {
 		unlocked = false,
-		title = "Alexandra - Neutral",
+		title = "ALEXANDRA - NEUTRAL",
 		description = "The detective, Alexandra, who is trying to figure out what is going on around the city."
 	},
 	alexandra_happy = {
 		unlocked = false,
-		title = "Alexandra - Happy",
+		title = "ALEXANDRA - HAPPY",
 		description = "The detective, Alexandra, who is trying to figure out what is going on around the city."
 	},
 	alexandra_angry = {
 		unlocked = false,
-		title = "Alexandra - Angry",
+		title = "ALEXANDRA - ANGRY",
 		description = "The detective, Alexandra, who is trying to figure out what is going on around the city."
 	},
 	alexandra_sad = {
 		unlocked = false,
-		title = "Alexandra - Sad",
+		title = "ALEXANDRA - SAD",
 		description = "The detective, Alexandra, who is trying to figure out what is going on around the city."
 	},
 	loren_neutral = {
 		unlocked = false,
-		title = "Loren - Neutral",
-		description = "Stray Signals long time coming regular who might be the only reason that you're still in business."
+		title = "LOREN - NEUTRAL",
+		description = "Stray Signals long time regular who might be the only reason that you're still in business."
 	},
 	loren_happy = {
 		unlocked = false,
-		title = "Loren - Happy",
-		description = "Stray Signals long time coming regular who might be the only reason that you're still in business."
+		title = "LOREN - HAPPY",
+		description = "Stray Signals long time regular who might be the only reason that you're still in business."
 	},
 	loren_angry = {
 		unlocked = false,
-		title = "Loren - Angry",
-		description = "Stray Signals long time coming regular who might be the only reason that you're still in business."
+		title = "LOREN - ANGRY",
+		description = "Stray Signals long time regular who might be the only reason that you're still in business."
 	},
 	loren_sad = {
 		unlocked = false,
-		title = "Loren - Sad",
-		description = "Stray Signals long time coming regular who might be the only reason that you're still in business."
+		title = "LOREN - SAD",
+		description = "Stray Signals long time regular who might be the only reason that you're still in business."
 	},
 	archimedes_neutral = {
 		unlocked = false,
-		title = "Archimedes - Neutral",
+		title = "ARCHIMEDES - NEUTRAL",
 		description = "Archimedes is the know it all... is he the missing link in the mystery?"
 	},
 	archimedes_happy = {
 		unlocked = false,
-		title = "Archimedes - Happy",
+		title = "ARCHIMEDES - HAPPY",
 		description = "Archimedes is the know it all... is he the missing link in the mystery?"
 	},
 	archimedes_sad = {
 		unlocked = false,
-		title = "Archimedes - Sad",
+		title = "ARCHIMEDES - SAD",
 		description = "Archimedes is the know it all... is he the missing link in the mystery?"
 	},
 	gg_neutral = {
 		unlocked = false,
-		title = "GG - Neutral",
+		title = "GG - NEUTRAL",
 		description = "There is more to GG than meets the eye."
 	},
 	gg_happy = {
 		unlocked = false,
-		title = "GG - Happy",
+		title = "GG - HAPPY",
 		description = "There is more to GG than meets the eye."
 	},
 	gg_angry = {
 		unlocked = false,
-		title = "GG - Angry",
+		title = "GG - ANGRY",
 		description = "There is more to GG than meets the eye."
 	},
 	gg_sad = {
 		unlocked = false,
-		title = "GG - Sad",
+		title = "GG - SAD",
 		description = "There is more to GG than meets the eye."
 	},
 	whiskerly_neutral = {
 		unlocked = false,
-		title = "Whiskerly - Neutral",
+		title = "WHISKERLY - NEUTRAL",
 		description = "A new regular at Stray Signals. Why does Whiskerly seem so familiar? It's like I've known him for years."
 	},
 	whiskerly_happy = {
 		unlocked = false,
-		title = "Whiskerly - Happy",
+		title = "Whiskerly - HAPPY",
 		description = "A new regular at Stray Signals. Why does Whiskerly seem so familiar? It's like I've known him for years."
 	},
 	whiskerly_sad = {
 		unlocked = false,
-		title = "Whiskerly - Sad",
+		title = "WHISKERLY - SAD",
 		description = "A new regular at Stray Signals. Why does Whiskerly seem so familiar? It's like I've known him for years."
 	},
 	zara_neutral = {
 		unlocked = false,
-		title = "Zara - Neutral",
+		title = "ZARA - NEUTRAL",
 		description = "Zara might just be the fanciest cat that you will ever meet."
 	},
 	zara_happy = {
 		unlocked = false,
-		title = "Zara - Happy",
+		title = "ZARA - HAPPY",
 		description = "Zara might just be the fanciest cat that you will ever meet."
 	},
 	zara_sad = {
 		unlocked = false,
-		title = "Zara - sad",
+		title = "ZARA - SAD",
 		description = "Zara might just be the fanciest cat that you will ever meet."
 	},
 	cup = {
 		unlocked = false,
-		title = "Cup",
+		title = "CUP",
 		description = "An empty cup, but it has served so many drinks to the customers of Stray Signals."
 	},
 	mug = {
 		unlocked = false,
-		title = "Mug",
+		title = "MUG",
 		description = "If you want a cozy, warm drink at Stray Signals, this is the cup for you."
 	},
 	glass = {
 		unlocked = false,
-		title = "Glass",
+		title = "GLASS",
 		description = "Feeling fancy?"
 	},
 	coffee = {
 		unlocked = false,
-		title = "Coffee",
+		title = "COFFEE",
 		description = "The first thing ever served at Stray Signals was... you guessed it... a cup of coffee. How else does a night city keep running?"
 	},
 	matcha = {
 		unlocked = false,
-		title = "Coffee",
-		description = "The first thing ever served at Stray Signals was... you guessed it... a cup of coffee. How else does a night city keep running?"
+		title = "MATCHA",
+		description = "Matcha matcha matcha."
 	},
 	mango = {
 		unlocked = false,
-		title = "Coffee",
-		description = "The first thing ever served at Stray Signals was... you guessed it... a cup of coffee. How else does a night city keep running?"
+		title = "MANGO",
+		description = "Mango is a popular flavor at Stray Signals."
 	},
 	strawberry = {
 		unlocked = false,
-		title = "Coffee",
-		description = "The first thing ever served at Stray Signals was... you guessed it... a cup of coffee. How else does a night city keep running?"
+		title = "STRAWBERRY",
+		description = "Yummm... strawberry."
 	},
 	milk_tea = {
 		unlocked = false,
-		title = "Milk Tea",
+		title = "MILK TEA",
 		description = "To complement the coffee, of course Stray Signals serves milk tea too."
 	},
 	catnip = {
 		unlocked = false,
-		title = "Catnip",
+		title = "CATNIP",
 		description = "At popular request, Stray Signals added catnip to it's menu and is the most popular spot for the city's cats to stop by to grab a drink."
 	},
 	boba = {
 		unlocked = false,
-		title = "Boba",
+		title = "BOBA",
 		description = "Boba is the perfect addition to any drink."
 	},
 	cream_and_cat_treats = {
 		unlocked = false,
-		title = "Cream & Cat Treats",
+		title = "CREAM & CAT TREATS",
 		description = "A fan favorite of the cat locals that visit Stray Signals."
 	},
 	magical_mushroom_fish = {
 		unlocked = false,
-		title = "Magical Mushroom Fish",
+		title = "MAGICAL MUSHROOM FISH",
 		description = "The only thing that will help solve the mystery clouding the city and bring your regulars back to Stray Signals."
 	},
 }
