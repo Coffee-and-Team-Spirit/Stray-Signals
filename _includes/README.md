@@ -1,4 +1,3 @@
-## Stray Signals
 Stray cats wander into your cozy cafe and offer you secrets about a larger mystery. There are sinister things happening in this cyberpunk-esque city and only these cute cats have the answers you are looking for. You will need to talk to these cats and make them the right drinks to uncover what they know and solve the mystery.
 
 
