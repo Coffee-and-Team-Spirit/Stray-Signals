@@ -26,6 +26,8 @@ layout: default
   display: flex;
   gap: 20px;                
   margin: 20px 0;
+  align-items: center;
+  justify-content: center;
 }
 
 h2 {
@@ -67,5 +69,5 @@ Known issues are documented in the Build Notes above.
 
 <h1>Project Overview</h1>
 <div class="markdown-body">
-  {{ site.github.repository_readme_html }}
+  {% include README.md %}
 </div>
