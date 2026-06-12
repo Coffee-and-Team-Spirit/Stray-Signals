@@ -57,6 +57,14 @@ h1 {
   </a>
 </div>
 
+<h1>Project Overview - README</h1>
+<div class="markdown-body">
+  {% capture readme %}
+  {% include README.md %}
+  {% endcapture %}
+  {{ readme | markdownify }}
+</div>
+
 <h1>Build Notes</h1>
 <h2>Known Bugs</h2>
 <ul>
@@ -71,11 +79,3 @@ I confirm that I have tested this build on Windows & MacOS and it runs as submit
 The core mechanic is functional and a player can start, play, and reach the end of our narrative mystery by crafting drinks for each encounter over the course of 5 days.  
 Known issues are documented in the Build Notes above.
 </p>
-
-<h1>Project Overview - README</h1>
-<div class="markdown-body">
-  {% capture readme %}
-  {% include README.md %}
-  {% endcapture %}
-  {{ readme | markdownify }}
-</div>
