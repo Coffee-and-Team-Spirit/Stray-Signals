@@ -71,5 +71,8 @@ Known issues are documented in the Build Notes above.
 
 <h1>Project Overview</h1>
 <div class="markdown-body">
+  {% capture readme %}
   {% include README.md %}
+  {% endcapture %}
+  {{ readme | markdownify }}
 </div>
