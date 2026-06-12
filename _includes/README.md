@@ -1,5 +1,3 @@
-Stray cats wander into your cozy cafe and offer you secrets about a larger mystery. There are sinister things happening in this cyberpunk-esque city and only these cute cats have the answers you are looking for. You will need to talk to these cats and make them the right drinks to uncover what they know and solve the mystery.
-
 
 ## To Start
 Download the 0.2.1 Final Capstone Build under [Releases](https://github.com/Coffee-and-Team-Spirit/Stray-Signals/releases) on Github.
