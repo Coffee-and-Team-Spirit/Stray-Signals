@@ -2,7 +2,6 @@
 layout: default
 ---
 <style>
-  
 /* Solid green buttons with white text */
 .btn {
   background-color: #2ecc71 !important; /* bright green */
@@ -21,6 +20,12 @@ layout: default
   background-color: #27ae60 !important; /* darker green */
   color: white !important;
 }
+
+.download-row {
+  display: flex;
+  gap: 20px;                
+  margin: 20px 0;
+}
 </style>
 
 <h1>Engine</h1>
@@ -30,17 +35,14 @@ layout: default
 <p>PC & MacOS. Tested on Windows 11 (Version 25H2) and MacOS (Sequoia 15.7.7)</p>
 
 <h1>Downloads</h1>
-<p>
+<div class="download-row">
   <a href="https://github.com/Coffee-and-Team-Spirit/Stray-Signals/releases/download/capstone/StraySignals_0.2.1.exe" class="btn">
     Download for Windows
   </a>
-</p>
-
-<p>
   <a href="https://github.com/Coffee-and-Team-Spirit/Stray-Signals/releases/download/capstone/StraySignals_0.2.1.app.zip" class="btn">
     Download for MacOS
   </a>
-</p>
+</div>
 
 <h1>Build Notes</h1>
 <h2>Known Bugs</h2>
@@ -56,3 +58,8 @@ I confirm that I have tested this build on Windows & MacOS and it runs as submit
 The core mechanic is functional and a player can start, play, and reach the end of our narrative mystery by crafting drinks for each encounter over the course of 5 days.  
 Known issues are documented in the Build Notes above.
 </p>
+
+<h1>Project Overview</h1>
+<div class="markdown-body">
+  {{ site.github.repository_readme_html }}
+</div>
