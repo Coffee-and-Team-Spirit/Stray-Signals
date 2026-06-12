@@ -3,7 +3,7 @@ Stray cats wander into your cozy cafe and offer you secrets about a larger myste
 
 
 ## To Start
-Download the 0.2.1 Final Capstone Build under [Releases](https://github.com/Coffee-and-Team-Spirit/Stray-Signals/releases) on Github.
+Download the 0.2.2 Final Capstone Build under [Releases](https://github.com/Coffee-and-Team-Spirit/Stray-Signals/releases) on Github.
 
 If on PC, download the *StraySignals_0.2.2.exe* and double click to run the executble. 
 
